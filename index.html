@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Power Learn — Aprenda programação & informática</title>
+  <meta name="description" content="Power Learn: aprenda Java, Python, C#, Pacote Office e Windows — conteúdo gratuito com anúncios, exercícios práticos e sistema gamificado com 'Powers'." />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Power Learn — Aprenda programação & informática" />
+  <meta property="og:description" content="Cursos gratuitos com exercícios práticos e sistema gamificado. Assista um anúncio para desbloquear lições." />
+  <meta property="og:image" content="" />
+  <meta name="theme-color" content="#ff7a18"/>
+  <style>
+    :root{
+      --bg:#0b0b0b;
+      --card:#111;
+      --accent:#ff7a18; /* laranja */
+      --muted:#9aa0a6;
+      --glass: rgba(255,255,255,0.03);
+      --radius:14px;
+      --maxw:1100px;
+      --sans:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:var(--sans);
+      background:linear-gradient(180deg,#050505 0%, #0b0b0b 100%);
+      color:#fff;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+    a{color:inherit; text-decoration:none}
+    .container{max-width:var(--maxw); margin:0 auto; padding:32px;}
+    header{
+      position:sticky; top:0; z-index:60;
+      backdrop-filter: blur(6px);
+      background: linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.3));
+      border-bottom:1px solid rgba(255,255,255,0.03);
+    }
+    .nav{display:flex; align-items:center; gap:24px; justify-content:space-between; max-width:var(--maxw); margin:0 auto; padding:12px 20px;}
+    .brand{display:flex;gap:12px;align-items:center;font-weight:700;font-size:18px}
+    .logo{
+      width:44px; height:44px; display:flex;align-items:center;justify-content:center;
+      background:linear-gradient(135deg,var(--accent), #ff3d00);
+      border-radius:10px; color:#111; font-weight:800;
+      box-shadow:0 6px 18px rgba(255,122,24,0.12), inset 0 -6px 14px rgba(0,0,0,0.12);
+    }
+    nav ul{display:flex; gap:16px; list-style:none; margin:0; padding:0; align-items:center}
+    .cta{background:var(--accent); color:#111; padding:10px 14px; border-radius:10px; font-weight:700; box-shadow: 0 6px 18px rgba(255,122,24,0.12);}
+    /* Hero */
+    .hero{display:grid; grid-template-columns:1fr 420px; gap:34px; align-items:center; padding:48px 0;}
+    .hero .eyebrow{display:inline-block; background:rgba(255,122,24,0.08); color:var(--accent); padding:8px 12px; border-radius:999px; font-weight:700; font-size:13px;}
+    .hero h1{font-size:44px; margin:14px 0; letter-spacing:-0.6px}
+    .hero p.lead{color:var(--muted); font-size:16px; margin:0 0 20px; max-width:60ch}
+    .hero .actions{display:flex; gap:12px; align-items:center}
+    .download-btn{background:#111; border:1px solid rgba(255,255,255,0.03); padding:12px 14px; border-radius:10px; display:inline-flex; gap:10px; align-items:center}
+    .cards {background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent); padding:18px; border-radius:14px; border:1px solid rgba(255,255,255,0.03)}
+    .app-mock{background:linear-gradient(180deg,#0b0b0b,#0f0f0f); padding:18px; border-radius:12px; box-shadow: 0 12px 40px rgba(0,0,0,0.5); width:100%; max-width:420px;}
+    .mock-header{display:flex; justify-content:space-between; align-items:center; margin-bottom:12px}
+    .mock-screen{background:linear-gradient(180deg,#070707,#111); border-radius:10px; padding:12px; border:1px solid rgba(255,255,255,0.03)}
+    .power-row{display:flex; gap:8px; align-items:center}
+    .power{width:10px; height:10px; border-radius:3px; background:var(--accent); box-shadow: 0 4px 12px rgba(255,122,24,0.12)}
+    /* Courses */
+    .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px}
+    .course{background:var(--card); padding:18px; border-radius:12px; border:1px solid rgba(255,255,255,0.03)}
+    .course h4{margin:10px 0 6px}
+    .badge{display:inline-block;background:rgba(255,255,255,0.03); color:var(--muted); padding:6px 8px;border-radius:8px;font-size:13px}
+    .progress{height:8px; background:rgba(255,255,255,0.03); border-radius:8px; overflow:hidden; margin-top:12px}
+    .progress > i{display:block; height:100%; background:linear-gradient(90deg,var(--accent), #ff3d00); width:0; transition:width .8s ease;}
+    /* How it works */
+    .steps{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px}
+    .step{background:var(--glass); padding:14px; border-radius:12px; border:1px solid rgba(255,255,255,0.02)}
+    .muted{color:var(--muted)}
+    /* footer */
+    footer{margin-top:40px; padding:32px 0; border-top:1px solid rgba(255,255,255,0.03)}
+    .flex{display:flex; gap:14px; align-items:center}
+    /* modal */
+    .modal-backdrop{position:fixed; inset:0; background:linear-gradient(90deg, rgba(0,0,0,0.6), rgba(0,0,0,0.7)); display:none; align-items:center; justify-content:center; z-index:200;}
+    .modal{background:#0e0e0e; border-radius:12px; padding:20px; width:96%; max-width:520px; border:1px solid rgba(255,255,255,0.04)}
+    .modal h3{margin-top:0}
+    .btn{padding:10px 12px; border-radius:10px; background:var(--accent); color:#111; font-weight:700; border:0; cursor:pointer}
+    .btn.ghost{background:transparent; border:1px solid rgba(255,255,255,0.06); color:var(--muted); font-weight:600}
+    /* responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr; gap:20px}
+      .app-mock{max-width:100%}
+      .nav{padding:8px 16px}
+    }
+
+    /* small touches */
+    .pill{background:rgba(255,255,255,0.02); padding:6px 10px; border-radius:999px; font-weight:700}
+    .small{font-size:13px; color:var(--muted)}
+    .shadow-soft{box-shadow:0 8px 30px rgba(0,0,0,0.6)}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav container" role="navigation" aria-label="Principal">
+      <div class="brand" title="Power Learn">
+        <div class="logo" aria-hidden="true">PL</div>
+        <div>
+          <div style="font-size:14px">Power Learn</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:2px">Aprenda. Pratique. Evolua.</div>
+        </div>
+      </div>
+
+      <nav>
+        <ul>
+          <li class="small muted"><a href="#cursos">Cursos</a></li>
+          <li class="small muted"><a href="#como-funciona">Como funciona</a></li>
+          <li class="small muted"><a href="#precos">Powers</a></li>
+          <li><button class="cta" id="open-cta">Comece grátis</button></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" role="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <span class="eyebrow">Aprendizado gamificado</span>
+        <h1 id="hero-title">Aprenda programação e informática — sem pagar nada.</h1>
+        <p class="lead">Power Learn transforma estudo em uma experiência interativa: cursos práticos de Java, Python, C#, Pacote Office e Windows. Assista a um anúncio e desbloqueie lições — aprenda no seu ritmo com exercícios, progresso e recompensas.</p>
+
+        <div class="actions">
+          <button class="btn" id="get-started">Assistir anúncio & começar</button>
+          <a class="download-btn" href="#" onclick="alert('Em breve nas lojas!'); return false;">
+            <!-- simple svg phone icon -->
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="opacity:0.9" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6" y="2" width="12" height="20" rx="2" stroke="rgba(255,255,255,0.14)" stroke-width="1.2"/>
+              <circle cx="12" cy="18" r="0.8" fill="rgba(255,255,255,0.14)"/>
+            </svg>
+            <span style="font-size:14px;margin-left:8px">Disponível grátis</span>
+          </a>
+        </div>
+
+        <div style="margin-top:20px" class="small muted">3 Powers (vidas) • Recarregue por <strong>R$ 8,00</strong> • Exercícios práticos após cada lição</div>
+      </div>
+
+      <aside class="app-mock shadow-soft" aria-label="Mockup do app">
+        <div class="mock-header">
+          <div class="small muted">Olá, estudante 👋</div>
+          <div class="power-row" title="Powers remanescentes">
+            <div class="pill small">Powers</div>
+            <div style="display:flex; margin-left:8px">
+              <div class="power" aria-hidden="true"></div>
+              <div class="power" aria-hidden="true" style="opacity:0.85"></div>
+              <div class="power" aria-hidden="true" style="opacity:0.6"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mock-screen">
+          <div style="display:flex; justify-content:space-between; align-items:center; gap:12px;">
+            <div style="flex:1">
+              <div class="badge">Curso recomendado</div>
+              <h3 style="margin:8px 0 6px">Python Básico</h3>
+              <div class="small muted">Aula 3 de 12 • Exercícios após a lição</div>
+              <div class="progress" style="margin-top:10px"><i style="width:32%"></i></div>
+            </div>
+            <div style="width:84px;text-align:center;">
+              <div style="background:rgba(255,122,24,0.08); color:var(--accent); padding:10px; border-radius:10px; font-weight:700">+ XP</div>
+              <div class="small muted" style="margin-top:8px">Recompensas</div>
+            </div>
+          </div>
+
+          <hr style="border:none;height:1px;background:rgba(255,255,255,0.02); margin:14px 0"/>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap">
+            <button class="btn" style="flex:1" onclick="simulateLesson('Python Básico')">Iniciar lição</button>
+            <button class="btn ghost" style="flex:1" onclick="openPowers()">Recarregar Powers</button>
+          </div>
+        </div>
+
+      </aside>
+    </section>
+
+    <section id="cursos" style="margin-top:28px">
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:12px">
+        <div>
+          <h2 style="margin:0">Cursos em destaque</h2>
+          <div class="small muted" style="margin-top:6px">Aulas práticas, exercícios e trilhas por nível.</div>
+        </div>
+        <div class="small muted">100% gratuito (com anúncio)</div>
+      </div>
+
+      <div style="margin-top:18px" class="grid" aria-live="polite">
+        <!-- course cards -->
+        <article class="course" aria-labelledby="c1">
+          <div class="badge">Programação</div>
+          <h4 id="c1">Java — Do básico ao avançado</h4>
+          <p class="small muted">Estruturas, OOP, coleções e projetos práticos.</p>
+          <div class="progress" aria-hidden="true" style="margin-top:12px"><i style="width:12%"></i></div>
+        </article>
+
+        <article class="course" aria-labelledby="c2">
+          <div class="badge">Programação</div>
+          <h4 id="c2">Python — Comece a programar</h4>
+          <p class="small muted">Sintaxe, manipulação de dados e automações.</p>
+          <div class="progress" aria-hidden="true" style="margin-top:12px"><i style="width:32%"></i></div>
+        </article>
+
+        <article class="course" aria-labelledby="c3">
+          <div class="badge">Programação</div>
+          <h4 id="c3">C# — Fundamentos & .NET</h4>
+          <p class="small muted">Crie apps com C# e entenda o ecossistema .NET.</p>
+          <div class="progress" aria-hidden="true" style="margin-top:12px"><i style="width:6%"></i></div>
+        </article>
+
+        <article class="course" aria-labelledby="c4">
+          <div class="badge">Ferramentas</div>
+          <h4 id="c4">Pacote Office</h4>
+          <p class="small muted">Excel, Word e PowerPoint com exercícios práticos.</p>
+          <div class="progress" aria-hidden="true" style="margin-top:12px"><i style="width:48%"></i></div>
+        </article>
+
+        <article class="course" aria-labelledby="c5">
+          <div class="badge">Sistemas</div>
+          <h4 id="c5">Windows & Ferramentas digitais</h4>
+          <p class="small muted">Configurações, atalhos e produtividade.</p>
+          <div class="progress" aria-hidden="true" style="margin-top:12px"><i style="width:24%"></i></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="como-funciona" style="margin-top:36px">
+      <h2>Como funciona</h2>
+      <div class="small muted" style="margin-top:6px">Curto, prático e gamificado — veja o fluxo:</div>
+
+      <div style="margin-top:12px" class="steps">
+        <div class="step">
+          <strong>Assista a um anúncio</strong>
+          <div class="small muted" style="margin-top:6px">Liberte lições completas gratuitamente ao assistir um anúncio curto.</div>
+        </div>
+
+        <div class="step">
+          <strong>Estude no seu ritmo</strong>
+          <div class="small muted" style="margin-top:6px">Lições curtas, exercícios e revisões para fixar o conteúdo.</div>
+        </div>
+
+        <div class="step">
+          <strong>Ganhe recompensas</strong>
+          <div class="small muted" style="margin-top:6px">XP, badges e progresso visual — como em jogos educativos.</div>
+        </div>
+
+        <div class="step">
+          <strong>Powers (vidas)</strong>
+          <div class="small muted" style="margin-top:6px">Você tem 3 vidas. Se acabar, recarregue por <strong>R$ 8,00</strong> e continue.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="precos" style="margin-top:36px">
+      <div style="display:flex; justify-content:space-between; align-items:center">
+        <h2>Powers</h2>
+        <div class="small muted">Recarga simples e transparente</div>
+      </div>
+
+      <div style="margin-top:12px; display:flex; gap:12px; flex-wrap:wrap">
+        <div class="course" style="flex:1; min-width:240px;">
+          <h4>3 Powers</h4>
+          <p class="small muted">Recupere suas 3 vidas para continuar suas lições.</p>
+          <div style="margin-top:12px; display:flex; gap:8px; align-items:center">
+            <div style="font-size:20px; font-weight:800">R$ 8,00</div>
+            <button class="btn" onclick="openPayment()">Recarregar</button>
+          </div>
+        </div>
+
+        <div class="course" style="flex:1; min-width:240px;">
+          <h4>Assinatura (em breve)</h4>
+          <p class="small muted">Em breve: opção de assinatura para eliminar anúncios e bônus extras.</p>
+          <div style="margin-top:12px"><button class="btn ghost" onclick="alert('Em breve!')">Saiba mais</button></div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; flex-wrap:wrap;">
+        <div style="max-width:520px">
+          <h3 style="margin:0">Power Learn</h3>
+          <div class="small muted" style="margin-top:8px">Transformando o estudo em um jogo: cursos de programação e informática com prática e progresso visível.</div>
+          <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap">
+            <div class="small pill">Gratuito com anúncio</div>
+            <div class="small pill">Exercícios práticos</div>
+            <div class="small pill">3 Powers</div>
+          </div>
+        </div>
+
+        <div style="min-width:220px">
+          <div class="small muted">Contato</div>
+          <div style="margin-top:8px">
+            <a href="mailto:contato@powerlearn.app" class="small">contato@powerlearn.app</a>
+            <div class="small muted" style="margin-top:6px">© <span id="year"></span> Power Learn</div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Modal backdrop -->
+  <div class="modal-backdrop" id="modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal" role="document">
+      <h3 id="modal-title">Recarregar Powers</h3>
+      <p class="small muted" id="modal-desc">Recupere suas 3 vidas imediatamente por <strong>R$ 8,00</strong> e continue aprendendo sem interrupções.</p>
+
+      <div style="display:flex; gap:10px; margin-top:18px">
+        <button class="btn" id="confirm-pay">Pagar R$ 8,00</button>
+        <button class="btn ghost" id="close-modal">Cancelar</button>
+      </div>
+
+      <div id="modal-note" class="small muted" style="margin-top:12px">Pagamento simulado — integre sua solução de pagamentos (ex: Stripe, PagSeguro) na implementação final.</div>
+    </div>
+  </div>
+
+  <script>
+    // basic interactive behaviors
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const modal = document.getElementById('modal');
+    const openCta = document.getElementById('open-cta');
+    const getStarted = document.getElementById('get-started');
+
+    function openModal(){
+      modal.style.display = 'flex';
+      modal.setAttribute('aria-hidden','false');
+    }
+    function closeModal(){
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden','true');
+    }
+    function openPowers(){ openModal(); }
+
+    openCta.addEventListener('click', () => {
+      // simulate quick onboarding
+      handleAdFlow();
+    });
+    getStarted.addEventListener('click', () => {
+      handleAdFlow();
+    });
+
+    document.getElementById('close-modal').addEventListener('click', closeModal);
+    document.getElementById('confirm-pay').addEventListener('click', () => {
+      // simulate payment success
+      alert('Pagamento simulado concluído. Suas 3 Powers foram recarregadas!');
+      closeModal();
+    });
+
+    function openPayment(){
+      openModal();
+    }
+
+    // simulate lesson flow: user watches a short ad to unlock
+    function handleAdFlow(){
+      // lightweight simulation of "assistir anúncio"
+      const ok = confirm('Assistir a um anúncio curto para desbloquear a lição? (simulação)');
+      if(!ok) return;
+      // show a fake loader
+      const loader = document.createElement('div');
+      loader.style.position='fixed';
+      loader.style.inset='0';
+      loader.style.display='flex';
+      loader.style.alignItems='center';
+      loader.style.justifyContent='center';
+      loader.style.background='rgba(0,0,0,0.6)';
+      loader.style.zIndex=250;
+      loader.innerHTML = '<div style="background:#111;padding:20px;border-radius:12px;text-align:center"><div style="color:var(--accent);font-weight:800;margin-bottom:8px">Anúncio</div><div class="small" style="color:#ddd">Assistindo... (simulação)</div></div>';
+      document.body.appendChild(loader);
+      setTimeout(()=> {
+        document.body.removeChild(loader);
+        alert('Anúncio concluído — lição desbloqueada! 🎉');
+      }, 1800);
+    }
+
+    // simulate starting a lesson
+    function simulateLesson(name){
+      const proceed = confirm('Iniciar a lição "' + name + '"?');
+      if(!proceed) return;
+      const lessonWindow = window.open('', '_blank', 'width=520,height=720,noopener');
+      lessonWindow.document.write('<!doctype html><html><head><meta charset="utf-8"><title>' + name + '</title><style>body{background:#0b0b0b;color:#fff;font-family:Inter,Arial;padding:20px} .card{background:#111;padding:18px;border-radius:12px}</style></head><body><div class="card"><h2>' + name + '</h2><p class="small">Conteúdo de exemplo — aqui você colocaria o player de vídeo e os exercícios interativos.</p><p><button onclick="window.close()" style="padding:10px 12px;border-radius:8px;background:#ff7a18;border:0;color:#111;font-weight:700">Fechar lição</button></p></div></body></html>');
+    }
+
+    // accessibility: close modal with ESC
+    document.addEventListener('keydown', (e) => {
+      if(e.key === 'Escape') closeModal();
+    });
+
+    // animated progress on load
+    window.addEventListener('load', () => {
+      const bars = document.querySelectorAll('.progress > i');
+      bars.forEach((b, i) => {
+        setTimeout(()=> b.style.width = b.getAttribute('data-w') || b.style.width, 200 + i*120);
+      });
+    });
+
+    // set explicit widths for progress elements from inline widths
+    (function assignDataWidth(){
+      document.querySelectorAll('.progress > i').forEach(el=>{
+        if(!el.style.width || el.style.width === '0%') return;
+        el.setAttribute('data-w', el.style.width);
+        el.style.width = '4%';
+      });
+    })();
+  </script>
+</body>
+</html>
