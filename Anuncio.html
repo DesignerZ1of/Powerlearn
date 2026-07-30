@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>PowerLearn</title>
+
+<style>
+body{
+    margin:0;
+    background:#000;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    font-family:Arial, sans-serif;
+}
+
+.card{
+    background:#0D1016;
+    padding:40px;
+    border-radius:15px;
+    text-align:center;
+    width:400px;
+}
+
+h2{
+    color:orange;
+}
+
+p{
+    color:#cfcfcf;
+}
+</style>
+
+</head>
+<body>
+
+<div class="card">
+
+<h2>PowerLearn</h2>
+
+<p>Seu anúncio será exibido...</p>
+
+<p id="contador">5</p>
+
+</div>
+
+<script>
+
+const parametros = new URLSearchParams(window.location.search);
+
+// Parâmetro esperado na URL: ?curso=Py1  |  ?curso=Excel3  |  ?curso=LP12  |  ?curso=Win7
+const curso = parametros.get("curso");
+
+// Configuração de cada Ebook: prefixo usado na URL, pasta real e como montar o nome do arquivo
+const cursos = [
+    { prefixo: "Py",    pasta: "Ebook Python",                  max: 20, arquivo: n => `LiçãoPy${n}.html` },
+    { prefixo: "Excel", pasta: "Ebook Excel",                   max: 10, arquivo: n => `Lição${n}.html` },
+    { prefixo: "LP",    pasta: "Ebook Lógica de Programação",   max: 30, arquivo: n => `LiçãoLP${n}.html` },
+    { prefixo: "Win",   pasta: "Ebook Windows",                 max: 30, arquivo: n => `Liçãowzz${n}.html` }
+    { prefixo: "Ii",  pasta: "Ebook InglêsIniciante",  max: 10, arquivo: n =>  `LiçãoIi${n}.html`}
+];
+
+function montarDestino(curso){
+    if(!curso) return null;
+
+    // separa letras do número, ex: "Py12" -> ["Py", "12"]
+    const match = curso.match(/^([A-Za-z]+)(\d+)$/);
+    if(!match) return null;
+
+    const prefixo = match[1];
+    const numero = parseInt(match[2], 10);
+
+    const config = cursos.find(c => c.prefixo === prefixo);
+    if(!config) return null;
+    if(numero < 1 || numero > config.max) return null;
+
+    return `EBOOKS/${config.pasta}/${config.arquivo(numero)}`;
+}
+
+let tempo = 5;
+let contador = document.getElementById("contador");
+
+let intervalo = setInterval(()=>{
+
+    tempo--;
+    contador.textContent = tempo;
+
+    if(tempo <= 0){
+
+        clearInterval(intervalo);
+
+        const destino = montarDestino(curso);
+
+        if(destino){
+            window.location.href = encodeURI(destino);
+        } else {
+            contador.textContent = "Link inválido ou expirado.";
+        }
+    }
+
+},1000);
+
+</script>
+
+</body>
+</html>
