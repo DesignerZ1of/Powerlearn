@@ -119,7 +119,7 @@ app.get("/dashboard", (req, res) => {
         return res.redirect("/Login.html");
     }
 
-    res.sendFile(path.join(__dirname, "..", "DashBoard.html"));
+    res.sendFile(path.join(__dirname, "DashBoard.html"));
 
 });
 
