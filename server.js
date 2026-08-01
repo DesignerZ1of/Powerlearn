@@ -95,11 +95,11 @@ app.post("/login", (req, res) => {
 const PORT = 3000;
 
 // Permite acessar todos os arquivos da pasta PowerLearn
-app.use(express.static(path.join(__dirname, "..")));
+app.use(express.static(__dirname));
 
 // Página inicial
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "..", "index.html"));
+    res.sendFile(path.join(__dirname, "index.html"));
 });
 
 
