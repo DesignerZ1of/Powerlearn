@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 7 — Como o computador organiza tudo</title>
+
+<style>
+
+body{
+font-family:Segoe UI, Arial;
+background:#ffffff;
+margin:0;
+color:#1f2937;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:50px 40px;
+}
+
+h1{
+color:#1e3a8a;
+font-size:34px;
+}
+
+.card{
+background:#f9fafb;
+border:1px solid #e5e7eb;
+border-radius:14px;
+padding:35px;
+margin-top:30px;
+}
+
+.section-title{
+color:#1e40af;
+font-size:20px;
+margin-top:35px;
+font-weight:bold;
+}
+
+.question{
+background:white;
+padding:20px;
+border-radius:10px;
+border:1px solid #e5e7eb;
+margin-top:20px;
+}
+
+input{
+padding:10px;
+width:300px;
+margin-top:10px;
+border-radius:6px;
+border:1px solid #d1d5db;
+}
+
+button{
+margin-top:10px;
+padding:10px 15px;
+border:none;
+background:#2563eb;
+color:white;
+border-radius:6px;
+cursor:pointer;
+}
+
+button:hover{
+background:#1e40af;
+}
+
+.result{
+margin-top:10px;
+font-weight:bold;
+}
+
+.correct{
+color:green;
+}
+
+.wrong{
+color:red;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🧠 Lição 7 — Como o computador organiza tudo</h1>
+
+<div class="card">
+
+<p>Nas lições anteriores você aprendeu sobre programas e arquivos. Agora vamos entender como o computador mantém tudo organizado dentro do sistema do Microsoft Windows. Sem essa organização, seria praticamente impossível encontrar qualquer coisa dentro do computador.</p>
+
+<div class="section-title">🗂️ Organização em pastas</div>
+
+<p>O computador organiza os arquivos em pastas. Uma pasta funciona como uma espécie de gaveta digital, onde vários arquivos podem ficar guardados. Isso permite separar diferentes tipos de conteúdo e manter o sistema mais organizado. Alguns exemplos comuns são a pasta de documentos, a pasta de imagens e a pasta de downloads.</p>
+
+<div class="section-title">🧭 Caminho dos arquivos</div>
+
+<p>Cada arquivo possui um local específico dentro do computador. Isso significa que todo arquivo está guardado em algum lugar dentro do sistema. A estrutura costuma seguir uma ordem parecida com esta:</p>
+
+<p><b>Computador → Disco → Pasta → Arquivo</b></p>
+
+<p>Essa organização pode ser comparada a um armário cheio de gavetas, onde cada coisa tem o seu lugar.</p>
+
+<div class="section-title">📥 Onde ficam arquivos baixados</div>
+
+<p>Quando você baixa algo da internet, o computador normalmente salva esse arquivo na pasta Downloads. Isso evita que novos arquivos fiquem espalhados pelo sistema e facilita encontrá-los depois.</p>
+
+<div class="section-title">📑 Por que essa organização existe</div>
+
+<p>O computador utiliza essa estrutura para conseguir encontrar arquivos rapidamente, evitar confusão no sistema e permitir que programas localizem os arquivos que precisam abrir. Sem essa organização, o computador ficaria mais lento e seria muito difícil encontrar qualquer documento ou arquivo.</p>
+
+<div class="section-title">🎯 Ideia principal da lição</div>
+
+<p>Tudo no computador fica guardado em algum lugar específico. Arquivos não ficam soltos; eles sempre estão dentro de uma estrutura organizada de pastas. Entender isso facilita muito quando você começa a procurar, salvar ou organizar arquivos dentro do computador.</p>
+
+</div>
+
+<div class="card">
+
+<h2>🧪 Exercícios</h2>
+
+<div class="question">
+<strong>1. Como o computador organiza os arquivos?</strong><br>
+<input type="text" id="q1">
+<br>
+<button onclick="check(1,'pastas')">Responder</button>
+<div id="r1" class="result"></div>
+</div>
+
+<div class="question">
+<strong>2. Qual é o nome da pasta onde normalmente ficam arquivos baixados da internet?</strong><br>
+<input type="text" id="q2">
+<br>
+<button onclick="check(2,'downloads')">Responder</button>
+<div id="r2" class="result"></div>
+</div>
+
+<div class="question">
+<strong>3. Complete a estrutura correta de organização:</strong><br>
+Computador → ______ → Pasta → Arquivo<br>
+<input type="text" id="q3">
+<br>
+<button onclick="check(3,'disco')">Responder</button>
+<div id="r3" class="result"></div>
+</div>
+
+<div class="question">
+<strong>4. Arquivos ficam soltos no computador ou dentro de uma estrutura organizada?</strong><br>
+<input type="text" id="q4">
+<br>
+<button onclick="check(4,'estrutura')">Responder</button>
+<div id="r4" class="result"></div>
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function check(num,correct){
+
+let answer=document.getElementById("q"+num).value.toLowerCase()
+let result=document.getElementById("r"+num)
+
+if(answer.includes(correct)){
+result.innerHTML="<span class='correct'>✔ Resposta correta!</span>"
+}else{
+result.innerHTML="<span class='wrong'>✖ Resposta incorreta. Resposta esperada: "+correct+"</span>"
+}
+
+}
+
+</script>
+
+</body>
+</html>

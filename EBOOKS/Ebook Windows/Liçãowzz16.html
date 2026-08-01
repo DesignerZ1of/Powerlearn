@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 16 — Armazenamento</title>
+
+<style>
+body{font-family:Arial;background:#fff;margin:0;color:#111}
+.container{max-width:1100px;margin:auto;padding:40px}
+h2{color:#1e3a8a}
+
+.card{
+background:#f9fafb;
+border:1px solid #e5e7eb;
+border-radius:10px;
+padding:25px;
+margin:20px 0
+}
+
+/* DESKTOP */
+.desktop{
+height:350px;
+background:#1e3a8a;
+border-radius:10px;
+position:relative;
+color:#fff;
+}
+
+.icon{
+position:absolute;
+top:60px;
+left:40px;
+text-align:center;
+cursor:pointer;
+}
+.icon div{font-size:40px}
+
+/* WINDOW */
+.window{
+position:absolute;
+top:30px;
+left:50%;
+transform:translateX(-50%);
+width:900px;
+height:280px;
+background:#fff;
+border-radius:10px;
+display:none;
+}
+
+.close{
+text-align:right;
+padding:8px;
+cursor:pointer;
+}
+
+/* EXPLORER */
+.explorer{display:flex;height:100%}
+
+.sidebar{
+width:220px;
+background:#f3f4f6;
+padding:10px;
+color:#000;
+}
+
+.content{
+flex:1;
+padding:15px;
+color:#000;
+}
+
+.disk{
+border:2px solid #ccc;
+padding:15px;
+margin-top:10px;
+cursor:pointer;
+border-radius:8px;
+}
+
+.bar{
+height:20px;
+background:#e5e7eb;
+border-radius:5px;
+margin-top:10px;
+overflow:hidden;
+}
+
+.fill{
+height:100%;
+background:#ef4444;
+width:80%;
+}
+
+/* QUIZ */
+.pergunta{margin-top:20px}
+
+.option{
+display:block;
+padding:8px;
+border:1px solid #ddd;
+margin-top:5px;
+border-radius:6px;
+cursor:pointer;
+}
+
+.correct{background:#22c55e;color:#fff}
+.wrong{background:#ef4444;color:#fff}
+
+.result{margin-top:5px;font-weight:bold}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<h2>💽 Lição 16 — Espaço do computador (armazenamento)</h2>
+
+<div class="card">
+
+📦 O que é armazenamento<br><br>
+
+O armazenamento é o espaço interno do computador onde todos os arquivos são guardados.<br><br>
+
+👉 Pense assim:<br>
+O computador é como um armário, e o armazenamento é o espaço dentro dele.<br>
+Tudo que você salva — documentos, imagens, vídeos e programas — ocupa esse espaço.<br><br>
+
+---
+
+💽 Tipos de armazenamento<br><br>
+
+Existem dois tipos mais comuns:<br><br>
+
+HD (Disco Rígido) → mais antigo, mais lento<br>
+SSD → mais moderno, mais rápido<br><br>
+
+👉 Ambos servem para guardar arquivos, mas o SSD deixa o computador mais rápido.<br><br>
+
+---
+
+📊 Arquivos ocupam espaço<br><br>
+
+Cada arquivo usa uma parte do armazenamento:<br><br>
+
+Texto → ocupa pouco espaço<br>
+Imagem → ocupa mais<br>
+Vídeo → ocupa muito mais<br><br>
+
+👉 Quanto mais arquivos você tiver, menos espaço sobra.<br><br>
+
+---
+
+🖥️ Como ver o espaço do computador<br><br>
+
+1. Abra o Explorador de Arquivos<br>
+2. Clique em Este Computador<br>
+3. Observe o disco (ex: Disco Local)<br><br>
+
+Lá você verá:<br>
+Espaço usado<br>
+Espaço livre<br><br>
+
+---
+
+⚠️ Quando o espaço está cheio<br><br>
+
+Se o armazenamento ficar cheio:<br><br>
+
+O computador pode ficar lento<br>
+Pode não conseguir salvar arquivos<br>
+Alguns programas podem travar<br><br>
+
+👉 Isso acontece porque não há espaço disponível.<br><br>
+
+---
+
+🧹 Noção básica de limpeza<br><br>
+
+Para evitar problemas:<br><br>
+
+Apague arquivos que não usa<br>
+Limpe a pasta Downloads<br>
+Evite guardar arquivos grandes desnecessários
+
+</div>
+
+<!-- EXERCÍCIO -->
+<div class="card">
+
+<b>Exercício — Controle de armazenamento</b><br><br>
+
+👉 Objetivo:<br>
+Verificar o espaço do computador e identificar problemas.<br><br>
+
+<div class="desktop">
+
+<div class="icon" onclick="abrirExplorer()">
+<div>📁</div>
+Arquivos
+</div>
+
+<div class="window" id="exp">
+<div class="close" onclick="fechar()">❌</div>
+
+<div class="explorer">
+
+<div class="sidebar">
+<div onclick="abrirPC()">Este Computador</div>
+</div>
+
+<div class="content" id="conteudo"></div>
+
+</div>
+</div>
+
+</div>
+
+<!-- QUIZ -->
+
+<div class="pergunta">
+<b>1. Esse disco está:</b>
+<div class="option" onclick="responder(this,0,0)">Quase cheio</div>
+<div class="option" onclick="responder(this,1,0)">Vazio</div>
+<div class="option" onclick="responder(this,2,0)">Com erro</div>
+<div class="result"></div>
+</div>
+
+<div class="pergunta">
+<b>2. O que pode acontecer nesse caso?</b>
+<div class="option" onclick="responder(this,0,0)">PC lento</div>
+<div class="option" onclick="responder(this,1,0)">Mais rápido</div>
+<div class="option" onclick="responder(this,2,0)">Nada muda</div>
+<div class="result"></div>
+</div>
+
+<div class="pergunta">
+<b>3. Qual arquivo ocupa mais espaço?</b>
+<div class="option" onclick="responder(this,0,2)">Texto</div>
+<div class="option" onclick="responder(this,1,2)">Imagem</div>
+<div class="option" onclick="responder(this,2,2)">Vídeo</div>
+<div class="result"></div>
+</div>
+
+<div class="pergunta">
+<b>4. Melhor ação nesse cenário:</b>
+<div class="option" onclick="responder(this,0,1)">Baixar mais arquivos</div>
+<div class="option" onclick="responder(this,1,1)">Apagar arquivos</div>
+<div class="option" onclick="responder(this,2,1)">Ignorar</div>
+<div class="result"></div>
+</div>
+
+</div>
+
+</div>
+
+<script>
+function abrirExplorer(){
+document.getElementById("exp").style.display="block"
+}
+
+function fechar(){
+document.getElementById("exp").style.display="none"
+}
+
+function abrirPC(){
+document.getElementById("conteudo").innerHTML=
+`
+<b>Disco Local (C:)</b>
+
+<div class="disk">
+Espaço usado: 80 GB<br>
+Espaço livre: 20 GB
+
+<div class="bar">
+<div class="fill"></div>
+</div>
+</div>
+`
+}
+
+function responder(el, selecionado, correto){
+
+let pergunta = el.closest(".pergunta")
+let opcoes = pergunta.querySelectorAll(".option")
+let resultado = pergunta.querySelector(".result")
+
+opcoes.forEach(o => o.style.pointerEvents="none")
+
+if(selecionado === correto){
+el.classList.add("correct")
+resultado.innerHTML="✔ Correto"
+}else{
+el.classList.add("wrong")
+opcoes[correto].classList.add("correct")
+resultado.innerHTML="❌ Errado — correta destacada"
+}
+}
+</script>
+
+</body>
+</html>

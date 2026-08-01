@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 15 — Funções</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Consolas;
+background:#0f172a;
+color:#e2e8f0;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:40px;
+}
+
+.card{
+background:#1e293b;
+padding:25px;
+border-radius:12px;
+margin-bottom:25px;
+border:1px solid #334155;
+}
+
+h1{
+color:#38bdf8;
+}
+
+h2{
+color:#38bdf8;
+}
+
+.code{
+background:black;
+padding:15px;
+border-radius:8px;
+margin-top:10px;
+white-space:pre-line;
+color:#22c55e;
+}
+
+.exercise{
+background:#020617;
+padding:20px;
+border-radius:10px;
+margin-top:20px;
+}
+
+.option{
+display:block;
+margin-top:10px;
+}
+
+textarea{
+width:100%;
+height:180px;
+margin-top:10px;
+background:black;
+color:#22c55e;
+border:1px solid #334155;
+border-radius:8px;
+padding:15px;
+font-family:Consolas;
+}
+
+button{
+margin-top:15px;
+padding:10px 15px;
+background:#38bdf8;
+border:none;
+border-radius:6px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.result{
+margin-top:15px;
+font-weight:bold;
+}
+
+.correct{
+color:#22c55e;
+}
+
+.wrong{
+color:#ef4444;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>📘 LIÇÃO 15 — Funções</h1>
+
+<hr>
+
+<h2>🧠 O que você vai aprender aqui</h2>
+
+<p>
+• O que é uma função<br>
+• Como criar funções<br>
+• Como executar funções<br>
+• Como reutilizar código<br>
+• Como organizar ações no programa
+</p>
+
+<hr>
+
+<h2>🧩 Tipo de lógica usado</h2>
+
+<p>
+🔹 Lógica de Organização
+</p>
+
+<p>
+> Separar ações em partes reutilizáveis.
+</p>
+
+<hr>
+
+<h2>🧠 O que é uma função?</h2>
+
+<p>
+Função é:
+</p>
+
+<p>
+> um bloco de código que executa uma ação.
+</p>
+
+<hr>
+
+<h2>📌 Ideia simples</h2>
+
+<p>
+Você cria uma ação uma vez… e pode usar várias vezes.
+</p>
+
+<hr>
+
+<h2>💻 Código (1º da aula)</h2>
+
+<div class="code">
+function falar() {
+  console.log("Olá");
+}
+</div>
+
+<hr>
+
+<h2>🧠 O que significa cada parte</h2>
+
+<p>
+🔹 function
+</p>
+
+<p>
+Serve para:
+</p>
+
+<p>
+> criar a função
+</p>
+
+<hr>
+
+<p>
+🔹 falar
+</p>
+
+<p>
+É o nome da função.
+</p>
+
+<hr>
+
+<p>
+🔹 ( )
+</p>
+
+<p>
+Parênteses da função.
+</p>
+
+<hr>
+
+<p>
+🔹 { }
+</p>
+
+<p>
+Guardam as ações da função.
+</p>
+
+<hr>
+
+<h2>⚠️ Importante</h2>
+
+<p>
+Criar a função:
+</p>
+
+<p>
+> NÃO executa ela automaticamente.
+</p>
+
+<hr>
+
+<h2>🚀 Como executar a função</h2>
+
+<div class="code">
+falar();
+</div>
+
+<hr>
+
+<h2>🧠 Resultado</h2>
+
+<p>
+Aparece:
+</p>
+
+<div class="code">
+Olá
+</div>
+
+<hr>
+
+<h2>📌 Como pensar em função</h2>
+
+<p>
+Função funciona como:
+</p>
+
+<p>
+> um botão de ação
+</p>
+
+<p>
+Quando você chama:
+</p>
+
+<p>
+> ela executa tudo que está dentro.
+</p>
+
+<hr>
+
+<h2>💻 Exemplo completo</h2>
+
+<div class="code">
+function falar() {
+  console.log("Olá");
+}
+
+falar();
+falar();
+falar();
+</div>
+
+<hr>
+
+<h2>🧠 O que acontece</h2>
+
+<p>
+A função executa:
+</p>
+
+<p>
+> 3 vezes
+</p>
+
+<hr>
+
+<h2>🧠 Onde funções são usadas?</h2>
+
+<p>
+botões<br>
+jogos<br>
+verificações<br>
+menus<br>
+sistemas<br>
+cálculos
+</p>
+
+<hr>
+
+<h2>🎯 Fechamento</h2>
+
+<p>
+> Variável guarda.
+Repetição repete.
+Função executa ações.
+</p>
+
+</div>
+
+<!-- EXERCÍCIO 1 -->
+
+<div class="card">
+
+<div class="exercise">
+
+<h2>🧠 1. Múltipla escolha</h2>
+
+<p>
+O que a função faz?
+</p>
+
+<label class="option">
+<input type="radio" name="q1" value="a">
+A) Guarda listas
+</label>
+
+<label class="option">
+<input type="radio" name="q1" value="b">
+B) Executa ações
+</label>
+
+<label class="option">
+<input type="radio" name="q1" value="c">
+C) Remove arrays
+</label>
+
+<label class="option">
+<input type="radio" name="q1" value="d">
+D) Cria posições
+</label>
+
+<button onclick="corrigir1()">Verificar</button>
+
+<div id="r1" class="result"></div>
+
+</div>
+</div>
+
+<!-- EXERCÍCIO 2 -->
+
+<div class="card">
+
+<div class="exercise">
+
+<h2>🧠 2. Múltipla escolha</h2>
+
+<p>
+Qual palavra cria uma função?
+</p>
+
+<label class="option">
+<input type="radio" name="q2" value="a">
+A) while
+</label>
+
+<label class="option">
+<input type="radio" name="q2" value="b">
+B) for
+</label>
+
+<label class="option">
+<input type="radio" name="q2" value="c">
+C) function
+</label>
+
+<label class="option">
+<input type="radio" name="q2" value="d">
+D) if
+</label>
+
+<button onclick="corrigir2()">Verificar</button>
+
+<div id="r2" class="result"></div>
+
+</div>
+</div>
+
+<!-- EXERCÍCIO 3 -->
+
+<div class="card">
+
+<div class="exercise">
+
+<h2>🧠 3. Múltipla escolha</h2>
+
+<p>
+O que chama/executa a função?
+</p>
+
+<label class="option">
+<input type="radio" name="q3" value="a">
+A) falar
+</label>
+
+<label class="option">
+<input type="radio" name="q3" value="b">
+B) function
+</label>
+
+<label class="option">
+<input type="radio" name="q3" value="c">
+C) falar();
+</label>
+
+<label class="option">
+<input type="radio" name="q3" value="d">
+D) {}
+</label>
+
+<button onclick="corrigir3()">Verificar</button>
+
+<div id="r3" class="result"></div>
+
+</div>
+</div>
+
+<!-- EXERCÍCIO 4 -->
+
+<div class="card">
+
+<div class="exercise">
+
+<h2>🧠 4. Criar código</h2>
+
+<p>
+Crie uma função chamada:
+</p>
+
+<p>
+mensagem
+</p>
+
+<p>
+Ela deve mostrar:
+</p>
+
+<p>
+"Olá"
+</p>
+
+<p>
+Depois execute/chame a função.
+</p>
+
+<textarea id="q4"></textarea>
+
+<button onclick="corrigir4()">Verificar</button>
+
+<div id="r4" class="result"></div>
+
+</div>
+</div>
+
+<!-- EXERCÍCIO 5 -->
+
+<div class="card">
+
+<div class="exercise">
+
+<h2>🧠 5. Criar código</h2>
+
+<p>
+Crie uma função chamada:
+</p>
+
+<p>
+mostrar
+</p>
+
+<p>
+Ela deve mostrar:
+</p>
+
+<p>
+"Oi"
+</p>
+
+<p>
+Depois use:
+</p>
+
+<p>
+for
+</p>
+
+<p>
+Para executar a função 3 vezes.
+</p>
+
+<textarea id="q5"></textarea>
+
+<button onclick="corrigir5()">Verificar</button>
+
+<div id="r5" class="result"></div>
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+function correto(id){
+document.getElementById(id).innerHTML =
+'<span class="correct">✔ Correto!</span>'
+}
+
+function errado(id){
+document.getElementById(id).innerHTML =
+'<span class="wrong">✖ Errado.</span>'
+}
+
+function corrigir1(){
+
+let r = document.querySelector('input[name="q1"]:checked')
+
+if(r && r.value == "b"){
+correto("r1")
+}else{
+errado("r1")
+}
+
+}
+
+function corrigir2(){
+
+let r = document.querySelector('input[name="q2"]:checked')
+
+if(r && r.value == "c"){
+correto("r2")
+}else{
+errado("r2")
+}
+
+}
+
+function corrigir3(){
+
+let r = document.querySelector('input[name="q3"]:checked')
+
+if(r && r.value == "c"){
+correto("r3")
+}else{
+errado("r3")
+}
+
+}
+
+function corrigir4(){
+
+let r = document.getElementById("q4").value.toLowerCase()
+
+if(
+r.includes("function") &&
+r.includes("mensagem") &&
+r.includes("console.log") &&
+r.includes("olá") &&
+r.includes("mensagem();")
+){
+correto("r4")
+}else{
+errado("r4")
+}
+
+}
+
+function corrigir5(){
+
+let r = document.getElementById("q5").value.toLowerCase()
+
+if(
+r.includes("function") &&
+r.includes("mostrar") &&
+r.includes("console.log") &&
+r.includes("oi") &&
+r.includes("for") &&
+r.includes("mostrar();")
+){
+correto("r5")
+}else{
+errado("r5")
+}
+
+}
+
+</script>
+
+</body>
+</html>

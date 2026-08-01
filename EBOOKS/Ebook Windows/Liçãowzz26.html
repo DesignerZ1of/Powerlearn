@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 26 — Widgets</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Segoe UI, Arial;
+background:#ffffff;
+}
+
+/* CONTAINER DA LIÇÃO */
+.container{
+max-width:1100px;
+margin:auto;
+padding:40px;
+}
+
+/* TÍTULO */
+h1{
+color:#1e3a8a;
+}
+
+/* CARD */
+.card{
+background:#f9fafb;
+border:1px solid #e5e7eb;
+border-radius:14px;
+padding:30px;
+margin-top:20px;
+}
+
+/* SUBTÍTULOS */
+.section{
+margin-top:25px;
+font-weight:bold;
+color:#1e40af;
+}
+
+/* DESKTOP */
+.desktop{
+height:100vh;
+background:#1e3a8a;
+position:relative;
+margin-top:30px;
+}
+
+/* BOTÃO */
+.menuBtn{
+position:absolute;
+top:20px;
+left:20px;
+font-size:25px;
+color:#fff;
+cursor:pointer;
+}
+
+/* PAINEL */
+.panel{
+position:absolute;
+top:0;
+left:0;
+width:420px;
+height:100%;
+background:#f5f7fb;
+box-shadow:5px 0 20px rgba(0,0,0,0.2);
+padding:20px;
+display:none;
+overflow:auto;
+}
+
+/* TOPO */
+.top{
+display:flex;
+justify-content:space-between;
+}
+
+/* CLIMA */
+.weather{
+background:linear-gradient(135deg,#1e3a8a,#2563eb);
+color:#fff;
+padding:20px;
+border-radius:15px;
+margin-top:20px;
+}
+
+.weather h1{
+margin:0;
+}
+
+/* NOTÍCIAS */
+.cardNews{
+background:#fff;
+border-radius:10px;
+padding:10px;
+margin-top:10px;
+cursor:pointer;
+}
+
+.cardNews:hover{
+background:#eef2ff;
+}
+
+/* MENU WIDGETS */
+.widgetsMenu{
+margin-top:20px;
+display:none;
+}
+
+.widgetsMenu div{
+background:#fff;
+padding:10px;
+margin-top:10px;
+border-radius:8px;
+cursor:pointer;
+border:1px solid #ddd;
+}
+
+.widgetsMenu div:hover{
+background:#e5e7eb;
+}
+
+/* WIDGET */
+.widget{
+position:absolute;
+top:100px;
+right:40px;
+width:220px;
+background:#fff;
+padding:15px;
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>📘 Lição 26 — Widgets</h1>
+
+<div class="card">
+
+<p>Agora você vai aprender a usar widgets no Microsoft Windows.</p>
+
+<p>👉 Eles não ficam na área de trabalho</p>
+<p>👉 mas ajudam muito no uso do computador</p>
+
+<div class="section">🧩 O que são Widgets</div>
+
+<p>Widgets são pequenos blocos de informação que aparecem em um painel separado.</p>
+
+<p>Exemplos:</p>
+<p>🌦️ Clima</p>
+<p>📰 Notícias</p>
+<p>📅 Calendário</p>
+
+<div class="section">🖥️ Onde ficam</div>
+
+<p>Ficam em um painel lateral</p>
+<p>👉 Você abre e fecha quando quiser</p>
+
+<div class="section">⚙️ Como abrir</div>
+
+<p>Clique no ícone de widgets ou use Windows + W</p>
+
+<div class="section">➕ Como adicionar</div>
+
+<p>1. Abra o painel</p>
+<p>2. Clique em + ou adicionar</p>
+<p>3. Escolha o widget</p>
+
+<div class="section">✏️ Organização</div>
+
+<p>Arraste, remova e deixe só o necessário</p>
+
+<div class="section">❌ Remover</div>
+
+<p>Clique nos três pontos → remover</p>
+
+<div class="section">⚠️ Erros comuns</div>
+
+<p>Colocar muitos widgets</p>
+<p>Achar que fica na área de trabalho</p>
+
+<div class="section">🎯 Ideia principal</div>
+
+<p><b>Use poucos widgets, mas úteis.</b></p>
+
+</div>
+
+</div>
+
+<!-- SIMULAÇÃO -->
+<div class="desktop">
+
+<div class="menuBtn" onclick="abrirMenu()">☰</div>
+
+<div class="panel" id="panel">
+
+<div class="top">
+<h2>Boa noite</h2>
+<span onclick="abrirConfig()">⚙️</span>
+</div>
+
+<div class="weather">
+<p>Rio de Janeiro</p>
+<h1>23°C</h1>
+<p>Parcialmente nublado</p>
+</div>
+
+<div>
+<div class="cardNews">Notícia 1</div>
+<div class="cardNews">Notícia 2</div>
+<div class="cardNews">Notícia 3</div>
+</div>
+
+<div class="widgetsMenu" id="widgetsMenu">
+
+<h3>Adicionar widgets</h3>
+
+<div onclick="criarWidget('tempo')">🌤️ Tempo</div>
+<div onclick="criarWidget('temporizador')">⏱️ Temporizador</div>
+<div onclick="criarWidget('calendario')">📅 Calendário</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function abrirMenu(){
+let p=document.getElementById("panel")
+p.style.display = p.style.display=="block" ? "none" : "block"
+}
+
+function abrirConfig(){
+document.getElementById("widgetsMenu").style.display="block"
+}
+
+function criarWidget(tipo){
+
+let w=document.createElement("div")
+w.className="widget"
+
+if(tipo=="tempo"){
+w.innerHTML="<h4>🌤️ Tempo</h4><p>25°C</p><p>Ensolarado</p>"
+}
+
+if(tipo=="temporizador"){
+w.innerHTML="<h4>⏱️ Temporizador</h4><p>00:30</p>"
+}
+
+if(tipo=="calendario"){
+w.innerHTML="<h4>📅 Calendário</h4><p>01/04/2026</p>"
+}
+
+document.querySelector(".desktop").appendChild(w)
+
+}
+
+</script>
+
+</body>
+</html>

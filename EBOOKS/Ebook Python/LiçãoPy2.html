@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ebook de Python</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:'Inter',sans-serif;
+background:#0f172a;
+color:#e2e8f0;
+}
+
+/* TOPO */
+.header{
+background:linear-gradient(90deg,#111827,#1e293b);
+padding:35px;
+text-align:center;
+font-size:30px;
+font-weight:700;
+color:#facc15;
+letter-spacing:1px;
+border-bottom:3px solid #facc15;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* CONTAINER */
+.container{
+max-width:1000px;
+margin:auto;
+padding:40px 20px;
+}
+
+/* CARDS */
+.card{
+background:#111827;
+border-radius:18px;
+padding:30px;
+margin-bottom:30px;
+border-left:7px solid #facc15;
+box-shadow:0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* TITULOS */
+h1{
+margin-top:0;
+font-size:32px;
+color:#f8fafc;
+}
+
+.section-title{
+margin-top:30px;
+font-size:22px;
+font-weight:700;
+padding-left:12px;
+border-left:5px solid #3b82f6;
+color:#facc15;
+}
+
+/* TEXTO */
+p{
+line-height:1.8;
+color:#cbd5e1;
+}
+
+ul{
+line-height:2;
+color:#cbd5e1;
+}
+
+/* DESTAQUE */
+.highlight{
+background:#1e293b;
+padding:18px;
+border-radius:12px;
+margin-top:20px;
+border-left:5px solid #22c55e;
+}
+
+/* EXEMPLOS */
+.example{
+background:#0b1220;
+border:1px solid #334155;
+border-radius:12px;
+overflow:hidden;
+margin-top:20px;
+}
+
+/* TOPO CODIGO */
+.code-top{
+background:#1e293b;
+padding:10px 15px;
+display:flex;
+align-items:center;
+gap:8px;
+border-bottom:1px solid #334155;
+}
+
+.circle{
+width:12px;
+height:12px;
+border-radius:50%;
+}
+
+.red{background:#ef4444;}
+.yellow{background:#facc15;}
+.green{background:#22c55e;}
+
+/* CODIGO */
+.code{
+padding:20px;
+font-family:'JetBrains Mono', monospace;
+font-size:15px;
+line-height:2;
+color:#e2e8f0;
+}
+
+/* RESULTADO */
+.result{
+background:#020617;
+padding:15px 20px;
+border-top:1px solid #334155;
+font-family:'JetBrains Mono', monospace;
+color:#4ade80;
+}
+
+/* CORES */
+.blue{color:#60a5fa;}
+.green-text{color:#4ade80;}
+.yellow-text{color:#facc15;}
+.purple{color:#c084fc;}
+
+/* EXERCICIOS */
+.exercise{
+background:#1e293b;
+padding:25px;
+border-radius:14px;
+margin-top:25px;
+border:1px solid #334155;
+}
+
+.exercise h3{
+margin-top:0;
+color:#facc15;
+}
+
+textarea{
+width:100%;
+height:180px;
+margin-top:15px;
+background:#0b1220;
+border:1px solid #334155;
+border-radius:12px;
+padding:15px;
+color:#e2e8f0;
+font-family:'JetBrains Mono', monospace;
+font-size:15px;
+resize:none;
+}
+
+.button{
+display:inline-block;
+margin-top:20px;
+padding:12px 22px;
+background:#facc15;
+color:#111827;
+font-weight:700;
+border:none;
+border-radius:10px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.button:hover{
+background:#eab308;
+transform:translateY(-2px);
+}
+
+/* ALTERNATIVAS */
+.option{
+background:#0b1220;
+padding:15px;
+border-radius:10px;
+margin-top:15px;
+border:1px solid #334155;
+cursor:pointer;
+transition:0.3s;
+}
+
+.option:hover{
+border-color:#facc15;
+transform:translateX(5px);
+}
+
+.correct{
+margin-top:15px;
+color:#22c55e;
+font-weight:bold;
+}
+
+.wrong{
+margin-top:15px;
+color:#ef4444;
+font-weight:bold;
+}
+
+.footer{
+text-align:center;
+padding:30px;
+font-size:14px;
+color:#64748b;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+🐍 Ebook de Python
+</div>
+
+<div class="container">
+
+<div class="card">
+
+<h1>📘 Lição 2 — Variáveis no Python</h1>
+
+<p>
+Nesta aula você vai aprender:
+</p>
+
+<ul>
+<li>O que são variáveis</li>
+<li>Como guardar informações</li>
+<li>Tipos básicos de dados</li>
+<li>Como usar variáveis com print()</li>
+</ul>
+
+<div class="section-title">
+🧠 O que é uma variável?
+</div>
+<p>
+
+<p>
+Uma variável é um lugar que serve para Guardar informações na memória.
+</p>
+<p>
+Elas guardam informações que o programa vai usar para realizar tarefas,como cálculos e mostrar mensagens. Sem variáveis, o programa não tem memória, e nenhuma informação para usar e realizar essas Tarefas.</p>
+
+<div class="highlight">
+O Valor das Variáveis podem mudar, conforme for feito o código. Por isso do nome Variável.(Pode parecer só uma pequena informação mas ela acrescenta muitas possibilidades, por isso guarde essa informação.)
+</div>
+
+<div class="example">
+
+<div class="code-top">
+<div class="circle red"></div>
+<div class="circle yellow"></div>
+<div class="circle green"></div>
+</div>
+
+<div class="code">
+
+nome = <span class="green-text">"Carlos"</span>
+
+</div>
+
+</div>
+
+<p>
+Sempre use essa estrutura para quando for criar uma Variável:
+</p>
+
+<ul>
+<li><b>nome</b> → nome da variável</li>
+<li><b>=</b> → significa "recebe", ou seja o que vem depois é o valor da variável</li>
+<li><b>"Carlos"</b> → valor guardado</li>
+</ul>
+
+<div class="section-title">
+📦 Pense como uma caixa
+</div>
+
+<p>
+Uma variável funciona como uma caixa com etiqueta.
+</p>
+
+<div class="example">
+
+<div class="code-top">
+<div class="circle red"></div>
+<div class="circle yellow"></div>
+<div class="circle green"></div>
+</div>
+
+<div class="code">
+
+idade = <span class="yellow-text">20</span>
+
+</div>
+
+</div>
+
+<p>
+A caixa chamada:
+</p>
+
+<div class="highlight">
+idade
+</div>
+
+<p>
+está guardando:
+</p>
+
+<div class="highlight">
+20
+</div>
+
+<div class="section-title">
+⚠ O sinal =
+</div>
+
+<p>
+No Python:
+</p>
+
+<div class="example">
+
+<div class="code-top">
+<div class="circle red"></div>
+<div class="circle yellow"></div>
+<div class="circle green"></div>
+</div>
+
+<div class="code">
+
+nome = <span class="green-text">"Ana"</span>
+
+</div>
+
+</div>
+
+<p>
+O "=" significa:
+</p>
+
+<div class="highlight">
+“guardar”
+</div>
+
+<p>
+Não significa igualdade como na matemática.
+</p>
+
+<div class="section-title">
+🔥 Mostrando variáveis
+</div>
+
+<div class="example">
+
+<div class="code-top">
+<div class="circle red"></div>
+<div class="circle yellow"></div>
+<div class="circle green"></div>
+</div>
+
+<div class="code">
+
+nome = <span class="green-text">"Lucas"</span><br><br>
+
+<span class="blue">print</span>(nome)
+
+</div>
+
+<div class="result">
+▶ Lucas
+</div>
+
+</div>
+
+<div class="section-title">
+🔢 Tipos básicos de dados
+</div>
+
+<p>
+Uma variável pode guardar diferentes tipos de dados, aonde cada um tem sua forma de usar, por isso se atente a cada um deles.
+<p>
+📝 Texto (string)
+</p>
+
+<b> Nele usamos as aspas "" para mostrar ao Python que o valor da variável é um texto.</b>
+
+<div class="example">
+
+<div class="code-top">
+<div class="circle red"></div>
+<div class="circle yellow"></div>
+<div class="circle green"></div>
+</div>
+
+<div class="code">
+
+cidade = <span class="green-text">"Rio de Janeiro"</span>
+
+</div>
+
+</div>
+
+<p>
+🔢 Número inteiro (int)
+</p>
+
+<div class="example">
+
+<div class="code-top">
+<div class="circle red"></div>
+<div class="circle yellow"></div>
+<div class="circle green"></div>
+</div>
+
+<div class="code">
+
+idade = <span class="yellow-text">18</span>
+
+</div>
+
+</div>
+
+<p>
+🔥 Número decimal (float)
+</p>
+
+<b>  Nele nós usamos o ponto para fazer a função da vírgula, sempre lembre disso quando for usá-lo. Não é Vírgula é Ponto.
+
+<div class="example">
+
+<div class="code-top">
+<div class="circle red"></div>
+<div class="circle yellow"></div>
+<div class="circle green"></div>
+</div>
+
+<div class="code">
+
+altura = <span class="yellow-text">1.75</span>
+
+</div>
+
+</div>
+
+<p>
+✅ Verdadeiro ou falso (bool)
+</p>
+
+<b> Nele usamos só dois tipos de valor; pois o valor ou é Verdadeiro ou é Falso.</b>
+<b> Verdadeiro → True</b>
+<b> Falso → False </b>
+
+<div class="example">
+
+<div class="code-top">
+<div class="circle red"></div>
+<div class="circle yellow"></div>
+<div class="circle green"></div>
+</div>
+
+<div class="code">
+
+aprovado = <span class="purple">True</span>
+
+</div>
+
+</div>
+
+<div class="section-title">
+🧠 Python lê de cima para baixo
+</div>
+
+<div class="example">
+
+<div class="code-top">
+<div class="circle red"></div>
+<div class="circle yellow"></div>
+<div class="circle green"></div>
+</div>
+
+<div class="code">
+
+nome = <span class="green-text">"Carlos"</span><br><br>
+
+<span class="blue">print</span>(nome)
+
+</div>
+
+<div class="result">
+▶ Carlos
+</div>
+
+</div>
+
+<p>
+Primeiro:
+</p>
+
+<ul>
+<li>guarda "Carlos"</li>
+<li>depois mostra na tela</li>
+</ul>
+
+<div class="section-title">
+⚠ Espaços ainda são importantes
+</div>
+
+<p>
+Os espaços fazem parte da estrutura principal do Python.
+</p>
+
+<p>
+Sabendo usar os espaços corretamente você entende grande parte da linguagem.
+</p>
+
+<p>
+✅ Correto:
+</p>
+
+<div class="example">
+
+<div class="code-top">
+<div class="circle red"></div>
+<div class="circle yellow"></div>
+<div class="circle green"></div>
+</div>
+
+<div class="code">
+
+<span class="purple">if</span> True:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;nome = <span class="green-text">"João"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">print</span>(nome)
+
+</div>
+
+</div>
+
+<p>
+❌ Errado:
+</p>
+
+<div class="example">
+
+<div class="code-top">
+<div class="circle red"></div>
+<div class="circle yellow"></div>
+<div class="circle green"></div>
+</div>
+
+<div class="code">
+
+<span class="purple">if</span> True:<br>
+nome = <span class="green-text">"João"</span>
+
+</div>
+
+<div class="result">
+▶ IndentationError
+</div>
+
+</div>
+
+<div class="section-title">
+🔥 Mudando valores
+</div>
+
+<b> Como foi falado lá em cima, nós podemos mudar os valores de uma variável no mesmo código, de uma forma simples. </b>
+
+<h3> Como Mudar os Valores </h3>
+
+<b> Você pode mudar o valor de uma variável, escrevendo ela novamente só que com um valor diferente.</b>
+
+<div class="example">
+
+<div class="code-top">
+<div class="circle red"></div>
+<div class="circle yellow"></div>
+<div class="circle green"></div>
+</div>
+
+<div class="code">
+
+idade = <span class="yellow-text">18</span><br><br>
+
+<span class="blue">print</span>(idade)<br><br>
+
+idade = <span class="yellow-text">25</span><br><br>
+
+<span class="blue">print</span>(idade)
+
+</div>
+
+<div class="result">
+▶ 18<br>
+▶ 25
+</div>
+
+</div>
+
+<div class="section-title">
+💡 Juntando texto e variável
+</div>
+
+<div class="example">
+
+<div class="code-top">
+<div class="circle red"></div>
+<div class="circle yellow"></div>
+<div class="circle green"></div>
+</div>
+
+<div class="code">
+
+nome = <span class="green-text">"Pedro"</span><br><br>
+
+<span class="blue">print</span>(<span class="green-text">"Olá"</span>, nome)
+
+</div>
+
+<div class="result">
+▶ Olá Pedro
+</div>
+
+</div>
+
+</div>
+
+<!-- EXERCICIO 1 -->
+<div class="card">
+
+<div class="exercise">
+
+<h3>🎯 Exercício 1 — Criar código</h3>
+
+<p>
+Crie um código para guardar 20 e mostrar 20.
+</p>
+
+<textarea id="res1"></textarea>
+
+<button class="button" onclick="corrigir1()">
+Verificar
+</button>
+
+<div id="resultado1"></div>
+
+</div>
+
+</div>
+
+<!-- EXERCICIO 2 -->
+<div class="card">
+
+<div class="exercise">
+
+<h3>🎯 Exercício 2 — Criar código</h3>
+
+<p>
+Crie um código para guardar "Olá",depois troca para "Maçã" e mostra "Maçã".
+</p>
+
+<textarea id="res2"></textarea>
+
+<button class="button" onclick="corrigir2()">
+Verificar
+</button>
+
+<div id="resultado2"></div>
+
+</div>
+
+</div>
+
+<!-- EXERCICIO 3 -->
+<div class="card">
+
+<div class="exercise">
+
+<h3>🎯 Exercício 3 — Múltipla escolha</h3>
+
+<p>
+Qual código está correto no Python?
+</p>
+
+<div class="option" onclick="errado3()">
+if True:
+print("Olá")
+</div>
+
+<div class="option" onclick="certo3()">
+if True:
+&nbsp;&nbsp;&nbsp;&nbsp;print("Olá")
+</div>
+
+<div class="option" onclick="errado3()">
+if True
+print("Olá")
+</div>
+
+<div id="resultado3"></div>
+
+</div>
+
+</div>
+
+<!-- EXERCICIO 4 -->
+<div class="card">
+
+<div class="exercise">
+
+<h3>🎯 Exercício 4 — Múltipla escolha</h3>
+
+<p>
+O que acontece se os espaços estiverem errados?
+</p>
+
+<div class="option" onclick="errado4()">
+O Python ignora
+</div>
+
+<div class="option" onclick="certo4()">
+O Python mostra erro
+</div>
+
+<div class="option" onclick="errado4()">
+Nada acontece
+</div>
+
+<div id="resultado4"></div>
+
+</div>
+
+</div>
+
+<!-- EXERCICIO 3 -->
+<div class="card">
+
+<div class="exercise">
+
+<h3>🎯 Exercício 5 — Múltipla escolha</h3>
+
+<p>
+Qual desses é usado o Ponto invés da Vírgula?
+</p>
+
+<div class="option" onclick="errado5()">
+True ou False (Bool)
+</div>
+
+<div class="option" onclick="certo5()">
+Decimal (Float)
+</div>
+
+<div class="option" onclick="errado5()">
+Texto(Sting)
+</div>
+
+<div id="resultado5"></div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="footer">
+Python Academy © 2026
+</div>
+
+<script>
+
+// EXERCICIO 1
+function corrigir1(){
+
+let resposta =
+document
+.getElementById("res1")
+.value
+.toLowerCase()
+
+if(
+resposta.includes("20")
+&&
+resposta.includes("print")
+){
+
+document.getElementById("resultado1").innerHTML =
+'<div class="correct">✔ Correto!</div>'
+
+}else{
+
+document.getElementById("resultado1").innerHTML =
+'<div class="wrong">✖ Seu código precisa guardar 20 e mostrar 20.</div>'
+
+}
+
+}
+
+// EXERCICIO 2
+function corrigir2(){
+
+let resposta =
+document
+.getElementById("res2")
+.value
+.toLowerCase()
+
+if(
+resposta.includes("olá")
+&&
+resposta.includes("maçã")
+&&
+resposta.includes("print")
+){
+
+document.getElementById("resultado2").innerHTML =
+'<div class="correct">✔ Correto!</div>'
+
+}else{
+
+document.getElementById("resultado2").innerHTML =
+'<div class="wrong">✖ Seu código precisa guardar "Olá", trocar para "Maçã" e mostrar na tela.</div>'
+
+}
+
+}
+
+// EX 3
+function certo3(){
+
+document.getElementById("resultado3").innerHTML =
+'<div class="correct">✔ Correto! Python precisa dos espaços.</div>'
+
+}
+
+function errado3(){
+
+document.getElementById("resultado3").innerHTML =
+'<div class="wrong">✖ Errado! Os espaços são obrigatórios.</div>'
+
+}
+
+// EX 4
+function certo4(){
+
+document.getElementById("resultado4").innerHTML =
+'<div class="correct">✔ Correto! O Python mostra erro.</div>'
+
+}
+
+function errado4(){
+
+document.getElementById("resultado4").innerHTML =
+'<div class="wrong">✖ Errado! Espaços fazem parte da estrutura do Python.</div>'
+
+}
+
+// EX 5
+function certo5(){
+
+document.getElementById("resultado5").innerHTML =
+'<div class="correct">✔ Correto!</div>'
+
+}
+
+function errado5(){
+
+document.getElementById("resultado5").innerHTML =
+'<div class="wrong">✖ Errado! É o Decimal (Float).</div>'
+
+}
+
+</script>
+
+</body>
+</html>s

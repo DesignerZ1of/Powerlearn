@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 20 — Exercícios</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Consolas;
+background:#0f172a;
+color:#e2e8f0;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:40px;
+}
+
+.card{
+background:#1e293b;
+padding:25px;
+border-radius:12px;
+margin-bottom:25px;
+border:1px solid #334155;
+}
+
+h1,h2{
+color:#38bdf8;
+}
+
+.exercise{
+background:#020617;
+padding:20px;
+border-radius:10px;
+margin-top:20px;
+}
+
+textarea{
+width:100%;
+height:240px;
+margin-top:15px;
+padding:15px;
+background:black;
+color:#22c55e;
+border:1px solid #334155;
+border-radius:8px;
+font-family:Consolas;
+font-size:15px;
+}
+
+button{
+margin-top:15px;
+padding:10px 15px;
+background:#38bdf8;
+border:none;
+border-radius:6px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.result{
+margin-top:15px;
+font-weight:bold;
+}
+
+.correct{
+color:#22c55e;
+}
+
+.wrong{
+color:#ef4444;
+}
+
+.code{
+background:black;
+padding:15px;
+border-radius:8px;
+margin-top:10px;
+white-space:pre-line;
+color:#22c55e;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>📘 LIÇÃO 20 — Exercícios</h1>
+
+<!-- EXERCÍCIO 1 -->
+
+<div class="card">
+<div class="exercise">
+
+<h2>🧠 1. While + Array + .length</h2>
+
+<p>
+📌 O que fazer
+</p>
+
+<p>
+Crie:
+</p>
+
+<p>
+• um array com 3 nomes<br><br>
+
+• uma variável i = 0<br><br>
+
+• um while<br><br>
+
+• use .length<br><br>
+
+• mostre todos os nomes
+</p>
+
+<textarea id="ex1"></textarea>
+
+<button onclick="corrigir1()">Verificar</button>
+
+<div id="r1" class="result"></div>
+
+</div>
+</div>
+
+<!-- EXERCÍCIO 2 -->
+
+<div class="card">
+<div class="exercise">
+
+<h2>🧠 2. For + Array</h2>
+
+<p>
+📌 O que fazer
+</p>
+
+<p>
+Crie:
+</p>
+
+<p>
+• um array com 5 números<br><br>
+
+• um for<br><br>
+
+• mostre todos os números
+</p>
+
+<textarea id="ex2"></textarea>
+
+<button onclick="corrigir2()">Verificar</button>
+
+<div id="r2" class="result"></div>
+
+</div>
+</div>
+
+<!-- EXERCÍCIO 3 -->
+
+<div class="card">
+<div class="exercise">
+
+<h2>🧠 3. indexOf()</h2>
+
+<p>
+📌 O que fazer
+</p>
+
+<p>
+Crie:
+</p>
+
+<p>
+• um array com 3 frutas<br><br>
+
+• use .indexOf()<br><br>
+
+• procure "Uva"
+</p>
+
+<textarea id="ex3"></textarea>
+
+<button onclick="corrigir3()">Verificar</button>
+
+<div id="r3" class="result"></div>
+
+</div>
+</div>
+
+<!-- EXERCÍCIO 4 -->
+
+<div class="card">
+<div class="exercise">
+
+<h2>🧠 4. Função + parâmetro</h2>
+
+<p>
+📌 O que fazer
+</p>
+
+<p>
+Crie:
+</p>
+
+<p>
+• uma função chamada mensagem<br><br>
+
+• parâmetro: nome<br><br>
+
+• mostre:<br><br>
+
+"Olá " + nome
+</p>
+
+<textarea id="ex4"></textarea>
+
+<button onclick="corrigir4()">Verificar</button>
+
+<div id="r4" class="result"></div>
+
+</div>
+</div>
+
+<!-- EXERCÍCIO 5 -->
+
+<div class="card">
+<div class="exercise">
+
+<h2>🧠 5. Classe</h2>
+
+<p>
+📌 O que fazer
+</p>
+
+<p>
+Crie:
+</p>
+
+<p>
+• uma classe chamada Jogador<br><br>
+
+• com:<br><br>
+
+nome<br>
+pontos<br><br>
+
+• crie um jogador chamado "Carlos"<br><br>
+
+• com 100 pontos
+</p>
+
+<textarea id="ex5"></textarea>
+
+<button onclick="corrigir5()">Verificar</button>
+
+<div id="r5" class="result"></div>
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+function correto(id){
+
+document.getElementById(id).innerHTML =
+'<span class="correct">✔ Correto!</span>'
+
+}
+
+function errado(id){
+
+document.getElementById(id).innerHTML =
+'<span class="wrong">✖ Código incompleto.</span>'
+
+}
+
+function verificar(texto, requisitos){
+
+texto = texto.toLowerCase()
+
+return requisitos.every(item =>
+texto.includes(item)
+)
+
+}
+
+function corrigir1(){
+
+let texto = document.getElementById("ex1").value
+
+let requisitos = [
+"let",
+"[",
+"]",
+"i = 0",
+"while",
+".length",
+"console.log",
+"i++"
+]
+
+if(verificar(texto, requisitos)){
+correto("r1")
+}else{
+errado("r1")
+}
+
+}
+
+function corrigir2(){
+
+let texto = document.getElementById("ex2").value
+
+let requisitos = [
+"let",
+"[",
+"]",
+"for",
+"= 0",
+".length",
+"++",
+"console.log"
+]
+
+if(verificar(texto, requisitos)){
+correto("r2")
+}else{
+errado("r2")
+}
+
+}
+
+function corrigir3(){
+
+let texto = document.getElementById("ex3").value
+
+let requisitos = [
+"let",
+"[",
+"]",
+".indexof",
+'"uva"',
+"console.log"
+]
+
+if(verificar(texto, requisitos)){
+correto("r3")
+}else{
+errado("r3")
+}
+
+}
+
+function corrigir4(){
+
+let texto = document.getElementById("ex4").value
+
+let requisitos = [
+"function",
+"mensagem",
+"(",
+"nome",
+")",
+"console.log",
+'"olá"',
+"+",
+"nome",
+"mensagem("
+]
+
+if(verificar(texto, requisitos)){
+correto("r4")
+}else{
+errado("r4")
+}
+
+}
+
+function corrigir5(){
+
+let texto = document.getElementById("ex5").value
+
+let requisitos = [
+"class",
+"jogador",
+"constructor",
+"nome",
+"pontos",
+"this.nome",
+"this.pontos",
+"new jogador",
+'"carlos"',
+"100",
+"console.log"
+]
+
+if(verificar(texto, requisitos)){
+correto("r5")
+}else{
+errado("r5")
+}
+
+}
+
+</script>
+
+</body>
+</html>

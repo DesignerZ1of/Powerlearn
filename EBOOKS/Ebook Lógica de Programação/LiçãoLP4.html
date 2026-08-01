@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 4 — Resumo</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Consolas, monospace;
+background:#0f172a;
+color:#e2e8f0;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:40px;
+}
+
+.card{
+background:#1e293b;
+padding:25px;
+border-radius:12px;
+margin-bottom:25px;
+border:1px solid #334155;
+}
+
+h1{
+color:#38bdf8;
+}
+
+.code{
+background:#020617;
+color:#22c55e;
+padding:15px;
+border-radius:8px;
+margin-top:10px;
+white-space:pre-line;
+}
+
+textarea{
+width:100%;
+height:160px;
+margin-top:10px;
+padding:10px;
+border-radius:8px;
+border:none;
+background:#020617;
+color:#e2e8f0;
+font-family:Consolas;
+}
+
+button{
+margin-top:15px;
+padding:10px 15px;
+background:#38bdf8;
+border:none;
+border-radius:6px;
+color:#0f172a;
+cursor:pointer;
+font-weight:bold;
+}
+
+.result{
+margin-top:15px;
+background:#020617;
+padding:15px;
+border-radius:8px;
+}
+
+.correct{
+color:#22c55e;
+}
+
+.wrong{
+color:#ef4444;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>📘 LIÇÃO 4 🖥 - Resumo</h1>
+
+<p>Olá, você nesse ebook já tem avançado bastante, vamos revisar e organizar os conteúdos aprendido em sua cabeça!!</p>
+
+<p>> Bom aprendemos sobre como funciona a lógica na programação na Lição1</p>
+
+<p>Aprendemos como criar uma variável (Variável é uma caixa que guardar informações)</p>
+
+<div class="code">
+let NomeDaVariável = 10;
+</div>
+
+<p>let → Comando para criar a variável</p>
+<p>= → Significa recebe esse valor</p>
+
+<p><b>IMPORTANTE📌</b></p>
+
+<p>O que significa o ";" (ponto e vírgula)?</p>
+
+<p>→ Nós usamos ele para finalizar uma ação, na qual é a de criar uma variável.</p>
+
+<p>É como se ele dissese:</p>
+
+<p>“Essa ação terminou, pode ir pra próxima”</p>
+
+<p>E nós usamos ele para criar a variável e para mostra la (aprendemos na lição 3)</p>
+
+<div class="code">
+console.log(NomedaVariável);
+</div>
+
+<p>Nesse código usamos tambem o ";" E tambem usamos outros componentes:</p>
+
+<p>console.log → Comando para mostrar a variável</p>
+<p>() → Dentro dos parenteses nós colocamos o nome da variável desejada</p>
+<p>E finalizamos com ";"</p>
+
+</div>
+
+<div class="card">
+
+<h1>🧪 Exercício</h1>
+
+<p>Crie Duas Variável com os seguintes nomes e valores:</p>
+
+<p>"CódigoM" com o valor: 10</p>
+<p>"CódigoN" com o valor: 5</p>
+
+<p>E mostre eles com comparações falando se:</p>
+
+<p>CódigoM é igual a CódigoN</p>
+<p>CódigoM é maior que CódigoN</p>
+
+<textarea id="codigo" placeholder="Ex: let CodigoM = 10;"></textarea>
+
+<button onclick="executar()">Executar</button>
+
+<div id="saida" class="result"></div>
+
+</div>
+
+</div>
+
+<script>
+
+function executar(){
+
+let codigo = document.getElementById("codigo").value
+let saida = document.getElementById("saida")
+
+saida.innerHTML = ""
+
+try{
+
+let consoleFake = {
+log: function(msg){
+saida.innerHTML += msg + "<br>"
+}
+}
+
+// EXECUTA
+new Function("console", codigo)(consoleFake)
+
+// VALIDAÇÃO REAL
+let valido = true
+
+if(!codigo.includes("let CódigoM")) valido = false
+if(!codigo.includes("let CódigoN")) valido = false
+if(!codigo.includes("==")) valido = false
+if(!codigo.includes(">")) valido = false
+if(!codigo.includes("console.log")) valido = false
+
+if(valido){
+saida.innerHTML += '<br><span class="correct">✔ Código correto! Você aplicou tudo certo</span>'
+}else{
+saida.innerHTML += '<br><span class="wrong">✖ Erro: você precisa usar "let", comparações e mostrar com console.log</span>'
+}
+
+}catch(e){
+saida.innerHTML = '<span class="wrong">Erro no código: '+e.message+'</span>'
+}
+
+}
+
+</script>
+
+</body>
+</html>

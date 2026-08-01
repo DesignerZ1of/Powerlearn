@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 6 — Primeiros Cálculos</title>
+
+<style>
+body{font-family:Arial;background:#fff;color:#111;margin:0}
+.container{max-width:1100px;margin:auto;padding:40px}
+h2{color:#22c55e}
+
+.card{background:#f9fafb;border:1px solid #e5e7eb;border-radius:10px;padding:25px;margin:20px 0}
+
+.excel{border:1px solid #cbd5e1;border-radius:8px;background:#fff}
+.menu{display:flex;gap:18px;background:#e5e7eb;padding:8px;font-weight:bold}
+
+.header-top{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  margin-bottom:30px;
+}
+
+.header-top img{
+  width:60px;
+}
+
+.grid{display:grid;grid-template-columns:40px repeat(3,120px)}
+.header{background:#f1f5f9;border:1px solid #cbd5e1;text-align:center;font-weight:bold;padding:6px}
+.cell{border:1px solid #cbd5e1;min-height:32px;padding:6px}
+.resultado{background:#ecfdf5}
+
+.verify{background:#22c55e;color:#fff;border:none;padding:8px 14px;border-radius:6px;cursor:pointer}
+.result{font-weight:bold;margin-left:10px}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<div class="header-top">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Microsoft_Excel_2013-2019_logo.svg">
+
+  <h2 class="lesson-title">
+    Lição 6 — Primeiros Cálculos
+  </h2>
+</div>
+
+<!-- CONTEÚDO INTACTO -->
+<div class="card">
+<p><b>📌 O que muda a partir daqui</b></p>
+<p>Até agora você:</p>
+<ul>
+<li>Organizava</li>
+<li>Formatava</li>
+<li>Deixava claro</li>
+</ul>
+
+<p><i>*Agora você vai fazer o Excel pensar por você.*</i></p>
+
+<hr>
+
+<b>1️⃣ Conceito de fórmula</b>
+
+<p>Fórmula é quando você diz ao Excel:</p>
+<p><i>“Não mostre só o número. Calcule algo para mim.”</i></p>
+
+<p>Ela sempre começa com:</p>
+<p><b>=</b></p>
+
+<p>Esse sinal avisa: “O que vem agora é uma conta, não um texto.”</p>
+
+<p>Exemplo simples:</p>
+<p>=2+2 → Resultado: 4</p>
+
+<p>Mais importante ainda: Você pode usar células, não só números.</p>
+
+<p><b>=A1+A2</b></p>
+
+<p><i>*Aqui o Excel soma o que estiver dentro das células.*</i></p>
+
+<p>Essa função é muito utilizada no excel para fazer contas na planilha como: Calcular o salário, estoque ou controlar gastos.</p>
+
+<p>Use essa função junto com outras ferramentas apresentadas. AQUI UM EXEMPLO: Crie uma planilha de gastos mensais e pinte de verde o valor que você recebe, e de vermelho o quanto você gasta e depois calcule o quanto você tem.</p>
+
+<p>Usamos o símbolo:</p>
+<ul>
+<li>Multiplicação  *</li>
+<li>Divisão /</li>
+<li>Subtração -</li>
+</ul>
+
+<p>Exemplos:</p>
+<p>=2*3 → Resultado: 6</p>
+<p>=4/2 → Resultado: 2</p>
+
+<p>Você pode usar a função de usar as células nas 4 operações podendo atribuir o valor para as células, exemplo: A1= 2/2(divisão)  A2= 2*2(multiplicação)  A3=A1+A2 A3=5
+
+<hr>
+
+<b>🎯 O que você ganha com essa aula</b>
+<ul>
+<li>Criar contas automáticas</li>
+<li>Agora é possível controlar gastos, analisar dados e criar relatórios mais facilmente por já haver um sistema de cálculos</li>
+<li>Usar o Excel como calculadora inteligente</li>
+</ul>
+</div>
+
+<!-- EXERCÍCIO -->
+<div class="card">
+<b>Exercício — Fórmulas Básicas</b>
+
+<p>
+1. Digite números nas células <b>A1</b> e <b>A2</b><br>
+2. Em outra célula, digite exatamente uma das fórmulas:<br><br>
+
+=A1+A2<br>
+=A1-A2<br>
+=A1*A2<br>
+=A1/A2
+</p>
+
+<p><b>Atenção:</b> a fórmula deve começar com <b>=</b> e estar escrita corretamente.</p>
+
+<div class="excel">
+<div class="menu">
+<span>Arquivo</span>
+<span>Início</span>
+<span>Inserir</span>
+<span>Compartilhar</span>
+<span>Layout da Página</span>
+</div>
+
+<div class="grid">
+  <div class="header"></div><div class="header">A</div><div class="header">B</div><div class="header">C</div>
+
+  <div class="header">1</div>
+  <div class="cell" contenteditable id="a1"></div>
+  <div class="cell"></div>
+  <div class="cell resultado" contenteditable id="c1"></div>
+
+  <div class="header">2</div>
+  <div class="cell" contenteditable id="a2"></div>
+  <div class="cell"></div>
+  <div class="cell resultado" contenteditable id="c2"></div>
+
+  <div class="header">3</div>
+  <div class="cell"></div>
+  <div class="cell"></div>
+  <div class="cell resultado" contenteditable id="c3"></div>
+
+  <div class="header">4</div>
+  <div class="cell"></div>
+  <div class="cell"></div>
+  <div class="cell resultado" contenteditable id="c4"></div>
+</div>
+</div>
+
+<br>
+<button class="verify" onclick="verificar()">Verificar</button>
+<span id="res" class="result"></span>
+</div>
+
+</div>
+
+<script>
+function calcular(cell){
+  const a1 = Number(document.getElementById("a1").innerText);
+  const a2 = Number(document.getElementById("a2").innerText);
+  const formula = cell.innerText.trim();
+
+  if(isNaN(a1) || isNaN(a2)) return;
+
+  if(formula === "=A1+A2") cell.innerText = a1 + a2;
+  else if(formula === "=A1-A2") cell.innerText = a1 - a2;
+  else if(formula === "=A1*A2") cell.innerText = a1 * a2;
+  else if(formula === "=A1/A2") cell.innerText = a2 !== 0 ? (a1 / a2) : "Erro";
+}
+
+["c1","c2","c3","c4"].forEach(id=>{
+  document.getElementById(id).addEventListener("blur",function(){
+    calcular(this);
+  });
+});
+
+function verificar(){
+  document.getElementById("res").innerText = "✔ Exercício concluído corretamente";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 5 — Programas e Aplicativos</title>
+
+<style>
+body{
+  font-family:Segoe UI, Arial, sans-serif;
+  background:#ffffff;
+  margin:0;
+  color:#1f2937;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:50px 40px;
+}
+
+h1{
+  color:#1e3a8a;
+  font-size:34px;
+}
+
+.card{
+  background:#f9fafb;
+  border:1px solid #e5e7eb;
+  border-radius:14px;
+  padding:35px;
+  margin-top:30px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.05);
+}
+
+.section-title{
+  color:#1e40af;
+  font-size:20px;
+  margin-top:35px;
+  font-weight:bold;
+}
+
+.highlight{
+  background:#eff6ff;
+  border-left:6px solid #2563eb;
+  padding:18px;
+  border-radius:10px;
+  margin-top:15px;
+}
+
+.question{
+  margin-top:25px;
+  padding:20px;
+  background:#ffffff;
+  border-radius:10px;
+  border:1px solid #e5e7eb;
+}
+
+.option{
+  margin-top:10px;
+  padding:10px;
+  border-radius:6px;
+  border:1px solid #d1d5db;
+  cursor:pointer;
+}
+
+.option:hover{
+  background:#eef2ff;
+}
+
+.correct{
+  background:#dcfce7 !important;
+  border-color:green !important;
+}
+
+.wrong{
+  background:#fee2e2 !important;
+  border-color:red !important;
+}
+
+.result{
+  margin-top:15px;
+  font-weight:bold;
+}
+
+.score{
+  margin-top:20px;
+  font-weight:bold;
+  font-size:18px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🧾 Lição 5 — Programas e Aplicativos (O que você realmente está usando)</h1>
+
+<div class="card">
+
+<p>Até agora você instalou o Microsoft Windows e conheceu a tela.</p>
+
+<p>Agora vem algo essencial:</p>
+
+<p><strong>Você não usa “o computador”.  
+Você usa programas dentro do Windows.</strong></p>
+
+<p>Se entender isso, tudo começa a fazer sentido.</p>
+
+<div class="section-title">💡 O que é um programa?</div>
+
+<p>Programa (ou aplicativo) é toda ferramenta que você abre para fazer algo.</p>
+
+<p>Exemplos:</p>
+
+<ul>
+<li>Navegar na internet → Google Chrome</li>
+<li>Escrever textos → Word</li>
+<li>Jogar → Jogo</li>
+<li>Ver fotos → Visualizador de imagens</li>
+</ul>
+
+<p>👉 Sempre que você clica e algo abre, aquilo é um programa.</p>
+
+<div class="section-title">📂 Arquivo não é programa (essa parte é importante)</div>
+
+<p>Muita gente confunde.</p>
+
+<p><strong>📄 Arquivo</strong></p>
+<ul>
+<li>PDF</li>
+<li>Foto</li>
+<li>Vídeo</li>
+<li>Documento</li>
+</ul>
+
+<p><strong>🛠 Programa</strong></p>
+<ul>
+<li>PDF → precisa de leitor de PDF</li>
+<li>Foto → precisa de visualizador</li>
+<li>Documento → precisa de editor</li>
+</ul>
+
+<div class="highlight">
+💡 Regra simples: O programa abre o arquivo.
+</div>
+
+<div class="section-title">🔎 Onde ficam os programas?</div>
+
+<ul>
+<li>No Menu Iniciar</li>
+<li>Na barra de tarefas</li>
+<li>Na área de trabalho</li>
+<li>Pesquisando pelo nome</li>
+</ul>
+
+<p>Se você instalou algo e não encontra, pode usar a barra de pesquisa.</p>
+
+<div class="section-title">🧠 O que acontece quando você abre um programa?</div>
+
+<p>1. O Windows executa o programa</p>
+<p>2. Ele passa a rodar na memória</p>
+<p>3. Ele aparece em forma de janela</p>
+
+<p>Mesmo minimizado, ele continua funcionando.</p>
+
+<div class="highlight">
+👉 Minimizar não é fechar.
+</div>
+
+<div class="section-title">⚠️ Erros comuns que essa lição evita</div>
+
+<ul>
+<li>Achar que arquivo é programa</li>
+<li>Minimizar e pensar que fechou</li>
+<li>Não entender o que está aberto</li>
+<li>Instalar coisa sem saber o que é</li>
+</ul>
+
+</div>
+
+<!-- EXERCÍCIO -->
+
+<div class="card">
+<h2>🧪 Exercício — Testando seu entendimento</h2>
+
+<div id="quiz"></div>
+
+<div class="score" id="score"></div>
+
+</div>
+
+</div>
+
+<script>
+
+const perguntas = [
+{
+pergunta:"Se você clica em um PDF e ele abre, o que está realmente sendo executado?",
+opcoes:["O arquivo PDF","O Windows diretamente","Um programa leitor de PDF","A pasta onde ele estava"],
+correta:2
+},
+{
+pergunta:"Qual afirmação descreve corretamente a diferença entre arquivo e programa?",
+opcoes:[
+"Arquivo e programa são a mesma coisa",
+"O programa é o conteúdo e o arquivo abre ele",
+"O programa abre o arquivo",
+"O arquivo executa o programa sozinho"
+],
+correta:2
+},
+{
+pergunta:"Quando você minimiza um programa, o que acontece?",
+opcoes:[
+"Ele é fechado automaticamente",
+"Ele continua rodando na memória",
+"Ele é apagado do sistema",
+"Ele vira um arquivo"
+],
+correta:1
+},
+{
+pergunta:"Se você instalou um programa e não encontra, qual é uma forma correta de localizá-lo?",
+opcoes:[
+"Reiniciar o computador",
+"Usar a barra de pesquisa",
+"Apagar a pasta Downloads",
+"Abrir qualquer arquivo"
+],
+correta:1
+},
+{
+pergunta:"Qual erro comum essa lição tenta evitar?",
+opcoes:[
+"Achar que todo programa é vírus",
+"Pensar que minimizar é o mesmo que fechar",
+"Acreditar que o Windows não usa memória",
+"Pensar que só existe um tipo de arquivo"
+],
+correta:1
+}
+];
+
+let acertos = 0;
+
+function renderQuiz(){
+const quizDiv = document.getElementById("quiz");
+
+perguntas.forEach((q,index)=>{
+let html = `<div class="question"><strong>${index+1}. ${q.pergunta}</strong>`;
+q.opcoes.forEach((op,i)=>{
+html += `<div class="option" onclick="responder(${index},${i},this)">${op}</div>`;
+});
+html += `<div class="result" id="result${index}"></div></div>`;
+quizDiv.innerHTML += html;
+});
+}
+
+function responder(qIndex,opIndex,element){
+const pergunta = perguntas[qIndex];
+const resultDiv = document.getElementById("result"+qIndex);
+
+if(resultDiv.innerHTML !== "") return;
+
+if(opIndex === pergunta.correta){
+element.classList.add("correct");
+resultDiv.innerHTML = "✔ Resposta correta!";
+acertos++;
+}else{
+element.classList.add("wrong");
+resultDiv.innerHTML = "✖ Errado. Resposta correta: " + pergunta.opcoes[pergunta.correta];
+}
+
+document.getElementById("score").innerHTML = 
+"Pontuação: " + acertos + " de " + perguntas.length;
+}
+
+renderQuiz();
+
+</script>
+
+</body>
+</html>

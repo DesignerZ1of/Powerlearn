@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 3 — Lógica</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Consolas, monospace;
+background:#0f172a;
+color:#e2e8f0;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:40px;
+}
+
+.card{
+background:#1e293b;
+padding:25px;
+border-radius:12px;
+margin-bottom:25px;
+border:1px solid #334155;
+}
+
+h1{
+color:#38bdf8;
+}
+
+.section{
+margin-top:20px;
+font-weight:bold;
+color:#94a3b8;
+}
+
+.code{
+background:#020617;
+color:#22c55e;
+padding:15px;
+border-radius:8px;
+margin-top:10px;
+}
+
+button{
+margin-top:15px;
+padding:10px 15px;
+background:#38bdf8;
+border:none;
+border-radius:6px;
+color:#0f172a;
+cursor:pointer;
+font-weight:bold;
+}
+
+.result{
+margin-top:10px;
+font-weight:bold;
+}
+
+.correct{
+color:#22c55e;
+}
+
+.wrong{
+color:#ef4444;
+}
+
+.option{
+margin:8px 0;
+display:block;
+}
+
+.box{
+background:#020617;
+padding:10px;
+border-radius:8px;
+margin:10px 0;
+}
+
+select{
+padding:8px;
+border-radius:6px;
+margin:5px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>📘 LIÇÃO 3 — Operadores e Visualização</h1>
+
+<div class="section">🧠 O que você vai aprender aqui</div>
+
+<p>
+.Como ver resultados<br>
+.O que significa o =<br>
+.Como funcionam comparações (> < >= <= ==)
+</p>
+
+---
+
+<div class="section">👁️ 1. Ver o resultado (console.log)</div>
+
+<p>
+Na aula passada vimos como criar uma variável, mas como podemos usa las? las?<br>
+E antes de te responder você precisa ver o que o programa está fazendo.
+</p>
+
+<p><b>É como perguntar: Qual é o seu valor?</b></p>
+
+---
+
+<div class="section">💻 Código (1º da aula)</div>
+
+<div class="code">
+let NomedaVariável = 10;
+</div>
+
+<p>Na aula passada aprendemos esse código. Mas para você saber o valor dessa variável você coloca esse código:</p>
+
+<div class="code">
+console.log(NomedaVariável);
+</div>
+
+---
+
+<div class="section">🧠 Tradução</div>
+
+<p><b>Guarda 10 → mostra 10
+Ou seja ela irá mostrar o avlor da variável</b></p>
+
+---
+
+<div class="section">📌 2. O que significa =</div>
+
+<p><b> Nesse código:
+Let NomedaVariável = 1=
+
+Nós usamos o "="; mas o que significa?</b></p>
+
+<p><b>O = não é igual. Ele significa: recebe</b></p>
+
+<p> Ou seja: NomedaVariável RECEBE 10
+Você está colocando um valor na variável!</p>
+---
+
+<div class="section">⚖️ Comparações</div>
+
+<p> Vamos aprender sobre comparações, elas são importantes para agente usar as variáveis</p>
+
+<p>
+> maior que<br>
+< menor que<br>
+>= maior ou igual<br>
+<= menor ou igual<br>
+== igual
+</p>
+
+<div class="code">
+let numero = 10;
+
+console.log(numero > 5);
+</div>
+
+<p><b>Resultado: verdadeiro</b></p>
+
+</div>
+
+<<p><b> Quando começamos a usar uma Comparação ela não mostra o número! Ela mostra se aquela Comparação é verdadeiro ou Falso</b></p>
+
+<div class="card">
+
+<h1>🧪 Exercícios</h1>
+
+<!-- MULTIPLA ESCOLHA -->
+
+<p><b>1. Um número é 20. Ele é maior que 10?</b></p>
+
+<label class="option"><input type="radio" name="q1" value="v"> Verdadeiro</label>
+<label class="option"><input type="radio" name="q1" value="f"> Falso</label>
+
+<p><b>2. Ele é menor que 5?</b></p>
+
+<label class="option"><input type="radio" name="q2" value="v"> Verdadeiro</label>
+<label class="option"><input type="radio" name="q2" value="f"> Falso</label>
+
+---
+
+<p><b>3. O que significa = ?</b></p>
+
+<label class="option"><input type="radio" name="q3" value="a"> Igual</label>
+<label class="option"><input type="radio" name="q3" value="b"> Recebe valor</label>
+<label class="option"><input type="radio" name="q3" value="c"> Comparar</label>
+
+---
+
+<p><b>4. 15 ≥ 15 é:</b></p>
+
+<label class="option"><input type="radio" name="q4" value="v"> Verdadeiro</label>
+<label class="option"><input type="radio" name="q4" value="f"> Falso</label>
+
+<p><b>5. 15 &lt; 10 é:</b></p>
+
+<label class="option"><input type="radio" name="q5" value="v"> Verdadeiro</label>
+<label class="option"><input type="radio" name="q5" value="f"> Falso</label>
+
+---
+
+<!-- COMPLETAR FRASE -->
+
+<h2>🧩 Complete a frase</h2>
+
+<div class="box">
+Palavras: recebe | verdadeiro | falso | comparar
+</div>
+
+<p>6. O operador "=" significa <select id="q6">
+<option></option>
+<option>recebe</option>
+<option>comparar</option>
+<option>falso</option>
+</select></p>
+
+<p>7. 10 > 5 é <select id="q7">
+<option></option>
+<option>verdadeiro</option>
+<option>falso</option>
+</select></p>
+
+<p>8. 3 > 10 é <select id="q8">
+<option></option>
+<option>verdadeiro</option>
+<option>falso</option>
+</select></p>
+
+<button onclick="corrigir()">Verificar</button>
+
+<div id="resultado" class="result"></div>
+
+</div>
+
+</div>
+
+<script>
+
+function getRadio(name){
+return document.querySelector('input[name="'+name+'"]:checked')?.value
+}
+
+function corrigir(){
+
+let acertos = 0
+
+if(getRadio("q1") === "v") acertos++
+if(getRadio("q2") === "f") acertos++
+if(getRadio("q3") === "b") acertos++
+if(getRadio("q4") === "v") acertos++
+if(getRadio("q5") === "f") acertos++
+
+if(document.getElementById("q6").value === "recebe") acertos++
+if(document.getElementById("q7").value === "verdadeiro") acertos++
+if(document.getElementById("q8").value === "falso") acertos++
+
+if(acertos >= 7){
+resultado.innerHTML = '<span class="correct">✔ Excelente! Você entendeu a lógica</span>'
+}else{
+resultado.innerHTML = '<span class="wrong">✖ Revise os conceitos e tente novamente</span>'
+}
+
+}
+
+</script>
+
+</body>
+</html>

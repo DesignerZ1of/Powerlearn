@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 29 — Conversão de Valores</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Consolas, monospace;
+background:#0f172a;
+color:#e5e7eb;
+}
+
+.header{
+background:#020617;
+padding:30px;
+text-align:center;
+font-size:24px;
+color:#3b82f6;
+border-bottom:1px solid #1f2937;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:30px;
+}
+
+.card{
+background:#111827;
+padding:25px;
+border-radius:12px;
+margin-bottom:25px;
+border:1px solid #1f2937;
+}
+
+h1{
+color:#3b82f6;
+}
+
+.section{
+margin-top:20px;
+font-size:20px;
+font-weight:bold;
+color:#7dd3fc;
+}
+
+.code{
+background:#020617;
+padding:15px;
+border-radius:8px;
+margin-top:15px;
+color:#22c55e;
+white-space:pre-line;
+overflow:auto;
+border:1px solid #1f2937;
+}
+
+.question{
+background:#020617;
+padding:20px;
+border-radius:10px;
+margin-top:20px;
+border:1px solid #334155;
+}
+
+.option{
+padding:12px;
+margin-top:10px;
+background:#111827;
+border-radius:8px;
+cursor:pointer;
+border:1px solid #1f2937;
+transition:0.2s;
+}
+
+.option:hover{
+background:#1e293b;
+}
+
+.correct{
+background:#14532d !important;
+border:1px solid #22c55e;
+}
+
+.wrong{
+background:#450a0a !important;
+border:1px solid #ef4444;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+💻 LIÇÃO 29 — Conversão de Valores
+</div>
+
+<div class="container">
+
+<div class="card">
+
+<h1>📘 LIÇÃO 29 — Conversão de Valores</h1>
+
+<div class="section">🧠 Objetivo da aula</div>
+
+<p>
+Agora você aprenderá:
+</p>
+
+<p>
+> como transformar valores.
+</p>
+
+<p>
+Isso é muito importante porque:
+</p>
+
+<p>
+inputs normalmente vêm como texto<br><br>
+
+sistemas precisam trabalhar com números<br><br>
+
+às vezes o JavaScript junta textos sem querer
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">📌 Conteúdos usados</div>
+
+<p>
+Number()<br>
+String()<br>
+soma<br>
+texto<br>
+números
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🧠 Relembrando tipos de valores</div>
+
+<p>
+🔹 Texto
+</p>
+
+<div class="code">
+"10"
+</div>
+
+<p>
+🔹 Número
+</p>
+
+<div class="code">
+10
+</div>
+
+<div class="section">🧠 Parece igual…</div>
+
+<p>
+Mas NÃO é igual.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🚀 Problema comum</div>
+
+<div class="code">
+console.log("10" + 5);
+</div>
+
+<p>
+📌 Resultado
+</p>
+
+<div class="code">
+105
+</div>
+
+<div class="section">🧠 Por que aconteceu isso?</div>
+
+<p>
+Porque:
+</p>
+
+<div class="code">
+"10"
+</div>
+
+<p>
+É texto.
+</p>
+
+<p>
+Então o JavaScript:
+</p>
+
+<p>
+> juntou os valores.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🚀 Entrando no Number()</div>
+
+<div class="section">🧠 O que faz?</div>
+
+<p>
+Number() transforma:
+</p>
+
+<p>
+> texto em número.
+</p>
+
+<div class="code">
+console.log(Number("10") + 5);
+</div>
+
+<p>
+📌 Resultado
+</p>
+
+<div class="code">
+15
+</div>
+
+<div class="section">🧠 O que aconteceu?</div>
+
+<p>
+Agora:
+</p>
+
+<div class="code">
+"10"
+</div>
+
+<p>
+Virou:
+</p>
+
+<div class="code">
+10
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="section">🚀 Outro exemplo</div>
+
+<div class="code">
+let moedas = "100";
+
+moedas = Number(moedas);
+
+moedas = moedas + 50;
+
+console.log(moedas);
+</div>
+
+<p>
+📌 Resultado
+</p>
+
+<div class="code">
+150
+</div>
+
+<div class="section">🧠 Pensamento importante</div>
+
+<p>
+> Sistemas precisam saber quando algo é texto ou número.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🚀 Entrando no String()</div>
+
+<div class="section">🧠 O que faz?</div>
+
+<p>
+String() transforma:
+</p>
+
+<p>
+> valor em texto.
+</p>
+
+<div class="code">
+console.log(String(10));
+</div>
+
+<p>
+📌 Resultado
+</p>
+
+<div class="code">
+"10"
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="section">🚀 Misturando texto</div>
+
+<div class="code">
+let moedas = 100;
+
+console.log("Moedas: " + moedas);
+</div>
+
+<p>
+📌 Resultado
+</p>
+
+<div class="code">
+Moedas: 100
+</div>
+
+<div class="section">🧠 O que aconteceu?</div>
+
+<p>
+O JavaScript:
+</p>
+
+<p>
+> transformou o número em texto automaticamente.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🚀 Sistema simples</div>
+
+<p>
+Agora iremos criar:
+</p>
+
+<p>
+🎮 Sistema de compra com conversão
+</p>
+
+<div class="code">
+let moedas = "100";
+
+function comprar(valor) {
+
+  moedas = Number(moedas);
+
+  moedas = moedas - valor;
+
+  console.log(moedas);
+
+}
+
+comprar(30);
+</div>
+
+<p>
+📌 Resultado
+</p>
+
+<div class="code">
+70
+</div>
+
+<div class="section">🧠 O que esse sistema faz?</div>
+
+<p>
+recebe valor como texto<br><br>
+
+transforma em número<br><br>
+
+realiza conta<br><br>
+
+atualiza moedas
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🎯 Pensamento importante</div>
+
+<p>
+> Conversão evita erros nos sistemas.
+</p>
+
+</div>
+
+<div class="card">
+
+<h1>🧪 Exercícios</h1>
+
+<div class="question">
+
+<h3>1. Qual será o resultado?</h3>
+
+<div class="code">
+console.log("10" + 5);
+</div>
+
+<div class="option" onclick="responder(this, false)">
+15
+</div>
+
+<div class="option" onclick="responder(this, true)">
+105
+</div>
+
+<div class="option" onclick="responder(this, false)">
+50
+</div>
+
+<div class="option" onclick="responder(this, false)">
+Erro
+</div>
+
+</div>
+
+<div class="question">
+
+<h3>2. O que o Number() faz?</h3>
+
+<div class="option" onclick="responder(this, false)">
+Transforma número em array
+</div>
+
+<div class="option" onclick="responder(this, false)">
+Remove textos
+</div>
+
+<div class="option" onclick="responder(this, true)">
+Transforma texto em número
+</div>
+
+<div class="option" onclick="responder(this, false)">
+Cria função
+</div>
+
+</div>
+
+<div class="question">
+
+<h3>3. Qual será o resultado?</h3>
+
+<div class="code">
+console.log(Number("10") + 5);
+</div>
+
+<div class="option" onclick="responder(this, true)">
+15
+</div>
+
+<div class="option" onclick="responder(this, false)">
+105
+</div>
+
+<div class="option" onclick="responder(this, false)">
+"15"
+</div>
+
+<div class="option" onclick="responder(this, false)">
+Erro
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function responder(elemento, correto){
+
+if(
+elemento.classList.contains("correct")
+||
+elemento.classList.contains("wrong")
+){
+return;
+}
+
+if(correto){
+
+elemento.classList.add("correct");
+
+}else{
+
+elemento.classList.add("wrong");
+
+}
+
+}
+
+</script>
+
+</body>
+</html>

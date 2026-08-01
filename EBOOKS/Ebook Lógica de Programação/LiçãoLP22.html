@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 22 — Verificação Melhorada</title>
+
+<style>
+
+body{
+margin:0;
+background:#0f172a;
+font-family:Arial;
+color:#e2e8f0;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:40px;
+}
+
+.card{
+background:#1e293b;
+padding:30px;
+border-radius:14px;
+margin-bottom:25px;
+border:1px solid #334155;
+}
+
+h1{
+color:#38bdf8;
+}
+
+.section{
+margin-top:25px;
+font-size:22px;
+font-weight:bold;
+color:#7dd3fc;
+}
+
+.text{
+line-height:1.8;
+margin-top:10px;
+}
+
+.code{
+background:#020617;
+padding:18px;
+border-radius:10px;
+margin-top:15px;
+color:#22c55e;
+font-family:Consolas;
+white-space:pre-line;
+overflow:auto;
+border:1px solid #334155;
+}
+
+.exercise{
+background:#020617;
+padding:25px;
+border-radius:12px;
+margin-top:20px;
+border:1px solid #334155;
+}
+
+textarea{
+width:100%;
+height:400px;
+margin-top:15px;
+padding:15px;
+background:black;
+color:#22c55e;
+border-radius:8px;
+border:1px solid #334155;
+font-family:Consolas;
+font-size:15px;
+}
+
+button{
+margin-top:15px;
+padding:12px 18px;
+background:#38bdf8;
+border:none;
+border-radius:8px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.result{
+margin-top:15px;
+font-weight:bold;
+font-size:18px;
+}
+
+.correct{
+color:#22c55e;
+}
+
+.wrong{
+color:#ef4444;
+}
+
+.highlight{
+color:#facc15;
+font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>📘 LIÇÃO 22 — Verificação Melhorada</h1>
+
+<div class="section">🧠 Objetivo da aula</div>
+
+<div class="text">
+Agora você vai aprender:
+<br><br>
+
+<span class="highlight">
+> verificações mais inteligentes.
+</span>
+
+<br><br>
+
+Até agora:
+<br><br>
+
+> você fazia verificações simples.
+
+<br><br>
+
+Agora:
+<br><br>
+
+> começará a juntar condições.
+</div>
+
+<div class="section">📌 Conteúdos usados</div>
+
+<div class="text">
+• if<br>
+• else<br>
+• &&<br>
+• ||<br>
+• .includes()<br>
+• .indexOf()<br>
+• funções<br>
+• parâmetros
+</div>
+
+<div class="section">🧠 Relembrando if</div>
+
+<div class="code">
+let idade = 18;
+
+if (idade >= 18) {
+  console.log("Pode entrar");
+}
+</div>
+
+<div class="section">🧠 Relembrando else</div>
+
+<div class="code">
+let idade = 15;
+
+if (idade >= 18) {
+  console.log("Pode entrar");
+} else {
+  console.log("Não pode entrar");
+}
+</div>
+
+<div class="section">🚀 Entrando no &&</div>
+
+<div class="text">
+O && significa:
+<br><br>
+
+<span class="highlight">
+> E
+</span>
+
+<br><br>
+
+As DUAS condições precisam ser verdadeiras.
+</div>
+
+<div class="code">
+let idade = 18;
+let dinheiro = 100;
+
+if (idade >= 18 && dinheiro >= 50) {
+  console.log("Pode entrar");
+}
+</div>
+
+<div class="section">🚀 Entrando no ||</div>
+
+<div class="text">
+O || significa:
+<br><br>
+
+<span class="highlight">
+> OU
+</span>
+
+<br><br>
+
+Apenas UMA condição precisa ser verdadeira.
+</div>
+
+<div class="code">
+let vip = false;
+let idade = 20;
+
+if (vip == true || idade >= 18) {
+  console.log("Pode entrar");
+}
+</div>
+
+<div class="section">🚀 Misturando .includes()</div>
+
+<div class="code">
+let jogadores = ["Carlos", "Ana"];
+
+if (jogadores.includes("Carlos")) {
+  console.log("Jogador encontrado");
+}
+</div>
+
+<div class="section">🚀 Misturando .indexOf()</div>
+
+<div class="code">
+let jogadores = ["Carlos", "Ana"];
+
+let posicao = jogadores.indexOf("Ana");
+
+console.log(posicao);
+</div>
+
+<div class="section">🚀 Sistema simples de verificação</div>
+
+<div class="code">
+let jogadores = ["Carlos", "Ana"];
+let moedas = [100, 20];
+
+function comprar(nome) {
+
+  if (jogadores.includes(nome)) {
+
+    let posicao = jogadores.indexOf(nome);
+
+    if (moedas[posicao] >= 50) {
+
+      console.log("Compra realizada");
+
+    } else {
+
+      console.log("Moedas insuficientes");
+
+    }
+
+  } else {
+
+    console.log("Jogador não encontrado");
+
+  }
+
+}
+</div>
+
+<div class="section">🎮 Sistema de Compra — Projeto da Aula</div>
+
+<div class="exercise">
+
+<div class="section">🧠 Objetivo</div>
+
+<div class="text">
+Você irá criar um sistema que:
+<br><br>
+
+• guarda jogadores<br>
+• guarda moedas<br>
+• verifica se o jogador existe<br>
+• verifica se possui moedas suficientes<br>
+• realiza compra
+</div>
+
+<div class="section">🚀 ETAPA 1 — Criar os arrays</div>
+
+<div class="text">
+📌 O que fazer
+<br><br>
+
+Crie:
+<br><br>
+
+• um array de jogadores<br>
+• um array de moedas
+</div>
+
+<div class="code">
+let jogadores = [];
+let moedas = [];
+</div>
+
+<div class="section">🚀 ETAPA 2 — Adicionar valores</div>
+
+<div class="text">
+📌 O que fazer
+<br><br>
+
+Adicione:
+<br><br>
+
+• pelo menos 2 jogadores<br>
+• moedas para cada um
+</div>
+
+<div class="code">
+let jogadores = ["Carlos", "Ana"];
+
+let moedas = [100, 20];
+</div>
+
+<div class="section">🚀 ETAPA 3 — Criar função</div>
+
+<div class="text">
+📌 O que fazer
+<br><br>
+
+Crie uma função chamada:
+<br><br>
+
+> comprar
+<br><br>
+
+Ela deve receber:
+<br><br>
+
+• nome<br>
+• preco
+</div>
+
+<div class="code">
+function comprar(nome, preco) {
+
+}
+</div>
+
+<div class="section">🚀 ETAPA 4 — Verificar se jogador existe</div>
+
+<div class="code">
+if (jogadores.includes(nome)) {
+
+}
+</div>
+
+<div class="section">🚀 ETAPA 5 — Procurar posição</div>
+
+<div class="code">
+let posicao = jogadores.indexOf(nome);
+</div>
+
+<div class="section">🚀 ETAPA 6 — Verificar moedas</div>
+
+<div class="code">
+if (moedas[posicao] >= preco) {
+
+}
+</div>
+
+<div class="section">🚀 ETAPA 7 — Remover moedas</div>
+
+<div class="code">
+moedas[posicao] = moedas[posicao] - preco;
+</div>
+
+<div class="section">🚀 ETAPA 8 — Mostrar mensagens</div>
+
+<div class="text">
+Mostre:
+<br><br>
+
+• compra realizada<br>
+• moedas insuficientes<br>
+• jogador não encontrado
+</div>
+
+<div class="section">🎯 Exercício</div>
+
+<div class="text">
+Crie o sistema completo abaixo:
+</div>
+
+<textarea id="codigo"></textarea>
+
+<button onclick="verificar()">Verificar Código</button>
+
+<div id="resultado" class="result"></div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function verificar(){
+
+let texto =
+document.getElementById("codigo")
+.value
+.toLowerCase()
+
+let requisitos = [
+
+"let",
+"[",
+"]",
+
+"function",
+
+"if",
+
+".includes",
+
+".indexof",
+
+"-",
+
+"console.log",
+
+"else"
+
+]
+
+let correto = requisitos.every(item =>
+texto.includes(item)
+)
+
+if(correto){
+
+document.getElementById("resultado").innerHTML =
+'<span class="correct">✔ Sistema correto!</span>'
+
+}else{
+
+document.getElementById("resultado").innerHTML =
+'<span class="wrong">✖ O sistema está incompleto.</span>'
+
+}
+
+}
+
+</script>
+
+</body>
+</html>

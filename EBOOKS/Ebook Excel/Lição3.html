@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 3 — Formatação que Faz Sentido</title>
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background:#ffffff;
+  margin:0;
+  color:#111;
+}
+.section{
+  max-width:1000px;
+  margin:auto;
+  padding:40px;
+}
+.header{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  margin-bottom:20px;
+}
+.header img{width:55px;}
+h2{color:#22c55e;}
+
+.card{
+  background:#f9fafb;
+  border:1px solid #e5e7eb;
+  border-radius:10px;
+  padding:25px;
+  margin:20px 0;
+}
+
+.excel{
+  border:1px solid #cbd5e1;
+  border-radius:8px;
+  overflow:hidden;
+  background:#fff;
+}
+
+.top{
+  background:#e5e7eb;
+  padding:6px;
+  display:flex;
+  gap:10px;
+}
+.name-box{width:70px;}
+
+.tabs{
+  background:#d1d5db;
+  padding:6px;
+  display:flex;
+  gap:12px;
+  font-weight:bold;
+}
+.tabs span{cursor:pointer;}
+
+.grid{
+  display:grid;
+  grid-template-columns:40px repeat(3,120px);
+}
+
+.header-cell{
+  background:#f1f5f9;
+  border:1px solid #cbd5e1;
+  text-align:center;
+  padding:6px;
+  font-weight:bold;
+}
+
+.cell{
+  border:1px solid #cbd5e1;
+  padding:6px;
+  min-height:32px;
+}
+
+.menu{
+  position:absolute;
+  background:#fff;
+  border:1px solid #cbd5e1;
+  border-radius:6px;
+  display:none;
+  z-index:10;
+}
+.menu div{
+  padding:8px 14px;
+  cursor:pointer;
+}
+.menu div:hover{
+  background:#22c55e;
+  color:#fff;
+}
+
+button{
+  background:#22c55e;
+  color:#fff;
+  border:none;
+  padding:8px 14px;
+  border-radius:6px;
+  cursor:pointer;
+}
+.result{font-weight:bold;margin-left:10px;}
+</style>
+</head>
+
+<body>
+
+<div class="section">
+
+<!-- CABEÇALHO -->
+<div class="header">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Microsoft_Excel_2013-2019_logo.svg">
+  <h2>Lição 3 — Formatação que Faz Sentido</h2>
+</div>
+
+<!-- CONTEÚDO -->
+<div class="card">
+<p>
+Na lição de hoje, vamos aprender sobre ferramentas que irão te ajudar a destacar células importantes; de forma que você possa achar de forma mais rápida ou destacar algum tema importante. Ferramentas que serão aprendidas: Alinhamento, Fonte, Preenchimento.
+</p>
+
+<hr>
+
+<b>1️⃣ Alinhamento</b><br><br>
+
+<b>O que faz:</b> Posiciona o dado dentro da célula.<br><br>
+
+<b>Como usar:</b><br>
+1. Selecione a célula que quer alinhar (ex: B2)<br>
+2. Aperte em Página Inicial → Alinhamento → e escolha entre: esquerda, direita ou centro<br><br>
+
+<b>Exemplo prático:</b><br>
+Nomes → esquerda<br>
+Valores → direita<br>
+Títulos → centro<br><br>
+
+<i>Use o alinhamento como uma forma de organizar ideias dentro de uma célula.</i>
+
+<hr>
+
+<b>2️⃣ Fonte</b><br><br>
+
+<b>O que faz:</b> Ajusta tipo, tamanho e destaque do texto.<br><br>
+
+<b>Como usar:</b><br>
+1. Selecione as células (ex: A1)<br>
+2. Aperte em Página Inicial → E escolha: Fonte, negrito ou tamanho<br><br>
+
+<b>Exemplo prático:</b><br>
+Títulos → negrito e maior<br>
+Dados → fonte padrão<br><br>
+
+<i>Use para destacar títulos ou temas de suas planilhas.</i><br></br>
+<b>Atalho</b><br></br>
+
+<p> Nós podemos usar o seguinte atalho: 
+Aperte com o Butão Direito do Mouse → e Escolha a Fonte, aplique o negrito, ou aumente o tamanho</p>
+<hr>
+
+<b>3️⃣ Preenchimento</b><br><br>
+
+<b>O que faz:</b> Colore as células para diferenciar dados sem poluir a planilha.<br><br>
+
+<b>Como usar:</b><br>
+1. Selecione as células(C1 ou B2)<br>
+2. Aperte em Página Inicial → Cor de Preenchimento → e escolha a cor<br><br>
+
+<b>Exemplo prático:</b><br>
+Categorias → cinza claro<br>
+Valores importantes → amarelo suave<br><br>
+
+<i> Elas são importantes para uma melhor visualização; ou seja, caso queira achar dados mais rápidos você pode colorir as células usando essa ferramenta.</i><br></br>
+<b>Atalho</b><br></br>
+
+<i> Nós podemos usar o seguinte atalho: 
+Aperte com o Butão Direito do Mouse → e Escolha a Cor de Preenchimento</i>
+
+
+<hr>
+
+<b>🔑 Dica final: unindo tudo</b><br><br>
+
+1. Selecione corretamente os dados (Aula 2)<br>
+2. Aplique alinhamento → facilita leitura<br>
+3. Ajuste fonte → destaca informação<br>
+4. Use cores e estilos → organiza visualmente
+</div>
+
+<!-- ÁREA EXCEL -->
+<div class="card excel">
+
+<div class="top">
+  <input class="name-box" value="A1" disabled>
+  <input style="flex:1" disabled>
+</div>
+
+<div class="tabs">
+  <span>Arquivo</span>
+  <span>Início</span>
+  <span>Inserir</span>
+  <span>Compartilhar</span>
+  <span>Layout da Página</span>
+</div>
+
+<div class="grid" id="grid3">
+  <div class="header-cell"></div>
+  <div class="header-cell">A</div>
+  <div class="header-cell">B</div>
+  <div class="header-cell">C</div>
+
+  <div class="header-cell">1</div>
+  <div class="cell" contenteditable="true"></div>
+  <div class="cell" contenteditable="true"></div>
+  <div class="cell" contenteditable="true"></div>
+
+  <div class="header-cell">2</div>
+  <div class="cell" contenteditable="true"></div>
+  <div class="cell" contenteditable="true"></div>
+  <div class="cell" contenteditable="true"></div>
+
+  <div class="header-cell">3</div>
+  <div class="cell" contenteditable="true"></div>
+  <div class="cell" contenteditable="true"></div>
+  <div class="cell" contenteditable="true"></div>
+</div>
+</div>
+
+<!-- EXERCÍCIO -->
+<div class="card">
+<b>Exercício Difícil</b><br><br>
+
+No exercício de hoje faremos uma planilha para uma loja de frutas:<br><br>
+Abaixo estão as iformações que você precisa.
+
+- Na Coluna A Coloque → Loja 1 (linha1), Loja 2(linha2), Loja 3(linha3)<br>
+- Na Coluna B Coloque → As quantidades (pode ser qualquer número) de Maçã ( e pinte de vermelho as células)<br>
+- Na Coluna C Coloque → As quantidades (pode ser qualquer número) de Banana (e pinte de amarelo)<br>
+- Preencha todas as Células com as quantidades e as cores: vermelho e amarelo<br><br>
+
+<button onclick="verificarEx3()">Verificar</button>
+<span id="resEx3" class="result"></span>
+</div>
+
+</div>
+
+<!-- MENU DIREITO -->
+<div class="menu" id="menu">
+  <div onclick="copyCell()">Copiar</div>
+  <div onclick="pasteCell()">Colar</div>
+  <div onclick="colorCell('rgb(255, 0, 0)')">Vermelho</div>
+  <div onclick="colorCell('rgb(255, 255, 0)')">Amarelo</div>
+</div>
+
+<script>
+let selected=null, clipboard="";
+
+document.querySelectorAll(".cell").forEach(c=>{
+  c.oncontextmenu=e=>{
+    e.preventDefault();
+    selected=c;
+    menu.style.left=e.pageX+"px";
+    menu.style.top=e.pageY+"px";
+    menu.style.display="block";
+  };
+  c.onclick=()=>selected=c;
+});
+
+document.body.onclick=()=>menu.style.display="none";
+
+function copyCell(){ clipboard=selected.innerText; }
+function pasteCell(){ if(selected) selected.innerText=clipboard; }
+function colorCell(c){ if(selected) selected.style.backgroundColor=c; }
+
+function verificarEx3(){
+  const cells=document.querySelectorAll("#grid3 .cell");
+  let erros=[];
+  const lojas=["loja 1","loja 2","loja 3"];
+
+  for(let i=0;i<3;i++){
+    if(cells[i*3].innerText.trim().toLowerCase()!==lojas[i]){
+      erros.push(`A${i+1} deve ser ${lojas[i]}`);
+    }
+  }
+
+  [1,2,4,5,7,8].forEach(i=>{
+    if(cells[i].innerText.trim()===""){
+      erros.push("Existem quantidades vazias");
+    }
+  });
+
+  [1,4,7].forEach(i=>{
+    if(cells[i].style.backgroundColor!=="rgb(255, 0, 0)"){
+      erros.push("Coluna B deve estar vermelha");
+    }
+  });
+
+  [2,5,8].forEach(i=>{
+    if(cells[i].style.backgroundColor!=="rgb(255, 255, 0)"){
+      erros.push("Coluna C deve estar amarela");
+    }
+  });
+
+  document.getElementById("resEx3").innerText =
+    erros.length===0 ? "✔ Exercício correto!" : "✖ "+erros.join(" | ");
+}
+</script>
+
+</body>
+</html>

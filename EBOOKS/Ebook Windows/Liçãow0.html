@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 0 — Conhecendo o Mundo do Windows</title>
+
+<style>
+body{
+  font-family:Segoe UI, Arial, sans-serif;
+  background:#ffffff;
+  color:#1f2937;
+  margin:0;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:50px 40px;
+}
+
+h1{
+  color:#1e3a8a;
+  font-size:34px;
+  margin-bottom:25px;
+}
+
+h2{
+  color:#1e40af;
+  margin-top:30px;
+}
+
+.card{
+  background:#f9fafb;
+  border:1px solid #e5e7eb;
+  border-radius:14px;
+  padding:35px;
+  margin:30px 0;
+  box-shadow:0 4px 12px rgba(0,0,0,0.04);
+}
+
+.highlight{
+  background:#eff6ff;
+  border-left:6px solid #2563eb;
+  padding:22px;
+  border-radius:10px;
+  margin-top:35px;
+  font-style:italic;
+  font-weight:500;
+  font-size:18px;
+}
+
+.divider{
+  height:1px;
+  background:#e5e7eb;
+  margin:40px 0;
+}
+
+.badge{
+  display:block;
+  background:#2563eb;
+  color:#fff;
+  padding:18px;
+  border-radius:12px;
+  font-size:14px;
+  margin-bottom:30px;
+  line-height:1.6;
+}
+
+p{
+  margin:18px 0;
+  line-height:1.8;
+}
+
+.exercise{
+  margin-top:25px;
+  padding:20px;
+  background:#ffffff;
+  border:1px solid #dbeafe;
+  border-radius:10px;
+}
+
+.option{
+  padding:10px;
+  margin:8px 0;
+  border-radius:6px;
+  cursor:pointer;
+  transition:0.2s;
+  border:1px solid transparent;
+}
+
+.option:hover{
+  background:#f1f5f9;
+}
+
+.correct{
+  background:#dcfce7;
+  border:1px solid #22c55e;
+}
+
+.wrong{
+  background:#fee2e2;
+  border:1px solid #ef4444;
+}
+.feedback{
+  margin-top:10px;
+  font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Lição 0 — Conhecendo o Mundo do Windows</h1>
+
+<div class="card">
+
+<div class="badge">
+Este curso foi criado para levar você do zero absoluto até níveis avançados. 
+Você sempre aprende a teoria primeiro e depois pratica.<br><br>
+
+A Power Learn utiliza o sistema de Powers: ao errar exercícios você perde 1 vida. 
+Sem vidas, o avanço é bloqueado até revisar a lição.
+</div>
+
+<p>
+O Microsoft Windows é o sistema responsável por dar vida ao computador.
+</p>
+
+<p>
+É através dele que você interage com tudo: abre programas, acessa a internet, organiza arquivos e executa tarefas do dia a dia.
+</p>
+
+<p>
+Desenvolvido pela Microsoft, o Windows surgiu em 1985 e, com o tempo, se tornou o sistema mais utilizado no mundo, principalmente por ser simples, intuitivo e compatível com a maioria dos softwares.
+</p>
+
+<p>
+Na prática, sempre que você liga um computador ou notebook, é o Windows que inicia e permite que tudo funcione corretamente.
+</p>
+
+<p>
+A maioria dos dispositivos já vem com ele instalado, mas também existem máquinas com outros sistemas, como o Linux.
+</p>
+
+<p>
+Este conteúdo vai te mostrar, de forma simples e direta, como entender e usar o Windows com segurança e eficiência no seu dia a dia.
+</p>
+
+<div class="highlight">
+“Não é sobre usar o computador. É sobre saber quem está no controle.”
+</div>
+
+</div>
+
+<div class="divider"></div>
+
+<div class="card">
+<h2>Exercícios — Múltipla Escolha</h2>
+
+<div class="exercise" data-correct="b">
+<b>1) Qual é a principal função do Windows?</b>
+
+<div class="option">a) Apenas acessar a internet</div>
+<div class="option" data-answer="b">b) Permitir que o computador funcione e interaja com programas</div>
+<div class="option">c) Criar documentos automaticamente</div>
+<div class="option">d) Substituir todos os softwares</div>
+
+<div class="feedback"></div>
+</div>
+
+<div class="exercise" data-correct="c">
+<b>2) O Windows foi desenvolvido por qual empresa?</b>
+
+<div class="option">a) Apple</div>
+<div class="option">b) Google</div>
+<div class="option" data-answer="c">c) Microsoft</div>
+<div class="option">d) Linux Foundation</div>
+
+<div class="feedback"></div>
+</div>
+
+<div class="exercise" data-correct="b">
+<b>3) O que acontece quando você liga o computador?</b>
+
+<div class="option">a) Nada acontece</div>
+<div class="option" data-answer="b">b) O sistema inicia e permite o funcionamento do computador</div>
+<div class="option">c) Apenas a internet é ativada</div>
+<div class="option">d) Os arquivos são apagados</div>
+
+<div class="feedback"></div>
+</div>
+
+</div>
+
+</div>
+
+<script>
+document.querySelectorAll(".exercise").forEach(exercise=>{
+  const correctLetter = exercise.getAttribute("data-correct");
+  const options = exercise.querySelectorAll(".option");
+  const feedback = exercise.querySelector(".feedback");
+
+  options.forEach(option=>{
+    option.addEventListener("click", function(){
+      
+      if(exercise.classList.contains("answered")) return;
+
+      exercise.classList.add("answered");
+
+      options.forEach(o=>{
+        const letter = o.innerText.charAt(0);
+        if(letter === correctLetter){
+          o.classList.add("correct");
+        }
+      });
+
+      const chosenLetter = this.innerText.charAt(0);
+
+      if(chosenLetter === correctLetter){
+        this.classList.add("correct");
+        feedback.innerText = "✔ Correto!";
+        feedback.style.color = "#16a34a";
+      } else {
+        this.classList.add("wrong");
+        feedback.innerText = "✘ Errado! A alternativa correta está marcada em verde.";
+        feedback.style.color = "#dc2626";
+      }
+    });
+  });
+});
+</script>
+
+</body>
+</html>

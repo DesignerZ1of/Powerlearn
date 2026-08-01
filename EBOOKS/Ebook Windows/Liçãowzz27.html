@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 27 — Impressão</title>
+
+<style>
+
+body{
+font-family:Segoe UI, Arial;
+margin:0;
+background:#ffffff;
+}
+
+/* CONTEÚDO */
+.container{
+max-width:1100px;
+margin:auto;
+padding:40px;
+}
+
+h1{
+color:#1e3a8a;
+}
+
+.card{
+background:#f9fafb;
+padding:30px;
+border-radius:14px;
+border:1px solid #e5e7eb;
+margin-top:20px;
+}
+
+.section{
+margin-top:25px;
+font-weight:bold;
+color:#1e40af;
+}
+
+/* DESKTOP */
+.desktop{
+height:100vh;
+background:#1e3a8a;
+position:relative;
+margin-top:30px;
+color:#fff;
+}
+
+/* ARQUIVO */
+.file{
+position:absolute;
+top:60px;
+left:40px;
+cursor:pointer;
+text-align:center;
+}
+.file div{
+font-size:40px;
+}
+
+/* JANELA */
+.window{
+position:absolute;
+top:80px;
+left:200px;
+width:500px;
+background:#fff;
+color:#000;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.3);
+display:none;
+}
+
+/* TOPO */
+.topbar{
+background:#f3f4f6;
+padding:10px;
+display:flex;
+gap:10px;
+}
+
+/* CONTEÚDO */
+.content{
+padding:20px;
+}
+
+/* BOTÃO */
+button{
+padding:8px 12px;
+border:none;
+background:#2563eb;
+color:#fff;
+border-radius:6px;
+cursor:pointer;
+}
+
+button:hover{
+background:#1d4ed8;
+}
+
+/* IMPRESSÃO */
+.print{
+display:none;
+}
+
+select, input{
+margin-top:10px;
+width:100%;
+padding:5px;
+}
+
+/* RESULTADO */
+.result{
+margin-top:15px;
+font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>📘 Lição 27 — Impressão de arquivos (uso real)</h1>
+
+<div class="card">
+
+<p>Agora você vai aprender algo muito importante no uso do computador no Microsoft Windows:</p>
+
+<p><b>👉 transformar arquivos digitais em papel</b></p>
+
+<div class="section">🖨️ O que é imprimir</div>
+
+<p>Imprimir é:</p>
+<p>Pegar um arquivo do computador</p>
+<p>Enviar para uma impressora</p>
+<p>Receber esse conteúdo no papel</p>
+
+<p><b>👉 É sair do digital para o físico</b></p>
+
+<div class="section">📄 O que pode ser impresso</div>
+
+<p>Documentos (texto)</p>
+<p>Imagens</p>
+<p>Trabalhos escolares</p>
+<p>PDFs</p>
+
+<p><b>👉 Qualquer conteúdo visual pode ser impresso</b></p>
+
+<div class="section">⚙️ Como imprimir (PASSO A PASSO)</div>
+
+<p>1. Abra o arquivo</p>
+<p>2. Clique em Arquivo</p>
+<p>3. Clique em Imprimir</p>
+<p>4. Escolha a impressora</p>
+<p>5. Clique em Imprimir</p>
+
+<p><b>👉 Pronto, o computador envia para a impressora</b></p>
+
+<div class="section">🧠 Outra forma rápida</div>
+
+<p>👉 Ctrl + P</p>
+
+<p>Isso abre direto a tela de impressão</p>
+
+<div class="section">📊 Configurações importantes</div>
+
+<p>📄 Número de cópias</p>
+<p>🎨 Cor ou preto e branco</p>
+<p>📑 Páginas específicas</p>
+<p>📐 Orientação</p>
+
+<p><b>👉 Isso evita erro e desperdício</b></p>
+
+<div class="section">🔌 O que precisa</div>
+
+<p>Impressora conectada</p>
+<p>Ligada</p>
+<p>Papel</p>
+<p>Tinta</p>
+
+<div class="section">⚠️ Problemas comuns</div>
+
+<p>Impressora desligada</p>
+<p>Sem papel</p>
+<p>Impressora errada</p>
+
+<div class="section">🧠 Uso inteligente</div>
+
+<p>Veja a prévia</p>
+<p>Evite erros</p>
+<p>Economize</p>
+
+<div class="section">🎯 Ideia principal</div>
+
+<p><b>Imprimir leva o digital para o mundo real.</b></p>
+
+</div>
+
+<div class="card">
+
+<h2>🧪 Exercício</h2>
+
+<p>1. Abra o arquivo</p>
+<p>2. Clique em Imprimir</p>
+<p>3. Configure corretamente</p>
+<p>4. Realize a impressão</p>
+
+<p><b>Dica: use Ctrl + P</b></p>
+
+</div>
+
+</div>
+
+<!-- SIMULAÇÃO -->
+<div class="desktop">
+
+<div class="file" onclick="abrirArquivo()">
+<div>📄</div>
+Trabalho.pdf
+</div>
+
+<div class="window" id="janela">
+
+<div class="topbar">
+<button onclick="abrirPrint()">Imprimir</button>
+<button onclick="ctrlP()">Ctrl + P</button>
+</div>
+
+<div class="content">
+<p>Conteúdo do arquivo...</p>
+
+<div class="print" id="printArea">
+
+<h3>Impressão</h3>
+
+<label>Impressora:</label>
+<select id="printer">
+<option value="">Selecione</option>
+<option>Impressora Casa</option>
+</select>
+
+<label>Cópias:</label>
+<input type="number" id="copias" value="1">
+
+<label>Cor:</label>
+<select>
+<option>Colorido</option>
+<option>Preto e Branco</option>
+</select>
+
+<button onclick="imprimir()">Imprimir</button>
+
+<div class="result" id="resultado"></div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function abrirArquivo(){
+document.getElementById("janela").style.display="block"
+}
+
+function abrirPrint(){
+document.getElementById("printArea").style.display="block"
+}
+
+function ctrlP(){
+abrirPrint()
+}
+
+function imprimir(){
+
+let printer=document.getElementById("printer").value
+let copias=document.getElementById("copias").value
+let res=document.getElementById("resultado")
+
+if(printer==""){
+res.innerHTML="❌ Nenhuma impressora selecionada"
+return
+}
+
+if(copias<=0){
+res.innerHTML="❌ Número de cópias inválido"
+return
+}
+
+res.innerHTML="✅ Impressão realizada com sucesso!"
+
+}
+
+</script>
+
+</body>
+</html>

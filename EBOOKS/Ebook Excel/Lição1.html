@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Excel do Zero — Lição 1</title>
+
+<style>
+:root{
+  --verde:#2ecc71;
+  --amarelo:#f1c40f;
+  --cinza:#f3f3f3;
+  --linha:#d0d0d0;
+}
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#fff;
+  color:#333;
+}
+header{
+  background:var(--verde);
+  color:#fff;
+  padding:30px;
+  text-align:center;
+}
+.section{
+  padding:30px;
+}
+.intro{
+  background:#fafafa;
+  border-left:5px solid var(--verde);
+  padding:20px;
+  margin-bottom:30px;
+}
+.lesson-title{
+  font-size:1.6em;
+  color:var(--verde);
+  margin-bottom:15px;
+}
+
+/* ===== EXCEL SIMULATOR ===== */
+.excel{
+  border:2px solid var(--verde);
+  margin:25px 0;
+}
+.excel-top{
+  background:#eaeaea;
+  padding:6px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.name-box{
+  width:80px;
+  padding:4px;
+  border:1px solid #aaa;
+  font-weight:bold;
+}
+.fx{
+  font-weight:bold;
+}
+.formula{
+  flex:1;
+  padding:4px;
+  border:1px solid #aaa;
+}
+.excel-tabs{
+  background:#ddd;
+  padding:6px;
+}
+.excel-tabs span{
+  margin-right:10px;
+  font-weight:bold;
+}
+.grid{
+  display:grid;
+  grid-template-columns: 40px repeat(8, 90px);
+}
+.header{
+  background:#f0f0f0;
+  border:1px solid var(--linha);
+  text-align:center;
+  font-weight:bold;
+  padding:5px;
+}
+.cell{
+  border:1px solid var(--linha);
+  height:32px;
+  padding:5px;
+}
+.cell.active{
+  outline:2px solid var(--verde);
+}
+
+/* ===== EXERCISES ===== */
+.exercises{
+  background:#fafafa;
+  border-left:5px solid var(--amarelo);
+  padding:20px;
+}
+.doubts{
+  margin-top:20px;
+  background:#f5f5f5;
+  padding:20px;
+  border-left:5px solid var(--verde);
+}
+footer{
+  text-align:center;
+  font-size:0.8em;
+  color:#777;
+  padding:20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Excel do Zero ao Avançado</h1>
+  <p>Volume 1 — Fundamentos Essenciais</p>
+</header>
+
+<div class="section">
+
+<div class="intro">
+<p>
+Este curso foi criado para levar você do <b>zero absoluto</b> até níveis
+<b>avançados de Excel</b>.  
+Você sempre aprende a teoria primeiro e depois pratica.
+</p>
+</div>
+
+<h2 class="lesson-title">Lição 1 — Conhecendo o Mundo do Excel</h2>
+
+<p>
+Nesta lição você aprende a interface do Excel, os modos de exibição
+e como se movimentar corretamente pela planilha.
+</p>
+
+<h3>Interface do Excel</h3>
+<p>
+O Excel é formado por Abas, Barra de fórmulas, Colunas, Linhas e Células.
+</p>
+<p>
+Por enquanto nós iremos trabalhar com as linhas, células e colunas.
+</p>
+As Colunas podem ser localizadas na horizontal em cima dos quadrados, aonde são classificadas em: A,B,C aonde cada coluna é uma letra.
+</p>
+<p>
+Já as linhas elas estão na lateral de forma vertical e podem ser classificada com números de forma crescente: 1,2,3, aonde cada linha é um número.
+</p>
+<h3>Mas afinal o que é uma Célula?</h3>
+<p>
+Célula pode ser dito como uma caixa que guarda alguma informação.
+</p>
+<p>
+MAS EM QUE NÓS USAMOS UMA CÉLULA?
+</p>
+<p>
+As células são a base do Excel pois nelas nós iremos guardar as informações, e criaremos listas.
+</p>
+<p>
+Em cada coluna( A,B,C,D,...)há células que podem ser das linhas 1,2,3,4,... 
+Dessa forma podemos especificar a célula em que iremos trabalhar; da seguinte forma:
+</p>
+<p>
+A1
+</p>
+<p>
+Coluna: A
+</p>
+<p>
+Linha: 1
+</p>
+<p>
+Assim podemos dizer que a célula é A1
+</p>
+<h3>Caixa de Nome</h3>
+<p> 
+Bom agora que você já sabe o que é células,colunas e linhas você aprenderá sobre a Caixa de Nome.
+</p>
+<p>
+A Caixa de Nome é uma ferramenta usada para achar mais rápido a célula desejada, ela está na parte superior, aonde é só escrever o nome da Célula e pesquisar.
+</p>
+<h3>Modo de Exibição</h3>
+<p>
+É o local aonde iremos poder mudar a forma na qual visualizaremos a planilha.
+<p>
+Os modos de exibição ajudam a visualizar melhor a planilha,
+dependendo do tipo de trabalho.
+</p>
+
+<h3>Navegação Básica</h3>
+<p>
+A navegação pode ser feita com mouse ou teclado(Caixa de Nome).
+</p>
+
+<div class="excel">
+  <div class="excel-top">
+    <input class="name-box" id="nameBox" value="A1">
+    <span class="fx">fx</span>
+    <input class="formula" placeholder="Barra de fórmulas">
+  </div>
+
+  <div class="excel-tabs">
+    <span>Arquivo</span>
+    <span>Página Inicial</span>
+    <span>Inserir</span>
+    <span>Layout</span>
+    <span>Fórmulas</span>
+  </div>
+
+  <div class="grid" id="grid"></div>
+</div>
+
+<div class="exercises">
+<b>Exercícios</b>
+<ol>
+<li>Clique na célula C1 e digite seu nome.</li>
+<li>Digite <b>B2</b> na Caixa de Nome para ir até essa célula.</li>
+<li>E dentro da célula B2 Explique com suas poucas palavras o que é uma célula.</li>
+</ol>
+</div>
+
+<div class="doubts">
+<b>Dúvidas Comuns</b><br><br>
+• O que é a Caixa de Nome?<br>
+Ela mostra onde está o foco atual.<br><br>
+• Posso navegar só pelo teclado?<br>
+Sim, isso é essencial no Excel.<br><br>
+• Por que aprender isso primeiro?<br>
+Porque todo o Excel depende da navegação correta.
+</div>
+
+</div>
+
+<footer>
+© Power Learn - Curso Excel
+</footer>
+
+<script>
+const grid = document.getElementById("grid");
+const nameBox = document.getElementById("nameBox");
+let activeCell = null;
+
+const cols = ["A","B","C","D","E","F","G","H"];
+for(let r=0;r<=5;r++){
+  for(let c=0;c<=8;c++){
+    if(r===0 && c===0){
+      grid.innerHTML += `<div class="header"></div>`;
+    }else if(r===0){
+      grid.innerHTML += `<div class="header">${cols[c-1]}</div>`;
+    }else if(c===0){
+      grid.innerHTML += `<div class="header">${r}</div>`;
+    }else{
+      const id = cols[c-1]+r;
+      grid.innerHTML += `<div class="cell" id="${id}" contenteditable></div>`;
+    }
+  }
+}
+
+document.querySelectorAll(".cell").forEach(cell=>{
+  cell.addEventListener("click",()=>{
+    if(activeCell) activeCell.classList.remove("active");
+    activeCell = cell;
+    cell.classList.add("active");
+    nameBox.value = cell.id;
+  });
+});
+
+nameBox.addEventListener("change",()=>{
+  const target = document.getElementById(nameBox.value.toUpperCase());
+  if(target){
+    target.click();
+    target.focus();
+  }
+});
+</script>
+
+</body>
+</html>

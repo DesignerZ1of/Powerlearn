@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Exercícios 11 ao 20</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Consolas;
+background:#0f172a;
+color:white;
+padding:30px;
+}
+
+.card{
+background:#1e293b;
+padding:20px;
+border-radius:12px;
+margin-bottom:25px;
+border:1px solid #334155;
+}
+
+h2{
+color:#38bdf8;
+}
+
+textarea{
+width:100%;
+height:160px;
+margin-top:10px;
+background:black;
+color:#22c55e;
+border:1px solid #334155;
+border-radius:8px;
+padding:15px;
+font-family:Consolas;
+}
+
+.option{
+display:block;
+margin-top:10px;
+}
+
+button{
+margin-top:15px;
+padding:10px 15px;
+background:#38bdf8;
+border:none;
+border-radius:6px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.result{
+margin-top:15px;
+font-weight:bold;
+}
+
+.correct{
+color:#22c55e;
+}
+
+.wrong{
+color:#ef4444;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- 11 -->
+
+<div class="card">
+
+<h2>11. Criar código — splice()</h2>
+
+<p>
+Crie um array com:
+10, 20, 30
+</p>
+
+<p>
+Depois remova o número 20 usando splice().
+</p>
+
+<textarea id="q11"></textarea>
+
+<button onclick="corrigir11()">Verificar</button>
+
+<div id="r11" class="result"></div>
+
+</div>
+
+<!-- 12 -->
+
+<div class="card">
+
+<h2>12. Criar código — indexOf()</h2>
+
+<p>
+Crie um array com:
+"Ana", "Carlos", "João"
+</p>
+
+<p>
+Depois mostre a posição de "Carlos".
+</p>
+
+<textarea id="q12"></textarea>
+
+<button onclick="corrigir12()">Verificar</button>
+
+<div id="r12" class="result"></div>
+
+</div>
+
+<!-- 13 -->
+
+<div class="card">
+
+<h2>13. Criar código — if com ||</h2>
+
+<p>
+Crie uma condição usando:
+VIP OU ingresso
+</p>
+
+<p>
+Se uma condição for verdadeira:
+mostre "Pode entrar"
+</p>
+
+<textarea id="q13"></textarea>
+
+<button onclick="corrigir13()">Verificar</button>
+
+<div id="r13" class="result"></div>
+
+</div>
+
+<!-- 14 -->
+
+<div class="card">
+
+<h2>14. Múltipla escolha</h2>
+
+<p>Qual comando remove valores específicos do array?</p>
+
+<label class="option">
+<input type="radio" name="q14" value="a">
+A) .includes()
+</label>
+
+<label class="option">
+<input type="radio" name="q14" value="b">
+B) .splice()
+</label>
+
+<label class="option">
+<input type="radio" name="q14" value="c">
+C) .length
+</label>
+
+<label class="option">
+<input type="radio" name="q14" value="d">
+D) .indexOf()
+</label>
+
+<button onclick="corrigir14()">Verificar</button>
+
+<div id="r14" class="result"></div>
+
+</div>
+
+<!-- 15 -->
+
+<div class="card">
+
+<h2>15. Múltipla escolha</h2>
+
+<p>O que o || significa?</p>
+
+<label class="option">
+<input type="radio" name="q15" value="a">
+A) E
+</label>
+
+<label class="option">
+<input type="radio" name="q15" value="b">
+B) Igual
+</label>
+
+<label class="option">
+<input type="radio" name="q15" value="c">
+C) OU
+</label>
+
+<label class="option">
+<input type="radio" name="q15" value="d">
+D) Diferente
+</label>
+
+<button onclick="corrigir15()">Verificar</button>
+
+<div id="r15" class="result"></div>
+
+</div>
+
+<!-- 16 -->
+
+<div class="card">
+
+<h2>16. Múltipla escolha</h2>
+
+<p>Qual comando procura a posição de um valor?</p>
+
+<label class="option">
+<input type="radio" name="q16" value="a">
+A) .indexOf()
+</label>
+
+<label class="option">
+<input type="radio" name="q16" value="b">
+B) .includes()
+</label>
+
+<label class="option">
+<input type="radio" name="q16" value="c">
+C) .splice()
+</label>
+
+<label class="option">
+<input type="radio" name="q16" value="d">
+D) .push()
+</label>
+
+<button onclick="corrigir16()">Verificar</button>
+
+<div id="r16" class="result"></div>
+
+</div>
+
+<!-- 17 -->
+
+<div class="card">
+
+<h2>17. Múltipla escolha</h2>
+
+<p>O que o if faz?</p>
+
+<label class="option">
+<input type="radio" name="q17" value="a">
+A) Cria arrays
+</label>
+
+<label class="option">
+<input type="radio" name="q17" value="b">
+B) Repete infinitamente
+</label>
+
+<label class="option">
+<input type="radio" name="q17" value="c">
+C) Toma decisões
+</label>
+
+<label class="option">
+<input type="radio" name="q17" value="d">
+D) Remove valores
+</label>
+
+<button onclick="corrigir17()">Verificar</button>
+
+<div id="r17" class="result"></div>
+
+</div>
+
+<!-- 18 -->
+
+<div class="card">
+
+<h2>18. Múltipla escolha</h2>
+
+<p>Qual estrutura é mais organizada para repetições?</p>
+
+<label class="option">
+<input type="radio" name="q18" value="a">
+A) if
+</label>
+
+<label class="option">
+<input type="radio" name="q18" value="b">
+B) else
+</label>
+
+<label class="option">
+<input type="radio" name="q18" value="c">
+C) while
+</label>
+
+<label class="option">
+<input type="radio" name="q18" value="d">
+D) for
+</label>
+
+<button onclick="corrigir18()">Verificar</button>
+
+<div id="r18" class="result"></div>
+
+</div>
+
+<!-- 19 -->
+
+<div class="card">
+
+<h2>19. Múltipla escolha</h2>
+
+<p>O que console.log() faz?</p>
+
+<label class="option">
+<input type="radio" name="q19" value="a">
+A) Mostra informações
+</label>
+
+<label class="option">
+<input type="radio" name="q19" value="b">
+B) Remove arrays
+</label>
+
+<label class="option">
+<input type="radio" name="q19" value="c">
+C) Cria condições
+</label>
+
+<label class="option">
+<input type="radio" name="q19" value="d">
+D) Atualiza variáveis
+</label>
+
+<button onclick="corrigir19()">Verificar</button>
+
+<div id="r19" class="result"></div>
+
+</div>
+
+<!-- 20 -->
+
+<div class="card">
+
+<h2>20. Múltipla escolha</h2>
+
+<p>O que .includes() retorna?</p>
+
+<label class="option">
+<input type="radio" name="q20" value="a">
+A) Posição
+</label>
+
+<label class="option">
+<input type="radio" name="q20" value="b">
+B) Quantidade
+</label>
+
+<label class="option">
+<input type="radio" name="q20" value="c">
+C) true ou false
+</label>
+
+<label class="option">
+<input type="radio" name="q20" value="d">
+D) Remove valores
+</label>
+
+<button onclick="corrigir20()">Verificar</button>
+
+<div id="r20" class="result"></div>
+
+</div>
+
+<script>
+
+function correto(id){
+document.getElementById(id).innerHTML =
+'<span class="correct">✔ Correto!</span>'
+}
+
+function errado(id){
+document.getElementById(id).innerHTML =
+'<span class="wrong">✖ Errado.</span>'
+}
+
+function corrigir11(){
+
+let r = document.getElementById("q11").value.toLowerCase()
+
+if(
+r.includes(".splice(") &&
+r.includes("console.log") &&
+r.includes("[10")
+){
+correto("r11")
+}else{
+errado("r11")
+}
+
+}
+
+function corrigir12(){
+
+let r = document.getElementById("q12").value.toLowerCase()
+
+if(
+r.includes(".indexof(") &&
+r.includes("console.log") &&
+r.includes("carlos")
+){
+correto("r12")
+}else{
+errado("r12")
+}
+
+}
+
+function corrigir13(){
+
+let r = document.getElementById("q13").value.toLowerCase()
+
+if(
+r.includes("if") &&
+r.includes("||") &&
+r.includes("vip") &&
+r.includes("ingresso") &&
+r.includes("console.log")
+){
+correto("r13")
+}else{
+errado("r13")
+}
+
+}
+
+function corrigir14(){
+
+let r = document.querySelector('input[name="q14"]:checked')
+
+if(r && r.value == "b"){
+correto("r14")
+}else{
+errado("r14")
+}
+
+}
+
+function corrigir15(){
+
+let r = document.querySelector('input[name="q15"]:checked')
+
+if(r && r.value == "c"){
+correto("r15")
+}else{
+errado("r15")
+}
+
+}
+
+function corrigir16(){
+
+let r = document.querySelector('input[name="q16"]:checked')
+
+if(r && r.value == "a"){
+correto("r16")
+}else{
+errado("r16")
+}
+
+}
+
+function corrigir17(){
+
+let r = document.querySelector('input[name="q17"]:checked')
+
+if(r && r.value == "c"){
+correto("r17")
+}else{
+errado("r17")
+}
+
+}
+
+function corrigir18(){
+
+let r = document.querySelector('input[name="q18"]:checked')
+
+if(r && r.value == "d"){
+correto("r18")
+}else{
+errado("r18")
+}
+
+}
+
+function corrigir19(){
+
+let r = document.querySelector('input[name="q19"]:checked')
+
+if(r && r.value == "a"){
+correto("r19")
+}else{
+errado("r19")
+}
+
+}
+
+function corrigir20(){
+
+let r = document.querySelector('input[name="q20"]:checked')
+
+if(r && r.value == "c"){
+correto("r20")
+}else{
+errado("r20")
+}
+
+}
+
+</script>
+
+</body>
+</html>

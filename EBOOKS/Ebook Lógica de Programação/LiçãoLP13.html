@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 13 — Reforço Final</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Consolas, monospace;
+background:#0f172a;
+color:#e2e8f0;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:40px;
+}
+
+.card{
+background:#1e293b;
+padding:25px;
+border-radius:12px;
+margin-bottom:25px;
+border:1px solid #334155;
+}
+
+h1{
+color:#38bdf8;
+}
+
+.exercise{
+background:#020617;
+padding:20px;
+border-radius:10px;
+margin-top:20px;
+}
+
+.option{
+display:block;
+margin-top:10px;
+}
+
+input{
+width:100%;
+padding:10px;
+margin-top:10px;
+border-radius:8px;
+border:none;
+background:#0f172a;
+color:white;
+}
+
+textarea{
+width:100%;
+height:180px;
+margin-top:10px;
+background:black;
+color:#22c55e;
+border:1px solid #334155;
+border-radius:8px;
+padding:15px;
+font-family:Consolas;
+}
+
+button{
+margin-top:15px;
+padding:10px 15px;
+background:#38bdf8;
+border:none;
+border-radius:6px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.result{
+margin-top:15px;
+font-weight:bold;
+}
+
+.correct{
+color:#22c55e;
+}
+
+.wrong{
+color:#ef4444;
+}
+
+.code{
+background:black;
+padding:15px;
+border-radius:8px;
+margin-top:10px;
+color:#22c55e;
+white-space:pre-line;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>📘 LIÇÃO 13 — REFORÇO</h1>
+
+<p>
+Revisão geral de:
+</p>
+
+<p>
+✔ Arrays<br>
+✔ for<br>
+✔ while<br>
+✔ if / else<br>
+✔ includes()<br>
+✔ indexOf()<br>
+✔ splice()
+</p>
+
+</div>
+
+<!-- 1 -->
+
+<div class="card">
+<div class="exercise">
+
+<h2>1. Múltipla escolha</h2>
+
+<p>Qual comando verifica se um valor existe no array?</p>
+
+<label class="option"><input type="radio" name="q1" value="b"> B) .includes()</label>
+<label class="option"><input type="radio" name="q1" value="a"> A) .pop()</label>
+<label class="option"><input type="radio" name="q1" value="c"> C) .splice()</label>
+<label class="option"><input type="radio" name="q1" value="d"> D) .length</label>
+
+<button onclick="corrigir1()">Verificar</button>
+
+<div id="r1" class="result"></div>
+
+</div>
+</div>
+
+<!-- 2 -->
+
+<div class="card">
+<div class="exercise">
+
+<h2>2. Completar código</h2>
+
+<p>Digite apenas o comando faltando.</p>
+
+<div class="code">
+let nomes = ["Ana", "Carlos"];
+
+console.log(nomes._______("Ana"));
+</div>
+
+<input type="text" id="q2">
+
+<button onclick="corrigir2()">Verificar</button>
+
+<div id="r2" class="result"></div>
+
+</div>
+</div>
+
+<!-- 3 -->
+
+<div class="card">
+<div class="exercise">
+
+<h2>3. Criar código FOR</h2>
+
+<p>Crie um código usando for para mostrar:</p>
+
+<p>10<br>20<br>30</p>
+
+<textarea id="q3"></textarea>
+
+<button onclick="corrigir3()">Verificar</button>
+
+<div id="r3" class="result"></div>
+
+</div>
+</div>
+
+<!-- 4 -->
+
+<div class="card">
+<div class="exercise">
+
+<h2>4. Interpretação</h2>
+
+<p>O que aparece no console?</p>
+
+<p>Digite apenas o número final.</p>
+
+<div class="code">
+let nums = [5, 10, 15];
+
+console.log(nums[1]);
+</div>
+
+<input type="text" id="q4">
+
+<button onclick="corrigir4()">Verificar</button>
+
+<div id="r4" class="result"></div>
+
+</div>
+</div>
+
+<!-- 5 -->
+
+<div class="card">
+<div class="exercise">
+
+<h2>5. Criar código WHILE</h2>
+
+<p>Crie um while que mostre:</p>
+
+<p>1<br>2<br>3</p>
+
+<textarea id="q5"></textarea>
+
+<button onclick="corrigir5()">Verificar</button>
+
+<div id="r5" class="result"></div>
+
+</div>
+</div>
+
+<!-- 6 -->
+
+<div class="card">
+<div class="exercise">
+
+<h2>6. Múltipla escolha</h2>
+
+<p>Qual comando mostra informações no console?</p>
+
+<label class="option"><input type="radio" name="q6" value="a"> A) prompt()</label>
+<label class="option"><input type="radio" name="q6" value="b"> B) console.log()</label>
+<label class="option"><input type="radio" name="q6" value="c"> C) while</label>
+<label class="option"><input type="radio" name="q6" value="d"> D) splice()</label>
+
+<button onclick="corrigir6()">Verificar</button>
+
+<div id="r6" class="result"></div>
+
+</div>
+</div>
+
+<!-- 7 -->
+
+<div class="card">
+<div class="exercise">
+
+<h2>7. Alterar Array</h2>
+
+<p>Crie um array com:</p>
+
+<p>"Pedro"<br>"Lucas"<br>"Ana"</p>
+
+<p>Depois altere:</p>
+
+<p>"Lucas" → "Carlos"</p>
+
+<textarea id="q7"></textarea>
+
+<button onclick="corrigir7()">Verificar</button>
+
+<div id="r7" class="result"></div>
+
+</div>
+</div>
+
+<!-- 8 -->
+
+<div class="card">
+<div class="exercise">
+
+<h2>8. Interpretação</h2>
+
+<p>O que aparece no console?</p>
+
+<p>Digite apenas:</p>
+
+<p>true<br>ou<br>false</p>
+
+<div class="code">
+let nomes = ["Ana", "Carlos"];
+
+console.log(nomes.includes("Pedro"));
+</div>
+
+<input type="text" id="q8">
+
+<button onclick="corrigir8()">Verificar</button>
+
+<div id="r8" class="result"></div>
+
+</div>
+</div>
+
+<!-- 9 -->
+
+<div class="card">
+<div class="exercise">
+
+<h2>9. Múltipla escolha</h2>
+
+<p>Qual operador significa:</p>
+
+<p><b>“E”</b></p>
+
+<label class="option"><input type="radio" name="q9" value="a"> A) ||</label>
+<label class="option"><input type="radio" name="q9" value="b"> B) ==</label>
+<label class="option"><input type="radio" name="q9" value="c"> C) &&</label>
+<label class="option"><input type="radio" name="q9" value="d"> D) >=</label>
+
+<button onclick="corrigir9()">Verificar</button>
+
+<div id="r9" class="result"></div>
+
+</div>
+</div>
+
+<!-- 10 -->
+
+<div class="card">
+<div class="exercise">
+
+<h2>10. Múltipla escolha</h2>
+
+<p>O que o .length faz?</p>
+
+<label class="option"><input type="radio" name="q10" value="a"> A) Remove valores</label>
+<label class="option"><input type="radio" name="q10" value="b"> B) Mostra o tamanho do array</label>
+<label class="option"><input type="radio" name="q10" value="c"> C) Procura posição</label>
+<label class="option"><input type="radio" name="q10" value="d"> D) Verifica existência</label>
+
+<button onclick="corrigir10()">Verificar</button>
+
+<div id="r10" class="result"></div>
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+function correto(id){
+document.getElementById(id).innerHTML =
+'<span class="correct">✔ Correto!</span>'
+}
+
+function errado(id){
+document.getElementById(id).innerHTML =
+'<span class="wrong">✖ Errado.</span>'
+}
+
+function corrigir1(){
+
+let r = document.querySelector('input[name="q1"]:checked')
+
+if(r && r.value == "b"){
+correto("r1")
+}else{
+errado("r1")
+}
+
+}
+
+function corrigir2(){
+
+let r = document.getElementById("q2").value.trim().toLowerCase()
+
+if(r == "includes"){
+correto("r2")
+}else{
+errado("r2")
+}
+
+}
+
+function corrigir3(){
+
+let r = document.getElementById("q3").value.toLowerCase()
+
+if(
+r.includes("let") &&
+r.includes("[") &&
+r.includes("for") &&
+r.includes("numeros.length") &&
+r.includes("console.log")
+){
+correto("r3")
+}else{
+errado("r3")
+}
+
+}
+
+function corrigir4(){
+
+let r = document.getElementById("q4").value.trim()
+
+if(r == "10"){
+correto("r4")
+}else{
+errado("r4")
+}
+
+}
+
+function corrigir5(){
+
+let r = document.getElementById("q5").value.toLowerCase()
+
+if(
+r.includes("let") &&
+r.includes("while") &&
+r.includes("console.log") &&
+r.includes("++")
+){
+correto("r5")
+}else{
+errado("r5")
+}
+
+}
+
+function corrigir6(){
+
+let r = document.querySelector('input[name="q6"]:checked')
+
+if(r && r.value == "b"){
+correto("r6")
+}else{
+errado("r6")
+}
+
+}
+
+function corrigir7(){
+
+let r = document.getElementById("q7").value.toLowerCase()
+
+if(
+r.includes("let") &&
+r.includes("[") &&
+r.includes("pedro") &&
+r.includes("lucas") &&
+r.includes("ana") &&
+r.includes("carlos") &&
+r.includes("console.log")
+){
+correto("r7")
+}else{
+errado("r7")
+}
+
+}
+
+function corrigir8(){
+
+let r = document.getElementById("q8").value.trim().toLowerCase()
+
+if(r == "false"){
+correto("r8")
+}else{
+errado("r8")
+}
+
+}
+
+function corrigir9(){
+
+let r = document.querySelector('input[name="q9"]:checked')
+
+if(r && r.value == "c"){
+correto("r9")
+}else{
+errado("r9")
+}
+
+}
+
+function corrigir10(){
+
+let r = document.querySelector('input[name="q10"]:checked')
+
+if(r && r.value == "b"){
+correto("r10")
+}else{
+errado("r10")
+}
+
+}
+
+</script>
+
+</body>
+</html>

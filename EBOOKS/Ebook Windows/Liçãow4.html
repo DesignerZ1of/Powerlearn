@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 4 — Personalizando a Tela Inicial</title>
+
+<style>
+body{
+  font-family:Segoe UI, Arial, sans-serif;
+  background:#ffffff;
+  margin:0;
+  color:#1f2937;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:50px 40px;
+}
+
+h1{
+  color:#1e3a8a;
+  font-size:34px;
+}
+
+.card{
+  background:#f9fafb;
+  border:1px solid #e5e7eb;
+  border-radius:14px;
+  padding:35px;
+  margin-top:30px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.05);
+}
+
+.section-title{
+  color:#1e40af;
+  font-size:20px;
+  margin-top:35px;
+  font-weight:bold;
+}
+
+.highlight{
+  background:#eff6ff;
+  border-left:6px solid #2563eb;
+  padding:18px;
+  border-radius:10px;
+  margin-top:15px;
+}
+
+/* WINDOWS SIMULAÇÃO */
+
+.windows-area{
+  margin-top:30px;
+  border-radius:14px;
+  overflow:hidden;
+  border:1px solid #d1d5db;
+  box-shadow:0 8px 20px rgba(0,0,0,0.1);
+}
+
+.desktop{
+  height:350px;
+  background:linear-gradient(135deg,#1e3a8a,#2563eb,#60a5fa);
+  background-size:cover;
+  background-position:center;
+  position:relative;
+}
+
+.taskbar{
+  height:55px;
+  background:#ffffff;
+  display:flex;
+  align-items:center;
+  padding:0 20px;
+  gap:15px;
+  box-shadow:0 -2px 8px rgba(0,0,0,0.08);
+}
+
+.icon{
+  width:32px;
+  height:32px;
+  background:#f3f4f6;
+  border-radius:8px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+}
+
+.settings-window{
+  position:absolute;
+  top:20px;
+  left:50%;
+  transform:translateX(-50%);
+  width:900px;
+  height:450px;
+  background:#f9fafb;
+  border-radius:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+  overflow:hidden;
+  display:none;
+}
+
+.sidebar{
+  width:240px;
+  background:#ffffff;
+  border-right:1px solid #e5e7eb;
+  padding:15px;
+  float:left;
+  height:100%;
+}
+
+.sidebar div{
+  padding:10px;
+  border-radius:6px;
+  cursor:pointer;
+  margin-bottom:5px;
+}
+
+.sidebar div:hover{
+  background:#f3f4f6;
+}
+
+.content{
+  margin-left:240px;
+  padding:25px;
+}
+
+.option{
+  padding:12px;
+  background:#ffffff;
+  border-radius:8px;
+  margin-top:15px;
+  cursor:pointer;
+  border:1px solid #e5e7eb;
+}
+
+.option:hover{
+  background:#eef2ff;
+}
+
+.feedback{
+  margin-top:15px;
+  font-weight:bold;
+}
+
+.correct{color:green;}
+.wrong{color:red;}
+
+.instructions{
+  margin-top:20px;
+  background:#eff6ff;
+  border-left:5px solid #2563eb;
+  padding:15px;
+  border-radius:8px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🎨 Lição 4 — Personalizando a Tela Inicial</h1>
+
+<div class="card">
+
+<p>Agora você vai ajustar o Microsoft Windows do seu jeito.
+Não é só estética — é deixar o sistema confortável e fácil de usar.</p>
+
+<div class="section-title">🖼️ 1. Papel de parede (visual + identidade)</div>
+
+<p><strong>Como fazer:</strong></p>
+<p>1. Clique com o botão direito na área de trabalho</p>
+<p>2. Clique em Personalizar</p>
+<p>3. Entre em Plano de Fundo</p>
+<p>4. Escolha:</p>
+<ul>
+<li>Imagem</li>
+<li>Cor sólida</li>
+<li>Apresentação (várias imagens mudando)</li>
+</ul>
+<p>5. Para usar uma imagem sua: clique em Procurar</p>
+
+<p><strong>Pra que fazer:</strong></p>
+<ul>
+<li>Deixa o ambiente mais agradável</li>
+<li>Ajuda você a se identificar com o seu PC</li>
+<li>Evita aquele visual “padrão sem vida”</li>
+</ul>
+
+<div class="section-title">🎨 2. Cores e modo escuro (conforto visual)</div>
+
+<p><strong>Como fazer:</strong></p>
+<p>1. Vá em Configurações</p>
+<p>2. Clique em Personalização > Cores</p>
+<p>3. Escolha:</p>
+<ul>
+<li>Modo claro (tela branca)</li>
+<li>Modo escuro (tela escura)</li>
+</ul>
+
+<p><strong>Pra que fazer:</strong></p>
+<ul>
+<li>Modo escuro → menos cansaço nos olhos (principalmente à noite)</li>
+<li>Modo claro → mais visível durante o dia</li>
+</ul>
+
+<div class="section-title">🔤 3. Ajustar tamanho da tela (escala)</div>
+
+<p><strong>Como fazer:</strong></p>
+<p>1. Vá em Configurações > Sistema > Tela</p>
+<p>2. Procure por Escala</p>
+<p>3. Escolha:</p>
+<ul>
+<li>100% (normal)</li>
+<li>125% ou mais (aumenta tudo)</li>
+</ul>
+
+<p><strong>Pra que fazer:</strong></p>
+<ul>
+<li>Facilita a leitura</li>
+<li>Evita forçar a visão</li>
+<li>Deixa o sistema mais confortável</li>
+</ul>
+
+<div class="section-title">📌 4. Barra de tarefas (acesso rápido)</div>
+
+<p><strong>Para fixar:</strong></p>
+<p>1. Abra um programa</p>
+<p>2. Clique com botão direito no ícone dele na barra</p>
+<p>3. Clique em Fixar na barra de tarefas</p>
+
+<p><strong>Para remover:</strong></p>
+<p>1. Clique com botão direito no ícone</p>
+<p>2. Clique em Desafixar</p>
+
+<p><strong>Pra que fazer:</strong></p>
+<ul>
+<li>Acesso rápido aos programas que você mais usa</li>
+<li>Menos tempo procurando</li>
+<li>Mais agilidade no dia a dia</li>
+</ul>
+
+<div class="section-title">🔐 5. Tela de bloqueio (segurança + visual)</div>
+
+<p><strong>Como fazer:</strong></p>
+<p>1. Vá em Configurações > Personalização > Tela de bloqueio</p>
+<p>2. Escolha a imagem</p>
+<p>3. (Opcional) escolha informações para aparecer</p>
+
+<p><strong>Pra que fazer:</strong></p>
+<ul>
+<li>Protege seu computador</li>
+<li>Mostra informações úteis sem entrar no sistema</li>
+<li>Mantém um visual organizado até antes de entrar</li>
+</ul>
+
+<div class="highlight">
+🎯 O ponto principal: você não está só mudando aparência.
+Você está ajustando o sistema pra ficar do seu jeito e funcionar melhor pra você.
+</div>
+
+</div>
+
+<div class="card">
+<h2>🧪 Exercício — Alterar Tela de Fundo</h2>
+
+<div class="instructions">
+1. Clique em Configurações (⚙️)<br>
+2. Clique em Personalização<br>
+3. Clique em Tela de fundo
+</div>
+
+<div class="windows-area">
+<div class="desktop" id="desktop">
+
+<div class="settings-window" id="settings">
+
+<div class="sidebar">
+<div onclick="erro()">Início</div>
+<div onclick="erro()">Sistema</div>
+<div onclick="erro()">Bluetooth e dispositivos</div>
+<div onclick="erro()">Rede e Internet</div>
+<div onclick="abrirPersonalizacao()">Personalização</div>
+<div onclick="erro()">Aplicativos</div>
+<div onclick="erro()">Contas</div>
+<div onclick="erro()">Hora e idioma</div>
+<div onclick="erro()">Windows Update</div>
+</div>
+
+<div class="content" id="content">
+<h2>Configurações</h2>
+<p>Selecione uma opção no menu lateral.</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="taskbar">
+<div class="icon" onclick="toggleConfig()">⚙️</div>
+</div>
+
+</div>
+
+<div id="feedback" class="feedback"></div>
+
+</div>
+
+</div>
+
+<script>
+function toggleConfig(){
+  const janela = document.getElementById("settings");
+  janela.style.display = janela.style.display === "block" ? "none" : "block";
+}
+
+function abrirPersonalizacao(){
+  document.getElementById("content").innerHTML = `
+    <h2>Personalização</h2>
+    <div class="option" onclick="mudarFundo()">Tela de fundo</div>
+    <div class="option" onclick="erro()">Cores</div>
+    <div class="option" onclick="erro()">Tela de bloqueio</div>
+  `;
+}
+
+function mudarFundo(){
+  document.getElementById("desktop").style.backgroundImage =
+  "url('https://images.unsplash.com/photo-1505761671935-60b3a7427bad')";
+  
+  document.getElementById("feedback").innerHTML =
+  "<span class='correct'>✔ Processo correto! Tela de fundo alterada.</span>";
+}
+
+function erro(){
+  document.getElementById("feedback").innerHTML =
+  "<span class='wrong'>✖ Caminho incorreto. Siga as instruções corretamente.</span>";
+}
+</script>
+
+</body>
+</html>

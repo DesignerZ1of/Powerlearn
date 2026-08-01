@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 22 — Senhas</title>
+
+<style>
+
+body{
+font-family:Segoe UI, Arial;
+background:#ffffff;
+margin:0;
+color:#1f2937;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:50px 40px;
+}
+
+h1{
+color:#1e3a8a;
+font-size:34px;
+}
+
+.card{
+background:#f9fafb;
+border:1px solid #e5e7eb;
+border-radius:14px;
+padding:35px;
+margin-top:30px;
+}
+
+.section-title{
+color:#1e40af;
+font-size:20px;
+margin-top:35px;
+font-weight:bold;
+}
+
+input{
+padding:10px;
+width:300px;
+border:1px solid #ccc;
+border-radius:6px;
+margin-top:10px;
+}
+
+button{
+margin-top:15px;
+padding:10px 15px;
+border:none;
+background:#1e3a8a;
+color:#fff;
+border-radius:6px;
+cursor:pointer;
+}
+
+button:hover{
+background:#1e40af;
+}
+
+.feedback{
+margin-top:10px;
+font-weight:bold;
+}
+
+/* QUIZ */
+.question{
+background:white;
+padding:20px;
+border-radius:10px;
+border:1px solid #e5e7eb;
+margin-top:20px;
+}
+
+.option{
+padding:10px;
+border:1px solid #d1d5db;
+border-radius:6px;
+margin-top:8px;
+cursor:pointer;
+}
+
+.option:hover{
+background:#eef2ff;
+}
+
+.correct{
+background:#dcfce7 !important;
+border-color:green !important;
+}
+
+.wrong{
+background:#fee2e2 !important;
+border-color:red !important;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🔒 Lição 22 — Senhas e contas</h1>
+
+<div class="card">
+
+<p>Depois de aprender sobre segurança, agora você vai entender algo essencial no uso da internet:</p>
+
+<p><b>👉 como funcionam as contas e senhas</b></p>
+
+<div class="section-title">👤 O que é uma conta</div>
+
+<p>Uma conta é um cadastro que você cria para usar um site ou aplicativo.</p>
+
+<p>👉 Exemplo:</p>
+<p>E-mail</p>
+<p>Redes sociais</p>
+<p>Outros serviços online</p>
+
+<p>Você usa uma conta para entrar e usar esses serviços no computador.</p>
+
+<div class="section-title">🔑 O que é uma senha</div>
+
+<p>A senha é o que protege sua conta.</p>
+
+<p>👉 Só você deve saber.</p>
+
+<p>Sem senha, qualquer pessoa poderia acessar sua conta.</p>
+
+<div class="section-title">🧠 Como criar uma senha forte</div>
+
+<p>Misture letras e números</p>
+<p>Evite coisas óbvias (123456, nome)</p>
+<p>Não use a mesma senha em tudo</p>
+
+<div class="section-title">⚠️ Erros comuns</div>
+
+<p>Usar senha fácil</p>
+<p>Compartilhar senha</p>
+<p>Repetir a mesma senha em vários sites</p>
+
+<div class="section-title">🔐 Por que isso é importante</div>
+
+<p>Protege suas informações</p>
+<p>Evita que alguém invada sua conta</p>
+<p>Mantém sua segurança online</p>
+
+<div class="section-title">🎯 Ideia principal</div>
+
+<p>Contas e senhas são a base da internet.</p>
+
+<p>Se você não souber usar isso direito, não está seguro online.</p>
+
+</div>
+
+<!-- EXERCÍCIO -->
+<div class="card">
+
+<h2>🔐 Exercício prático (criação de senha)</h2>
+
+<p id="etapaTexto"><b>Etapa 1:</b> Crie uma senha só com letras minúsculas</p>
+
+<input type="text" id="senhaInput" placeholder="Digite sua senha">
+
+<br>
+<button onclick="validar()">Confirmar</button>
+
+<div class="feedback" id="feedback"></div>
+
+</div>
+
+<!-- QUIZ -->
+<div class="card">
+
+<h2>🧪 Perguntas</h2>
+
+<div id="quiz"></div>
+
+</div>
+
+</div>
+
+<script>
+
+let etapa = 1
+let senhaBase = ""
+
+/* VALIDAÇÃO */
+function validar(){
+
+let senha = document.getElementById("senhaInput").value
+let feedback = document.getElementById("feedback")
+
+if(etapa === 1){
+
+if(/^[a-z]+$/.test(senha)){
+senhaBase = senha
+feedback.innerHTML="✔ Etapa 1 concluída"
+proximaEtapa()
+}else{
+feedback.innerHTML="❌ Use apenas letras minúsculas"
+}
+
+}
+
+else if(etapa === 2){
+
+if(senha.startsWith(senhaBase) && /[0-9]/.test(senha)){
+senhaBase = senha
+feedback.innerHTML="✔ Etapa 2 concluída"
+proximaEtapa()
+}else{
+feedback.innerHTML="❌ Mantenha a base e adicione números"
+}
+
+}
+
+else if(etapa === 3){
+
+let maiusculas = senha.match(/[A-Z]/g)
+
+if(senha.startsWith(senhaBase) && maiusculas && maiusculas.length >= 2){
+senhaBase = senha
+feedback.innerHTML="✔ Etapa 3 concluída"
+proximaEtapa()
+}else{
+feedback.innerHTML="❌ Adicione pelo menos 2 letras maiúsculas mantendo a base"
+}
+
+}
+
+else if(etapa === 4){
+
+if(senha === senhaBase){
+feedback.innerHTML="🎉 Senha confirmada com sucesso!"
+document.getElementById("senhaInput").disabled=true
+}else{
+feedback.innerHTML="❌ Senha diferente"
+}
+
+}
+
+}
+
+/* AVANÇAR */
+function proximaEtapa(){
+
+etapa++
+
+let texto = document.getElementById("etapaTexto")
+
+if(etapa === 2){
+texto.innerHTML="<b>Etapa 2:</b> Agora adicione números"
+}
+
+else if(etapa === 3){
+texto.innerHTML="<b>Etapa 3:</b> Adicione duas letras maiúsculas"
+}
+
+else if(etapa === 4){
+texto.innerHTML="<b>Etapa 4:</b> Confirme a senha"
+}
+
+}
+
+/* QUIZ */
+const perguntas=[
+
+{
+pergunta:"1. O que é uma conta?",
+opcoes:[
+"Um tipo de vírus",
+"Um cadastro para usar serviços",
+"Um arquivo",
+"Um programa"
+],
+correta:1
+},
+
+{
+pergunta:"2. Para que serve a senha?",
+opcoes:[
+"Deixar o computador rápido",
+"Proteger sua conta",
+"Baixar arquivos",
+"Abrir programas"
+],
+correta:1
+},
+
+{
+pergunta:"3. Qual é um erro comum?",
+opcoes:[
+"Criar senha forte",
+"Usar letras e números",
+"Compartilhar senha",
+"Criar senha difícil"
+],
+correta:2
+}
+
+]
+
+function carregarQuiz(){
+
+const quiz=document.getElementById("quiz")
+
+perguntas.forEach((q,i)=>{
+
+let html=`<div class="question">
+<strong>${q.pergunta}</strong>`
+
+q.opcoes.forEach((op,j)=>{
+
+html+=`<div class="option" onclick="responder(${i},${j},this)">
+${op}
+</div>`
+
+})
+
+html+=`</div>`
+
+quiz.innerHTML+=html
+
+})
+
+}
+
+function responder(p,o,el){
+
+const correta=perguntas[p].correta
+const opcoes=el.parentNode.querySelectorAll(".option")
+
+opcoes.forEach(btn=>btn.onclick=null)
+
+if(o==correta){
+el.classList.add("correct")
+}else{
+el.classList.add("wrong")
+opcoes[correta].classList.add("correct")
+}
+
+}
+
+carregarQuiz()
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 9 — Pesquisar programas e arquivos</title>
+
+<style>
+
+body{
+font-family:Segoe UI, Arial;
+background:#ffffff;
+margin:0;
+color:#1f2937;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:50px 40px;
+}
+
+h1{
+color:#1e3a8a;
+font-size:34px;
+}
+
+.card{
+background:#f9fafb;
+border:1px solid #e5e7eb;
+border-radius:14px;
+padding:35px;
+margin-top:30px;
+}
+
+.section-title{
+color:#1e40af;
+font-size:20px;
+margin-top:35px;
+font-weight:bold;
+}
+
+.question{
+background:white;
+padding:20px;
+border-radius:10px;
+border:1px solid #e5e7eb;
+margin-top:20px;
+}
+
+.option{
+padding:10px;
+border:1px solid #d1d5db;
+border-radius:6px;
+margin-top:8px;
+cursor:pointer;
+}
+
+.option:hover{
+background:#eef2ff;
+}
+
+.correct{
+background:#dcfce7 !important;
+border-color:green !important;
+}
+
+.wrong{
+background:#fee2e2 !important;
+border-color:red !important;
+}
+
+.result{
+margin-top:10px;
+font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🔎 Lição 9 — Pesquisar programas e arquivos</h1>
+
+<div class="card">
+
+<p>Com o tempo, conforme você usa o computador, mais programas e arquivos vão sendo adicionados ao sistema. Por isso, procurar algo manualmente pode se tornar difícil. Para resolver isso, o Microsoft Windows possui uma ferramenta de pesquisa, que permite encontrar rapidamente programas, arquivos e outras ferramentas do computador.</p>
+
+<div class="section-title">🔍 Pesquisando programas</div>
+
+<p>Uma das formas mais rápidas de abrir um programa é utilizando a pesquisa do Windows.</p>
+
+<p><b>Como fazer:</b></p>
+
+<p>1. Clique no Menu Iniciar ou na barra de pesquisa</p>
+<p>2. Comece a digitar o nome do programa</p>
+<p>3. O sistema mostrará os resultados encontrados</p>
+<p>4. Clique no programa para abrir</p>
+
+<p>Por exemplo, se você digitar Google Chrome, o navegador aparecerá nos resultados e poderá ser aberto rapidamente.</p>
+
+<div class="section-title">📂 Pesquisando arquivos</div>
+
+<p>A ferramenta de pesquisa também pode ser usada para encontrar arquivos que estão salvos no computador.</p>
+
+<p><b>Como funciona:</b></p>
+
+<p>1. Abra a barra de pesquisa</p>
+<p>2. Digite o nome do arquivo ou parte dele</p>
+<p>3. O Windows procurará nas pastas do computador</p>
+<p>4. Os resultados aparecerão na tela</p>
+
+<p>Isso é muito útil quando você não lembra exatamente onde salvou um arquivo.</p>
+
+<div class="section-title">📑 Tipos de arquivos</div>
+
+<p>Durante uma pesquisa, você pode encontrar diferentes tipos de arquivos. Cada tipo possui uma função específica dentro do computador.</p>
+
+<p><b>Alguns exemplos comuns são:</b></p>
+
+<p>PDF → documentos digitais</p>
+<p>JPG / PNG → imagens ou fotos</p>
+<p>MP3 → arquivos de música</p>
+<p>MP4 → vídeos</p>
+<p>DOCX → documentos de texto</p>
+
+<p>👉 É importante gravar e reconhecer esses tipos, pois eles aparecem com muita frequência no uso do computador.</p>
+
+<div class="section-title">🎯 Ideia principal da lição</div>
+
+<p>A ferramenta de pesquisa do Windows ajuda você a encontrar rapidamente programas e arquivos no computador.</p>
+
+<p>Em vez de procurar manualmente em várias pastas, basta digitar o nome do que você procura, e o sistema mostrará os resultados disponíveis.</p>
+
+</div>
+
+<div class="card">
+
+<h2>🧪 Exercícios</h2>
+
+<div id="quiz"></div>
+
+</div>
+
+</div>
+
+<script>
+
+const perguntas=[
+
+{
+pergunta:"1. Qual tipo de arquivo normalmente representa uma imagem ou foto?",
+opcoes:[
+"PDF",
+"MP3",
+"JPG",
+"DOCX"
+],
+correta:2
+},
+
+{
+pergunta:"2. Qual tipo de arquivo normalmente representa um documento digital?",
+opcoes:[
+"PDF",
+"MP3",
+"MP4",
+"PNG"
+],
+correta:0
+},
+
+{
+pergunta:"3. Se você não lembra em qual pasta salvou um arquivo, qual ferramenta do Windows pode ajudar a encontrá-lo rapidamente?",
+opcoes:[
+"Painel de controle",
+"Barra de pesquisa",
+"Gerenciador de tarefas",
+"Configurações do sistema"
+],
+correta:1
+},
+
+{
+pergunta:"4. Qual tipo de arquivo normalmente representa um arquivo de música?",
+opcoes:[
+"MP3",
+"JPG",
+"PDF",
+"PNG"
+],
+correta:0
+},
+
+{
+pergunta:"5. O que acontece quando você digita o nome de um programa ou arquivo na barra de pesquisa?",
+opcoes:[
+"O computador reinicia",
+"O Windows mostra resultados encontrados no sistema",
+"O arquivo é apagado",
+"O programa instala automaticamente"
+],
+correta:1
+},
+
+{
+pergunta:"6. Qual tipo de arquivo abaixo normalmente representa um vídeo?",
+opcoes:[
+"MP4",
+"JPG",
+"DOCX",
+"PDF"
+],
+correta:0
+}
+
+]
+
+function carregarQuiz(){
+
+const quiz=document.getElementById("quiz")
+
+perguntas.forEach((q,i)=>{
+
+let html=`<div class="question">
+<strong>${q.pergunta}</strong>`
+
+q.opcoes.forEach((op,j)=>{
+
+html+=`<div class="option" onclick="responder(${i},${j},this)">
+${op}
+</div>`
+
+})
+
+html+=`<div id="res${i}" class="result"></div></div>`
+
+quiz.innerHTML+=html
+
+})
+
+}
+
+function responder(p,o,el){
+
+const correta=perguntas[p].correta
+const res=document.getElementById("res"+p)
+
+if(res.innerHTML!="") return
+
+if(o==correta){
+
+el.classList.add("correct")
+res.innerHTML="✔ Resposta correta!"
+
+}else{
+
+el.classList.add("wrong")
+res.innerHTML="✖ Resposta incorreta. Resposta correta: "+perguntas[p].opcoes[correta]
+
+}
+
+}
+
+carregarQuiz()
+
+</script>
+
+</body>
+</html>

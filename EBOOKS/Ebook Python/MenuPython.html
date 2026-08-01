@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Power Learn - Windows</title>
+
+<style>
+
+:root{
+  --bg:#0b0b0b;
+  --card:#111;
+  --accent:#ff7a18;
+  --muted:#9aa0a6;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Inter, Arial, sans-serif;
+  background:linear-gradient(180deg,#050505 0%, #0b0b0b 100%);
+  color:white;
+}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  backdrop-filter:blur(6px);
+  background:rgba(0,0,0,0.7);
+  border-bottom:1px solid rgba(255,255,255,0.03);
+}
+
+.nav{
+  max-width:1200px;
+  margin:auto;
+  padding:18px 25px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo-area{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+
+.logo{
+  width:5px;
+  height:5px;
+  background:linear-gradient(135deg,var(--accent),#ff3d00);
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:800;
+  color:#111;
+  margin-top: 20px;
+}
+
+.logo img{
+  display: block;
+    width: 60px;
+    margin: 20px auto;
+    position: relative;
+    top: -10px;
+    left: -20px;
+}
+
+.logo-text{
+  font-size:18px;
+  font-weight:700;
+}
+
+.logo-sub{
+  font-size:12px;
+  color:var(--muted);
+}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:50px 25px;
+}
+
+.topo{
+  margin-bottom:40px;
+}
+
+.tag{
+  display:inline-block;
+  padding:8px 14px;
+  border-radius:999px;
+  background:rgba(255,122,24,0.08);
+  color:var(--accent);
+  font-size:13px;
+  font-weight:700;
+}
+
+h1{
+  font-size:50px;
+  margin-top:20px;
+  margin-bottom:15px;
+}
+
+.desc{
+  color:var(--muted);
+  max-width:700px;
+  line-height:1.7;
+  font-size:16px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:20px;
+}
+
+.licao{
+  background:var(--card);
+  border:1px solid rgba(255,255,255,0.03);
+  border-radius:18px;
+  padding:35px 20px;
+  text-align:center;
+  text-decoration:none;
+  color:white;
+  transition:0.3s;
+  font-weight:700;
+  box-shadow:0 10px 25px rgba(0,0,0,0.35);
+}
+
+.licao:hover{
+  transform:translateY(-6px);
+  border-color:var(--accent);
+  box-shadow:0 0 20px rgba(255,122,24,0.2);
+}
+
+.exercicio{
+  background:#0066ff;
+}
+
+.reforco{
+  background:linear-gradient(135deg,#ff7a18,#ff5500);
+  color:#111;
+}
+
+.numero{
+  font-size:32px;
+  margin-bottom:10px;
+}
+
+.tipo{
+  font-size:14px;
+  color:#aaa;
+}
+
+footer{
+  margin-top:60px;
+  padding:30px;
+  text-align:center;
+  color:#777;
+  border-top:1px solid rgba(255,255,255,0.03);
+}
+
+</style>
+</head>
+<body>
+
+<header>
+
+  <div class="nav">
+
+    <div class="logo-area">
+
+      <div class="logo">
+    <img src="../../Arquivos/PowerLearnLogo.png" alt="Logo">
+</div>
+
+      <div>
+        <div class="logo-text">
+          Power Learn
+        </div>
+
+        <div class="logo-sub">
+          Aprenda. Pratique. Evolua.
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</header>
+
+<div class="container">
+
+  <div class="topo">
+
+    <div class="tag">
+      Curso Completo
+    </div>
+
+    <h1>
+      Ebook Python
+    </h1>
+
+    <div class="desc">
+      Aprenda a programar em Python do absoluto zero até recursos avançados. 
+      Explore: códigos e funções e muito mais através de lições práticas e objetivas.
+    </div>
+
+  </div>
+
+  <div class="grid">
+
+    <a onclick="window.location.href='../../Anuncio.html?curso=Py1'" class="licao">
+      <div class="numero">1</div>
+      <div>O que é Lógica de Programação?</div>
+    </a>
+
+     <a onclick="window.location.href='../../Anuncio.html?curso=Py2'" class="licao">
+      <div class="numero">2</div>
+      <div>Variáveis</div>
+    </a>
+
+     <a onclick="window.location.href='../../Anuncio.html?curso=Py3'" class="licao">
+      <div class="numero">3</div>
+      <div>Operadores</div>
+    </a>
+
+    <a onclick="window.location.href='../../Anuncio.html?curso=Py4'" class="licao">
+      <div class="numero">4</div>
+      <div>Resumo</div>
+    </a>
+
+     <a onclick="window.location.href='../../Anuncio.html?curso=Py5'" class="licao">
+      <div class="numero">5</div>
+      <div>Repetição</div>
+    </a>
+
+     <a onclick="window.location.href='../../Anuncio.html?curso=Py6'" class="licao">
+      <div class="numero">6</div>
+      <div>Repetição 2</div>
+    </a>
+
+     <a onclick="window.location.href='../../Anuncio.html?curso=Py7'" class="licao">
+      <div class="numero">7</div>
+      <div>Reforço</div>
+    </a>
+
+     <a onclick="window.location.href='../../Anuncio.html?curso=Py8'" class="licao">
+      <div class="numero">8</div>
+      <div>Condição</div>
+    </a>
+
+     <a onclick="window.location.href='../../Anuncio.html?curso=Py9'" class="licao">
+      <div class="numero">9</div>
+      <div>Condição 2</div>
+    </a>
+
+     <a onclick="window.location.href='../../Anuncio.html?curso=Py10'" class="licao">
+      <div class="numero">10</div>
+      <div>Arrays</div>
+    </a>
+
+     <a onclick="window.location.href='../../Anuncio.html?curso=Py11'" class="licao">
+      <div class="numero">11</div>
+      <div>Arrays 2</div>
+    </a>
+
+     <a onclick="window.location.href='../../Anuncio.html?curso=Py12'" class="licao">
+      <div class="numero">12</div>
+      <div>Arrays 3</div>
+    </a>
+
+     <a onclick="window.location.href='../../Anuncio.html?curso=Py13'" class="licao">
+      <div class="numero">13</div>
+      <div>Reforço</div>
+    </a>
+
+     <a onclick="window.location.href='../../Anuncio.html?curso=Py14'" class="licao">
+      <div class="numero">14</div>
+      <div>Objetos</div>
+    </a>
+
+     <a onclick="window.location.href='../../Anuncio.html?curso=Py15'" class="licao">
+      <div class="numero">15</div>
+      <div>Funções</div>
+    </a>
+
+     <a onclick="window.location.href='../../Anuncio.html?curso=Py16'" class="licao">
+      <div class="numero">16</div>
+      <div>Parâmetros</div>
+    </a>
+
+     <a onclick="window.location.href='../../Anuncio.html?curso=Py17'" class="licao">
+      <div class="numero">17</div>
+      <div>Reforço</div>
+    </a>
+
+     <a onclick="window.location.href='../../Anuncio.html?curso=Py18'" class="licao">
+      <div class="numero">18</div>
+      <div>Return</div>
+    </a>
+
+     <a onclick="window.location.href='../../Anuncio.html?curso=Py19'" class="licao"><div class="numero">19</div><div>Classes</div></a>
+     <a onclick="window.location.href='../../Anuncio.html?curso=Py20'" class="licao"><div class="numero">20</div><div>Exercícios</div></a>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 Power Learn
+</footer>
+
+</body>
+</html>

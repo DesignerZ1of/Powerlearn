@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 16 — Parâmetros</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Consolas;
+background:#0f172a;
+color:#e2e8f0;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:40px;
+}
+
+.card{
+background:#1e293b;
+padding:25px;
+border-radius:12px;
+margin-bottom:25px;
+border:1px solid #334155;
+}
+
+h1,h2{
+color:#38bdf8;
+}
+
+.code{
+background:black;
+padding:15px;
+border-radius:8px;
+margin-top:10px;
+white-space:pre-line;
+color:#22c55e;
+}
+
+.exercise{
+background:#020617;
+padding:20px;
+border-radius:10px;
+margin-top:20px;
+}
+
+.option{
+display:block;
+margin-top:10px;
+}
+
+textarea{
+width:100%;
+height:180px;
+margin-top:10px;
+background:black;
+color:#22c55e;
+border:1px solid #334155;
+border-radius:8px;
+padding:15px;
+font-family:Consolas;
+}
+
+button{
+margin-top:15px;
+padding:10px 15px;
+background:#38bdf8;
+border:none;
+border-radius:6px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.result{
+margin-top:15px;
+font-weight:bold;
+}
+
+.correct{
+color:#22c55e;
+}
+
+.wrong{
+color:#ef4444;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>📘 LIÇÃO 16 — Parâmetros</h1>
+
+<hr>
+
+<h2>🧠 O que você vai aprender aqui</h2>
+
+<p>
+• O que é um parâmetro<br>
+• Como a função recebe informações<br>
+• Como enviar valores diferentes para a mesma função<br>
+• Como o parâmetro muda de valor a cada execução
+</p>
+
+<hr>
+
+<h2>🧩 Tipo de lógica usado</h2>
+
+<p>
+🔹 Lógica de Comunicação
+</p>
+
+<p>
+> Enviar informações para a função usar.
+</p>
+
+<hr>
+
+<h2>🧠 O que é um parâmetro?</h2>
+
+<p>
+> O parâmetro funciona como: uma variável vazia esperando um valor.
+</p>
+
+<hr>
+
+<h2>💻 Exemplo simples</h2>
+
+<div class="code">
+function falar(nome) {
+  console.log(nome);
+}
+</div>
+
+<hr>
+
+<h2>🧠 O que está acontecendo?</h2>
+
+<p>
+🔹 nome
+</p>
+
+<p>
+É o parâmetro.
+</p>
+
+<p>
+Nesse momento:
+</p>
+
+<p>
+> ele ainda está vazio.
+</p>
+
+<hr>
+
+<h2>🚀 Enviando um valor</h2>
+
+<div class="code">
+falar("Carlos");
+</div>
+
+<hr>
+
+<h2>🧠 O que acontece?</h2>
+
+<p>
+A função recebe:
+</p>
+
+<div class="code">
+"Carlos"
+</div>
+
+<p>
+Então:
+</p>
+
+<p>
+> nome passa a valer "Carlos"
+</p>
+
+<hr>
+
+<h2>📌 Como pensar nisso</h2>
+
+<p>
+É como se fosse:
+</p>
+
+<div class="code">
+nome = "Carlos"
+</div>
+
+<p>
+Só que:
+</p>
+
+<p>
+> isso acontece dentro da função.
+</p>
+
+<hr>
+
+<h2>🧠 O parâmetro escolhe sozinho?</h2>
+
+<p>
+❌ Não.
+</p>
+
+<p>
+O parâmetro:
+</p>
+
+<p>
+> apenas recebe o valor enviado.
+</p>
+
+<hr>
+
+<h2>💻 Outro exemplo</h2>
+
+<div class="code">
+falar("Ana");
+</div>
+
+<p>
+Agora:
+</p>
+
+<p>
+> nome = "Ana"
+</p>
+
+<hr>
+
+<h2>🧠 Importante</h2>
+
+<p>
+O valor antigo:
+</p>
+
+<p>
+> é trocado pelo novo.
+</p>
+
+<hr>
+
+<h2>🚀 Chamando várias vezes</h2>
+
+<div class="code">
+function nome(pessoa) {
+  console.log(pessoa);
+}
+
+nome("Carlos");
+nome("Ana");
+</div>
+
+<hr>
+
+<h2>🧠 O que acontece?</h2>
+
+<p>
+Primeira execução:
+</p>
+
+<p>
+> pessoa = "Carlos"
+</p>
+
+<p>
+Segunda execução:
+</p>
+
+<p>
+> pessoa = "Ana"
+</p>
+
+<hr>
+
+<h2>📌 Resultado</h2>
+
+<div class="code">
+Carlos
+Ana
+</div>
+
+<hr>
+
+<h2>🧠 Ideia principal</h2>
+
+<p>
+Cada vez que a função é chamada:
+</p>
+
+<p>
+> o parâmetro recebe um novo valor.
+</p>
+
+<hr>
+
+<h2>💻 Exemplo mais completo</h2>
+
+<div class="code">
+function mensagem(nome) {
+  console.log("Olá " + nome);
+}
+
+mensagem("Carlos");
+mensagem("Ana");
+</div>
+
+<hr>
+
+<h2>🧠 Resultado</h2>
+
+<div class="code">
+Olá Carlos
+Olá Ana
+</div>
+
+<hr>
+
+<h2>📌 Fluxo simples</h2>
+
+<p>
+cria função<br>
+cria parâmetro vazio<br>
+envia valor<br>
+parâmetro recebe valor<br>
+função usa valor
+</p>
+
+<hr>
+
+<h2>⚠️ Erro comum</h2>
+
+<p>
+Pensar que:
+</p>
+
+<p>
+> o parâmetro cria ou escolhe valores sozinho.
+</p>
+
+<p>
+❌ Não.
+</p>
+
+<p>
+Você precisa:
+</p>
+
+<p>
+> enviar os valores manualmente.
+</p>
+
+<hr>
+
+<h2>🎯 Fechamento</h2>
+
+<p>
+> O parâmetro é uma variável vazia.
+A função espera você enviar um valor.
+</p>
+
+</div>
+
+<!-- EXERCÍCIO 1 -->
+
+<div class="card">
+
+<div class="exercise">
+
+<h2>🧠 1. Reforço — Criar código usando for</h2>
+
+<p>
+Crie um for que mostre:
+</p>
+
+<div class="code">
+1
+2
+3
+</div>
+
+<textarea id="q1"></textarea>
+
+<button onclick="corrigir1()">Verificar</button>
+
+<div id="r1" class="result"></div>
+
+</div>
+</div>
+
+<!-- EXERCÍCIO 2 -->
+
+<div class="card">
+
+<div class="exercise">
+
+<h2>🧠 2. Criar função com parâmetro</h2>
+
+<p>
+Crie uma função chamada:
+</p>
+
+<div class="code">
+mensagem
+</div>
+
+<p>
+Com o parâmetro:
+</p>
+
+<div class="code">
+nome
+</div>
+
+<p>
+A função deve mostrar:
+</p>
+
+<div class="code">
+Olá + nome
+</div>
+
+<p>
+Depois execute a função enviando:
+</p>
+
+<div class="code">
+"Carlos"
+</div>
+
+<textarea id="q2"></textarea>
+
+<button onclick="corrigir2()">Verificar</button>
+
+<div id="r2" class="result"></div>
+
+</div>
+</div>
+
+<!-- EXERCÍCIO 3 -->
+
+<div class="card">
+
+<div class="exercise">
+
+<h2>🧠 3. Função com parâmetro + repetição</h2>
+
+<p>
+Crie uma função chamada:
+</p>
+
+<div class="code">
+falar
+</div>
+
+<p>
+Com o parâmetro:
+</p>
+
+<div class="code">
+nome
+</div>
+
+<p>
+Depois use:
+</p>
+
+<div class="code">
+for
+</div>
+
+<p>
+Para executar a função 3 vezes.
+</p>
+
+<p>
+A função deve mostrar:
+</p>
+
+<div class="code">
+Olá + nome
+</div>
+
+<textarea id="q3"></textarea>
+
+<button onclick="corrigir3()">Verificar</button>
+
+<div id="r3" class="result"></div>
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+function correto(id){
+document.getElementById(id).innerHTML =
+'<span class="correct">✔ Correto!</span>'
+}
+
+function errado(id){
+document.getElementById(id).innerHTML =
+'<span class="wrong">✖ Errado.</span>'
+}
+
+function corrigir1(){
+
+let r = document.getElementById("q1").value.toLowerCase()
+
+if(
+r.includes("for") &&
+r.includes("console.log") &&
+r.includes("i++")
+){
+correto("r1")
+}else{
+errado("r1")
+}
+
+}
+
+function corrigir2(){
+
+let r = document.getElementById("q2").value.toLowerCase()
+
+if(
+r.includes("function") &&
+r.includes("mensagem") &&
+r.includes("nome") &&
+r.includes("console.log") &&
+r.includes("carlos")
+){
+correto("r2")
+}else{
+errado("r2")
+}
+
+}
+
+function corrigir3(){
+
+let r = document.getElementById("q3").value.toLowerCase()
+
+if(
+r.includes("function") &&
+r.includes("falar") &&
+r.includes("nome") &&
+r.includes("for") &&
+r.includes("console.log")
+){
+correto("r3")
+}else{
+errado("r3")
+}
+
+}
+
+</script>
+
+</body>
+</html>

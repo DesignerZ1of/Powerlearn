@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 6 — Repetição (Parte 2)</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Consolas, monospace;
+background:#0f172a;
+color:#e2e8f0;
+}
+
+.container{
+max-width:950px;
+margin:auto;
+padding:40px;
+}
+
+.card{
+background:#1e293b;
+padding:25px;
+border-radius:12px;
+margin-bottom:25px;
+border:1px solid #334155;
+}
+
+h1{
+color:#38bdf8;
+}
+
+.section{
+margin-top:20px;
+font-weight:bold;
+color:#94a3b8;
+}
+
+.code{
+background:#020617;
+color:#22c55e;
+padding:15px;
+border-radius:8px;
+margin-top:10px;
+white-space:pre-line;
+}
+
+.exercise{
+background:#020617;
+padding:20px;
+border-radius:10px;
+margin-top:20px;
+}
+
+textarea{
+width:100%;
+height:220px;
+margin-top:10px;
+padding:10px;
+border-radius:8px;
+border:none;
+background:#0f172a;
+color:#e2e8f0;
+font-family:Consolas;
+font-size:15px;
+}
+
+button{
+margin-top:15px;
+padding:10px 15px;
+background:#38bdf8;
+border:none;
+border-radius:6px;
+color:#0f172a;
+cursor:pointer;
+font-weight:bold;
+}
+
+.result{
+margin-top:15px;
+padding:15px;
+border-radius:8px;
+background:#020617;
+}
+
+.correct{
+color:#22c55e;
+}
+
+.wrong{
+color:#ef4444;
+}
+
+.tip{
+background:#0f172a;
+padding:15px;
+border-left:4px solid #38bdf8;
+margin-top:15px;
+border-radius:6px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>📘 LIÇÃO 6 — Repetição (Parte 2)</h1>
+
+<div class="section">🧠 O que você vai aprender hoje?</div>
+
+<p>
+Vamos aprender sobre o código:
+</p>
+
+<div class="code">
+for
+</div>
+
+<p>
+Como funciona sua estrutura<br>
+Diferença entre while e for<br>
+Como controlar repetições de forma organizada
+</p>
+
+---
+
+<div class="section">🧠 O que é "for"</div>
+
+<p>
+O for é uma estrutura de repetição.
+</p>
+
+<p><b>
+Ele é usado quando você já sabe:
+</b></p>
+
+<p>
+• Onde começa<br>
+• Até onde vai<br>
+• Como o valor muda
+</p>
+
+---
+
+<div class="section">📌 Estrutura do for</div>
+
+<div class="code">
+for (início; condição; mudança) {
+
+}
+</div>
+
+<div class="section">🔍 O que cada parte faz</div>
+
+<p><b>Início</b> → Valor inicial</p>
+
+<p>
+O início sempre vai estar no começo dos parênteses()
+e antes do ; .
+</p>
+
+<p>
+Ele é o valor inicial,
+é o valor que está antes do código.
+IMPORTANTE:
+A variável criada no código "for" só pode ser usada dentro dele e não em outros códigos
+</p>
+
+<p><b>Condição</b> → Até quando continua</p>
+
+<p>
+Ele vem depois do ; e acaba no ;
+</p>
+
+<p>
+Nele mostra o que é necessário para o código acontecer.
+</p>
+
+<p><b>Mudança</b> → Atualização do valor</p>
+
+<p>
+Ele vem depois do ; e acaba no ()
+</p>
+
+<p>
+Ele serve para mudar o valor inicial.
+</p>
+
+---
+
+<div class="section">💻 Código (1º da aula)</div>
+
+<div class="code">
+for (let i = 1; i <= 3; i++) {
+
+console.log(i);
+
+}
+</div>
+
+---
+
+<div class="section">🧠 Tradução</div>
+
+<p>
+Cria a variável "i" com o valor 1 (Início)
+</p>
+
+<p>
+Mostra que a variável "i"
+tem que ter o valor menor ou igual a 3 (Condição)
+</p>
+
+<p>
+Nós aumentamos o valor +1 (Mudança)
+</p>
+
+<div class="code">
+NomedaVariável++
+</div>
+
+<p>
+E finalizamos com o console.log
+para nos mostrar o resultado
+</p>
+
+---
+
+<div class="section">📌 O que significa i++</div>
+
+<div class="code">
+i++
+</div>
+
+<p>
+É uma forma resumida de:
+</p>
+
+<div class="code">
+i = i + 1
+</div>
+
+<p><b>
+Ou seja:
+pega o valor atual e soma +1
+</b></p>
+
+---
+
+<div class="section">🧠 Por que usamos for</div>
+
+<p>
+Porque ele deixa:
+</p>
+
+<p>
+início<br>
+condição<br>
+mudança
+</p>
+
+<p>
+Tudo organizado em uma linha.
+</p>
+
+---
+
+<div class="section">🔥 Diferença de while e for</div>
+
+<p><b>while</b> → “Não sei exatamente quantas vezes vai repetir”</p>
+
+<div class="code">
+let numero = 1;
+
+while (numero <= 3) {
+
+console.log(numero);
+
+numero = numero + 1;
+
+}
+</div>
+
+<p>
+O while funciona assim:
+“Enquanto isso for verdadeiro → continue”
+</p>
+
+<p>
+Ele é mais manual.
+</p>
+
+<p>
+Você separa:
+</p>
+
+<p>
+início<br>
+condição<br>
+mudança
+</p>
+
+---
+
+<p><b>for</b> → “Já sei quantas vezes quero repetir”</p>
+
+<div class="code">
+for (let i = 1; i <= 3; i++) {
+
+console.log(i);
+
+}
+</div>
+
+<p>
+O for é mais organizado.
+</p>
+
+<p>
+Ele junta:
+</p>
+
+<p>
+início<br>
+condição<br>
+mudança
+</p>
+
+<p>
+Tudo em uma linha.
+</p>
+
+---
+
+<div class="section">💡 Dica importante</div>
+
+<p>
+Antes de usar for, pense:
+</p>
+
+<p><b>
+“Quantas vezes isso precisa repetir?”
+</b></p>
+
+---
+
+<div class="section">🎯 Fechamento</div>
+
+<p><b>
+while controla na mão.<br>
+for organiza o controle.
+</b></p>
+
+</div>
+
+<div class="card">
+
+<h1>🧪 Exercício Prático</h1>
+
+<div class="exercise">
+
+<p>
+Crie um código usando <b>for</b>
+para mostrar os números:
+</p>
+
+<p><b>1, 2, 3, 4</b></p>
+
+---
+
+<div class="tip">
+
+💡 EXEMPLO PARA SEGUIR:
+
+<div class="code">
+for (let i = 1; i <= 3; i++) {
+
+console.log(i);
+
+}
+</div>
+
+<p>
+Agora adapte para mostrar até 4.
+</p>
+
+</div>
+
+<textarea id="codigo" placeholder="Escreva seu código aqui..."></textarea>
+
+<button onclick="executar()">Executar Código</button>
+
+<div id="resultado" class="result"></div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function executar(){
+
+let codigo = document.getElementById("codigo").value
+
+let resultado = document.getElementById("resultado")
+
+resultado.innerHTML = ""
+
+try{
+
+let saida = []
+
+let consoleFake = {
+
+log: function(msg){
+
+saida.push(msg)
+
+}
+
+}
+
+new Function("console", codigo)(consoleFake)
+
+let valido = true
+
+if(!codigo.includes("for")) valido = false
+
+if(!codigo.includes("console.log")) valido = false
+
+if(!codigo.includes("i++")) valido = false
+
+if(saida.join(",") !== "1,2,3,4") valido = false
+
+if(valido){
+
+resultado.innerHTML = `
+<span class="correct">
+✔ Excelente! Seu for funcionou corretamente.
+</span>
+
+<br><br>
+
+Resultado mostrado:
+<br>
+
+${saida.join(", ")}
+`
+
+}else{
+
+resultado.innerHTML = `
+<span class="wrong">
+✖ Seu código ainda não mostrou:
+1, 2, 3, 4
+</span>
+`
+
+}
+
+}catch(erro){
+
+resultado.innerHTML = `
+<span class="wrong">
+Erro no código:
+<br><br>
+${erro.message}
+</span>
+`
+
+}
+
+}
+
+</script>
+
+</body>
+</html>

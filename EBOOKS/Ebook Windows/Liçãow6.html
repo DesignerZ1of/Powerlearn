@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 6 — O que está acontecendo dentro do computador</title>
+
+<style>
+
+body{
+font-family:Segoe UI, Arial;
+background:#ffffff;
+margin:0;
+color:#1f2937;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:50px 40px;
+}
+
+h1{
+color:#1e3a8a;
+font-size:34px;
+}
+
+.card{
+background:#f9fafb;
+border:1px solid #e5e7eb;
+border-radius:14px;
+padding:35px;
+margin-top:30px;
+}
+
+.section-title{
+color:#1e40af;
+font-size:20px;
+margin-top:35px;
+font-weight:bold;
+}
+
+.highlight{
+background:#eff6ff;
+border-left:6px solid #2563eb;
+padding:18px;
+border-radius:10px;
+margin-top:15px;
+}
+
+.question{
+background:white;
+padding:20px;
+border-radius:10px;
+border:1px solid #e5e7eb;
+margin-top:20px;
+}
+
+.option{
+padding:10px;
+border:1px solid #d1d5db;
+border-radius:6px;
+margin-top:8px;
+cursor:pointer;
+}
+
+.option:hover{
+background:#eef2ff;
+}
+
+.correct{
+background:#dcfce7 !important;
+border-color:green !important;
+}
+
+.wrong{
+background:#fee2e2 !important;
+border-color:red !important;
+}
+
+.result{
+margin-top:10px;
+font-weight:bold;
+}
+
+input[type=text]{
+padding:10px;
+width:300px;
+margin-top:10px;
+border-radius:6px;
+border:1px solid #d1d5db;
+}
+
+button{
+margin-top:10px;
+padding:10px 15px;
+border:none;
+background:#2563eb;
+color:white;
+border-radius:6px;
+cursor:pointer;
+}
+
+button:hover{
+background:#1e40af;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🧠 Lição 6 — O que está acontecendo dentro do computador</h1>
+
+<div class="card">
+
+<p>Agora você já sabe que usa programas dentro do Microsoft Windows.</p>
+
+<p>Essa lição não é sobre clicar.
+É sobre entender o jogo por trás da tela.</p>
+
+<p><strong>👉 O computador não faz nada sozinho.
+Ele executa exatamente o que você manda.</strong></p>
+
+<p>Entender isso é o que separa quem clica… de quem entende.</p>
+
+<div class="section-title">⚙️ O que acontece quando você clica em algo</div>
+
+<p>1. Você clica em um programa</p>
+<p>2. O Windows recebe o comando</p>
+<p>3. Ele carrega o programa na memória</p>
+<p>4. O programa abre na tela</p>
+
+<div class="highlight">
+💡 Clique → comando → execução
+</div>
+
+<div class="section-title">🧠 O que significa “programa rodando”</div>
+
+<p>Quando um programa está aberto, ele está em execução.</p>
+
+<p>Mesmo que você não veja.</p>
+
+<p>👉 Exemplos:</p>
+
+<p>Minimizado → ainda está rodando</p>
+
+<p>Em segundo plano → ainda está rodando</p>
+
+<p>💡 Ele só para quando você fecha de verdade.</p>
+
+<div class="section-title">🔄 Vários programas ao mesmo tempo</div>
+
+<p>O computador consegue rodar vários programas juntos.</p>
+
+<p>Exemplo:</p>
+
+<p>Navegador aberto</p>
+<p>Música tocando</p>
+<p>Arquivo aberto</p>
+
+<p>👉 Tudo ao mesmo tempo.</p>
+
+<div class="section-title">⚠️ Minimizar ≠ Fechar</div>
+
+<p>Minimizar → só esconde</p>
+<p>Fechar → encerra</p>
+
+<div class="section-title">🧱 Por que o PC trava às vezes?</div>
+
+<p>Muitos programas abertos</p>
+<p>Programa pesado</p>
+<p>Pouca memória</p>
+
+<div class="section-title">🔍 O que significa “carregando”</div>
+
+<p>O sistema está processando algo ou buscando informações.</p>
+
+<div class="section-title">🧠 Quem controla tudo?</div>
+
+<p>Windows → controla o sistema</p>
+<p>Programas → fazem tarefas</p>
+<p>Você → dá os comandos</p>
+
+<div class="highlight">
+👉 Você é o centro de tudo.
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>🧪 Exercícios</h2>
+
+<div id="quiz"></div>
+
+<div class="question">
+<strong>7. Complete a frase:</strong><br><br>
+"O computador executa exatamente o que você ______."
+<br>
+<input type="text" id="resposta">
+<br>
+<button onclick="verificarTexto()">Responder</button>
+<div id="resultadoTexto" class="result"></div>
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+const perguntas = [
+
+{
+pergunta:"1. Qual é a sequência correta quando você abre um programa?",
+opcoes:[
+"Programa → Windows → Clique",
+"Clique → comando → execução",
+"Windows → programa → clique",
+"Execução → clique → comando"
+],
+correta:1
+},
+
+{
+pergunta:"2. Quando um programa está minimizado, o que acontece?",
+opcoes:[
+"Ele é fechado",
+"Ele continua rodando",
+"Ele é apagado",
+"Ele vira um arquivo"
+],
+correta:1
+},
+
+{
+pergunta:"3. Por que o computador consegue rodar vários programas ao mesmo tempo?",
+opcoes:[
+"Porque o monitor permite",
+"Porque o Windows gerencia os programas",
+"Porque os arquivos fazem isso",
+"Porque o teclado controla"
+],
+correta:1
+},
+
+{
+pergunta:"4. Qual é um erro comum que essa lição evita?",
+opcoes:[
+"Achar que minimizar fecha o programa",
+"Pensar que internet é um programa",
+"Achar que arquivos abrem sozinhos",
+"Pensar que monitor executa programas"
+],
+correta:0
+},
+
+{
+pergunta:"5. O que normalmente causa travamentos no computador?",
+opcoes:[
+"Mouse quebrado",
+"Muitos programas abertos ou pouca memória",
+"Ícones na tela",
+"Programas pequenos"
+],
+correta:1
+},
+
+{
+pergunta:"6. Quem controla o sistema e gerencia os programas?",
+opcoes:[
+"Internet",
+"Windows",
+"Monitor",
+"Teclado"
+],
+correta:1
+}
+
+];
+
+function carregarQuiz(){
+
+const quiz = document.getElementById("quiz");
+
+perguntas.forEach((q,i)=>{
+
+let html = `<div class="question">
+<strong>${q.pergunta}</strong>`;
+
+q.opcoes.forEach((op,j)=>{
+
+html+=`<div class="option" onclick="responder(${i},${j},this)">
+${op}
+</div>`
+
+})
+
+html+=`<div id="res${i}" class="result"></div></div>`
+
+quiz.innerHTML+=html
+
+})
+
+}
+
+function responder(pergunta,opcao,elemento){
+
+const correta = perguntas[pergunta].correta
+const res = document.getElementById("res"+pergunta)
+
+if(res.innerHTML!="") return
+
+if(opcao==correta){
+
+elemento.classList.add("correct")
+res.innerHTML="✔ Correto!"
+
+}else{
+
+elemento.classList.add("wrong")
+res.innerHTML="✖ Errado. Resposta correta: "+perguntas[pergunta].opcoes[correta]
+
+}
+
+}
+
+function verificarTexto(){
+
+const resp = document.getElementById("resposta").value.toLowerCase()
+const res = document.getElementById("resultadoTexto")
+
+if(resp.includes("manda") || resp.includes("comanda")){
+
+res.innerHTML="<span style='color:green'>✔ Correto!</span>"
+
+}else{
+
+res.innerHTML="<span style='color:red'>✖ Errado. Resposta correta: manda.</span>"
+
+}
+
+}
+
+carregarQuiz()
+
+</script>
+
+</body>
+</html>

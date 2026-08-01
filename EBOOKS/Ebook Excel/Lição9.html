@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 9 — Leitura de Tabelas Grandes</title>
+
+<style>
+body{font-family:Arial;background:#fff;color:#111;margin:0}
+.container{max-width:1100px;margin:auto;padding:40px}
+h2{color:#22c55e}
+
+.card{
+  background:#f9fafb;
+  border:1px solid #e5e7eb;
+  border-radius:10px;
+  padding:25px;
+  margin:20px 0
+}
+
+.excel{
+  border:1px solid #cbd5e1;
+  border-radius:8px;
+  background:#fff
+}
+
+.header-top{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  margin-bottom:30px;
+}
+
+.header-top img{
+  width:60px;
+}
+
+.menu{
+  display:flex;
+  gap:18px;
+  background:#e5e7eb;
+  padding:8px;
+  font-weight:bold;
+  cursor:pointer
+}
+
+.submenu{
+  display:none;
+  gap:15px;
+  padding:8px;
+  background:#f1f5f9;
+  border-bottom:1px solid #cbd5e1;
+  font-weight:bold
+}
+
+.grid-wrapper{
+  max-height:220px;
+  overflow-y:auto;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:40px repeat(3,140px);
+}
+
+.header{
+  background:#f1f5f9;
+  border:1px solid #cbd5e1;
+  text-align:center;
+  font-weight:bold;
+  padding:6px;
+}
+
+.cell{
+  border:1px solid #cbd5e1;
+  min-height:32px;
+  padding:6px;
+}
+
+/* CONGELAR LINHA 1 INTEIRA */
+.freeze-row .row-1{
+  position:sticky;
+  top:0;
+  z-index:2;
+  background:#f1f5f9;
+}
+
+button{
+  background:#22c55e;
+  color:#fff;
+  border:none;
+  padding:6px 12px;
+  border-radius:6px;
+  cursor:pointer
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<div class="header-top">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Microsoft_Excel_2013-2019_logo.svg">
+
+  <h2 class="lesson-title">
+    Lição 9 — Leitura de Tabelas Grandes
+  </h2>
+</div>
+
+<!-- CONTEÚDO INTACTO -->
+<div class="card">
+<p><b>📌 Objetivo da aula</b><br>
+Ensinar você a não se perder ao trabalhar com listas grandes no Excel.<br>
+O foco não é editar dados, mas conseguir ler e navegar.</p>
+
+<p>▪️Quando a planilha possui muitas linhas, é fácil perder a noção do que cada coluna representa. Por isso, aprendemos a manter os títulos sempre visíveis enquanto a planilha é rolada.</p>
+
+<p><b>Importância:</b><br>
+. Ajudar a mostrar o que cada coluna representa.</p>
+
+<p><b>Como usar:</b><br>
+. Clique na célula superior ( Célula A1)<br>
+. Vá em Exibir → Congelar Painéis</p>
+
+<p><i>"Congelar Painéis faz com que parte da planilha fique sempre visível, mesmo quando você rola para baixo ou para o lado."</i></p>
+
+<p>▪Em outras aulas aprendemos sobre as ferramentas que estão no <i>"Início"</i> e <i>"Dados"</i> E nessas últimas Lições vamos entender melhor sobre as ferramentas no <i>"Exibir"</i>.</p>
+
+<p>1⃣ A Primeira função é o <i>Nível de Zoom</i> aonde você pode ajusta lo; facilitando sua visualização.</p>
+
+<p>2⃣ A Segunda foi a que foi falada na introdução da aula, a de <i>Congelar Painéis</i> sendo uma ferramenta bem importante; para sempre poder dar destaque nas células, por isso decidimos focar nela nessa lição.</p>
+
+<p>3⃣ A terceira é a de <i>"Tela Inteira"</i> sendo bem simples, mas muito boa para uma melhor visualização, da planília.</p>
+
+<p><b>📌 Conclusão da Aula</b><br>
+Falamos um pouco sobre as ferramentas no <i>"Exibir"</i> podendo facilitar sua visualização, e organização na Excel.</p>
+</div>
+
+<!-- EXERCÍCIO -->
+<div class="card">
+<b>Exercício — Congelar Painéis</b>
+
+<p>
+1. Clique em qualquer célula da linha 1<br>
+2. Digite qualquer texto<br>
+3. Clique em <b>Exibir</b><br>
+4. Clique em <b>Congelar Painéis</b><br>
+5. Role a planilha para baixo
+</p>
+
+<div class="excel">
+
+<div class="menu">
+  <span>Arquivo</span>
+  <span>Início</span>
+  <span>Inserir</span>
+  <span>Compartilhar</span>
+  <span>Layout da Página</span>
+  <span>Fórmulas</span>
+  <span>Dados</span>
+  <span onclick="abrirExibir()">Exibir</span>
+</div>
+
+<div class="submenu" id="exibirBarra">
+  <button onclick="congelar()">Congelar Painéis</button>
+</div>
+
+<div class="grid-wrapper">
+<div class="grid" id="grid">
+
+  <!-- CABEÇALHO -->
+  <div class="header row-1"></div>
+  <div class="header row-1">A</div>
+  <div class="header row-1">B</div>
+  <div class="header row-1">C</div>
+
+  <!-- LINHAS -->
+  <script>
+    for(let i=1;i<=30;i++){
+      const rowClass = i === 1 ? 'row-1' : '';
+      document.write(`
+        <div class="header ${rowClass}">${i}</div>
+        <div class="cell ${rowClass}" contenteditable></div>
+        <div class="cell ${rowClass}" contenteditable></div>
+        <div class="cell ${rowClass}" contenteditable></div>
+      `);
+    }
+  </script>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+
+<script>
+function abrirExibir(){
+  document.getElementById("exibirBarra").style.display = "flex";
+}
+
+function congelar(){
+  document.getElementById("grid").classList.add("freeze-row");
+}
+</script>
+
+</body>
+</html>

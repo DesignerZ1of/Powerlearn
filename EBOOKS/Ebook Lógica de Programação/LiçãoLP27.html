@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 27 — Reforço Brabo</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Consolas, monospace;
+background:#0f172a;
+color:#e5e7eb;
+}
+
+.header{
+background:#020617;
+padding:30px;
+text-align:center;
+font-size:24px;
+color:#3b82f6;
+border-bottom:1px solid #1f2937;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:30px;
+}
+
+.card{
+background:#111827;
+padding:25px;
+border-radius:12px;
+margin-bottom:25px;
+border:1px solid #1f2937;
+}
+
+h1{
+color:#3b82f6;
+}
+
+.section{
+margin-top:20px;
+font-size:20px;
+font-weight:bold;
+color:#7dd3fc;
+}
+
+.code{
+background:#020617;
+padding:15px;
+border-radius:8px;
+margin-top:15px;
+color:#22c55e;
+white-space:pre-line;
+overflow:auto;
+border:1px solid #1f2937;
+}
+
+.question{
+background:#020617;
+padding:20px;
+border-radius:10px;
+margin-top:20px;
+border:1px solid #334155;
+}
+
+.option{
+padding:12px;
+margin-top:10px;
+background:#111827;
+border-radius:8px;
+cursor:pointer;
+border:1px solid #1f2937;
+transition:0.2s;
+}
+
+.option:hover{
+background:#1e293b;
+}
+
+.correct{
+background:#14532d !important;
+border:1px solid #22c55e;
+}
+
+.wrong{
+background:#450a0a !important;
+border:1px solid #ef4444;
+}
+
+.exercise{
+background:#020617;
+padding:25px;
+border-radius:12px;
+margin-top:20px;
+border:1px solid #334155;
+}
+
+textarea{
+width:100%;
+height:350px;
+margin-top:15px;
+padding:15px;
+background:black;
+color:#22c55e;
+border-radius:8px;
+border:1px solid #334155;
+font-family:Consolas;
+font-size:15px;
+}
+
+button{
+margin-top:15px;
+padding:12px 18px;
+background:#3b82f6;
+border:none;
+border-radius:8px;
+color:white;
+font-weight:bold;
+cursor:pointer;
+}
+
+.result{
+margin-top:15px;
+font-weight:bold;
+font-size:18px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+💻 LIÇÃO 27 — Reforço Brabo
+</div>
+
+<div class="container">
+
+<div class="card">
+
+<h1>📘 LIÇÃO 27 — Reforço Brabo</h1>
+
+<div class="section">🧠 Objetivo da aula</div>
+
+<p>
+Agora você irá:
+</p>
+
+<p>
+> misturar praticamente tudo que aprendeu até aqui.
+</p>
+
+<p>
+Essa aula serve para:
+</p>
+
+<p>
+reforçar lógica<br>
+reforçar sistemas<br>
+reforçar objetos<br>
+reforçar arrays<br>
+reforçar verificações
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">📌 Conteúdos usados</div>
+
+<p>
+arrays<br>
+objetos<br>
+for<br>
+.length<br>
+if<br>
+else<br>
+funções<br>
+parâmetros<br>
+atualização de dados<br>
+métodos
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🧠 Relembrando arrays + objetos</div>
+
+<div class="code">
+let jogadores = [
+
+  {
+    nome: "Carlos",
+    moedas: 100
+  },
+
+  {
+    nome: "Ana",
+    moedas: 200
+  }
+
+];
+</div>
+
+<div class="section">🧠 O que isso faz?</div>
+
+<p>
+O array:
+</p>
+
+<p>
+> guarda vários objetos.
+</p>
+
+<p>
+E cada objeto:
+</p>
+
+<p>
+> representa um jogador.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🚀 Relembrando for</div>
+
+<div class="code">
+for (let i = 0; i < jogadores.length; i++) {
+
+  console.log(jogadores[i].nome);
+
+}
+</div>
+
+<div class="section">🧠 O que o for faz?</div>
+
+<p>
+percorre o array<br>
+pega cada jogador<br>
+mostra o nome
+</p>
+
+<p>
+📌 Resultado
+</p>
+
+<div class="code">
+Carlos
+Ana
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="section">🚀 Relembrando atualização</div>
+
+<div class="code">
+jogadores[0].moedas =
+jogadores[0].moedas + 50;
+</div>
+
+<div class="section">🧠 O que acontece?</div>
+
+<p>
+O sistema:
+</p>
+
+<p>
+pega moedas atuais<br>
+adiciona valor<br>
+atualiza informação
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🚀 Relembrando if</div>
+
+<div class="code">
+if (jogadores[0].moedas >= 100) {
+
+  console.log("Pode comprar");
+
+}
+</div>
+
+<div class="section">🧠 O que o sistema verifica?</div>
+
+<p>
+Se o jogador:
+</p>
+
+<p>
+> possui moedas suficientes.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🚀 Relembrando função</div>
+
+<div class="code">
+function recompensa(valor) {
+
+}
+</div>
+
+<div class="section">🧠 O que a função faz?</div>
+
+<p>
+Ela guarda:
+</p>
+
+<p>
+> um código reutilizável.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🚀 Sistema completo da aula</div>
+
+<p>
+Agora iremos criar:
+</p>
+
+<p>
+🎮 Sistema de recompensa e dano
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🚀 ETAPA 1 — Criando jogadores</div>
+
+<div class="code">
+let jogadores = [
+
+  {
+    nome: "Carlos",
+    moedas: 100,
+    vida: 100
+  },
+
+  {
+    nome: "Ana",
+    moedas: 200,
+    vida: 80
+  }
+
+];
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="section">🚀 ETAPA 2 — Criando recompensa</div>
+
+<div class="code">
+function recompensa(valor) {
+
+  for (let i = 0; i < jogadores.length; i++) {
+
+    jogadores[i].moedas =
+    jogadores[i].moedas + valor;
+
+  }
+
+}
+</div>
+
+<div class="section">🧠 O que essa função faz?</div>
+
+<p>
+Ela:
+</p>
+
+<p>
+Percorre jogadores e adiciona moedas para todos.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🚀 ETAPA 3 — Criando dano</div>
+
+<div class="code">
+function dano(valor) {
+
+  for (let i = 0; i < jogadores.length; i++) {
+
+    jogadores[i].vida =
+    jogadores[i].vida - valor;
+
+  }
+
+}
+</div>
+
+<div class="section">🧠 O que essa função faz?</div>
+
+<p>
+Ela:
+</p>
+
+<p>
+Percorre jogadores e remove vida de todos.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🚀 ETAPA 4 — Verificando morte</div>
+
+<div class="code">
+for (let i = 0; i < jogadores.length; i++) {
+
+  if (jogadores[i].vida <= 0) {
+
+    console.log(jogadores[i].nome + " morreu");
+
+  }
+
+}
+</div>
+
+<div class="section">🧠 O que acontece?</div>
+
+<p>
+O sistema verifica:
+</p>
+
+<p>
+> quais jogadores morreram.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🚀 ETAPA 5 — Código final completo</div>
+
+<div class="code">
+let jogadores = [
+
+  {
+    nome: "Carlos",
+    moedas: 100,
+    vida: 100
+  },
+
+  {
+    nome: "Ana",
+    moedas: 200,
+    vida: 80
+  }
+
+];
+
+function recompensa(valor) {
+
+  for (let i = 0; i < jogadores.length; i++) {
+
+    jogadores[i].moedas =
+    jogadores[i].moedas + valor;
+
+  }
+
+}
+
+function dano(valor) {
+
+  for (let i = 0; i < jogadores.length; i++) {
+
+    jogadores[i].vida =
+    jogadores[i].vida - valor;
+
+  }
+
+}
+
+recompensa(50);
+
+dano(90);
+
+for (let i = 0; i < jogadores.length; i++) {
+
+  if (jogadores[i].vida <= 0) {
+
+    console.log(jogadores[i].nome + " morreu");
+
+  } else {
+
+    console.log(jogadores[i]);
+
+  }
+
+}
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="section">🧠 O que o sistema completo faz?</div>
+
+<p>
+🔹 Adiciona moedas<br><br>
+
+🔹 Remove vida<br><br>
+
+🔹 Percorre jogadores<br><br>
+
+🔹 Verifica morte<br><br>
+
+🔹 Mostra resultado final
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🎯 Pensamento importante</div>
+
+<p>
+> Sistemas grandes são várias pequenas lógicas funcionando juntas.
+</p>
+
+</div>
+
+<div class="card">
+
+<h1>🧪 Exercícios</h1>
+
+<div class="question">
+
+<h3>1. O que jogadores.length retorna?</h3>
+
+<div class="option" onclick="responder(this, false)">O primeiro jogador</div>
+<div class="option" onclick="responder(this, true)">A quantidade de jogadores</div>
+<div class="option" onclick="responder(this, false)">As moedas</div>
+<div class="option" onclick="responder(this, false)">O nome do array</div>
+
+</div>
+
+<div class="question">
+
+<h3>2. O que jogadores[1] pega?</h3>
+
+<div class="option" onclick="responder(this, false)">O primeiro jogador</div>
+<div class="option" onclick="responder(this, true)">O segundo jogador</div>
+<div class="option" onclick="responder(this, false)">A vida</div>
+<div class="option" onclick="responder(this, false)">Todos os jogadores</div>
+
+</div>
+
+<div class="question">
+
+<h3>3. Qual código atualiza moedas corretamente?</h3>
+
+<div class="option" onclick="responder(this, false)">jogadores.moedas + 50</div>
+<div class="option" onclick="responder(this, false)">moedas = 50</div>
+<div class="option" onclick="responder(this, true)">jogadores[0].moedas = jogadores[0].moedas + 50</div>
+<div class="option" onclick="responder(this, false)">jogadores[0] = moedas + 50</div>
+
+</div>
+
+<div class="question">
+
+<h3>4. O que o if verifica?</h3>
+
+<div class="code">
+if (jogadores[i].vida <= 0)
+</div>
+
+<div class="option" onclick="responder(this, false)">Se ganhou moedas</div>
+<div class="option" onclick="responder(this, false)">Se o array existe</div>
+<div class="option" onclick="responder(this, true)">Se o jogador morreu</div>
+<div class="option" onclick="responder(this, false)">Se o for terminou</div>
+
+</div>
+
+<div class="question">
+
+<h3>5. O que o for faz?</h3>
+
+<div class="option" onclick="responder(this, false)">Cria objetos</div>
+<div class="option" onclick="responder(this, true)">Percorre o array</div>
+<div class="option" onclick="responder(this, false)">Remove funções</div>
+<div class="option" onclick="responder(this, false)">Atualiza automaticamente</div>
+
+</div>
+
+<div class="question">
+
+<h3>6. O que recompensa(valor) faz?</h3>
+
+<div class="option" onclick="responder(this, false)">Remove jogadores</div>
+<div class="option" onclick="responder(this, true)">Adiciona moedas</div>
+<div class="option" onclick="responder(this, false)">Cria arrays</div>
+<div class="option" onclick="responder(this, false)">Verifica morte</div>
+
+</div>
+
+<div class="question">
+
+<h3>7. O que dano(valor) faz?</h3>
+
+<div class="option" onclick="responder(this, false)">Aumenta vida</div>
+<div class="option" onclick="responder(this, true)">Remove vida</div>
+<div class="option" onclick="responder(this, false)">Cria moedas</div>
+<div class="option" onclick="responder(this, false)">Cria objetos</div>
+
+</div>
+
+<div class="question">
+
+<h3>8. Qual código mostra o nome do jogador?</h3>
+
+<div class="option" onclick="responder(this, false)">jogadores.nome</div>
+<div class="option" onclick="responder(this, false)">jogadores[0]</div>
+<div class="option" onclick="responder(this, true)">jogadores[i].nome</div>
+<div class="option" onclick="responder(this, false)">nome[jogadores]</div>
+
+</div>
+
+<div class="question">
+
+<h3>9. O que esse sistema mistura?</h3>
+
+<div class="option" onclick="responder(this, false)">Somente arrays</div>
+<div class="option" onclick="responder(this, false)">Somente objetos</div>
+<div class="option" onclick="responder(this, true)">Várias pequenas lógicas juntas</div>
+<div class="option" onclick="responder(this, false)">Somente funções</div>
+
+</div>
+
+<div class="exercise">
+
+<h2>💻 Desafio Final</h2>
+
+<p>
+Crie:
+</p>
+
+<p>
+✅ um array com objetos<br><br>
+
+✅ nome, moedas e vida<br><br>
+
+✅ uma função<br><br>
+
+✅ um for<br><br>
+
+✅ atualização de moedas<br><br>
+
+✅ atualização de vida<br><br>
+
+✅ if verificando morte<br><br>
+
+✅ console.log()
+</p>
+
+<textarea id="codigo"></textarea>
+
+<button onclick="verificar()">Verificar Código</button>
+
+<div id="resultado" class="result"></div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function responder(elemento, correto){
+
+if(elemento.classList.contains("correct")
+|| elemento.classList.contains("wrong")){
+return;
+}
+
+if(correto){
+
+elemento.classList.add("correct");
+
+}else{
+
+elemento.classList.add("wrong");
+
+}
+
+}
+
+function verificar(){
+
+let texto =
+document.getElementById("codigo")
+.value
+.toLowerCase()
+
+let requisitos = [
+
+"let",
+"[",
+"]",
+"{",
+"}",
+"nome",
+"moedas",
+"vida",
+"function",
+"for",
+".length",
+"if",
+"console.log",
+"+",
+"-"
+
+]
+
+let correto = requisitos.every(item =>
+texto.includes(item)
+)
+
+if(correto){
+
+document.getElementById("resultado").innerHTML =
+'<span style="color:#22c55e;">✔ Código correto!</span>'
+
+}else{
+
+document.getElementById("resultado").innerHTML =
+'<span style="color:#ef4444;">✖ Seu código está incompleto.</span>'
+
+}
+
+}
+
+</script>
+
+</body>
+</html>

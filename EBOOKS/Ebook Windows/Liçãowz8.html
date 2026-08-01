@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 8 — Baixar, abrir e remover programas</title>
+
+<style>
+
+body{
+font-family:Segoe UI, Arial;
+background:#ffffff;
+margin:0;
+color:#1f2937;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:50px 40px;
+}
+
+h1{
+color:#1e3a8a;
+font-size:34px;
+}
+
+.card{
+background:#f9fafb;
+border:1px solid #e5e7eb;
+border-radius:14px;
+padding:35px;
+margin-top:30px;
+}
+
+.section-title{
+color:#1e40af;
+font-size:20px;
+margin-top:35px;
+font-weight:bold;
+}
+
+.question{
+background:white;
+padding:20px;
+border-radius:10px;
+border:1px solid #e5e7eb;
+margin-top:20px;
+}
+
+.option{
+padding:10px;
+border:1px solid #d1d5db;
+border-radius:6px;
+margin-top:8px;
+cursor:pointer;
+}
+
+.option:hover{
+background:#eef2ff;
+}
+
+.correct{
+background:#dcfce7 !important;
+border-color:green !important;
+}
+
+.wrong{
+background:#fee2e2 !important;
+border-color:red !important;
+}
+
+.result{
+margin-top:10px;
+font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>📥 Lição 8 — Baixar, abrir e remover programas</h1>
+
+<div class="card">
+
+<p>Nas lições anteriores você aprendeu que usamos programas para realizar tarefas no computador. Agora vamos entender como esses programas chegam ao computador, como abrir eles e como removê-los quando não são mais necessários dentro do Microsoft Windows.</p>
+
+<div class="section-title">🌐 Baixando programas</div>
+
+<p>Baixar um programa significa transferir ele da internet para o computador. Normalmente isso acontece quando você entra no site oficial de um programa e clica no botão de download. Depois disso, um arquivo é salvo no computador para iniciar a instalação. Um exemplo comum é baixar um navegador como o Google Chrome, que permite acessar sites na internet.</p>
+
+<div class="section-title">⚙️ Instalando o programa</div>
+
+<p>Depois que o download termina, geralmente aparece um arquivo instalador. Ao abrir esse arquivo, o computador inicia o processo de instalação. Normalmente basta seguir as instruções que aparecem na tela até o programa ser instalado. Após isso, ele passa a fazer parte do sistema e pode ser usado sempre que necessário.</p>
+
+<div class="section-title">▶️ Abrindo programas</div>
+
+<p>Depois de instalado, um programa pode ser aberto de diferentes maneiras. A forma mais comum é usando o Menu Iniciar, onde os programas ficam listados. Também é possível abrir um programa usando a barra de pesquisa, digitando o nome dele. Em alguns casos, um ícone também pode aparecer na área de trabalho ou na barra de tarefas, permitindo abrir o programa com apenas um clique.</p>
+
+<div class="section-title">🗑️ Removendo programas</div>
+
+<p>Às vezes um programa não é mais necessário ou ocupa espaço no computador. Nesse caso, ele pode ser removido. Para fazer isso normalmente é preciso abrir as Configurações do sistema, acessar a área de Aplicativos, encontrar o programa na lista e selecionar a opção Desinstalar. Esse processo remove o programa do computador.</p>
+
+<div class="section-title">🎯 Ideia principal da lição</div>
+
+<p>Programas não aparecem sozinhos no computador. Eles precisam ser baixados, instalados e depois abertos para serem utilizados. Quando não são mais necessários, também podem ser removidos do sistema para manter o computador organizado.</p>
+
+</div>
+
+<div class="card">
+
+<h2>🧪 Exercícios</h2>
+
+<div id="quiz"></div>
+
+</div>
+
+</div>
+
+<script>
+
+const perguntas=[
+
+{
+pergunta:"1. O que realmente acontece quando você baixa um programa da internet?",
+opcoes:[
+"O programa já começa a funcionar automaticamente",
+"Um arquivo é transferido da internet para o computador",
+"O Windows cria o programa sozinho",
+"O computador instala o programa automaticamente sem arquivo"
+],
+correta:1
+},
+
+{
+pergunta:"2. Depois que o download termina, qual é o próximo passo normal para usar o programa?",
+opcoes:[
+"Abrir o arquivo instalador",
+"Reiniciar o computador",
+"Apagar o arquivo baixado",
+"Entrar nas configurações do sistema"
+],
+correta:0
+},
+
+{
+pergunta:"3. Qual das opções abaixo NÃO é uma forma comum de abrir um programa no Windows?",
+opcoes:[
+"Menu Iniciar",
+"Barra de pesquisa",
+"Área de trabalho",
+"Gerenciador de tarefas"
+],
+correta:3
+},
+
+{
+pergunta:"4. Qual caminho normalmente é usado para remover um programa do computador?",
+opcoes:[
+"Configurações → Aplicativos → Desinstalar",
+"Explorador de arquivos → Downloads",
+"Menu Iniciar → Reiniciar",
+"Área de trabalho → Lixeira"
+],
+correta:0
+},
+
+{
+pergunta:"5. Por que remover programas que não são mais usados pode ser importante?",
+opcoes:[
+"Porque melhora a resolução da tela",
+"Porque ajuda a liberar espaço e manter o computador organizado",
+"Porque aumenta a velocidade da internet",
+"Porque impede o Windows de atualizar"
+],
+correta:1
+}
+
+]
+
+function carregarQuiz(){
+
+const quiz=document.getElementById("quiz")
+
+perguntas.forEach((q,i)=>{
+
+let html=`<div class="question">
+<strong>${q.pergunta}</strong>`
+
+q.opcoes.forEach((op,j)=>{
+
+html+=`<div class="option" onclick="responder(${i},${j},this)">
+${op}
+</div>`
+
+})
+
+html+=`<div id="res${i}" class="result"></div></div>`
+
+quiz.innerHTML+=html
+
+})
+
+}
+
+function responder(p,o,el){
+
+const correta=perguntas[p].correta
+const res=document.getElementById("res"+p)
+
+if(res.innerHTML!="") return
+
+if(o==correta){
+
+el.classList.add("correct")
+res.innerHTML="✔ Resposta correta!"
+
+}else{
+
+el.classList.add("wrong")
+res.innerHTML="✖ Resposta incorreta. Resposta correta: "+perguntas[p].opcoes[correta]
+
+}
+
+}
+
+carregarQuiz()
+
+</script>
+
+</body>
+</html>

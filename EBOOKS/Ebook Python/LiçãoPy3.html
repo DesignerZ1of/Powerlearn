@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ebook de Python</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:'Inter',sans-serif;
+background:#0f172a;
+color:#e2e8f0;
+}
+
+/* TOPO */
+.header{
+background:linear-gradient(90deg,#111827,#1e293b);
+padding:35px;
+text-align:center;
+font-size:30px;
+font-weight:700;
+color:#facc15;
+letter-spacing:1px;
+border-bottom:3px solid #facc15;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* CONTAINER */
+.container{
+max-width:1000px;
+margin:auto;
+padding:40px 20px;
+}
+
+/* CARDS */
+.card{
+background:#111827;
+border-radius:18px;
+padding:30px;
+margin-bottom:30px;
+border-left:7px solid #facc15;
+box-shadow:0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* TÍTULOS */
+h1{
+margin-top:0;
+font-size:32px;
+color:#f8fafc;
+}
+
+.section-title{
+margin-top:30px;
+font-size:22px;
+font-weight:700;
+padding-left:12px;
+border-left:5px solid #3b82f6;
+color:#facc15;
+}
+
+/* TEXTO */
+p{
+line-height:1.8;
+color:#cbd5e1;
+}
+
+/* DESTAQUE */
+.highlight{
+background:#1e293b;
+padding:18px;
+border-radius:12px;
+margin-top:20px;
+border-left:5px solid #22c55e;
+}
+
+/* EXEMPLOS */
+.example{
+background:#0b1220;
+border:1px solid #334155;
+border-radius:12px;
+overflow:hidden;
+margin-top:20px;
+}
+
+/* TOPO DO CÓDIGO */
+.code-top{
+background:#1e293b;
+padding:10px 15px;
+display:flex;
+align-items:center;
+gap:8px;
+border-bottom:1px solid #334155;
+}
+
+.circle{
+width:12px;
+height:12px;
+border-radius:50%;
+}
+
+.red{background:#ef4444;}
+.yellow{background:#facc15;}
+.green{background:#22c55e;}
+
+/* CÓDIGO */
+.code{
+padding:20px;
+font-family:'JetBrains Mono', monospace;
+font-size:15px;
+line-height:2;
+color:#e2e8f0;
+}
+
+/* RESULTADO */
+.result{
+background:#020617;
+padding:15px 20px;
+border-top:1px solid #334155;
+font-family:'JetBrains Mono', monospace;
+color:#4ade80;
+}
+
+/* CORES */
+.blue{color:#60a5fa;}
+.green-text{color:#4ade80;}
+.yellow-text{color:#facc15;}
+
+/* EXERCÍCIOS */
+.exercise{
+background:#1e293b;
+padding:25px;
+border-radius:14px;
+margin-top:25px;
+border:1px solid #334155;
+}
+
+textarea{
+width:100%;
+height:140px;
+margin-top:15px;
+background:#020617;
+border:1px solid #334155;
+border-radius:10px;
+padding:15px;
+color:white;
+font-family:'JetBrains Mono', monospace;
+font-size:15px;
+resize:none;
+}
+
+/* BOTÕES */
+button{
+margin-top:15px;
+padding:12px 22px;
+background:#facc15;
+color:#111827;
+font-weight:700;
+border:none;
+border-radius:10px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#eab308;
+transform:translateY(-2px);
+}
+
+/* RESULTADO EXERCÍCIO */
+.answer{
+margin-top:15px;
+font-weight:bold;
+font-size:18px;
+}
+
+.correct{
+color:#22c55e;
+}
+
+.wrong{
+color:#ef4444;
+}
+
+/* OPÇÕES */
+.option{
+display:block;
+background:#0b1220;
+padding:15px;
+border-radius:10px;
+margin-top:12px;
+cursor:pointer;
+border:1px solid #334155;
+transition:0.3s;
+}
+
+.option:hover{
+background:#172033;
+border-color:#3b82f6;
+}
+
+.footer{
+text-align:center;
+padding:30px;
+font-size:14px;
+color:#64748b;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+🐍 Ebook de Python
+</div>
+
+<div class="container">
+
+<!-- CONTEÚDO -->
+<div class="card">
+
+<h1>📘 Lição 3 — Entrada de Dados com input()</h1>
+
+<p>
+Nesta aula você vai aprender:
+</p>
+
+<ul>
+<li>Como receber dados do usuário</li>
+<li>O comando input()</li>
+<li>Guardar respostas em variáveis</li>
+</ul>
+
+<div class="section-title">
+🧠 O que é input()?
+</div>
+
+<p>
+Nesta aula o código que será aprendido será o <b>input()</b> que serve para:
+</p>
+
+<div class="highlight">
+💡 Receber informações digitadas pelo usuário.
+</div>
+
+<p>
+Nesse código, colocamos algo dentro dos parênteses () lembrando que ser for algum texto deve colocar aspas ""; aonde você deve usa-lo quando o usuário tem que colocar alguma informação.
+</p>
+
+<div class="example">
+
+<div class="code-top">
+<div class="circle red"></div>
+<div class="circle yellow"></div>
+<div class="circle green"></div>
+</div>
+
+<div class="code">
+
+<span class="yellow-text">nome</span> = 
+<span class="blue">input</span>(<span class="green-text">"Digite seu nome: "</span>)<br><br>
+
+<span class="blue">print</span>(nome)
+
+</div>
+
+<div class="result">
+▶ Digite seu nome:
+</div>
+
+</div>
+
+<div class="section-title">
+💻 Como funciona?
+</div>
+
+<p>
+Passo 1 → Python mostra a mensagem "nome"
+</p>
+
+<p>
+Passo 2 → O usuário digita algo.
+</p>
+
+<p>
+Passo 3 → O valor é guardado na variável.
+</p>
+
+<p>
+Passo 4 → O programa usa esse valor.
+</p>
+
+<div class="section-title">
+Estrutura
+</div>
+<p>
+Ok, agora irei te ensinar baseado nesse exemplo</p>
+<p>
+1. Nós começamos esse código criando uma variável chamado "nome"
+</p>
+<p>
+2. E deifinimos que o valor dessa variável será o que for digitado no "input()"
+</p>
+<p>
+3. Mas que por enquanto o valor será "Digite seu nome: "
+</p>
+<p>
+4. Mas que depois será trocado pelo nome do usuário
+</p>
+<p>
+5. E finalizamos mostrando na tela
+</p>
+
+<div class="section-title">
+🔥 Exemplo completo
+</div>
+
+<div class="example">
+
+<div class="code-top">
+<div class="circle red"></div>
+<div class="circle yellow"></div>
+<div class="circle green"></div>
+</div>
+
+<div class="code">
+
+<span class="yellow-text">nome</span> = 
+<span class="blue">input</span>(<span class="green-text">"Digite seu nome: "</span>)<br><br>
+
+<span class="blue">print</span>(<span class="green-text">"Olá"</span>, nome)
+
+</div>
+
+<div class="result">
+▶ Olá Carlos
+</div>
+
+</div>
+
+<div class="section-title">
+⚠ IMPORTANTE
+</div>
+
+<p>
+Tudo que vem do input() vira TEXTO.
+</p>
+
+<p>
+Mesmo números.
+</p>
+
+<div class="example">
+
+<div class="code-top">
+<div class="circle red"></div>
+<div class="circle yellow"></div>
+<div class="circle green"></div>
+</div>
+
+<div class="code">
+
+<span class="yellow-text">idade</span> = 
+<span class="blue">input</span>(<span class="green-text">"Digite sua idade: "</span>)<br><br>
+
+<span class="blue">print</span>(idade)
+
+</div>
+
+<div class="result">
+▶ 18
+</div>
+
+</div>
+
+<p>
+O Python entende:
+</p>
+
+<div class="highlight">
+💡 "18" como TEXTO.
+</div>
+
+<div class="section-title">
+🔥 Convertendo para número
+</div>
+
+<p>
+Para resolvermos isso colocamos "int(" para que Python possa entender que pode entrar números
+</p>
+
+<p>
+Número inteiro:
+</p>
+
+<div class="example">
+
+<div class="code-top">
+<div class="circle red"></div>
+<div class="circle yellow"></div>
+<div class="circle green"></div>
+</div>
+
+<div class="code">
+
+<span class="yellow-text">idade</span> = 
+<span class="blue">int</span>(
+<span class="blue">input</span>(
+<span class="green-text">"Digite sua idade: "</span>
+))
+
+</div>
+
+</div>
+
+<p>
+Número decimal:
+</p>
+
+<div class="example">
+
+<div class="code-top">
+<div class="circle red"></div>
+<div class="circle yellow"></div>
+<div class="circle green"></div>
+</div>
+
+<div class="code">
+
+<span class="yellow-text">altura</span> = 
+<span class="blue">float</span>(
+<span class="blue">input</span>(
+<span class="green-text">"Digite sua altura: "</span>
+))
+
+</div>
+
+</div>
+
+<div class="section-title">
+🧪 Exemplo com soma
+</div>
+
+<div class="example">
+
+<div class="code-top">
+<div class="circle red"></div>
+<div class="circle yellow"></div>
+<div class="circle green"></div>
+</div>
+
+<div class="code">
+
+<span class="yellow-text">numero1</span> =
+<span class="blue">int</span>(
+<span class="blue">input</span>(
+<span class="green-text">"Digite um número: "</span>
+))<br><br>
+
+<span class="yellow-text">numero2</span> =
+<span class="blue">int</span>(
+<span class="blue">input</span>(
+<span class="green-text">"Digite outro número: "</span>
+))<br><br>
+
+<span class="yellow-text">resultado</span> =
+numero1 + numero2<br><br>
+
+<span class="blue">print</span>(resultado)
+
+</div>
+
+<div class="result">
+▶ 20
+</div>
+
+</div>
+
+<div class="section-title">
+⚠ Sem int() dá problema
+</div>
+
+<div class="example">
+
+<div class="code-top">
+<div class="circle red"></div>
+<div class="circle yellow"></div>
+<div class="circle green"></div>
+</div>
+
+<div class="code">
+
+<span class="yellow-text">numero1</span> =
+<span class="blue">input</span>(<span class="green-text">"Número: "</span>)<br><br>
+
+<span class="yellow-text">numero2</span> =
+<span class="blue">input</span>(<span class="green-text">"Número: "</span>)<br><br>
+
+<span class="blue">print</span>(numero1 + numero2)
+
+</div>
+
+<div class="result">
+▶ 1010
+</div>
+
+</div>
+
+<p>
+Porque o Python juntou textos.
+</p>
+
+</div>
+
+<!-- EXERCÍCIO 1 -->
+<div class="card">
+
+<div class="exercise">
+
+<h2>🎯 Exercício 1 — Criar Código</h2>
+
+<p>
+Crie um código que:
+</p>
+
+<ul>
+<li>Pergunte o nome do usuário</li>
+<li>Mostre "Olá" junto do nome</li>
+</ul>
+
+<textarea id="codigo1"></textarea>
+
+<button onclick="corrigir1()">
+Verificar
+</button>
+
+<div id="resultado1" class="answer"></div>
+
+</div>
+
+</div>
+
+<!-- EXERCÍCIO 2 -->
+<div class="card">
+
+<div class="exercise">
+
+<h2>🧠 Exercício 2 — Multipla Escolha</h2>
+
+<p>
+O que o input() faz?
+</p>
+
+<div class="option" onclick="verificar2(false)">
+A) Mostra imagens
+</div>
+
+<div class="option" onclick="verificar2(true)">
+B) Recebe dados do usuário
+</div>
+
+<div class="option" onclick="verificar2(false)">
+C) Fecha o programa
+</div>
+
+<div class="option" onclick="verificar2(false)">
+D) Apaga variáveis
+</div>
+
+<div id="resultado2" class="answer"></div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="footer">
+Python Academy © 2026
+</div>
+
+<script>
+
+function corrigir1(){
+
+let resposta =
+document.getElementById("codigo1")
+.value
+.toLowerCase()
+
+if(
+resposta.includes("input") &&
+resposta.includes("print")
+){
+
+document.getElementById("resultado1")
+.innerHTML =
+'<span class="correct">✔ Código correto!</span>'
+
+}else{
+
+document.getElementById("resultado1")
+.innerHTML =
+'<span class="wrong">✖ O código precisa usar input() e print()</span>'
+
+}
+
+}
+
+function verificar2(correta){
+
+if(correta){
+
+document.getElementById("resultado2")
+.innerHTML =
+'<span class="correct">✔ Correto!</span>'
+
+}else{
+
+document.getElementById("resultado2")
+.innerHTML =
+'<span class="wrong">✖ Resposta incorreta.</span>'
+
+}
+
+}
+
+</script>
+
+</body>
+</html>

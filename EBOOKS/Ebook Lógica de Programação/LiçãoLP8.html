@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 8 — Condição</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Consolas, monospace;
+background:#0f172a;
+color:#e2e8f0;
+}
+
+.container{
+max-width:950px;
+margin:auto;
+padding:40px;
+}
+
+.card{
+background:#1e293b;
+padding:25px;
+border-radius:12px;
+margin-bottom:25px;
+border:1px solid #334155;
+}
+
+h1{
+color:#38bdf8;
+}
+
+.section{
+margin-top:20px;
+font-weight:bold;
+color:#94a3b8;
+}
+
+.code{
+background:#020617;
+color:#22c55e;
+padding:15px;
+border-radius:8px;
+margin-top:10px;
+white-space:pre-line;
+}
+
+.exercise{
+background:#020617;
+padding:20px;
+border-radius:10px;
+margin-top:20px;
+}
+
+.tip{
+background:#0f172a;
+padding:15px;
+border-left:4px solid #38bdf8;
+margin-top:15px;
+border-radius:6px;
+}
+
+textarea{
+width:100%;
+height:220px;
+margin-top:10px;
+padding:10px;
+border-radius:8px;
+border:none;
+background:#0f172a;
+color:#e2e8f0;
+font-family:Consolas;
+font-size:15px;
+}
+
+button{
+margin-top:15px;
+padding:10px 15px;
+background:#38bdf8;
+border:none;
+border-radius:6px;
+color:#0f172a;
+cursor:pointer;
+font-weight:bold;
+}
+
+.result{
+margin-top:15px;
+padding:15px;
+border-radius:8px;
+background:#020617;
+}
+
+.correct{
+color:#22c55e;
+}
+
+.wrong{
+color:#ef4444;
+}
+
+.option{
+display:block;
+margin-top:10px;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>📘 LIÇÃO 8 — Condição</h1>
+
+---
+
+<div class="section">🧠 O que você vai aprender aqui</div>
+
+<p>
+Como o programa toma decisões<br><br>
+
+O que é if<br><br>
+
+O que é else<br><br>
+
+Como usar comparações nas condições
+</p>
+
+---
+
+<div class="section">🧩 Tipo de lógica usado</div>
+
+<p><b>🔹 Lógica Condicional</b></p>
+
+<p>
+O programa escolhe um caminho dependendo da condição.
+</p>
+
+---
+
+<div class="section">🧠 O que é if</div>
+
+<p>
+if significa:
+</p>
+
+<p><b>
+“se”
+</b></p>
+
+---
+
+<div class="section">📌 O que ele faz</div>
+
+<p>
+O if verifica uma condição.
+</p>
+
+<p>
+Se a condição for verdadeira:
+</p>
+
+<p><b>
+o código dentro dele executa.
+</b></p>
+
+---
+
+<div class="section">💻 Código (1º da aula)</div>
+
+<div class="code">
+let idade = 18;
+
+if (idade >= 18) {
+
+console.log("Pode entrar");
+
+}
+</div>
+
+---
+
+<div class="section">🧠 Tradução</div>
+
+<p><b>
+Se a idade for maior ou igual a 18
+→ mostre “Pode entrar”
+</b></p>
+
+---
+
+<div class="section">🔍 O que está sendo usado aqui</div>
+
+<p>
+variável → guarda idade<br><br>
+
+operador >= → compara<br><br>
+
+if → decide<br><br>
+
+console.log() → mostra resultado
+</p>
+
+---
+
+<div class="section">🧠 O que é else</div>
+
+<p>
+else significa:
+</p>
+
+<p><b>
+“senão”
+</b></p>
+
+---
+
+<div class="section">📌 O que ele faz</div>
+
+<p>
+O else executa quando o if for falso.
+</p>
+
+---
+
+<div class="section">💻 Código (2º da aula)</div>
+
+<div class="code">
+let idade = 15;
+
+if (idade >= 18) {
+
+console.log("Pode entrar");
+
+} else {
+
+console.log("Não pode entrar");
+
+}
+</div>
+
+---
+
+<div class="section">🧠 Tradução</div>
+
+<p>
+se idade ≥ 18 → pode entrar
+</p>
+
+<p>
+senão → não pode entrar
+</p>
+
+---
+
+<div class="section">⚠️ IMPORTANTE</div>
+
+<p><b>ESTRUTURA</b></p>
+
+<div class="code">
+if (condição) {
+
+ação
+
+}
+
+else {
+
+ação
+
+}
+</div>
+
+<p>
+No else não tem "condição"
+pois já está no if.
+</p>
+
+<p>
+O else complementa o if.
+</p>
+
+---
+
+<div class="section">🧠 Verdadeiro e falso</div>
+
+<p>
+Toda condição gera:
+</p>
+
+<p>
+verdadeiro<br>
+ou<br>
+falso
+</p>
+
+---
+
+<div class="section">📌 Exemplos</div>
+
+<p>
+10 > 5 → verdadeiro<br><br>
+
+5 > 10 → falso<br><br>
+
+18 == 18 → verdadeiro
+</p>
+
+---
+
+<div class="section">🧠 Quando usamos condição?</div>
+
+<p>
+Condições são usadas quando:
+</p>
+
+<p><b>
+o programa precisa decidir algo.
+</b></p>
+
+---
+
+<div class="section">📌 Exemplos reais</div>
+
+<p>
+verificar idade<br><br>
+
+verificar senha<br><br>
+
+verificar pontos<br><br>
+
+verificar vida
+</p>
+
+</div>
+
+<!-- EXERCÍCIO 1 -->
+
+<div class="card">
+
+<h1>🧪 Exercício 1 — Criando um IF</h1>
+
+<div class="exercise">
+
+<p>
+Crie um código que:
+</p>
+
+<p>
+✔ Crie uma variável chamada idade com valor 18<br><br>
+
+✔ Use if para verificar se pode entrar<br><br>
+
+✔ Mostre:
+"Pode entrar"
+</p>
+
+<div class="tip">
+
+💡 EXEMPLO PARA SEGUIR:
+
+<div class="code">
+let idade = 10;
+
+if (idade >= 10) {
+
+console.log("Teste");
+
+}
+</div>
+
+</div>
+
+<textarea id="codigoIf"></textarea>
+
+<button onclick="executarIf()">Executar IF</button>
+
+<div id="resultadoIf" class="result"></div>
+
+</div>
+
+</div>
+
+<!-- EXERCÍCIO 2 -->
+
+<div class="card">
+
+<h1>🧪 Exercício 2 — Criando IF e ELSE</h1>
+
+<div class="exercise">
+
+<p>
+Crie um código que:
+</p>
+
+<p>
+✔ Crie idade = 15<br><br>
+
+✔ Use if e else<br><br>
+
+✔ Mostre:
+"Não pode entrar"
+</p>
+
+<div class="tip">
+
+💡 EXEMPLO PARA SEGUIR:
+
+<div class="code">
+let idade = 20;
+
+if (idade >= 18) {
+
+console.log("Pode entrar");
+
+} else {
+
+console.log("Não pode entrar");
+
+}
+</div>
+
+</div>
+
+<textarea id="codigoElse"></textarea>
+
+<button onclick="executarElse()">Executar IF/ELSE</button>
+
+<div id="resultadoElse" class="result"></div>
+
+</div>
+
+</div>
+
+<!-- EXERCÍCIO 3 -->
+
+<div class="card">
+
+<h1>🧪 Exercício 3 — Múltipla Escolha</h1>
+
+<div class="exercise">
+
+<p><b>O que o if faz?</b></p>
+
+<label class="option">
+<input type="radio" name="q1" value="a">
+ Repete várias vezes
+</label>
+
+<label class="option">
+<input type="radio" name="q1" value="b">
+ Verifica uma condição
+</label>
+
+<label class="option">
+<input type="radio" name="q1" value="c">
+ Cria variável
+</label>
+
+<button onclick="corrigirQ1()">Verificar</button>
+
+<div id="resultadoQ1" class="result"></div>
+
+</div>
+
+</div>
+
+<!-- EXERCÍCIO 4 -->
+
+<div class="card">
+
+<h1>🧪 Exercício 4 — Múltipla Escolha</h1>
+
+<div class="exercise">
+
+<p><b>Quando o else executa?</b></p>
+
+<label class="option">
+<input type="radio" name="q2" value="a">
+ Quando o if for falso
+</label>
+
+<label class="option">
+<input type="radio" name="q2" value="b">
+ Sempre
+</label>
+
+<label class="option">
+<input type="radio" name="q2" value="c">
+ Nunca
+</label>
+
+<button onclick="corrigirQ2()">Verificar</button>
+
+<div id="resultadoQ2" class="result"></div>
+
+</div>
+
+</div>
+
+<!-- EXERCÍCIO 5 -->
+
+<div class="card">
+
+<h1>🧪 Exercício 5 — Múltipla Escolha</h1>
+
+<div class="exercise">
+
+<p><b>18 == 18 é:</b></p>
+
+<label class="option">
+<input type="radio" name="q3" value="a">
+ falso
+</label>
+
+<label class="option">
+<input type="radio" name="q3" value="b">
+ verdadeiro
+</label>
+
+<label class="option">
+<input type="radio" name="q3" value="c">
+ erro
+</label>
+
+<button onclick="corrigirQ3()">Verificar</button>
+
+<div id="resultadoQ3" class="result"></div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function executarIf(){
+
+let codigo = document.getElementById("codigoIf").value
+
+let resultado = document.getElementById("resultadoIf")
+
+resultado.innerHTML = ""
+
+try{
+
+let saida = []
+
+let consoleFake = {
+
+log: function(msg){
+
+saida.push(msg)
+
+}
+
+}
+
+new Function("console", codigo)(consoleFake)
+
+let valido = true
+
+if(!codigo.includes("if")) valido = false
+
+if(!codigo.includes("console.log")) valido = false
+
+if(saida.join("") !== "Pode entrar") valido = false
+
+if(valido){
+
+resultado.innerHTML =
+'<span class="correct">✔ Código correto!</span>'
+
+}else{
+
+resultado.innerHTML =
+'<span class="wrong">✖ Revise seu IF.</span>'
+
+}
+
+}catch(erro){
+
+resultado.innerHTML =
+'<span class="wrong">Erro no código:<br><br>'+erro.message+'</span>'
+
+}
+
+}
+
+function executarElse(){
+
+let codigo = document.getElementById("codigoElse").value
+
+let resultado = document.getElementById("resultadoElse")
+
+resultado.innerHTML = ""
+
+try{
+
+let saida = []
+
+let consoleFake = {
+
+log: function(msg){
+
+saida.push(msg)
+
+}
+
+}
+
+new Function("console", codigo)(consoleFake)
+
+let valido = true
+
+if(!codigo.includes("if")) valido = false
+
+if(!codigo.includes("else")) valido = false
+
+if(saida.join("") !== "Não pode entrar") valido = false
+
+if(valido){
+
+resultado.innerHTML =
+'<span class="correct">✔ Código correto!</span>'
+
+}else{
+
+resultado.innerHTML =
+'<span class="wrong">✖ Revise seu IF e ELSE.</span>'
+
+}
+
+}catch(erro){
+
+resultado.innerHTML =
+'<span class="wrong">Erro no código:<br><br>'+erro.message+'</span>'
+
+}
+
+}
+
+function corrigirQ1(){
+
+let resposta = document.querySelector('input[name="q1"]:checked')
+
+let resultado = document.getElementById("resultadoQ1")
+
+if(resposta && resposta.value == "b"){
+
+resultado.innerHTML =
+'<span class="correct">✔ Correto!</span>'
+
+}else{
+
+resultado.innerHTML =
+'<span class="wrong">✖ Errado.</span>'
+
+}
+
+}
+
+function corrigirQ2(){
+
+let resposta = document.querySelector('input[name="q2"]:checked')
+
+let resultado = document.getElementById("resultadoQ2")
+
+if(resposta && resposta.value == "a"){
+
+resultado.innerHTML =
+'<span class="correct">✔ Correto!</span>'
+
+}else{
+
+resultado.innerHTML =
+'<span class="wrong">✖ Errado.</span>'
+
+}
+
+}
+
+function corrigirQ3(){
+
+let resposta = document.querySelector('input[name="q3"]:checked')
+
+let resultado = document.getElementById("resultadoQ3")
+
+if(resposta && resposta.value == "b"){
+
+resultado.innerHTML =
+'<span class="correct">✔ Correto!</span>'
+
+}else{
+
+resultado.innerHTML =
+'<span class="wrong">✖ Errado.</span>'
+
+}
+
+}
+
+</script>
+
+</body>
+</html>

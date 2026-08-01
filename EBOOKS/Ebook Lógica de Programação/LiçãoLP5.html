@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 5 — Repetição</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Consolas, monospace;
+background:#0f172a;
+color:#e2e8f0;
+}
+
+.container{
+max-width:950px;
+margin:auto;
+padding:40px;
+}
+
+.card{
+background:#1e293b;
+padding:25px;
+border-radius:12px;
+margin-bottom:25px;
+border:1px solid #334155;
+}
+
+h1{
+color:#38bdf8;
+}
+
+.section{
+margin-top:20px;
+font-weight:bold;
+color:#94a3b8;
+}
+
+.code{
+background:#020617;
+color:#22c55e;
+padding:15px;
+border-radius:8px;
+margin-top:10px;
+white-space:pre-line;
+}
+
+.exercise{
+background:#020617;
+padding:20px;
+border-radius:10px;
+margin-top:20px;
+}
+
+.option{
+display:block;
+margin:10px 0;
+}
+
+button{
+margin-top:15px;
+padding:10px 15px;
+background:#38bdf8;
+border:none;
+border-radius:6px;
+color:#0f172a;
+cursor:pointer;
+font-weight:bold;
+}
+
+.result{
+margin-top:15px;
+padding:15px;
+border-radius:8px;
+background:#020617;
+}
+
+.correct{
+color:#22c55e;
+}
+
+.wrong{
+color:#ef4444;
+}
+
+select{
+padding:8px;
+border-radius:6px;
+margin-top:5px;
+background:#0f172a;
+color:white;
+border:1px solid #334155;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>📘 LIÇÃO 5 — Repetição (Parte 1)</h1>
+
+<div class="section">🔹 Lógica de Repetição</div>
+
+<p><b>Fazer algo várias vezes automaticamente</b></p>
+
+<div class="section">🧠 Ideia central:</div>
+
+<p>Enquanto algo for verdadeiro → continue</p>
+
+<p>Para fazermos isso usaremos um código:</p>
+
+<div class="code">
+while
+</div>
+
+<div class="section">🧠 O que significa while</div>
+
+<p><b>while = “enquanto”</b></p>
+
+<p>Nós usamos "while" junto com uma estrutura onde cada símbolo ou palavra serve para algo</p>
+
+<div class="section">Estrutura:</div>
+
+<div class="code">
+while (condição) {
+
+ações
+
+}
+</div>
+
+<p>
+while → Chama o comando<br><br>
+
+() → Dentro dos parênteses nós botamos a condição, ou seja, significa:
+O que é necessário para que aconteça o código?<br><br>
+
+{} → Caso o que esteja em condição seja verdadeiro,
+todas as ações que estiver nas {} ocorrerá várias vezes.
+</p>
+
+<p><b>Essa é a estrutura da Lição de Hoje, bem simples mas complexa ao mesmo tempo</b></p>
+
+<div class="section">💻 Exemplo Completo do Código</div>
+
+<div class="code">
+let numero = 1;
+
+while (numero <= 5) {
+
+console.log(numero);
+
+numero = numero + 1;
+
+}
+</div>
+
+<div class="section">📌 VAMOS ENTENDE LO</div>
+
+<p>
+No código criamos uma variável chamada "numero" com o valor 1.<br>
+Até aqui aprendemos!
+</p>
+
+<p>
+Logo após começa com "while" para iniciar uma repetição;
+mas há um parenteses falando o seguinte:
+</p>
+
+<p><b>
+Se a variável numero (valor 1)
+for menor ou igual a 5
+é executada a ação
+</b></p>
+
+<p>
+Como 1 é menor que 5,
+será executada a ação!!
+</p>
+
+<p>
+A ação é:
+</p>
+
+<div class="code">
+console.log(numero)
+</div>
+
+<p>
+Ou seja será mostrado o valor da variável numero,
+que no caso é 1.
+</p>
+
+<div class="section">📌⌨️ MAIS O QUE É: numero = numero + 1</div>
+
+<p>
+Isso é algo que você tem que guardar,
+é uma grande informação:
+</p>
+
+<p><b>O valor das variáveis mudam</b></p>
+
+<p>
+Uma variável não é fixa.<br>
+Ela pode mudar de valor ao longo do código.
+</p>
+
+<p><b>Como isso funciona?</b></p>
+
+<p>
+Você pega o valor atual e atualiza ele.
+</p>
+
+<div class="code">
+numero = numero + 1
+</div>
+
+<p><b>
+Significa:
+pega o valor atual e soma +1
+</b></p>
+
+<div class="section">💻 Exemplo</div>
+
+<div class="code">
+let numero = 1;
+
+console.log(numero);
+
+numero = numero + 1;
+
+console.log(numero);
+</div>
+
+<div class="section">🧠 O que acontece</div>
+
+<p>
+Primeiro mostra: 1<br>
+Depois atualiza → vira 2<br>
+Mostra de novo: 2
+</p>
+
+<div class="section">🎯 Resumo</div>
+
+<p>
+A variável começa com um valor,
+e pode mudar durante o programa.
+</p>
+
+<p><b>
+No começo nós criamos uma variável,
+depois repetimos elas somando (+1)
+e o código termina mostrando:
+1,2,3,4,5
+</b></p>
+
+</div>
+
+<div class="card">
+
+<h1>🧪 Exercício</h1>
+
+<div class="exercise">
+
+<p><b>1. O que significa while?</b></p>
+
+<label class="option">
+<input type="radio" name="q1" value="a">
+ Repetir enquanto algo for verdadeiro
+</label>
+
+<label class="option">
+<input type="radio" name="q1" value="b">
+ Mostrar variável
+</label>
+
+<label class="option">
+<input type="radio" name="q1" value="c">
+ Criar variável
+</label>
+
+---
+
+<p><b>2. O que acontece dentro das chaves {} ?</b></p>
+
+<label class="option">
+<input type="radio" name="q2" value="a">
+ O programa fecha
+</label>
+
+<label class="option">
+<input type="radio" name="q2" value="b">
+ As ações acontecem
+</label>
+
+<label class="option">
+<input type="radio" name="q2" value="c">
+ A variável é apagada
+</label>
+
+---
+
+<p><b>3. Complete:</b></p>
+
+<p>
+numero = numero + 
+<select id="q3">
+
+<option></option>
+<option>1</option>
+<option>5</option>
+<option>10</option>
+
+</select>
+</p>
+
+---
+
+<p><b>4. O que o código abaixo mostrará?</b></p>
+
+<div class="code">
+let numero = 1;
+
+while(numero <= 3){
+
+console.log(numero);
+
+numero = numero + 1;
+
+}
+</div>
+
+<select id="q4">
+
+<option></option>
+<option>1 2 3</option>
+<option>1</option>
+<option>3 2 1</option>
+
+</select>
+
+<br>
+
+<button onclick="corrigir()">Verificar</button>
+
+<div id="resultado" class="result"></div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function getRadio(name){
+return document.querySelector('input[name="'+name+'"]:checked')?.value
+}
+
+function corrigir(){
+
+let acertos = 0
+
+if(getRadio("q1") === "a") acertos++
+
+if(getRadio("q2") === "b") acertos++
+
+if(document.getElementById("q3").value === "1") acertos++
+
+if(document.getElementById("q4").value === "1 2 3") acertos++
+
+if(acertos === 4){
+
+document.getElementById("resultado").innerHTML =
+'<span class="correct">✔ Excelente! Você entendeu repetição.</span>'
+
+}else{
+
+document.getElementById("resultado").innerHTML =
+'<span class="wrong">✖ Revise o funcionamento do while e das variáveis.</span>'
+
+}
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Reforço Windows</title>
+
+<style>
+body{margin:0;font-family:Arial}
+
+/* INSTRUÇÕES */
+.instructions{
+background:#1e3a8a;
+color:#fff;
+padding:20px;
+line-height:1.6;
+}
+
+/* TELAS */
+.screen{display:none;height:100vh}
+.active{display:block}
+
+/* DESKTOP */
+.desktop{
+height:100%;
+background:#1e3a8a;
+color:#fff;
+position:relative;
+}
+
+.icon{
+position:absolute;
+top:40px;
+left:40px;
+text-align:center;
+cursor:pointer;
+}
+.icon div{font-size:40px}
+
+.taskbar{
+position:absolute;
+bottom:0;
+width:100%;
+height:50px;
+background:#fff;
+display:flex;
+align-items:center;
+padding:0 10px;
+}
+
+.search{
+width:200px;
+height:30px;
+margin:0 10px;
+}
+
+.right{
+margin-left:auto;
+color:#000;
+}
+
+/* GOOGLE */
+.google{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+height:100%;
+background:#fff;
+}
+
+.logo{
+font-size:60px;
+font-weight:bold;
+margin-bottom:30px;
+}
+
+.search-box{
+width:500px;
+height:45px;
+border:1px solid #ddd;
+border-radius:30px;
+padding:0 20px;
+font-size:16px;
+}
+
+.buttons button{
+margin-top:15px;
+padding:10px 15px;
+border:none;
+background:#f3f4f6;
+border-radius:5px;
+cursor:pointer;
+}
+
+.buttons button:hover{
+background:#e5e7eb;
+}
+
+.results{
+margin-top:30px;
+width:600px;
+}
+
+/* EXPLORADOR */
+.window{
+height:100%;
+display:flex;
+flex-direction:column;
+}
+
+.topbar{
+background:#fff;
+padding:10px;
+display:flex;
+gap:10px;
+border-bottom:1px solid #ddd;
+}
+
+.topbar button{
+background:#f3f4f6;
+border:1px solid #ddd;
+padding:6px 12px;
+border-radius:5px;
+cursor:pointer;
+}
+
+.topbar button:hover{
+background:#e5e7eb;
+}
+
+.main{
+display:flex;
+flex:1;
+}
+
+.sidebar{
+width:220px;
+background:#ffffff;
+border-right:1px solid #ddd;
+padding:10px;
+}
+
+.sidebar div{
+padding:8px;
+cursor:pointer;
+border-radius:5px;
+}
+
+.sidebar div:hover{
+background:#e5e7eb;
+}
+
+.content{
+flex:1;
+padding:20px;
+background:#fff;
+}
+
+.file{
+padding:10px;
+border:1px solid #ddd;
+margin-bottom:10px;
+border-radius:6px;
+cursor:pointer;
+}
+
+.file:hover{
+background:#f3f4f6;
+}
+</style>
+</head>
+
+<body>
+
+<!-- INSTRUÇÕES -->
+<div class="instructions">
+<b>EXERCÍCIO DE REFORÇO</b><br><br>
+
+Etapa 1: Clique no Google<br>
+Etapa 2: Pesquise: <b>letra de música pdf</b><br>
+Etapa 3: Faça o download<br>
+Etapa 4: Abra Arquivos<br>
+Etapa 5: Vá em Downloads<br>
+Etapa 6: Renomeie e mude o tipo
+</div>
+
+<!-- DESKTOP -->
+<div class="screen active" id="desktop">
+<div class="desktop">
+
+<div class="icon" onclick="abrirGoogle()">
+<div>🌐</div>Google
+</div>
+
+<div class="icon" style="top:120px" onclick="abrirArquivos()">
+<div>📁</div>Arquivos
+</div>
+
+<div class="taskbar">
+⊞
+<input class="search" placeholder="Pesquisar">
+📁 🌐
+<div class="right">📶 🔊 🔋</div>
+</div>
+
+</div>
+</div>
+
+<!-- GOOGLE -->
+<div class="screen" id="google">
+<div class="google">
+
+<div class="logo">
+<span style="color:#4285F4">G</span>
+<span style="color:#EA4335">o</span>
+<span style="color:#FBBC05">o</span>
+<span style="color:#4285F4">g</span>
+<span style="color:#34A853">l</span>
+<span style="color:#EA4335">e</span>
+</div>
+
+<input id="pesquisa" class="search-box" placeholder="Pesquisar no Google">
+
+<div class="buttons">
+<button onclick="buscar()">Pesquisa Google</button>
+</div>
+
+<div class="results" id="resultados"></div>
+
+<button onclick="voltar()">⬅ Voltar</button>
+
+</div>
+</div>
+
+<!-- EXPLORADOR -->
+<div class="screen" id="arquivos">
+<div class="window">
+
+<div class="topbar">
+<button>Novo</button>
+<button>Recortar</button>
+<button>Copiar</button>
+<button onclick="renomear()">Renomear</button>
+<button>Excluir</button>
+<button onclick="voltar()">⬅ Voltar</button>
+</div>
+
+<div class="main">
+
+<div class="sidebar">
+<div>Início</div>
+<div>Galeria</div>
+<div>Área de trabalho</div>
+<div onclick="abrirDownloads()">Downloads</div>
+<div>Documentos</div>
+<div>Imagens</div>
+<div>Músicas</div>
+<div>Este Computador</div>
+</div>
+
+<div class="content" id="conteudo">
+Clique em Downloads
+</div>
+
+</div>
+
+</div>
+</div>
+
+<script>
+
+let arquivoBaixado = false
+let nomeArquivo = "musica.pdf"
+
+/* TELAS */
+function abrirGoogle(){trocarTela("google")}
+function abrirArquivos(){trocarTela("arquivos")}
+function voltar(){trocarTela("desktop")}
+
+function trocarTela(t){
+document.querySelectorAll(".screen").forEach(s=>s.classList.remove("active"))
+document.getElementById(t).classList.add("active")
+}
+
+/* GOOGLE */
+function buscar(){
+let txt=document.getElementById("pesquisa").value.toLowerCase()
+
+if(txt.includes("pdf")){
+document.getElementById("resultados").innerHTML=`
+<div onclick="baixar()" style="cursor:pointer;color:blue">
+Baixar letra de música PDF
+</div>
+`
+}
+}
+
+function baixar(){
+arquivoBaixado=true
+alert("Download concluído")
+}
+
+/* EXPLORADOR */
+function abrirDownloads(){
+if(arquivoBaixado){
+document.getElementById("conteudo").innerHTML=`
+<div class="file">${nomeArquivo}</div>
+`
+}else{
+document.getElementById("conteudo").innerHTML="Sem arquivos"
+}
+}
+
+/* RENOMEAR */
+function renomear(){
+if(!arquivoBaixado)return
+
+let novo=prompt("Novo nome (ex: musica.txt)")
+
+if(novo){
+nomeArquivo=novo
+abrirDownloads()
+}
+}
+
+</script>
+
+</body>
+</html>

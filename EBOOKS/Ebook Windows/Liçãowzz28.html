@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 28 — Dispositivos externos</title>
+
+<style>
+
+body{
+font-family:Segoe UI, Arial;
+margin:0;
+background:#ffffff;
+}
+
+/* CONTEÚDO */
+.container{
+max-width:1100px;
+margin:auto;
+padding:40px;
+}
+
+h1{color:#1e3a8a}
+
+.card{
+background:#f9fafb;
+padding:30px;
+border-radius:14px;
+border:1px solid #e5e7eb;
+margin-top:20px;
+}
+
+.section{
+margin-top:25px;
+font-weight:bold;
+color:#1e40af;
+}
+
+/* DESKTOP */
+.desktop{
+height:100vh;
+background:#1e3a8a;
+color:#fff;
+position:relative;
+margin-top:30px;
+}
+
+/* ÍCONE */
+.icon{
+position:absolute;
+top:40px;
+left:40px;
+text-align:center;
+cursor:pointer;
+}
+.icon div{font-size:40px}
+
+/* JANELA */
+.window{
+position:absolute;
+top:80px;
+left:150px;
+width:650px;
+background:#fff;
+color:#000;
+border-radius:10px;
+display:none;
+box-shadow:0 5px 20px rgba(0,0,0,0.3);
+}
+
+/* TOPO */
+.topbar{
+padding:10px;
+background:#f3f4f6;
+display:flex;
+gap:10px;
+}
+
+button{
+padding:6px 10px;
+border:none;
+background:#2563eb;
+color:#fff;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#1d4ed8;
+}
+
+/* CORPO */
+.main{
+display:flex;
+height:350px;
+}
+
+.sidebar{
+width:200px;
+background:#f9fafb;
+padding:10px;
+border-right:1px solid #ddd;
+}
+
+.sidebar div{
+padding:8px;
+cursor:pointer;
+border-radius:6px;
+}
+
+.sidebar div:hover{
+background:#e5e7eb;
+}
+
+.content{
+flex:1;
+padding:15px;
+}
+
+.file{
+padding:10px;
+border:1px solid #ddd;
+margin-top:10px;
+cursor:pointer;
+border-radius:6px;
+}
+
+.file:hover{
+background:#f3f4f6;
+}
+
+/* RESULTADO */
+.result{
+position:absolute;
+bottom:60px;
+left:20px;
+background:#fff;
+color:#000;
+padding:10px;
+border-radius:6px;
+font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>📘 Lição 28 — Dispositivos externos (pendrive e outros)</h1>
+
+<div class="card">
+
+<p>Agora você vai aprender a usar algo muito comum no dia a dia do Microsoft Windows:</p>
+<p><b>👉 levar arquivos para fora do computador</b></p>
+
+<div class="section">🔌 O que são dispositivos externos</div>
+
+<p>São dispositivos que você conecta ao computador para guardar ou transportar arquivos.</p>
+
+<p>💾 Pendrive</p>
+<p>💽 HD externo</p>
+<p>📱 Celular</p>
+<p>📷 Cartão de memória</p>
+
+<p><b>👉 Funcionam como armazenamento portátil</b></p>
+
+<div class="section">🖥️ Como conectar</div>
+
+<p>Use a entrada USB e conecte o dispositivo</p>
+<p><b>👉 O sistema reconhece automaticamente</b></p>
+
+<div class="section">📂 O que acontece</div>
+
+<p>Ele aparece como um novo local no computador</p>
+
+<div class="section">📁 Como acessar</div>
+
+<p>Abra o Explorador de Arquivos e clique no dispositivo</p>
+
+<div class="section">🔄 Como usar</div>
+
+<p><b>📥 Enviar para o pendrive</b></p>
+<p>Copiar → Colar</p>
+
+<p><b>📤 Trazer para o computador</b></p>
+<p>Copiar → Colar</p>
+
+<div class="section">⚠️ Remover com segurança</div>
+
+<p>Use a opção antes de retirar</p>
+
+<div class="section">❗ O que NÃO fazer</div>
+
+<p>Não remover direto</p>
+<p>Não desconectar usando</p>
+
+<div class="section">🎯 Ideia principal</div>
+
+<p><b>Permite levar arquivos e usar em outros computadores</b></p>
+
+</div>
+
+<div class="card">
+
+<h2>🧪 Exercício</h2>
+
+<p>1. Abra Arquivos</p>
+<p>2. Vá em Documentos e copie o arquivo</p>
+<p>3. Cole no Pendrive</p>
+<p>4. Vá no Pendrive e copie o arquivo</p>
+<p>5. Cole no computador</p>
+<p>6. Remova com segurança</p>
+
+<p><b>⚠️ Use duplo clique em Copiar e Colar</b></p>
+
+</div>
+
+</div>
+
+<!-- DESKTOP -->
+<div class="desktop">
+
+<div class="icon" ondblclick="abrirArquivos()">
+<div>📁</div>
+Arquivos
+</div>
+
+<div class="result" id="resultado">Siga as etapas</div>
+
+<div class="window" id="janela">
+
+<div class="topbar">
+<button ondblclick="copiar()">Copiar</button>
+<button ondblclick="colar()">Colar</button>
+<button onclick="remover()">Remover com segurança</button>
+</div>
+
+<div class="main">
+
+<div class="sidebar">
+<div onclick="abrirDocs()">Documentos</div>
+<div onclick="abrirUSB()">Pendrive (E:)</div>
+</div>
+
+<div class="content" id="conteudo"></div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+/* SISTEMA REAL DE ARQUIVOS */
+let arquivosPC = ["🖼️ Foto.jpg"]
+let arquivosUSB = ["📄 Trabalho.pdf"]
+
+let arquivoSelecionado = ""
+let arquivoCopiado = ""
+let origem = ""
+
+/* ABRIR */
+function abrirArquivos(){
+document.getElementById("janela").style.display="block"
+}
+
+/* MOSTRAR DOCUMENTOS */
+function abrirDocs(){
+
+origem="pc"
+
+let html=""
+
+arquivosPC.forEach(arq=>{
+html += `<div class="file" onclick="selecionar('${arq}','pc')">${arq}</div>`
+})
+
+document.getElementById("conteudo").innerHTML=html
+}
+
+/* MOSTRAR USB */
+function abrirUSB(){
+
+origem="usb"
+
+let html=""
+
+arquivosUSB.forEach(arq=>{
+html += `<div class="file" onclick="selecionar('${arq}','usb')">${arq}</div>`
+})
+
+document.getElementById("conteudo").innerHTML=html
+}
+
+/* SELECIONAR */
+function selecionar(nome, orig){
+arquivoSelecionado = nome
+origem = orig
+document.getElementById("resultado").innerHTML="Selecionado: "+nome
+}
+
+/* COPIAR DUPLO */
+let c=0
+function copiar(){
+c++
+if(c>=2){
+
+if(arquivoSelecionado==""){
+alert("Selecione um arquivo")
+return
+}
+
+arquivoCopiado = arquivoSelecionado
+document.getElementById("resultado").innerHTML="✔ Copiado: "+arquivoCopiado
+
+c=0
+}
+}
+
+/* COLAR DUPLO */
+let v=0
+function colar(){
+v++
+if(v>=2){
+
+if(arquivoCopiado==""){
+alert("Copie primeiro")
+return
+}
+
+/* PC → USB */
+if(origem=="pc"){
+if(!arquivosUSB.includes(arquivoCopiado)){
+arquivosUSB.push(arquivoCopiado)
+}
+abrirUSB()
+document.getElementById("resultado").innerHTML="✔ Arquivo no pendrive"
+}
+
+/* USB → PC */
+if(origem=="usb"){
+if(!arquivosPC.includes(arquivoCopiado)){
+arquivosPC.push(arquivoCopiado)
+}
+abrirDocs()
+document.getElementById("resultado").innerHTML="✔ Arquivo no computador"
+}
+
+v=0
+}
+}
+
+/* REMOVER */
+function remover(){
+
+let sucesso = arquivosUSB.includes("🖼️ Foto.jpg") && arquivosPC.includes("📄 Trabalho.pdf")
+
+if(sucesso){
+document.getElementById("resultado").innerHTML="✅ Tudo correto! Removido com segurança"
+}else{
+document.getElementById("resultado").innerHTML="❌ Você não completou o exercício"
+}
+
+}
+
+</script>
+
+</body>
+</html>

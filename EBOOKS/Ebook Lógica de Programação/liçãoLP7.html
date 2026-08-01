@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 7 — Reforço</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Consolas, monospace;
+background:#0f172a;
+color:#e2e8f0;
+}
+
+.container{
+max-width:950px;
+margin:auto;
+padding:40px;
+}
+
+.card{
+background:#1e293b;
+padding:25px;
+border-radius:12px;
+margin-bottom:25px;
+border:1px solid #334155;
+}
+
+h1{
+color:#38bdf8;
+}
+
+.section{
+margin-top:20px;
+font-weight:bold;
+color:#94a3b8;
+}
+
+.code{
+background:#020617;
+color:#22c55e;
+padding:15px;
+border-radius:8px;
+margin-top:10px;
+white-space:pre-line;
+}
+
+.exercise{
+background:#020617;
+padding:20px;
+border-radius:10px;
+margin-top:20px;
+}
+
+.tip{
+background:#0f172a;
+padding:15px;
+border-left:4px solid #38bdf8;
+margin-top:15px;
+border-radius:6px;
+}
+
+textarea{
+width:100%;
+height:220px;
+margin-top:10px;
+padding:10px;
+border-radius:8px;
+border:none;
+background:#0f172a;
+color:#e2e8f0;
+font-family:Consolas;
+font-size:15px;
+}
+
+button{
+margin-top:15px;
+padding:10px 15px;
+background:#38bdf8;
+border:none;
+border-radius:6px;
+color:#0f172a;
+cursor:pointer;
+font-weight:bold;
+}
+
+.result{
+margin-top:15px;
+padding:15px;
+border-radius:8px;
+background:#020617;
+}
+
+.correct{
+color:#22c55e;
+}
+
+.wrong{
+color:#ef4444;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>📘 LIÇÃO 7 — Reforço</h1>
+
+<div class="section">🧠 Objetivo da aula</div>
+
+<p>
+Relembrar:
+</p>
+
+<p>
+let<br>
+console.log()<br>
+while<br>
+for
+</p>
+
+---
+
+<div class="section">🧠 let</div>
+
+<p><b>📌 O que faz</b></p>
+
+<p>
+Cria uma variável.
+</p>
+
+<p>
+O que é uma variável?
+</p>
+
+<p><b>
+Variáveis são caixas que guardam informações
+elas são importante pra o funcionamento do código
+</b></p>
+
+<p>
+Mas o por que guardar uma informação?
+</p>
+
+<p>
+Tudo que fazemos deve estar guardado no sistema,
+por exemplo:
+</p>
+
+<p><b>🖥 Verificação de Idade</b></p>
+
+<p>
+Você guarda a idade para:
+</p>
+
+<p>
+verificar se pode entrar<br>
+comparar com 18
+</p>
+
+<p><b>
+Quando alguém digita sua idade isso é considerado uma variável.
+Ou seja estaria guardando a informação para usar depois na comparação
+</b></p>
+
+---
+
+<div class="section">💻 CÓDIGO</div>
+
+<div class="code">
+let numero = 10;
+</div>
+
+<div class="section">🧠 Tradução</div>
+
+<p><b>
+Crie uma variável chamada “numero”
+e guarde 10
+</b></p>
+
+---
+
+<div class="section">🧠 console.log()</div>
+
+<p><b>📌 O que faz</b></p>
+
+<p>
+Mostra informações no console.
+</p>
+
+<p><b>
+Serve para ver valores e testar lógica.
+</b></p>
+
+<div class="section">💻 Exemplo</div>
+
+<div class="code">
+let numero = 10;
+
+console.log(numero);
+</div>
+
+<div class="section">🧠 Resultado</div>
+
+<p><b>
+Aparece 10
+</b></p>
+
+<div class="section">💡 Quando usar</div>
+
+<p>
+ver resultado<br>
+testar variável<br>
+entender o que o código está fazendo
+</p>
+
+---
+
+<div class="section">🧠 while</div>
+
+<p><b>📌 O que faz</b></p>
+
+<p>
+Repete uma ação enquanto uma condição for verdadeira.
+</p>
+
+<p><b>
+Pode ser usado em sites da seguinte forma:
+</b></p>
+
+<p><b>🪪 Verificação de Senha</b></p>
+
+<p>
+Enquanto não tiver acertado a senha,
+continuará pedindo a senha.
+</p>
+
+<p><b>⏰ Temporizador</b></p>
+
+<p>
+Começa no 5 e vai diminuindo até o 0
+</p>
+
+---
+
+<div class="section">💻 Código (Base)</div>
+
+<div class="code">
+let numero = 1;
+
+while (numero <= 3) {
+
+console.log(numero);
+
+numero = numero + 1;
+
+}
+</div>
+
+<div class="section">🧠 Como funciona</div>
+
+<p>
+começa em 1<br>
+verifica condição<br>
+mostra valor<br>
+atualiza valor<br>
+repete
+</p>
+
+---
+
+<div class="section">💡 Quando usar while</div>
+
+<p><b>
+Use quando:
+</b></p>
+
+<p>
+você NÃO sabe exatamente quantas vezes vai repetir
+</p>
+
+---
+
+<div class="section">📌 Exemplo mental</div>
+
+<p><b>
+Enquanto algo continuar acontecendo
+→ continue repetindo
+</b></p>
+
+---
+
+<div class="section">🧠 for</div>
+
+<p><b>📌 O que faz</b></p>
+
+<p>
+Também é repetição.
+</p>
+
+<p><b>
+Mas:
+</b></p>
+
+<p>
+O for é usado quando você já sabe quantas vezes quer repetir algo.
+</p>
+
+<p>
+O for é bem estruturado pois ele junta:
+</p>
+
+<p>
+início<br>
+condição<br>
+mudança
+</p>
+
+<p>
+em uma única estrutura.
+</p>
+
+<p>
+Por isso:
+</p>
+
+<p>
+Fica mais fácil de ler<br>
+Mais rápido de entender<br>
+Melhor para contagens
+</p>
+
+<div class="section">💻 Exemplo</div>
+
+<div class="code">
+for (let i = 1; i <= 3; i++) {
+
+console.log(i);
+
+}
+</div>
+
+---
+
+<div class="section">🧠 Como funciona</div>
+
+<p>
+começa no 1<br>
+continua até 3<br>
+aumenta +1<br>
+repete
+</p>
+
+---
+
+<div class="section">💡 Quando usar for</div>
+
+<p><b>
+Use quando:
+</b></p>
+
+<p>
+você JÁ sabe quantas vezes vai repetir
+</p>
+
+---
+
+<div class="section">🔍 Diferença real</div>
+
+<p><b>while</b></p>
+
+<p>
+Mais manual<br>
+Não sabe exatamente as vezes em que vai repetir
+</p>
+
+---
+
+<p><b>for</b></p>
+
+<p>
+Mais organizado<br>
+É tudo em 1 linha só<br>
+Já sabe quantas vezes vai repetir.
+</p>
+
+---
+
+<div class="section">🧠 Sobre o ;</div>
+
+<p>
+O ; (ponto e vírgula)
+serve para finalizar uma instrução.
+</p>
+
+<p><b>
+É como um ponto final no código.
+</b></p>
+
+<p>
+Ele ajuda o programa a entender:
+</p>
+
+<p><b>
+“essa parte terminou”
+</b></p>
+
+---
+
+<div class="section">🧠 Sobre o ( )</div>
+
+<p>
+Os parênteses ( ) normalmente guardam:
+</p>
+
+<p>
+condições<br>
+informações<br>
+parâmetros
+</p>
+
+<p>
+Eles ajudam a organizar o que será usado.
+</p>
+
+---
+
+<div class="section">🧠 Sobre as { }</div>
+
+<p>
+As chaves { } criam um bloco de código.
+Tudo que está dentro pertence à mesma estrutura.
+</p>
+
+<p><b>
+Elas agrupam ações.
+</b></p>
+
+</div>
+
+<!-- EXERCÍCIO 1 -->
+
+<div class="card">
+
+<h1>🧪 Exercício 1 — WHILE</h1>
+
+<div class="exercise">
+
+<p>
+Crie um código usando <b>while</b>
+para mostrar:
+</p>
+
+<p><b>1, 2, 3</b></p>
+
+<div class="tip">
+
+💡 EXEMPLO PARA SEGUIR:
+
+<div class="code">
+let numero = 1;
+
+while(numero <= 3){
+
+console.log(numero);
+
+numero = numero + 1;
+
+}
+</div>
+
+</div>
+
+<textarea id="codigoWhile"></textarea>
+
+<button onclick="executarWhile()">Executar WHILE</button>
+
+<div id="resultadoWhile" class="result"></div>
+
+</div>
+
+</div>
+
+<!-- EXERCÍCIO 2 -->
+
+<div class="card">
+
+<h1>🧪 Exercício 2 — FOR</h1>
+
+<div class="exercise">
+
+<p>
+Crie um código usando <b>for</b>
+para mostrar:
+</p>
+
+<p><b>1, 2, 3</b></p>
+
+<div class="tip">
+
+💡 EXEMPLO PARA SEGUIR:
+
+<div class="code">
+for(let i = 1; i <= 3; i++){
+
+console.log(i);
+
+}
+</div>
+
+</div>
+
+<textarea id="codigoFor"></textarea>
+
+<button onclick="executarFor()">Executar FOR</button>
+
+<div id="resultadoFor" class="result"></div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function executarWhile(){
+
+let codigo = document.getElementById("codigoWhile").value
+
+let resultado = document.getElementById("resultadoWhile")
+
+resultado.innerHTML = ""
+
+try{
+
+let saida = []
+
+let consoleFake = {
+
+log: function(msg){
+
+saida.push(msg)
+
+}
+
+}
+
+new Function("console", codigo)(consoleFake)
+
+let valido = true
+
+if(!codigo.includes("while")) valido = false
+
+if(!codigo.includes("console.log")) valido = false
+
+if(saida.join(",") !== "1,2,3") valido = false
+
+if(valido){
+
+resultado.innerHTML =
+'<span class="correct">✔ WHILE funcionando corretamente!</span><br><br>Resultado: '+saida.join(", ")
+
+}else{
+
+resultado.innerHTML =
+'<span class="wrong">✖ Seu while ainda não mostrou 1,2,3 corretamente.</span>'
+
+}
+
+}catch(erro){
+
+resultado.innerHTML =
+'<span class="wrong">Erro no código:<br><br>'+erro.message+'</span>'
+
+}
+
+}
+
+function executarFor(){
+
+let codigo = document.getElementById("codigoFor").value
+
+let resultado = document.getElementById("resultadoFor")
+
+resultado.innerHTML = ""
+
+try{
+
+let saida = []
+
+let consoleFake = {
+
+log: function(msg){
+
+saida.push(msg)
+
+}
+
+}
+
+new Function("console", codigo)(consoleFake)
+
+let valido = true
+
+if(!codigo.includes("for")) valido = false
+
+if(!codigo.includes("console.log")) valido = false
+
+if(saida.join(",") !== "1,2,3") valido = false
+
+if(valido){
+
+resultado.innerHTML =
+'<span class="correct">✔ FOR funcionando corretamente!</span><br><br>Resultado: '+saida.join(", ")
+
+}else{
+
+resultado.innerHTML =
+'<span class="wrong">✖ Seu for ainda não mostrou 1,2,3 corretamente.</span>'
+
+}
+
+}catch(erro){
+
+resultado.innerHTML =
+'<span class="wrong">Erro no código:<br><br>'+erro.message+'</span>'
+
+}
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ebook de Python</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:'Inter',sans-serif;
+background:#0f172a;
+color:#e2e8f0;
+}
+
+/* TOPO */
+.header{
+background:linear-gradient(90deg,#111827,#1e293b);
+padding:35px;
+text-align:center;
+font-size:30px;
+font-weight:700;
+color:#facc15;
+letter-spacing:1px;
+border-bottom:3px solid #facc15;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* CONTAINER */
+.container{
+max-width:1000px;
+margin:auto;
+padding:40px 20px;
+}
+
+/* CARDS */
+.card{
+background:#111827;
+border-radius:18px;
+padding:30px;
+margin-bottom:30px;
+border-left:7px solid #facc15;
+box-shadow:0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* TÍTULOS */
+h1{
+margin-top:0;
+font-size:32px;
+color:#f8fafc;
+}
+
+.section-title{
+margin-top:30px;
+font-size:22px;
+font-weight:700;
+padding-left:12px;
+border-left:5px solid #3b82f6;
+color:#facc15;
+}
+
+/* TEXTO */
+p, li{
+line-height:1.8;
+color:#cbd5e1;
+}
+
+/* DESTAQUE */
+.highlight{
+background:#1e293b;
+padding:18px;
+border-radius:12px;
+margin-top:20px;
+border-left:5px solid #22c55e;
+}
+
+/* EXEMPLOS */
+.example{
+background:#0b1220;
+border:1px solid #334155;
+border-radius:12px;
+overflow:hidden;
+margin-top:20px;
+}
+
+/* TOPO DO CÓDIGO */
+.code-top{
+background:#1e293b;
+padding:10px 15px;
+display:flex;
+align-items:center;
+gap:8px;
+border-bottom:1px solid #334155;
+}
+
+.circle{
+width:12px;
+height:12px;
+border-radius:50%;
+}
+
+.red{background:#ef4444;}
+.yellow{background:#facc15;}
+.green{background:#22c55e;}
+
+/* CÓDIGO */
+.code{
+padding:20px;
+font-family:'JetBrains Mono', monospace;
+font-size:15px;
+line-height:2;
+color:#e2e8f0;
+white-space:pre-line;
+}
+
+/* RESULTADO */
+.result{
+background:#020617;
+padding:15px 20px;
+border-top:1px solid #334155;
+font-family:'JetBrains Mono', monospace;
+color:#4ade80;
+}
+
+/* CORES */
+.blue{color:#60a5fa;}
+.green-text{color:#4ade80;}
+.yellow-text{color:#facc15;}
+.purple{color:#c084fc;}
+
+/* EXERCÍCIOS */
+.exercise{
+background:#1e293b;
+padding:25px;
+border-radius:14px;
+margin-top:25px;
+border:1px solid #334155;
+}
+
+textarea{
+width:100%;
+height:160px;
+background:#020617;
+border:1px solid #334155;
+border-radius:10px;
+padding:15px;
+margin-top:15px;
+color:#e2e8f0;
+font-size:15px;
+font-family:'JetBrains Mono', monospace;
+resize:none;
+}
+
+button{
+margin-top:15px;
+padding:12px 22px;
+background:#facc15;
+color:#111827;
+font-weight:700;
+border:none;
+border-radius:10px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#eab308;
+transform:translateY(-2px);
+}
+
+.option{
+background:#0f172a;
+padding:14px;
+border-radius:10px;
+margin-top:12px;
+cursor:pointer;
+border:2px solid #334155;
+transition:0.3s;
+}
+
+.option:hover{
+border-color:#facc15;
+}
+
+.resultado{
+margin-top:15px;
+font-weight:bold;
+font-size:18px;
+}
+
+.correct{
+color:#22c55e;
+}
+
+.wrong{
+color:#ef4444;
+}
+
+/* FOOTER */
+.footer{
+text-align:center;
+padding:30px;
+font-size:14px;
+color:#64748b;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+🐍 Ebook de Python
+</div>
+
+<div class="container">
+
+<div class="card">
+
+<h1>📘 Lição 6 — Loops (for e while) no Python</h1>
+
+<p>
+Nesta aula você vai aprender:
+</p>
+
+<ul>
+<li>O que são loops</li>
+<li>Como repetir tarefas automaticamente</li>
+<li>for</li>
+<li>while</li>
+<li>Como loops funcionam no Python</li>
+<li>Diferenças do Python para outras linguagens</li>
+</ul>
+
+<div class="section-title">
+🧠 O que são loops?
+</div>
+
+<p>
+Loop significa:
+<b>repetição</b>
+</p>
+
+<p>
+Eles servem para repetir código várias vezes sem precisar escrever tudo manualmente.
+</p>
+
+<div class="section-title">
+❌ Sem loop
+</div>
+
+<div class="example">
+
+<div class="code-top">
+<div class="circle red"></div>
+<div class="circle yellow"></div>
+<div class="circle green"></div>
+</div>
+
+<div class="code">
+<span class="blue">print</span>(<span class="green-text">"Olá"</span>)
+<span class="blue">print</span>(<span class="green-text">"Olá"</span>)
+<span class="blue">print</span>(<span class="green-text">"Olá"</span>)
+<span class="blue">print</span>(<span class="green-text">"Olá"</span>)
+</div>
+
+</div>
+
+<p>
+Isso funciona… mas fica repetitivo.
+</p>
+
+<div class="section-title">
+✅ Com loop
+</div>
+
+<div class="example">
+
+<div class="code-top">
+<div class="circle red"></div>
+<div class="circle yellow"></div>
+<div class="circle green"></div>
+</div>
+
+<div class="code">
+<span class="purple">for</span> i <span class="purple">in</span> range(4):
+    <span class="blue">print</span>(<span class="green-text">"Olá"</span>)
+</div>
+
+<div class="result">
+▶ Olá<br>
+▶ Olá<br>
+▶ Olá<br>
+▶ Olá
+</div>
+
+</div>
+
+<div class="highlight">
+⚠ Python usa espaços (identação) para organizar os blocos.
+</div>
+
+<div class="section-title">
+🔥 O loop for
+</div>
+
+<p>
+O for serve para:
+<b>repetir algo uma quantidade definida de vezes.</b>
+</p>
+
+<div class="example">
+
+<div class="code-top">
+<div class="circle red"></div>
+<div class="circle yellow"></div>
+<div class="circle green"></div>
+</div>
+
+<div class="code">
+<span class="purple">for</span> i <span class="purple">in</span> range(5):
+    <span class="blue">print</span>(i)
+</div>
+
+<div class="result">
+▶ 0<br>
+▶ 1<br>
+▶ 2<br>
+▶ 3<br>
+▶ 4
+</div>
+
+</div>
+
+<div class="section-title">
+🔥 O loop while
+</div>
+
+<p>
+O while repete:
+<b>enquanto algo for verdadeiro.</b>
+</p>
+
+<div class="example">
+
+<div class="code-top">
+<div class="circle red"></div>
+<div class="circle yellow"></div>
+<div class="circle green"></div>
+</div>
+
+<div class="code">
+numero = 1
+
+<span class="purple">while</span> numero <= 5:
+    <span class="blue">print</span>(numero)
+
+    numero = numero + 1
+</div>
+
+<div class="result">
+▶ 1<br>
+▶ 2<br>
+▶ 3<br>
+▶ 4<br>
+▶ 5
+</div>
+
+</div>
+
+<div class="highlight">
+💡 No Python os espaços são obrigatórios.<br>
+Sem espaços corretos o código gera erro.
+</div>
+
+</div>
+
+<!-- EXERCÍCIO 1 -->
+<div class="card">
+
+<h1>🎯 Exercício 1 — Criar Código</h1>
+
+<p>
+Crie um código usando <b>for</b> para mostrar:
+</p>
+
+<p>
+Olá<br>
+Olá<br>
+Olá
+</p>
+
+<textarea id="codigo1"></textarea>
+
+<button onclick="verificarCodigo()">
+Verificar
+</button>
+
+<div id="resultado1" class="resultado"></div>
+
+</div>
+
+<!-- EXERCÍCIO 2 -->
+<div class="card">
+
+<h1>🎯 Exercício 2 — Multipla Escolha</h1>
+
+<p>
+Qual código está correto no Python?
+</p>
+
+<div class="option" onclick="verificarOpcao('a')">
+A)
+<pre>
+for i in range(3):
+print("Olá")
+</pre>
+</div>
+
+<div class="option" onclick="verificarOpcao('b')">
+B)
+<pre>
+for i in range(3):
+    print("Olá")
+</pre>
+</div>
+
+<div class="option" onclick="verificarOpcao('c')">
+C)
+<pre>
+for i range(3):
+    print("Olá")
+</pre>
+</div>
+
+<div id="resultado2" class="resultado"></div>
+
+</div>
+
+</div>
+
+<div class="footer">
+Python Academy © 2026
+</div>
+
+<script>
+
+function verificarCodigo(){
+
+let codigo =
+document.getElementById("codigo1")
+.value
+.toLowerCase()
+
+if(
+codigo.includes("for") &&
+codigo.includes("range") &&
+codigo.includes("print")
+){
+
+document.getElementById("resultado1")
+.innerHTML =
+'<span class="correct">✔ Código correto!</span>'
+
+}else{
+
+document.getElementById("resultado1")
+.innerHTML =
+'<span class="wrong">✖ Seu código precisa usar for, range e print.</span>'
+
+}
+
+}
+
+function verificarOpcao(opcao){
+
+if(opcao == "b"){
+
+document.getElementById("resultado2")
+.innerHTML =
+'<span class="correct">✔ Correto! O Python precisa dos espaços.</span>'
+
+}else{
+
+document.getElementById("resultado2")
+.innerHTML =
+'<span class="wrong">✖ Incorreto. Revise a identação do Python.</span>'
+
+}
+
+}
+
+</script>
+
+</body>
+</html>

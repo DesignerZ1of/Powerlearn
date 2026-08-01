@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 18 — Return</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Consolas;
+background:#0f172a;
+color:#e2e8f0;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:40px;
+}
+
+.card{
+background:#1e293b;
+padding:25px;
+border-radius:12px;
+margin-bottom:25px;
+border:1px solid #334155;
+}
+
+h1,h2{
+color:#38bdf8;
+}
+
+.code{
+background:black;
+padding:15px;
+border-radius:8px;
+margin-top:10px;
+margin-bottom:10px;
+white-space:pre-line;
+color:#22c55e;
+}
+
+.exercise{
+background:#020617;
+padding:20px;
+border-radius:10px;
+margin-top:20px;
+}
+
+.option{
+display:block;
+margin-top:10px;
+}
+
+button{
+margin-top:15px;
+padding:10px 15px;
+background:#38bdf8;
+border:none;
+border-radius:6px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.result{
+margin-top:15px;
+font-weight:bold;
+}
+
+.correct{
+color:#22c55e;
+}
+
+.wrong{
+color:#ef4444;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>📘 LIÇÃO 18 — Return (return)</h1>
+
+<hr>
+
+<h2>🧠 O que você vai aprender aqui</h2>
+
+<p>
+O que é return<br><br>
+
+Como funções devolvem resultados<br><br>
+
+Diferença entre mostrar e retornar<br><br>
+
+Como guardar resultados de funções
+</p>
+
+<hr>
+
+<h2>🧩 Tipo de lógica usado</h2>
+
+<p>
+🔹 Lógica de Retorno
+</p>
+
+<p>
+> Fazer a função entregar um resultado.
+</p>
+
+<hr>
+
+<h2>🧠 O que é return?</h2>
+
+<p>
+return serve para:
+</p>
+
+<p>
+> devolver um valor da função.
+</p>
+
+<hr>
+
+<h2>📌 Ideia simples</h2>
+
+<p>
+A função:
+</p>
+
+<p>
+executa algo<br>
+calcula algo<br>
+depois entrega o resultado
+</p>
+
+<hr>
+
+<h2>💻 Código (1º da aula)</h2>
+
+<div class="code">
+function soma() {
+  return 10 + 5;
+}
+</div>
+
+<hr>
+
+<h2>🧠 O que acontece?</h2>
+
+<p>
+A função:
+</p>
+
+<p>
+calcula 10 + 5<br><br>
+
+devolve:
+</p>
+
+<div class="code">
+15
+</div>
+
+<hr>
+
+<h2>⚠️ Importante</h2>
+
+<p>
+O return:
+</p>
+
+<p>
+> não mostra o valor sozinho.
+</p>
+
+<p>
+Ele apenas:
+</p>
+
+<p>
+> devolve o valor.
+</p>
+
+<hr>
+
+<h2>🚀 Mostrando o resultado</h2>
+
+<div class="code">
+function soma() {
+  return 10 + 5;
+}
+
+console.log(soma());
+</div>
+
+<hr>
+
+<h2>🧠 Resultado</h2>
+
+<div class="code">
+15
+</div>
+
+<hr>
+
+<h2>🧠 Diferença importante</h2>
+
+<div class="code">
+console.log()
+
+→ mostra na tela
+
+
+return
+
+→ devolve resultado
+</div>
+
+<hr>
+
+<h2>💻 Outro exemplo</h2>
+
+<div class="code">
+function nome() {
+  return "Carlos";
+}
+
+console.log(nome());
+</div>
+
+<hr>
+
+<h2>🧠 Resultado</h2>
+
+<div class="code">
+Carlos
+</div>
+
+<hr>
+
+<h2>🧠 Guardando o retorno</h2>
+
+<p>
+Você também pode guardar o resultado em variável.
+</p>
+
+<hr>
+
+<h2>💻 Exemplo</h2>
+
+<div class="code">
+function soma() {
+  return 20 + 10;
+}
+
+let resultado = soma();
+
+console.log(resultado);
+</div>
+
+<hr>
+
+<h2>🧠 O que acontece?</h2>
+
+<p>
+a função devolve 30<br><br>
+
+variável guarda 30<br><br>
+
+depois mostra 30
+</p>
+
+<hr>
+
+<h2>📌 Como pensar no return</h2>
+
+<p>
+> A função entrega um resultado para fora dela.
+</p>
+
+<hr>
+
+<h2>⚠️ Erro comum</h2>
+
+<p>
+Pensar que:
+</p>
+
+<p>
+> return mostra valores.
+</p>
+
+<p>
+❌ Não.
+</p>
+
+<p>
+Quem mostra:
+</p>
+
+<div class="code">
+console.log()
+</div>
+
+<hr>
+
+<h2>🧠 Estrutura</h2>
+
+<p>
+📌 Estrutura simples
+</p>
+
+<div class="code">
+function nome() {
+  return valor;
+}
+</div>
+
+<hr>
+
+<h2>🧠 Fluxo simples</h2>
+
+<div class="code">
+cria função
+
+função executa
+
+return devolve resultado
+
+código usa resultado
+</div>
+
+<hr>
+
+<h2>🧪 Pequena comparação</h2>
+
+<p>
+Sem return
+</p>
+
+<div class="code">
+function oi() {
+  console.log("Olá");
+}
+</div>
+
+<p>
+👉 apenas mostra
+</p>
+
+<hr>
+
+<p>
+Com return
+</p>
+
+<div class="code">
+function oi() {
+  return "Olá";
+}
+</div>
+
+<p>
+👉 devolve valor
+</p>
+
+<hr>
+
+<h2>🎯 Fechamento</h2>
+
+<p>
+> Parâmetro recebe.<br>
+Função executa.<br>
+Return devolve resultado.
+</p>
+
+</div>
+
+<!-- EXERCÍCIO 1 -->
+
+<div class="card">
+<div class="exercise">
+
+<h2>🧠 1. Múltipla escolha</h2>
+
+<p>
+O que o return faz?
+</p>
+
+<label class="option">
+<input type="radio" name="q1" value="a">
+A) Cria variável
+</label>
+
+<label class="option">
+<input type="radio" name="q1" value="b">
+B) Mostra valor na tela
+</label>
+
+<label class="option">
+<input type="radio" name="q1" value="c">
+C) Devolve um valor
+</label>
+
+<label class="option">
+<input type="radio" name="q1" value="d">
+D) Repete código
+</label>
+
+<button onclick="corrigir1()">Verificar</button>
+
+<div id="r1" class="result"></div>
+
+</div>
+</div>
+
+<!-- EXERCÍCIO 2 -->
+
+<div class="card">
+<div class="exercise">
+
+<h2>🧠 2. Múltipla escolha</h2>
+
+<p>
+Qual código MOSTRA o retorno na tela?
+</p>
+
+<label class="option">
+<input type="radio" name="q2" value="a">
+A) return soma();
+</label>
+
+<label class="option">
+<input type="radio" name="q2" value="b">
+B) console.log(soma());
+</label>
+
+<label class="option">
+<input type="radio" name="q2" value="c">
+C) soma = return;
+</label>
+
+<label class="option">
+<input type="radio" name="q2" value="d">
+D) function return()
+</label>
+
+<button onclick="corrigir2()">Verificar</button>
+
+<div id="r2" class="result"></div>
+
+</div>
+</div>
+
+<!-- EXERCÍCIO 3 -->
+
+<div class="card">
+<div class="exercise">
+
+<h2>🧠 3. Múltipla escolha</h2>
+
+<p>
+O que aparece?
+</p>
+
+<div class="code">
+function numero() {
+  return 50;
+}
+
+console.log(numero());
+</div>
+
+<label class="option">
+<input type="radio" name="q3" value="a">
+A) return
+</label>
+
+<label class="option">
+<input type="radio" name="q3" value="b">
+B) numero
+</label>
+
+<label class="option">
+<input type="radio" name="q3" value="c">
+C) 50
+</label>
+
+<label class="option">
+<input type="radio" name="q3" value="d">
+D) undefined
+</label>
+
+<button onclick="corrigir3()">Verificar</button>
+
+<div id="r3" class="result"></div>
+
+</div>
+</div>
+
+<!-- EXERCÍCIO 4 -->
+
+<div class="card">
+<div class="exercise">
+
+<h2>🧠 4. Múltipla escolha</h2>
+
+<p>
+Qual diferença entre console.log() e return?
+</p>
+
+<label class="option">
+<input type="radio" name="q4" value="a">
+A) Os dois apenas mostram
+</label>
+
+<label class="option">
+<input type="radio" name="q4" value="b">
+B) return mostra e console.log devolve
+</label>
+
+<label class="option">
+<input type="radio" name="q4" value="c">
+C) console.log mostra e return devolve
+</label>
+
+<label class="option">
+<input type="radio" name="q4" value="d">
+D) Não existe diferença
+</label>
+
+<button onclick="corrigir4()">Verificar</button>
+
+<div id="r4" class="result"></div>
+
+</div>
+</div>
+
+<!-- EXERCÍCIO 5 -->
+
+<div class="card">
+<div class="exercise">
+
+<h2>🧠 5. Múltipla escolha</h2>
+
+<p>
+O que acontece aqui?
+</p>
+
+<div class="code">
+function soma() {
+  return 10 + 10;
+}
+
+let resultado = soma();
+</div>
+
+<label class="option">
+<input type="radio" name="q5" value="a">
+A) resultado guarda 20
+</label>
+
+<label class="option">
+<input type="radio" name="q5" value="b">
+B) resultado guarda soma
+</label>
+
+<label class="option">
+<input type="radio" name="q5" value="c">
+C) resultado guarda return
+</label>
+
+<label class="option">
+<input type="radio" name="q5" value="d">
+D) resultado vira undefined
+</label>
+
+<button onclick="corrigir5()">Verificar</button>
+
+<div id="r5" class="result"></div>
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+function correto(id){
+document.getElementById(id).innerHTML =
+'<span class="correct">✔ Correto!</span>'
+}
+
+function errado(id){
+document.getElementById(id).innerHTML =
+'<span class="wrong">✖ Errado.</span>'
+}
+
+function corrigir1(){
+
+let r = document.querySelector('input[name="q1"]:checked')
+
+if(r && r.value == "c"){
+correto("r1")
+}else{
+errado("r1")
+}
+
+}
+
+function corrigir2(){
+
+let r = document.querySelector('input[name="q2"]:checked')
+
+if(r && r.value == "b"){
+correto("r2")
+}else{
+errado("r2")
+}
+
+}
+
+function corrigir3(){
+
+let r = document.querySelector('input[name="q3"]:checked')
+
+if(r && r.value == "c"){
+correto("r3")
+}else{
+errado("r3")
+}
+
+}
+
+function corrigir4(){
+
+let r = document.querySelector('input[name="q4"]:checked')
+
+if(r && r.value == "c"){
+correto("r4")
+}else{
+errado("r4")
+}
+
+}
+
+function corrigir5(){
+
+let r = document.querySelector('input[name="q5"]:checked')
+
+if(r && r.value == "a"){
+correto("r5")
+}else{
+errado("r5")
+}
+
+}
+
+</script>
+
+</body>
+</html>

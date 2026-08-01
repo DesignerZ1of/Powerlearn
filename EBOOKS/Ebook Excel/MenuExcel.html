@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Power Learn - Windows</title>
+
+<style>
+
+:root{
+  --bg:#0b0b0b;
+  --card:#111;
+  --accent:#ff7a18;
+  --muted:#9aa0a6;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Inter, Arial, sans-serif;
+  background:linear-gradient(180deg,#050505 0%, #0b0b0b 100%);
+  color:white;
+}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  backdrop-filter:blur(6px);
+  background:rgba(0,0,0,0.7);
+  border-bottom:1px solid rgba(255,255,255,0.03);
+}
+
+.nav{
+  max-width:1200px;
+  margin:auto;
+  padding:8px 25px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo-area{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+
+.logo-text{
+  font-size:18px;
+  font-weight:700;
+}
+
+.logo img{
+  display: block;
+    width: 60px;
+    margin: 20px auto;
+    position: relative;
+    top: -10px;
+    left: -20px;
+}
+
+.logo-sub{
+  font-size:12px;
+  color:var(--muted);
+}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:50px 25px;
+}
+
+.topo{
+  margin-bottom:40px;
+}
+
+.tag{
+  display:inline-block;
+  padding:8px 14px;
+  border-radius:999px;
+  background:rgba(255,122,24,0.08);
+  color:var(--accent);
+  font-size:13px;
+  font-weight:700;
+}
+
+h1{
+  font-size:50px;
+  margin-top:20px;
+  margin-bottom:15px;
+}
+
+.desc{
+  color:var(--muted);
+  max-width:700px;
+  line-height:1.7;
+  font-size:16px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:20px;
+}
+
+.licao{
+  background:var(--card);
+  border:1px solid rgba(255,255,255,0.03);
+  border-radius:18px;
+  padding:35px 20px;
+  text-align:center;
+  text-decoration:none;
+  color:white;
+  transition:0.3s;
+  font-weight:700;
+  box-shadow:0 10px 25px rgba(0,0,0,0.35);
+}
+
+.licao:hover{
+  transform:translateY(-6px);
+  border-color:var(--accent);
+  box-shadow:0 0 20px rgba(255,122,24,0.2);
+}
+
+.exercicio{
+  background:#0066ff;
+}
+
+.reforco{
+  background:linear-gradient(135deg,#ff7a18,#ff5500);
+  color:#111;
+}
+
+.numero{
+  font-size:32px;
+  margin-bottom:10px;
+}
+
+.tipo{
+  font-size:14px;
+  color:#aaa;
+}
+
+footer{
+  margin-top:60px;
+  padding:30px;
+  text-align:center;
+  color:#777;
+  border-top:1px solid rgba(255,255,255,0.03);
+}
+
+.barra-cursos{
+    position: sticky;
+    top: 82px;
+
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+
+    padding: 15px;
+
+    background: #111;
+
+    border-bottom: 1px solid #222;
+
+    overflow-x: auto;
+
+    z-index: 99;
+}
+
+.barra-cursos a{
+    text-decoration: none;
+    color: white;
+
+    background: #1b1b1b;
+
+    padding: 10px 20px;
+
+    border-radius: 10px;
+
+    transition: .3s;
+
+    white-space: nowrap;
+}
+
+.barra-cursos a:hover{
+    background: #ff7a18;
+    color: black;
+}
+
+.barra-cursos .ativo{
+    background: #ff7a18;
+    color: black;
+    font-weight: bold;
+}
+
+</style>
+</head>
+<body>
+
+<header>
+
+  <div class="nav">
+
+    <div class="logo-area">
+
+      <div class="logo">
+    <img src="../../Arquivos/PowerLearnLogo.png" alt="Logo">
+</div>
+
+      <div>
+        <div class="logo-text">
+          Power Learn
+        </div>
+
+        <div class="logo-sub">
+          Aprenda. Pratique. Evolua.
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</header>
+
+<div class="container">
+
+  <div class="topo">
+
+    <div class="tag">
+      Curso Completo
+    </div>
+
+    <h1>
+      Ebook Excel
+    </h1>
+
+    <div class="desc">
+      Aprenda a como usar a Excel ao seu favor;do absoluto zero até recursos avançados. 
+      Nesse ebook você aprenderá de forma rápida e sempre manterá uma bela organização em seus trabalhos, 
+      fará uma boa produtividade e muito mais através de lições práticas e teóricas.
+    </div>
+
+  </div>
+
+  <div class="barra-cursos">
+
+  <a href="MenuExcel.html" class="ativo">Excel Básico</a>
+
+  <a>Excel Intermediário </a>
+
+</div>
+
+  <div class="grid">
+
+    <a onclick="window.location.href='../../Anuncio.html?curso=Excel1'" class="licao">
+      <div class="numero">1</div>
+      <div>Conhecendo o Excel</div>
+    </a>
+
+    <a onclick="window.location.href='../../Anuncio.html?curso=Excel2'" class="licao">
+      <div class="numero">2</div>
+      <div>Estrutura da Planilha</div>
+    </a>
+
+     <a onclick="window.location.href='../../Anuncio.html?curso=Excel3'" class="licao">
+      <div class="numero">3</div>
+      <div>Formatação</div>
+    </a>
+
+     <a onclick="window.location.href='../../Anuncio.html?curso=Excel4'" class="licao">
+      <div class="numero">4</div>
+      <div>Organização</div>
+    </a>
+
+     <a onclick="window.location.href='../../Anuncio.html?curso=Excel5'" class="licao">
+      <div class="numero">5</div>
+      <div>Início</div>
+    </a>
+
+   <a onclick="window.location.href='../../Anuncio.html?curso=Excel6'" class="licao">
+      <div class="numero">6</div>
+      <div>Primeiros Cálculos</div>
+    </a>
+
+     <a onclick="window.location.href='../../Anuncio.html?curso=Excel7'" class="licao">
+      <div class="numero">7</div>
+      <div>Data e Tempo</div>
+    </a>
+
+     <a onclick="window.location.href='../../Anuncio.html?curso=Excel8'" class="licao">
+      <div class="numero">8</div>
+      <div>Organização de Dados</div>
+    </a>
+
+     <a onclick="window.location.href='../../Anuncio.html?curso=Excel9'" class="licao">
+      <div class="numero">9</div>
+      <div>Leitura</div>
+    </a>
+
+    <a onclick="window.location.href='../../Anuncio.html?curso=Excel10'" class="licao">
+      <div class="numero">10</div>
+      <div>Exibir</div>
+    </a>
+
+  </div>
+
+</div>
+
+<footer>
+  © 2026 Power Learn
+</footer>
+
+<script> function onclick
+
+</body>
+</html>

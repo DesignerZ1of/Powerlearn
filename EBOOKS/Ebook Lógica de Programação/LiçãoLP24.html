@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 24 — Atualização de Dados + Reforço</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Consolas, monospace;
+background:#0f172a;
+color:#e5e7eb;
+}
+
+.header{
+background:#020617;
+padding:30px;
+text-align:center;
+font-size:24px;
+color:#3b82f6;
+border-bottom:1px solid #1f2937;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:30px;
+}
+
+.card{
+background:#111827;
+padding:25px;
+border-radius:12px;
+margin-bottom:25px;
+border:1px solid #1f2937;
+}
+
+h1{
+color:#3b82f6;
+}
+
+.section{
+margin-top:25px;
+font-size:20px;
+font-weight:bold;
+color:#7dd3fc;
+}
+
+.code{
+background:#020617;
+padding:15px;
+border-radius:8px;
+margin-top:15px;
+color:#22c55e;
+white-space:pre-line;
+border:1px solid #1f2937;
+overflow:auto;
+}
+
+.highlight{
+color:#ffffff;
+font-weight:bold;
+}
+
+.question{
+margin-top:25px;
+padding:20px;
+background:#020617;
+border-radius:10px;
+border:1px solid #334155;
+}
+
+.option{
+margin-top:10px;
+padding:12px;
+background:#111827;
+border-radius:8px;
+cursor:pointer;
+border:1px solid #1f2937;
+transition:0.2s;
+}
+
+.option:hover{
+background:#1e293b;
+}
+
+.correct{
+background:#14532d !important;
+border:1px solid #22c55e;
+}
+
+.wrong{
+background:#450a0a !important;
+border:1px solid #ef4444;
+}
+
+.result{
+margin-top:15px;
+font-weight:bold;
+font-size:18px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+💻 LIÇÃO 24 — Atualização de Dados + Reforço
+</div>
+
+<div class="container">
+
+<div class="card">
+
+<h1>📘 LIÇÃO 24 — Atualização de Dados + Reforço</h1>
+
+<div class="section">🧠 Objetivo da aula</div>
+
+<p>
+Agora você irá:
+</p>
+
+<p class="highlight">
+> reforçar códigos importantes e melhorar sua lógica.
+</p>
+
+<p>
+Nessa aula iremos relembrar:
+</p>
+
+<p>
+• if<br>
+• else<br>
+• função<br>
+• parâmetros<br>
+• atualização de dados
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">📌 Conteúdos usados</div>
+
+<p>
+• if<br>
+• else<br>
+• função<br>
+• parâmetro<br>
+• variáveis<br>
+• atualização de valor
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🧠 Relembrando if</div>
+
+<p>
+O if serve para:
+</p>
+
+<p class="highlight">
+> verificar uma condição.
+</p>
+
+<div class="code">
+let idade = 18;
+
+if (idade >= 18) {
+  console.log("Maior de idade");
+}
+</div>
+
+<div class="section">🧠 O que acontece?</div>
+
+<p>
+O sistema verifica:
+</p>
+
+<div class="code">
+idade >= 18
+</div>
+
+<p>
+Se for verdadeiro:
+</p>
+
+<p class="highlight">
+> o código executa.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🧠 Relembrando else</div>
+
+<p class="highlight">
+> O else executa quando o if for falso.
+</p>
+
+<div class="code">
+let idade = 15;
+
+if (idade >= 18) {
+
+  console.log("Maior de idade");
+
+} else {
+
+  console.log("Menor de idade");
+
+}
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="section">🧠 Diferença importante</div>
+
+<p>
+🔹 if
+</p>
+
+<p class="highlight">
+> executa quando a condição é verdadeira.
+</p>
+
+<hr>
+
+<p>
+🔹 else
+</p>
+
+<p class="highlight">
+> executa quando a condição é falsa.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">📌 Pensamento lógico</div>
+
+<p>
+O sistema pensa:
+</p>
+
+<p class="highlight">
+se for verdadeiro → faça isso<br>
+senão → faça aquilo
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🧠 Relembrando função</div>
+
+<p class="highlight">
+> Função serve para guardar um código para usar depois.
+</p>
+
+<div class="code">
+function mensagem() {
+
+  console.log("Olá");
+
+}
+</div>
+
+<div class="section">🚀 Executando função</div>
+
+<div class="code">
+mensagem();
+</div>
+
+<p class="highlight">
+📌 Resultado: Olá
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🧠 Relembrando parâmetro</div>
+
+<p class="highlight">
+> parâmetro funciona como uma variável vazia esperando um valor.
+</p>
+
+<div class="code">
+function mensagem(nome) {
+
+  console.log("Olá " + nome);
+
+}
+</div>
+
+<div class="section">🚀 Executando</div>
+
+<div class="code">
+mensagem("Carlos");
+</div>
+
+<p class="highlight">
+📌 Resultado: Olá Carlos
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🧠 Atualização de dados</div>
+
+<p class="highlight">
+> atualizar valor significa mudar a informação antiga.
+</p>
+
+<div class="code">
+let moedas = 100;
+
+moedas = moedas + 50;
+</div>
+
+<div class="section">🧠 O que acontece?</div>
+
+<p>
+Primeiro:
+</p>
+
+<div class="code">
+moedas = 100
+</div>
+
+<p>
+Depois:
+</p>
+
+<div class="code">
+100 + 50
+</div>
+
+<p class="highlight">
+📌 Resultado final: 150
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🎯 Pensamento importante</div>
+
+<p class="highlight">
+> Sistemas funcionam tomando decisões e atualizando informações.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🧠 Resumo da aula</div>
+
+<p>
+🔹 if → verifica condição<br><br>
+
+🔹 else → executa quando o if falha<br><br>
+
+🔹 função → guarda código reutilizável<br><br>
+
+🔹 parâmetro → recebe valores<br><br>
+
+🔹 atualização → muda dados do sistema
+</p>
+
+</div>
+
+<div class="card">
+
+<h1>🧪 QUIZ DESAFIO — 8 QUESTÕES DIFÍCEIS</h1>
+
+<div id="quiz"></div>
+
+<div class="result" id="final"></div>
+
+</div>
+
+</div>
+
+<script>
+
+const perguntas = [
+
+{
+pergunta: "1️⃣ O que será mostrado?",
+codigo: `let moedas = 100;
+
+moedas = moedas + 50;
+
+console.log(moedas);`,
+opcoes:["50","100","150","Erro"],
+correta:2
+},
+
+{
+pergunta: "2️⃣ Qual condição executa o else?",
+codigo: `let vida = 10;
+
+if (vida > 50) {
+
+ console.log("Forte");
+
+} else {
+
+ console.log("Fraco");
+
+}`,
+opcoes:["vida > 50","vida <= 50","vida == 100","Nenhuma"],
+correta:1
+},
+
+{
+pergunta: "3️⃣ O que a função faz?",
+codigo:`function mensagem() {
+
+ console.log("Olá");
+
+}`,
+opcoes:[
+"Cria variável",
+"Guarda código",
+"Atualiza valor",
+"Cria objeto"
+],
+correta:1
+},
+
+{
+pergunta:"4️⃣ Qual será o resultado?",
+codigo:`function soma(valor){
+
+ console.log(valor + 10);
+
+}
+
+soma(5);`,
+opcoes:["5","10","15","50"],
+correta:2
+},
+
+{
+pergunta:"5️⃣ O que acontece aqui?",
+codigo:`let xp = 200;
+
+xp = xp - 50;`,
+opcoes:[
+"xp vira 250",
+"xp vira 150",
+"xp continua 200",
+"Dá erro"
+],
+correta:1
+},
+
+{
+pergunta:"6️⃣ Qual alternativa explica melhor parâmetros?",
+codigo:`function jogador(nome){
+
+ console.log(nome);
+
+}`,
+opcoes:[
+"Parâmetro guarda função",
+"Parâmetro recebe valor",
+"Parâmetro cria if",
+"Parâmetro executa else"
+],
+correta:1
+},
+
+{
+pergunta:"7️⃣ O que será mostrado?",
+codigo:`let nivel = 30;
+
+if(nivel >= 50){
+
+ console.log("Elite");
+
+}else{
+
+ console.log("Comum");
+
+}`,
+opcoes:[
+"Elite",
+"Comum",
+"30",
+"Erro"
+],
+correta:1
+},
+
+{
+pergunta:"8️⃣ Qual linha atualiza corretamente moedas?",
+codigo:`Escolha a alternativa correta`,
+opcoes:[
+`moedas + 50;`,
+`moedas = 50;`,
+`moedas = moedas + 50;`,
+`50 = moedas + moedas;`
+],
+correta:2
+}
+
+];
+
+const quiz = document.getElementById("quiz");
+
+perguntas.forEach((p, index)=>{
+
+let html = `
+<div class="question">
+
+<h3>${p.pergunta}</h3>
+
+<div class="code">${p.codigo}</div>
+`;
+
+p.opcoes.forEach((op, i)=>{
+
+html += `
+<div class="option"
+onclick="responder(this, ${i}, ${p.correta})">
+${op}
+</div>
+`;
+
+});
+
+html += `</div>`;
+
+quiz.innerHTML += html;
+
+});
+
+function responder(elemento, resposta, correta){
+
+if(elemento.classList.contains("correct")
+|| elemento.classList.contains("wrong")){
+return;
+}
+
+if(resposta == correta){
+
+elemento.classList.add("correct");
+
+
+}else{
+
+elemento.classList.add("wrong");
+
+}
+
+verificarFinal();
+
+}
+
+function verificarFinal(){
+
+let respondidas =
+document.querySelectorAll(".correct, .wrong").length;
+
+if(respondidas == perguntas.length){
+
+if(true){
+
+document.getElementById("final").innerHTML =
+"🏆 ✔ Excelente lógica! Você passou da lição.";
+
+}else{
+
+document.getElementById("final").innerHTML =
+"❌ Você precisa revisar a aula.";
+
+}
+
+}
+
+}
+
+</script>
+
+</body>
+</html>

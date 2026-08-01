@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 28 — Eventos</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Consolas, monospace;
+background:#0f172a;
+color:#e5e7eb;
+}
+
+.header{
+background:#020617;
+padding:30px;
+text-align:center;
+font-size:24px;
+color:#3b82f6;
+border-bottom:1px solid #1f2937;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:30px;
+}
+
+.card{
+background:#111827;
+padding:25px;
+border-radius:12px;
+margin-bottom:25px;
+border:1px solid #1f2937;
+}
+
+h1{
+color:#3b82f6;
+}
+
+.section{
+margin-top:20px;
+font-size:20px;
+font-weight:bold;
+color:#7dd3fc;
+}
+
+.code{
+background:#020617;
+padding:15px;
+border-radius:8px;
+margin-top:15px;
+color:#22c55e;
+white-space:pre-line;
+overflow:auto;
+border:1px solid #1f2937;
+}
+
+.question{
+background:#020617;
+padding:20px;
+border-radius:10px;
+margin-top:20px;
+border:1px solid #334155;
+}
+
+.option{
+padding:12px;
+margin-top:10px;
+background:#111827;
+border-radius:8px;
+cursor:pointer;
+border:1px solid #1f2937;
+transition:0.2s;
+}
+
+.option:hover{
+background:#1e293b;
+}
+
+.correct{
+background:#14532d !important;
+border:1px solid #22c55e;
+}
+
+.wrong{
+background:#450a0a !important;
+border:1px solid #ef4444;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+💻 LIÇÃO 28 — Eventos
+</div>
+
+<div class="container">
+
+<div class="card">
+
+<h1>📘 LIÇÃO 28 — Eventos</h1>
+
+<div class="section">🧠 Objetivo da aula</div>
+
+<p>
+Agora você aprenderá:
+</p>
+
+<p>
+> como fazer o usuário interagir com o sistema.
+</p>
+
+<p>
+Até agora:
+</p>
+
+<p>
+os códigos executavam sozinhos
+</p>
+
+<p>
+Agora:
+</p>
+
+<p>
+o usuário poderá ativar ações
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">📌 Conteúdos usados</div>
+
+<p>
+HTML<br>
+botão<br>
+função<br>
+evento<br>
+onclick
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🧠 O que é um evento?</div>
+
+<p>
+Evento é:
+</p>
+
+<p>
+> algo que acontece no sistema.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">📌 Exemplos</div>
+
+<p>
+clique<br>
+tecla apertada<br>
+mouse passando<br>
+enviar formulário
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🧠 O mais usado no começo</div>
+
+<p>
+O mais usado:
+</p>
+
+<p>
+click
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🚀 Criando botão</div>
+
+<p>
+💻 Código HTML
+</p>
+
+<div class="code">
+&lt;button&gt;Entrar&lt;/button&gt;
+</div>
+
+<div class="section">🧠 O que isso cria?</div>
+
+<p>
+Cria:
+</p>
+
+<p>
+> um botão na tela.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🚀 Entrando no onclick</div>
+
+<div class="section">🧠 O que é onclick?</div>
+
+<p>
+onclick significa:
+</p>
+
+<p>
+> quando clicar.
+</p>
+
+<div class="code">
+&lt;button onclick="mensagem()"&gt;
+  Entrar
+&lt;/button&gt;
+</div>
+
+<div class="section">🧠 O que acontece?</div>
+
+<p>
+Quando clicar:
+</p>
+
+<p>
+> a função será executada.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🚀 Criando função</div>
+
+<div class="code">
+function mensagem() {
+
+  console.log("Olá");
+
+}
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="section">🚀 Código completo</div>
+
+<div class="code">
+&lt;button onclick="mensagem()"&gt;
+  Entrar
+&lt;/button&gt;
+
+&lt;script&gt;
+
+function mensagem() {
+
+  console.log("Olá");
+
+}
+
+&lt;/script&gt;
+</div>
+
+<div class="section">🧠 O que esse sistema faz?</div>
+
+<p>
+cria botão<br>
+espera clique<br>
+executa função
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🚀 Atualizando informações</div>
+
+<p>
+Agora iremos misturar:
+</p>
+
+<p>
+evento<br>
+atualização de dados
+</p>
+
+<div class="code">
+&lt;button onclick="ganharMoedas()"&gt;
+  Ganhar moedas
+&lt;/button&gt;
+
+&lt;script&gt;
+
+let moedas = 100;
+
+function ganharMoedas() {
+
+  moedas = moedas + 50;
+
+  console.log(moedas);
+
+}
+
+&lt;/script&gt;
+</div>
+
+<div class="section">🧠 O que acontece?</div>
+
+<p>
+Cada clique:
+</p>
+
+<p>
+> adiciona moedas.
+</p>
+
+<p>
+📌 Resultado
+</p>
+
+<p>
+Clique 1:
+</p>
+
+<div class="code">
+150
+</div>
+
+<p>
+Clique 2:
+</p>
+
+<div class="code">
+200
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="section">🧠 Pensamento importante</div>
+
+<p>
+> Eventos fazem o usuário controlar o sistema.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🚀 Misturando objeto</div>
+
+<div class="code">
+&lt;button onclick="cura()"&gt;
+  Curar
+&lt;/button&gt;
+
+&lt;script&gt;
+
+let jogador = {
+  nome: "Carlos",
+  vida: 50
+};
+
+function cura() {
+
+  jogador.vida =
+  jogador.vida + 20;
+
+  console.log(jogador.vida);
+
+}
+
+&lt;/script&gt;
+</div>
+
+<div class="section">🧠 O que esse sistema faz?</div>
+
+<p>
+Quando clicar:
+</p>
+
+<p>
+aumenta vida<br>
+atualiza objeto<br>
+mostra resultado
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🎯 Ideia importante</div>
+
+<p>
+> Eventos conectam a lógica com a interface.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🚀 DESAFIO DA AULA</div>
+
+<p>
+Crie:
+</p>
+
+<p>
+botão de ganhar moedas<br><br>
+
+botão de tomar dano<br><br>
+
+objeto jogador<br><br>
+
+funções para atualizar dados
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🎯 Fechamento</div>
+
+<p>
+> Eventos fazem sistemas responderem às ações do usuário.
+</p>
+
+</div>
+
+<div class="card">
+
+<h1>🧪 Exercícios</h1>
+
+<div class="question">
+
+<h3>1. O que é um evento?</h3>
+
+<div class="option" onclick="responder(this, false)">
+Uma variável
+</div>
+
+<div class="option" onclick="responder(this, false)">
+Um número
+</div>
+
+<div class="option" onclick="responder(this, true)">
+Algo que acontece no sistema
+</div>
+
+<div class="option" onclick="responder(this, false)">
+Um objeto
+</div>
+
+</div>
+
+<div class="question">
+
+<h3>2. O que o onclick faz?</h3>
+
+<div class="option" onclick="responder(this, false)">
+Remove funções
+</div>
+
+<div class="option" onclick="responder(this, true)">
+Executa algo quando clicar
+</div>
+
+<div class="option" onclick="responder(this, false)">
+Cria arrays
+</div>
+
+<div class="option" onclick="responder(this, false)">
+Atualiza HTML sozinho
+</div>
+
+</div>
+
+<div class="question">
+
+<h3>3. O que esse código cria?</h3>
+
+<div class="code">
+&lt;button&gt;Entrar&lt;/button&gt;
+</div>
+
+<div class="option" onclick="responder(this, false)">
+Uma função
+</div>
+
+<div class="option" onclick="responder(this, false)">
+Um objeto
+</div>
+
+<div class="option" onclick="responder(this, true)">
+Um botão
+</div>
+
+<div class="option" onclick="responder(this, false)">
+Um evento
+</div>
+
+</div>
+
+<div class="question">
+
+<h3>4. O que acontece nesse código?</h3>
+
+<div class="code">
+&lt;button onclick="mensagem()"&gt;
+Entrar
+&lt;/button&gt;
+</div>
+
+<div class="option" onclick="responder(this, false)">
+O botão é removido
+</div>
+
+<div class="option" onclick="responder(this, true)">
+A função executa ao clicar
+</div>
+
+<div class="option" onclick="responder(this, false)">
+O HTML vira objeto
+</div>
+
+<div class="option" onclick="responder(this, false)">
+O onclick cria variável
+</div>
+
+</div>
+
+<div class="question">
+
+<h3>5. O que esse código faz?</h3>
+
+<div class="code">
+jogador.vida =
+jogador.vida + 20;
+</div>
+
+<div class="option" onclick="responder(this, false)">
+Remove vida
+</div>
+
+<div class="option" onclick="responder(this, false)">
+Percorre array
+</div>
+
+<div class="option" onclick="responder(this, true)">
+Atualiza a vida
+</div>
+
+<div class="option" onclick="responder(this, false)">
+Cria objeto
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function responder(elemento, correto){
+
+if(
+elemento.classList.contains("correct")
+||
+elemento.classList.contains("wrong")
+){
+return;
+}
+
+if(correto){
+
+elemento.classList.add("correct");
+
+}else{
+
+elemento.classList.add("wrong");
+
+}
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 4 — Organização de Planilhas</title>
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background:#ffffff;
+  margin:0;
+  color:#111;
+}
+.section{
+  max-width:1000px;
+  margin:auto;
+  padding:40px;
+}
+h2{color:#22c55e;}
+
+.card{
+  background:#f9fafb;
+  border:1px solid #e5e7eb;
+  border-radius:10px;
+  padding:25px;
+  margin:20px 0;
+}
+
+.header-top{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  margin-bottom:30px;
+}
+
+.header-top img{
+  width:60px;
+}
+
+.sheet-bar{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:8px;
+  background:#f1f5f9;
+  border-top:1px solid #cbd5e1;
+}
+
+.sheet{
+  padding:6px 14px;
+  background:#e5e7eb;
+  border-radius:6px;
+  cursor:pointer;
+  user-select:none;
+}
+.sheet.active{
+  background:#22c55e;
+  color:#fff;
+}
+
+.add{
+  padding:6px 12px;
+  border-radius:50%;
+  background:#22c55e;
+  color:#fff;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+input.rename{
+  border:none;
+  outline:none;
+  width:100px;
+}
+
+button{
+  background:#22c55e;
+  color:#fff;
+  border:none;
+  padding:8px 14px;
+  border-radius:6px;
+  cursor:pointer;
+}
+.result{font-weight:bold;margin-left:10px;}
+</style>
+</head>
+
+<body>
+
+<div class="section">
+
+<div class="header-top">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Microsoft_Excel_2013-2019_logo.svg">
+
+  <h2 class="lesson-title">
+    Lição 4 — Organização de Planilhas
+  </h2>
+</div>
+
+<div class="card">
+
+<p><b>O que são Planilhas?</b></p>
+
+<p> É o arquivo na qual estamos trabalhando, aonde nele nós organizamos dados e informações, calculamos valores, e organizamos nossas ideias.</p>
+
+<p><b>Por que planilhas existem?</b></p>
+
+<p>
+Uma planilha não é “mais uma aba”.<br>
+Ela serve para separar contextos.
+</p>
+
+<p><b>Regra mental:</b></p>
+
+<p><i>Uma planilha = Um tipo de informação.</i></p>
+
+<p>
+Misturar tudo em uma única planilha funciona só no começo.<br>
+Quando o arquivo cresce, vira confusão.
+</p>
+
+<hr>
+
+<p><b>Como pensar antes de criar planilhas</b></p>
+
+<p>
+Antes de clicar em “+”, pense:
+</p>
+
+<ul>
+<li>Isso é o mesmo assunto ou outro assunto?</li>
+<li>Esses dados têm o mesmo formato?</li>
+<li>Isso poderia crescer sozinho no futuro?</li>
+</ul>
+
+<p>
+Se a resposta for “sim”, merece outra planilha.
+</p>
+
+<hr>
+
+<p><b>Criar e excluir planilhas (uso essencial)</b></p>
+
+<p>
+<b>Criar:</b> clique no + ao lado das abas(Aba inferior, em baixo)<br>
+Use quando o conteúdo tem função diferente.
+</p>
+
+<p>
+<b>Excluir:</b> Aperte o Botão Direito do Mouse na aba → Excluir<br>
+Use quando a planilha não tem mais propósito.
+</p>
+
+<p><i>
+Criar não é bagunçar.<br>
+Criar é separar para organizar.
+</i></p>
+
+<hr>
+
+<p><b>Renomear planilhas (isso é obrigatório)</b></p>
+
+<p>
+Planilha chamada “Plan1” não comunica nada.
+</p>
+
+<p><b>Bons nomes:</b></p>
+
+<ul>
+<li>Vendas_2025</li>
+<li>Produtos</li>
+<li>Clientes</li>
+<li>Resumo</li>
+</ul>
+
+<p><b>Como fazer:</b></p>
+
+<p>
+Duplo clique na aba → digite o nome → Enter
+</p>
+
+<hr>
+
+<p><b>Gerenciar guias (organização visual)</b></p>
+
+<p>
+As guias são o mapa do arquivo.
+</p>
+
+<p><b>Boas práticas:</b></p>
+
+<ul>
+<li>Dados brutos em uma planilha</li>
+<li>Cálculos em outra</li>
+<li>Resumos em outra</li>
+</ul>
+
+<p><b>Exemplo lógico:</b></p>
+
+<p>
+1. Dados<br>
+2. Cálculos<br>
+3. Resumo
+</p>
+
+<p>
+Assim, qualquer pessoa entende o arquivo sem explicação.
+</p>
+
+<hr>
+
+<p><b>Importância real da organização</b></p>
+
+<p>
+Planilhas organizadas:
+</p>
+
+<ul>
+<li>Evitam erro</li>
+<li>Facilitam manutenção</li>
+<li>Escalam com o tempo</li>
+<li>Passam profissionalismo</li>
+</ul>
+
+<p>
+Planilhas desorganizadas:
+</p>
+
+<ul>
+<li>Funcionam hoje</li>
+<li>Quebram amanhã</li>
+</ul>
+</div>
+
+<!-- EXERCÍCIO -->
+<div class="card excel">
+<b>Exercício</b><br><br>
+
+Crie uma nova planilha usando o botão <b>+</b>  
+e renomeie a nova planilha para <b>Correto</b> usando duplo clique.
+<br><br>
+
+<div class="sheet-bar" id="sheetBar">
+  <div class="sheet active">Planilha1</div>
+  <div class="add" onclick="addSheet()">+</div>
+</div>
+
+<br>
+<button onclick="verificar()">Verificar</button>
+<span id="res" class="result"></span>
+</div>
+
+</div>
+
+<script>
+let sheetCount=1;
+
+function addSheet(){
+  sheetCount++;
+  const sheet=document.createElement("div");
+  sheet.className="sheet";
+  sheet.textContent="Planilha"+sheetCount;
+
+  sheet.ondblclick=()=>{
+    const input=document.createElement("input");
+    input.className="rename";
+    input.value=sheet.textContent;
+    sheet.innerHTML="";
+    sheet.appendChild(input);
+    input.focus();
+
+    input.onblur=()=>sheet.textContent=input.value;
+    input.onkeydown=e=>{
+      if(e.key==="Enter") input.blur();
+    };
+  };
+
+  document.getElementById("sheetBar")
+    .insertBefore(sheet,document.querySelector(".add"));
+}
+
+function verificar(){
+  const sheets=document.querySelectorAll(".sheet");
+  let ok=false;
+
+  sheets.forEach(s=>{
+    if(s.textContent.trim()==="Correto") ok=true;
+  });
+
+  document.getElementById("res").innerText =
+    ok ? "✔ Exercício correto!" : "✖ Crie uma planilha e renomeie para 'Correto'";
+}
+</script>
+
+</body>
+</html>

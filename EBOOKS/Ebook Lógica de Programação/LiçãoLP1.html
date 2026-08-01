@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 1 — Lógica de Programação</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Consolas, monospace;
+background:#0f172a;
+color:#e5e7eb;
+}
+
+.header{
+background:#020617;
+padding:30px;
+text-align:center;
+font-size:24px;
+color:#3b82f6;
+border-bottom:1px solid #1f2937;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:30px;
+}
+
+.card{
+background:#111827;
+padding:25px;
+border-radius:12px;
+margin-bottom:25px;
+border:1px solid #1f2937;
+}
+
+h1{
+color:#3b82f6;
+}
+
+.section{
+margin-top:20px;
+}
+
+.code{
+background:#020617;
+padding:15px;
+border-radius:8px;
+margin-top:15px;
+color:#22c55e;
+}
+
+textarea{
+width:100%;
+margin-top:10px;
+padding:10px;
+border-radius:8px;
+border:none;
+background:#020617;
+color:white;
+}
+
+.button{
+margin-top:10px;
+padding:10px 15px;
+background:#3b82f6;
+border:none;
+border-radius:6px;
+color:white;
+cursor:pointer;
+}
+
+.result{
+margin-top:10px;
+font-weight:bold;
+}
+
+.correct{
+color:#22c55e;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+💻 LIÇÃO 1 — O que é Lógica de Programação
+</div>
+
+<div class="container">
+
+<div class="card">
+
+<p>Este curso foi criado para levar você do zero absoluto até níveis avançados de Lógica de Programação. Você sempre aprende a teoria primeiro e depois pratica.</p>
+
+<p>A Power Learn utiliza o sistema de Powers: ao errar exercícios você perde 1 vida. Sem vidas, o avanço é bloqueado até revisar a lição.</p>
+
+<h1>📘 LIÇÃO 1 — O que é Lógica de Programação</h1>
+
+<div class="section">
+🧠 Definição direta
+</div>
+
+<p>Lógica de programação é a habilidade de pensar passo a passo para resolver um problema.</p>
+
+<p>> Antes do código existir, a solução já precisa existir na sua cabeça.</p>
+
+<p>A Lógica de Programação pode ser dividida em tópicos aonde você aprenderá cada um deles nesse Ebook:</p>
+
+<p>
+Lógica Sequencial<br>
+Lógica Condicional<br>
+Lógica de Repetição<br>
+Lógica de Estrutura de Dados<br>
+Lógica de Funções<br>
+Lógica Algorítmica<br>
+Lógica de Eventos<br>
+POO (Programação Orientada a Objetos)
+</p>
+
+<div class="section">
+⚙️ Como qualquer programa funciona
+</div>
+
+<p>Todo programa, sem exceção, segue 3 etapas:</p>
+
+<p>1. Entrada</p>
+<p>Receber dados</p>
+<p>Ex: idade, nome, comando do jogador</p>
+
+<p>2. Processamento</p>
+<p>Pensar / decidir o que fazer</p>
+
+<p>3. Saída</p>
+<p>Mostrar o resultado</p>
+
+<hr>
+
+<div class="section">
+🧩 Exemplo simples (vida real)
+</div>
+
+<p>Situação:</p>
+<p>> Uma pessoa quer entrar em um evento</p>
+
+<p>Lógica:</p>
+
+<p>1. Recebe a idade (entrada)</p>
+<p>2. Verifica se é maior de idade (processamento)</p>
+<p>3. Mostra resultado (saída)</p>
+
+<div class="section">
+💻 Exemplo em código (1º código da aula)
+</div>
+
+<div class="code">
+let idade = 18;<br><br>
+
+if (idade >= 18) {<br>
+&nbsp;&nbsp;console.log("Pode entrar");<br>
+} else {<br>
+&nbsp;&nbsp;console.log("Não pode entrar");<br>
+}
+</div>
+
+<div class="section">
+🧠 Mesma lógica em português (importante)
+</div>
+
+<p>> Se a idade for maior ou igual a 18 → pode entrar</p>
+<p>Senão → não pode entrar</p>
+
+<p>👉 Isso é lógica. O código é só a tradução.</p>
+
+<div class="section">
+🎮 Trazendo pro seu mundo (jogo)
+</div>
+
+<p>Situação:</p>
+<p>> Jogador quer desbloquear um drible</p>
+
+<p>Lógica:</p>
+
+<p>1. Recebe pontos de treino</p>
+<p>2. Verifica se tem o suficiente</p>
+<p>3. Libera ou não</p>
+
+<p>👉 Você já está pensando como programador aqui.</p>
+
+<div class="section">
+🧱 O erro mais comum
+</div>
+
+<p>Começar direto no código sem pensar.</p>
+
+<p>Resultado:</p>
+
+<p>Travar</p>
+<p>Copiar sem entender</p>
+<p>Depender sempre de ajuda</p>
+
+<div class="section">
+📌 Regra de ouro
+</div>
+
+<p>> Se você não consegue explicar a lógica em português,</p>
+<p>você não entendeu o problema.</p>
+
+</div>
+
+<div class="card">
+
+<h1>🧪 Exercícios</h1>
+
+<p>1. Pensamento puro (sem código)</p>
+
+<p>Situação:</p>
+<p>> Um aluno só passa se tirar nota maior ou igual a 7</p>
+
+<textarea id="res1"></textarea>
+<button class="button" onclick="corrigir(1)">Verificar</button>
+<div id="feedback1" class="result"></div>
+
+<p>2. Mais um cenário</p>
+
+<p>Situação:</p>
+<p>> Um jogador só evolui se tiver mais de 100 XP</p>
+
+<textarea id="res2"></textarea>
+<button class="button" onclick="corrigir(2)">Verificar</button>
+<div id="feedback2" class="result"></div>
+
+</div>
+
+</div>
+
+<script>
+
+function corrigir(num){
+
+let resposta = document.getElementById("res"+num).value.toLowerCase()
+
+let entrada = resposta.includes("entrada") || resposta.includes("receb")
+let processamento = resposta.includes("process") || resposta.includes("verific") || resposta.includes("decid")
+let saida = resposta.includes("saida") || resposta.includes("mostr") || resposta.includes("result")
+
+if(entrada && processamento && saida){
+document.getElementById("feedback"+num).innerHTML = '<span class="correct">✔ Boa! Lógica correta.</span>'
+}else{
+document.getElementById("feedback"+num).innerHTML = '✖ Use: entrada → processamento → saída'
+}
+
+}
+
+</script>
+
+</body>
+</html>

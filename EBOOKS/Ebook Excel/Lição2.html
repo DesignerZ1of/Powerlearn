@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 2 — Estrutura da Planilha</title>
+
+<style>
+body{
+  font-family: Inter, Arial, sans-serif;
+  background:#ffffff;
+  color:#111827;
+  margin:0;
+}
+.section{
+  max-width:1000px;
+  margin:auto;
+  padding:40px;
+}
+.header-top{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  margin-bottom:30px;
+}
+.header-top img{
+  width:60px;
+}
+.lesson-title{
+  font-size:2em;
+  color:#22c55e;
+}
+.card{
+  background:#f9fafb;
+  border:1px solid #e5e7eb;
+  border-radius:12px;
+  padding:25px;
+  margin:25px 0;
+}
+.excel{
+  background:#fff;
+  border-radius:8px;
+  border:1px solid #d1d5db;
+  overflow:hidden;
+}
+.top{
+  display:flex;
+  gap:10px;
+  padding:6px;
+  background:#e5e7eb;
+}
+.name-box{width:70px;}
+.grid{
+  display:grid;
+  grid-template-columns:40px repeat(3,120px);
+}
+.header{
+  background:#f1f5f9;
+  border:1px solid #cbd5e1;
+  text-align:center;
+  font-weight:bold;
+  padding:6px;
+}
+.cell{
+  border:1px solid #cbd5e1;
+  padding:6px;
+  min-height:30px;
+}
+.cell.selected{outline:2px solid #22c55e;}
+.menu{
+  position:absolute;
+  background:#ffffff;
+  border:1px solid #cbd5e1;
+  border-radius:6px;
+  display:none;
+  z-index:10;
+}
+.menu div{
+  padding:8px 14px;
+  cursor:pointer;
+}
+.menu div:hover{
+  background:#22c55e;
+  color:#ffffff;
+}
+.exercises{
+  border-left:5px solid #eab308;
+}
+.dicas{
+  border-left:5px solid #22c55e;
+}
+textarea{width:100%;padding:10px;}
+button{
+  background:#22c55e;
+  color:#fff;
+  border:none;
+  padding:8px 14px;
+  border-radius:6px;
+  cursor:pointer;
+}
+.result{margin-left:10px;font-weight:bold;}
+</style>
+</head>
+
+<body>
+
+<div class="section">
+
+<div class="header-top">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Microsoft_Excel_2013-2019_logo.svg">
+  <h2 class="lesson-title">Lição 2 — Estrutura da Planilha (do jeito certo)</h2>
+</div>
+
+<div class="card">
+
+<p>Vamos começar com a estrutura de uma Planilha, aonde cada Coluna e linha tem uma função.</p>
+<p>Você deve saber como usar colunas e linhas, para se organizar no Excel.</p>
+<p>Pense no Excel como uma cidade.</p>
+
+<p>
+<b>Colunas</b> São as ruas → Cada rua tem uma função (Preço, Nome, Quantidade).<br>
+<b>Linhas</b> São as casas → Cada casa é um item completo.<br>
+<b>Células</b> São os cômodos → Aqui deve ter um dado por cômodo.
+</p>
+
+<h3>Usando o Excel</h3>
+<p> Com forme aos exemplos inteiros, vamos pensar de forma lógica, aonde usaremos o excel como se tivéssemos uma loja.</p>
+<p> Nós devemos usar as colunas das seguintes formas:</p>
+<p>A → Produto<br>B → Preço<br>C → Quantidade</p>
+<p> Aonde em cada célula terá as suas informações</p>
+
+<div class="card excel">
+  <div class="top">
+    <input class="name-box" value="A1" disabled>
+    <input style="flex:1" disabled>
+  </div>
+
+  <div class="grid" id="grid">
+    <div class="header"></div>
+    <div class="header col" data-col="A">A</div>
+    <div class="header col" data-col="B">B</div>
+    <div class="header col" data-col="C">C</div>
+
+    <div class="header">1</div>
+    <div class="cell" contenteditable="true">Produto</div>
+    <div class="cell" contenteditable="true">Preço</div>
+    <div class="cell" contenteditable="true">Quantidade</div>
+
+    <div class="header">2</div>
+    <div class="cell" contenteditable="true">Caneta</div>
+    <div class="cell" contenteditable="true">5</div>
+    <div class="cell" contenteditable="true">4</div>
+  </div>
+</div>
+
+<p>Linha 2 = Agora na linha 2 podemos dizer que é um produto completo.</p>
+<p>Pois nela inserimos as infomações como: nome,preço e quantidade.</p>
+<h3>Selecionar</h3>
+<p>Irei te mostrar uma dica, para você selecionar células mais rápidamente</p> 
+<p>
+Clicar → Seleciona uma célula<br>
+Clicar + Arrastar → Seleciona várias células<br>
+Letra da coluna → Seleciona somente a coluna; a coluna inteira
+</p>
+
+<h3>Inserir (expandir a cidade)</h3>
+<p> Irei te mostrar uma técnica, que pode ser usada tanto para criar novas colunas ou mudar as informações de lugar
+<p>
+A Primeira técnica é a de você mudar de lugar todas as informações da coluna B para a coluna C ou A.<br>
+(IMPORTANTE: Isso só é mais usado para planilhas pequenas para que não mova informações que estejam mais escondidas e que não deviam ser mudadas de lugar)<br>
+Clique na coluna B → Inserir<br>
+Nova rua aparece, tudo continua no lugar<br>
+<h3>Use na Planilha abaixo</h3>
+</p>
+</div>
+
+<div class="card excel">
+  <div class="top">
+    <input class="name-box" value="A1" disabled>
+    <input style="flex:1" disabled>
+  </div>
+
+  <div class="grid" id="grid">
+    <div class="header"></div>
+    <div class="header col" data-col="A">A</div>
+    <div class="header col" data-col="B">B</div>
+    <div class="header col" data-col="C">C</div>
+
+    <div class="header">1</div>
+    <div class="cell" contenteditable="true">Produto</div>
+    <div class="cell" contenteditable="true">10</div>
+    <div class="cell" contenteditable="true">2</div>
+
+    <div class="header">2</div>
+    <div class="cell" contenteditable="true">Caneta</div>
+    <div class="cell" contenteditable="true">5</div>
+    <div class="cell" contenteditable="true">4</div>
+  </div>
+</div>
+
+<div class="card exercises">
+<h3>Exercícios</h3>
+
+<b>1️⃣ O que são células, colunas e linhas?</b>
+<textarea id="txt"></textarea>
+<button onclick="checkText()">Verificar</button>
+<span id="r1" class="result"></span>
+
+<hr>
+
+<b>2️⃣ Copiar usando botão direito</b><br>
+Clique com o botão direito em uma célula com texto e escolha <b>Copiar</b>.
+<span id="r2" class="result"></span>
+
+<hr>
+
+<b>3️⃣ Inserir coluna B</b><br>
+Clique com o botão direito na coluna B e escolha <b>Inserir</b>.
+<span id="r3" class="result"></span>
+</div>
+
+<div class="card dicas">
+<h3>Dúvidas rápidas</h3>
+
+<b>Por que selecionar antes?</b><br>
+Porque o Excel só age onde você apontar.<br><br>
+
+<b>Delete ou Excluir?</b><br>
+Delete esvazia a célula.<br>
+Excluir muda a estrutura da planilha.<br><br>
+
+<b>Por que inserir coluna?</b><br>
+Para corrigir a estrutura sem perder dados.
+</div>
+
+</div>
+
+<div class="menu" id="menu">
+  <div onclick="copy()">Copiar</div>
+  <div id="insertBtn" onclick="insert()">Inserir</div>
+</div>
+
+<script>
+let selected=null, clipboard="", mode="cell";
+
+document.querySelectorAll(".cell").forEach(c=>{
+  c.oncontextmenu=e=>{
+    e.preventDefault();
+    selected=c;
+    mode="cell";
+    showMenu(e);
+  }
+});
+
+document.querySelectorAll(".col").forEach(c=>{
+  c.oncontextmenu=e=>{
+    e.preventDefault();
+    selected=c.dataset.col;
+    mode="col";
+    showMenu(e);
+  }
+});
+
+function showMenu(e){
+  menu.style.left=e.pageX+"px";
+  menu.style.top=e.pageY+"px";
+  insertBtn.style.display=mode==="col"?"block":"none";
+  menu.style.display="block";
+}
+
+document.body.onclick=()=>menu.style.display="none";
+
+function copy(){
+  if(mode==="cell"){
+    clipboard=selected.innerText;
+    r2.innerText="✔ Copiado com botão direito";
+  }
+}
+
+function insert(){
+  if(selected==="B"){
+    const cells=[...document.querySelectorAll(".grid .cell")];
+    for(let i=cells.length-1;i>=0;i--){
+      if(i%3===1){
+        cells[i+1].innerText=cells[i].innerText;
+        cells[i].innerText="";
+      }
+    }
+    r3.innerText="✔ Coluna inserida corretamente";
+  }
+}
+
+function checkText(){
+  const t=txt.value.toLowerCase();
+  r1.innerText=(t.includes("célula")&&t.includes("linha")&&t.includes("coluna"))
+  ?"✔ Correto":"✖ Revise os conceitos";
+}
+</script>
+
+</body>
+</html>

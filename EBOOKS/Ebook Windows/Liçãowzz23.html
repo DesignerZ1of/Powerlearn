@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 23 — E-mail</title>
+
+<style>
+
+body{
+font-family:Segoe UI, Arial;
+background:#ffffff;
+margin:0;
+color:#1f2937;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:50px 40px;
+}
+
+h1{
+color:#1e3a8a;
+font-size:34px;
+}
+
+.card{
+background:#f9fafb;
+border:1px solid #e5e7eb;
+border-radius:14px;
+padding:35px;
+margin-top:30px;
+}
+
+.section-title{
+color:#1e40af;
+font-size:20px;
+margin-top:35px;
+font-weight:bold;
+}
+
+input{
+display:block;
+width:350px;
+padding:12px;
+margin-top:10px;
+border-radius:8px;
+border:1px solid #d1d5db;
+}
+
+button{
+margin-top:20px;
+padding:12px 20px;
+background:#1e3a8a;
+color:#fff;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
+
+button:hover{
+background:#1e40af;
+}
+
+.feedback{
+margin-top:15px;
+font-weight:bold;
+}
+
+.success{
+color:green;
+}
+
+.error{
+color:red;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>📘 Lição 23 — E-mail e contas</h1>
+
+<div class="card">
+
+<div class="section-title">📧 O que é e-mail</div>
+
+<p>É uma conta usada para enviar e receber mensagens.</p>
+<p>Funciona como sua identidade na internet.</p>
+
+<p><b>👉 Quase tudo depende de um e-mail</b></p>
+
+<div class="section-title">✉️ Para que serve o e-mail</div>
+
+<p>📩 Enviar e receber mensagens</p>
+<p>🔐 Criar contas</p>
+<p>🔄 Recuperar senha</p>
+<p>📢 Receber avisos</p>
+<p>📎 Receber arquivos</p>
+
+<p><b>👉 O e-mail é o centro de tudo na internet</b></p>
+
+<div class="section-title">🆕 Como criar uma conta</div>
+
+<p>1. Acesse um site</p>
+<p>2. Clique em criar conta</p>
+<p>3. Preencha os dados</p>
+<p>4. Crie uma senha</p>
+<p>5. Confirme</p>
+
+<div class="section-title">🧠 Organização</div>
+
+<p>Você pode ter mais de um e-mail.</p>
+<p>Mas precisa saber usar e organizar.</p>
+
+<div class="section-title">⚠️ Erros comuns</div>
+
+<p>Esquecer e-mail</p>
+<p>Criar contas sem controle</p>
+<p>Não lembrar senha</p>
+
+<div class="section-title">🎯 Ideia principal</div>
+
+<p>O e-mail é a base da sua vida digital.</p>
+
+</div>
+
+<!-- EXERCÍCIO -->
+<div class="card">
+
+<h2>🧪 Exercício — Criar uma conta</h2>
+
+<label>Nome da conta</label>
+<input type="text" id="nome" placeholder="Digite seu nome">
+
+<label>Senha</label>
+<input type="password" id="senha" placeholder="Senha segura">
+
+<label>Confirmar senha</label>
+<input type="password" id="confirmar" placeholder="Repita a senha">
+
+<button onclick="criarConta()">Criar conta</button>
+
+<div class="feedback" id="feedback"></div>
+
+</div>
+
+</div>
+
+<script>
+
+function criarConta(){
+
+let nome = document.getElementById("nome").value
+let senha = document.getElementById("senha").value
+let confirmar = document.getElementById("confirmar").value
+let feedback = document.getElementById("feedback")
+
+/* VALIDAÇÃO NOME */
+if(nome.length < 3){
+feedback.innerHTML="❌ Nome muito curto"
+feedback.className="feedback error"
+return
+}
+
+/* VALIDAÇÃO SENHA FORTE */
+let temMaiuscula = /[A-Z]/.test(senha)
+let temNumero = /[0-9]/.test(senha)
+
+if(!temMaiuscula || !temNumero){
+feedback.innerHTML="❌ A senha precisa ter letra maiúscula e número"
+feedback.className="feedback error"
+return
+}
+
+/* CONFIRMAÇÃO */
+if(senha !== confirmar){
+feedback.innerHTML="❌ As senhas não coincidem"
+feedback.className="feedback error"
+return
+}
+
+/* SUCESSO */
+feedback.innerHTML="🎉 Conta criada com sucesso!"
+feedback.className="feedback success"
+
+}
+
+</script>
+
+</body>
+</html>

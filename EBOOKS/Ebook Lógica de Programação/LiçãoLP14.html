@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 14 — Objetos</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Consolas;
+background:#0f172a;
+color:#e2e8f0;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:40px;
+}
+
+.card{
+background:#1e293b;
+padding:25px;
+border-radius:12px;
+margin-bottom:25px;
+border:1px solid #334155;
+}
+
+h1{
+color:#38bdf8;
+}
+
+h2{
+color:#38bdf8;
+margin-top:0;
+}
+
+.code{
+background:black;
+padding:15px;
+border-radius:8px;
+margin-top:10px;
+white-space:pre-line;
+color:#22c55e;
+}
+
+.exercise{
+background:#020617;
+padding:20px;
+border-radius:10px;
+margin-top:20px;
+}
+
+.option{
+display:block;
+margin-top:10px;
+}
+
+textarea{
+width:100%;
+height:170px;
+margin-top:10px;
+background:black;
+color:#22c55e;
+border:1px solid #334155;
+border-radius:8px;
+padding:15px;
+font-family:Consolas;
+}
+
+button{
+margin-top:15px;
+padding:10px 15px;
+background:#38bdf8;
+border:none;
+border-radius:6px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.result{
+margin-top:15px;
+font-weight:bold;
+}
+
+.correct{
+color:#22c55e;
+}
+
+.wrong{
+color:#ef4444;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>📘 LIÇÃO 14 — Objetos</h1>
+
+<h2>🧠 O que você vai aprender aqui</h2>
+
+<p>
+• O que são objetos<br>
+• Como organizar informações<br>
+• Diferença entre array e objeto<br>
+• Como acessar informações do objeto
+</p>
+
+<hr>
+
+<h2>🧩 Tipo de lógica usado</h2>
+
+<p>
+🔹 Lógica de Organização de Dados
+</p>
+
+<p>
+> Guardar várias informações relacionadas no mesmo lugar.
+</p>
+
+<hr>
+
+<h2>🧠 O que é um objeto?</h2>
+
+<p>
+Objeto é uma estrutura usada para guardar informações organizadas.
+</p>
+
+<hr>
+
+<h2>📌 Ideia simples</h2>
+
+<p>
+Enquanto o array guarda:
+</p>
+
+<p>
+> listas
+</p>
+
+<p>
+O objeto guarda:
+</p>
+
+<p>
+> características
+</p>
+
+<hr>
+
+<h2>💻 Código (1º da aula)</h2>
+
+<div class="code">
+let jogador = {
+  nome: "Carlos",
+  idade: 18,
+  pontos: 100
+};
+</div>
+
+<hr>
+
+<h2>🧠 O que está acontecendo</h2>
+
+<p>
+O objeto chamado:
+</p>
+
+<p>
+> jogador
+</p>
+
+<p>
+Está guardando:
+</p>
+
+<p>
+nome<br>
+idade<br>
+pontos
+</p>
+
+<p>
+Tudo junto e organizado.
+</p>
+
+<hr>
+
+<h2>📌 Como pensar no objeto</h2>
+
+<p>
+Objeto funciona como:
+</p>
+
+<p>
+> uma ficha de informações
+</p>
+
+<hr>
+
+<h2>🧠 O que são as chaves { }</h2>
+
+<p>
+No objeto:
+</p>
+
+<div class="code">
+{ }
+</div>
+
+<p>
+As chaves agrupam todas as informações.
+</p>
+
+<hr>
+
+<h2>🧠 O que significa :</h2>
+
+<p>
+O : separa:
+</p>
+
+<p>
+nome da característica<br>
+valor da característica
+</p>
+
+<hr>
+
+<h2>📌 Exemplo</h2>
+
+<div class="code">
+nome: "Carlos"
+</div>
+
+<p>
+Significa:
+</p>
+
+<p>
+> a característica “nome” possui valor “Carlos”.
+</p>
+
+<hr>
+
+<h2>🧠 Como acessar informações</h2>
+
+<p>
+Usamos:
+</p>
+
+<div class="code">
+.
+</div>
+
+<hr>
+
+<h2>💻 Exemplo</h2>
+
+<div class="code">
+console.log(jogador.nome);
+</div>
+
+<hr>
+
+<h2>🧠 Resultado</h2>
+
+<p>
+Aparece:
+</p>
+
+<div class="code">
+Carlos
+</div>
+
+<hr>
+
+<h2>📌 Outro exemplo</h2>
+
+<div class="code">
+console.log(jogador.pontos);
+</div>
+
+<p>
+Resultado:
+</p>
+
+<div class="code">
+100
+</div>
+
+<hr>
+
+<h2>🧠 Diferença entre array e objeto</h2>
+
+<p>
+Array
+</p>
+
+<p>
+> organizado por posições
+</p>
+
+<div class="code">
+nomes[0]
+</div>
+
+<hr>
+
+<p>
+Objeto
+</p>
+
+<p>
+> organizado por características
+</p>
+
+<div class="code">
+jogador.nome
+</div>
+
+<hr>
+
+<h2>🧠 Quando objetos são usados?</h2>
+
+<p>
+jogador<br>
+usuário<br>
+carro<br>
+personagem<br>
+conta<br>
+item<br>
+perfil
+</p>
+
+<hr>
+
+<h2>🎯 Fechamento</h2>
+
+<p>
+> Arrays organizam listas.
+Objetos organizam informações.
+</p>
+
+</div>
+
+<!-- EXERCÍCIO 1 -->
+
+<div class="card">
+
+<div class="exercise">
+
+<h2>🧠 1. Múltipla escolha</h2>
+
+<p>
+O que o objeto organiza?
+</p>
+
+<label class="option">
+<input type="radio" name="q1" value="a">
+A) Repetições
+</label>
+
+<label class="option">
+<input type="radio" name="q1" value="b">
+B) Características
+</label>
+
+<label class="option">
+<input type="radio" name="q1" value="c">
+C) Loops
+</label>
+
+<label class="option">
+<input type="radio" name="q1" value="d">
+D) Operadores
+</label>
+
+<button onclick="corrigir1()">Verificar</button>
+
+<div id="r1" class="result"></div>
+
+</div>
+</div>
+
+<!-- EXERCÍCIO 2 -->
+
+<div class="card">
+
+<div class="exercise">
+
+<h2>🧠 2. Múltipla escolha</h2>
+
+<p>
+Como acessamos uma informação do objeto?
+</p>
+
+<label class="option">
+<input type="radio" name="q2" value="a">
+A) []
+</label>
+
+<label class="option">
+<input type="radio" name="q2" value="b">
+B) ()
+</label>
+
+<label class="option">
+<input type="radio" name="q2" value="c">
+C) :
+</label>
+
+<label class="option">
+<input type="radio" name="q2" value="d">
+D) .
+</label>
+
+<button onclick="corrigir2()">Verificar</button>
+
+<div id="r2" class="result"></div>
+
+</div>
+</div>
+
+<!-- EXERCÍCIO 3 -->
+
+<div class="card">
+
+<div class="exercise">
+
+<h2>🧠 3. Criar objeto</h2>
+
+<p>
+Crie um objeto chamado:
+</p>
+
+<p>
+usuario
+</p>
+
+<p>
+Com:
+</p>
+
+<p>
+nome: "Pedro"<br>
+idade: 20
+</p>
+
+<textarea id="q3"></textarea>
+
+<button onclick="corrigir3()">Verificar</button>
+
+<div id="r3" class="result"></div>
+
+</div>
+</div>
+
+<!-- EXERCÍCIO 4 -->
+
+<div class="card">
+
+<div class="exercise">
+
+<h2>🧠 4. Interpretação</h2>
+
+<p>
+O que aparece no console?
+</p>
+
+<div class="code">
+let carro = {
+  nome: "BMW",
+  ano: 2024
+};
+
+console.log(carro.nome);
+</div>
+
+<label class="option">
+<input type="radio" name="q4" value="a">
+A) 2024
+</label>
+
+<label class="option">
+<input type="radio" name="q4" value="b">
+B) carro
+</label>
+
+<label class="option">
+<input type="radio" name="q4" value="c">
+C) BMW
+</label>
+
+<label class="option">
+<input type="radio" name="q4" value="d">
+D) nome
+</label>
+
+<button onclick="corrigir4()">Verificar</button>
+
+<div id="r4" class="result"></div>
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+function correto(id){
+document.getElementById(id).innerHTML =
+'<span class="correct">✔ Correto!</span>'
+}
+
+function errado(id){
+document.getElementById(id).innerHTML =
+'<span class="wrong">✖ Errado.</span>'
+}
+
+function corrigir1(){
+
+let r = document.querySelector('input[name="q1"]:checked')
+
+if(r && r.value == "b"){
+correto("r1")
+}else{
+errado("r1")
+}
+
+}
+
+function corrigir2(){
+
+let r = document.querySelector('input[name="q2"]:checked')
+
+if(r && r.value == "d"){
+correto("r2")
+}else{
+errado("r2")
+}
+
+}
+
+function corrigir3(){
+
+let r = document.getElementById("q3").value.toLowerCase()
+
+if(
+r.includes("let usuario") &&
+r.includes("nome") &&
+r.includes("pedro") &&
+r.includes("idade") &&
+r.includes("20") &&
+r.includes("{") &&
+r.includes("}")
+){
+correto("r3")
+}else{
+errado("r3")
+}
+
+}
+
+function corrigir4(){
+
+let r = document.querySelector('input[name="q4"]:checked')
+
+if(r && r.value == "c"){
+correto("r4")
+}else{
+errado("r4")
+}
+
+}
+
+</script>
+
+</body>
+</html>

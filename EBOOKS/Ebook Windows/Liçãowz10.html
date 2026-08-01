@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 10 — Explorador de Arquivos</title>
+
+<style>
+body{font-family:Segoe UI,Arial;background:#fff;margin:0;color:#1f2937}
+.container{max-width:1100px;margin:auto;padding:50px 40px}
+h1{color:#1e3a8a}
+
+.card{background:#f9fafb;border:1px solid #e5e7eb;border-radius:14px;padding:35px;margin-top:30px}
+.section-title{color:#1e40af;font-weight:bold;margin-top:25px}
+
+/* WINDOWS */
+.windows{border:2px solid #d1d5db;border-radius:10px;margin-top:20px;overflow:hidden}
+.desktop{height:360px;background:#2563eb;position:relative}
+
+/* TASKBAR */
+.taskbar{background:#fff;padding:6px 12px;display:flex;justify-content:space-between;align-items:center}
+.left{display:flex;gap:10px}
+.right{display:flex;gap:10px}
+
+/* EXPLORADOR REALISTA */
+.explorer{
+position:absolute;
+top:20px;
+left:50%;
+transform:translateX(-50%);
+width:700px;
+height:300px;
+background:#fff;
+border-radius:8px;
+border:1px solid #ccc;
+display:none;
+flex-direction:column;
+}
+
+.topbar{
+background:#f3f4f6;
+padding:8px;
+display:flex;
+gap:10px;
+border-bottom:1px solid #ddd;
+font-size:14px;
+}
+
+.sidebar{
+width:150px;
+border-right:1px solid #eee;
+padding:10px;
+}
+
+.content{
+flex:1;
+padding:10px;
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+}
+
+.main{
+display:flex;
+height:100%;
+}
+
+.file{
+padding:6px;
+background:#f1f5f9;
+border-radius:6px;
+cursor:grab;
+font-size:13px;
+}
+
+.folder{
+border:2px dashed #ccc;
+padding:10px;
+width:120px;
+text-align:center;
+border-radius:8px;
+}
+
+.navpath{
+font-size:13px;
+color:#555;
+margin-bottom:5px;
+}
+
+.result{margin-top:10px;font-weight:bold}
+.success{color:green}
+.error{color:red}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🔁 Lição 10 — Reforço e Explorador de Arquivos</h1>
+
+<div class="card">
+
+<p>Nas últimas lições você aprendeu três coisas importantes:</p>
+
+<p>Lição 7: como o computador organiza tudo em pastas</p>
+<p>Lição 8: como baixar, instalar e remover programas</p>
+<p>Lição 9: como pesquisar arquivos e programas</p>
+
+<p>Agora vamos juntar tudo isso e conhecer melhor uma ferramenta muito importante do Microsoft Windows: o Explorador de Arquivos.</p>
+
+<p>Essa ferramenta é responsável por mostrar onde estão os arquivos e pastas do computador.</p>
+
+<div class="section-title">📂 O que é o Explorador de Arquivos</div>
+
+<p>O Explorador de Arquivos é o lugar onde você pode ver, organizar e acessar arquivos e pastas dentro do computador.</p>
+
+<p>É através dele que você consegue:</p>
+
+<p>Abrir arquivos</p>
+<p>Ver pastas</p>
+<p>Organizar documentos</p>
+<p>Mover arquivos de um lugar para outro</p>
+
+<p>Normalmente ele é representado por um ícone de pasta 📁 na barra de tarefas ou no menu iniciar.</p>
+
+<div class="section-title">🗂️ Onde ficam os arquivos</div>
+
+<p>Documentos → arquivos de texto e trabalhos</p>
+<p>Imagens → fotos e imagens</p>
+<p>Downloads → arquivos baixados da internet</p>
+<p>Vídeos → arquivos de vídeo</p>
+
+<div class="section-title">🧭 Como navegar pelas pastas</div>
+
+<p>1. Abra o Explorador de Arquivos</p>
+<p>2. Clique em uma pasta</p>
+<p>3. Veja o conteúdo que está dentro dela</p>
+<p>4. Clique em outra pasta para continuar navegando</p>
+
+<div class="section-title">🔁 Como mover arquivos (muito importante)</div>
+
+<p>1. Abra o Explorador de Arquivos</p>
+<p>2. Encontre o arquivo que deseja mover</p>
+<p>3. Clique no arquivo e segure o botão do mouse</p>
+<p>4. Arraste o arquivo até a pasta desejada</p>
+<p>5. Solte o arquivo dentro da pasta</p>
+
+<p>Pronto, o arquivo foi movido para outro local.</p>
+
+<div class="section-title">🎯 Ideia principal da lição</div>
+
+<p>O Explorador de Arquivos é a ferramenta que permite ver, encontrar e organizar tudo que existe dentro do computador.</p>
+
+</div>
+
+<!-- EXERCÍCIO 1 -->
+<div class="card">
+<h2>🧪 Exercício 1 — Organizar Arquivos</h2>
+
+<p>Mova os arquivos para as pastas corretas.</p>
+
+<div class="windows">
+<div class="desktop">
+
+<div class="explorer" id="explorer1">
+
+<div class="topbar">📂 Explorador de Arquivos</div>
+
+<div class="main">
+
+<div class="sidebar">
+<p>📂 Downloads</p>
+<p>📂 Documentos</p>
+<p>📂 Imagens</p>
+</div>
+
+<div class="content">
+
+<div class="file" draggable="true" id="doc">📄 trabalho.docx</div>
+<div class="file" draggable="true" id="img">🖼 foto.jpg</div>
+<div class="file" draggable="true" id="pdf">📑 relatorio.pdf</div>
+
+<div class="folder" id="fdoc">📂 Documentos</div>
+<div class="folder" id="fimg">📂 Imagens</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="taskbar">
+<div class="left">
+<span onclick="abrir1()" style="cursor:pointer">📁</span>
+</div>
+<div class="right">🌐 🔊 🔋</div>
+</div>
+
+</div>
+
+<div id="res1" class="result"></div>
+</div>
+
+<!-- EXERCÍCIO 2 -->
+<div class="card">
+<h2>🧪 Exercício 2 — Navegação</h2>
+
+<p>Navegue até encontrar o arquivo.</p>
+
+<div class="windows">
+<div class="desktop">
+
+<div class="explorer" id="explorer2">
+
+<div class="topbar">📂 Explorador de Arquivos</div>
+
+<div class="main">
+
+<div class="sidebar">
+<p onclick="nav('c')">📂 Disco C</p>
+<p onclick="nav('user')">📂 Usuário</p>
+<p onclick="nav('down')">📂 Downloads</p>
+</div>
+
+<div class="content" id="content2"></div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="taskbar">
+<div class="left">
+<span onclick="abrir2()" style="cursor:pointer">📁</span>
+</div>
+<div class="right">🌐 🔊 🔋</div>
+</div>
+
+</div>
+
+<div id="res2" class="result"></div>
+</div>
+
+</div>
+
+<script>
+
+/* ABRIR */
+function abrir1(){document.getElementById("explorer1").style.display="flex"}
+function abrir2(){document.getElementById("explorer2").style.display="flex"}
+
+/* DRAG */
+function allow(e){e.preventDefault()}
+
+function drop(e,correct){
+e.preventDefault()
+const id=e.dataTransfer.getData("text")
+
+if(id===correct){
+e.target.appendChild(document.getElementById(id))
+check()
+}
+}
+
+function drag(e){
+e.dataTransfer.setData("text",e.target.id)
+}
+
+["doc","img","pdf"].forEach(id=>{
+document.getElementById(id).addEventListener("dragstart",drag)
+})
+
+document.getElementById("fdoc").ondragover=allow
+document.getElementById("fimg").ondragover=allow
+
+document.getElementById("fdoc").ondrop=(e)=>drop(e,"doc")
+document.getElementById("fimg").ondrop=(e)=>drop(e,"img")
+
+function check(){
+let ok = document.getElementById("fdoc").children.length>0 &&
+         document.getElementById("fimg").children.length>0
+
+if(ok){
+document.getElementById("res1").innerHTML="<span class='success'>✔ Organização correta!</span>"
+}
+}
+
+/* NAVEGAÇÃO */
+function nav(p){
+let c=document.getElementById("content2")
+
+if(p==="c") c.innerHTML="📂 Usuário"
+if(p==="user") c.innerHTML="📂 Downloads"
+if(p==="down") c.innerHTML="<div onclick='final()' style='cursor:pointer'>📄 segredo.txt</div>"
+}
+
+function final(){
+document.getElementById("res2").innerHTML="<span class='success'>✔ Arquivo encontrado!</span>"
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 17 — Reforço</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Consolas;
+background:#0f172a;
+color:#e2e8f0;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:40px;
+}
+
+.card{
+background:#1e293b;
+padding:25px;
+border-radius:12px;
+margin-bottom:25px;
+border:1px solid #334155;
+}
+
+h1,h2{
+color:#38bdf8;
+}
+
+.code{
+background:black;
+padding:15px;
+border-radius:8px;
+margin-top:10px;
+white-space:pre-line;
+color:#22c55e;
+}
+
+.exercise{
+background:#020617;
+padding:20px;
+border-radius:10px;
+margin-top:20px;
+}
+
+.option{
+display:block;
+margin-top:10px;
+}
+
+textarea{
+width:100%;
+height:190px;
+margin-top:10px;
+background:black;
+color:#22c55e;
+border:1px solid #334155;
+border-radius:8px;
+padding:15px;
+font-family:Consolas;
+}
+
+button{
+margin-top:15px;
+padding:10px 15px;
+background:#38bdf8;
+border:none;
+border-radius:6px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.result{
+margin-top:15px;
+font-weight:bold;
+}
+
+.correct{
+color:#22c55e;
+}
+
+.wrong{
+color:#ef4444;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>📘 LIÇÃO 17 — Reforço</h1>
+
+<hr>
+
+<h2>🧠 Objetivo da aula</h2>
+
+<p>
+Relembrar:
+</p>
+
+<p>
+.length<br>
+.includes()<br>
+.indexOf()<br>
+.splice()<br>
+função<br>
+if e else
+</p>
+
+<p>
+E entender:
+</p>
+
+<p>
+como usar<br>
+quando usar<br>
+estrutura de cada um
+</p>
+
+<hr>
+
+<h2>🧠 .length</h2>
+
+<p>
+📌 O que faz
+</p>
+
+<p>
+Mostra:
+</p>
+
+<p>
+> o tamanho do array.
+</p>
+
+<hr>
+
+<p>
+📌 Estrutura
+</p>
+
+<div class="code">
+array.length
+</div>
+
+<hr>
+
+<p>
+💻 Exemplo
+</p>
+
+<div class="code">
+let nomes = ["Ana", "Carlos", "João"];
+
+console.log(nomes.length);
+</div>
+
+<hr>
+
+<p>
+🧠 Resultado
+</p>
+
+<div class="code">
+3
+</div>
+
+<hr>
+
+<h2>🧠 .includes()</h2>
+
+<p>
+📌 O que faz
+</p>
+
+<p>
+Verifica:
+</p>
+
+<p>
+> se um valor existe no array.
+</p>
+
+<hr>
+
+<p>
+📌 Estrutura
+</p>
+
+<div class="code">
+array.includes(valor)
+</div>
+
+<hr>
+
+<p>
+💻 Exemplo
+</p>
+
+<div class="code">
+let nomes = ["Ana", "Carlos"];
+
+console.log(nomes.includes("Ana"));
+</div>
+
+<hr>
+
+<p>
+🧠 Resultado
+</p>
+
+<div class="code">
+true
+</div>
+
+<hr>
+
+<h2>🧠 .indexOf()</h2>
+
+<p>
+📌 O que faz
+</p>
+
+<p>
+Procura:
+</p>
+
+<p>
+> a posição do valor.
+</p>
+
+<hr>
+
+<p>
+📌 Estrutura
+</p>
+
+<div class="code">
+array.indexOf(valor)
+</div>
+
+<hr>
+
+<p>
+💻 Exemplo
+</p>
+
+<div class="code">
+let nomes = ["Ana", "Carlos", "João"];
+
+console.log(nomes.indexOf("Carlos"));
+</div>
+
+<hr>
+
+<p>
+🧠 Resultado
+</p>
+
+<div class="code">
+1
+</div>
+
+<hr>
+
+<h2>🧠 .splice()</h2>
+
+<p>
+📌 O que faz
+</p>
+
+<p>
+Remove valores específicos do array.
+</p>
+
+<hr>
+
+<p>
+📌 Estrutura
+</p>
+
+<div class="code">
+array.splice(posição, quantidade)
+</div>
+
+<hr>
+
+<p>
+💻 Exemplo
+</p>
+
+<div class="code">
+let nomes = ["Ana", "Carlos", "João"];
+
+nomes.splice(1, 1);
+
+console.log(nomes);
+</div>
+
+<hr>
+
+<p>
+🧠 Resultado
+</p>
+
+<div class="code">
+["Ana", "João"]
+</div>
+
+<hr>
+
+<h2>🧠 Função</h2>
+
+<p>
+📌 O que faz
+</p>
+
+<p>
+Cria:
+</p>
+
+<p>
+> uma ação reutilizável.
+</p>
+
+<hr>
+
+<p>
+📌 Estrutura
+</p>
+
+<div class="code">
+function nome() {
+
+}
+</div>
+
+<hr>
+
+<p>
+💻 Exemplo
+</p>
+
+<div class="code">
+function falar() {
+  console.log("Olá");
+}
+
+falar();
+</div>
+
+<hr>
+
+<p>
+🧠 Resultado
+</p>
+
+<div class="code">
+Olá
+</div>
+
+<hr>
+
+<h2>🧠 if</h2>
+
+<p>
+📌 O que faz
+</p>
+
+<p>
+Verifica:
+</p>
+
+<p>
+> uma condição.
+</p>
+
+<hr>
+
+<p>
+📌 Estrutura
+</p>
+
+<div class="code">
+if (condição) {
+
+}
+</div>
+
+<hr>
+
+<p>
+💻 Exemplo
+</p>
+
+<div class="code">
+let idade = 18;
+
+if (idade >= 18) {
+  console.log("Maior");
+}
+</div>
+
+<hr>
+
+<h2>🧠 else</h2>
+
+<p>
+📌 O que faz
+</p>
+
+<p>
+Executa:
+</p>
+
+<p>
+> quando o if for falso.
+</p>
+
+<hr>
+
+<p>
+📌 Estrutura
+</p>
+
+<div class="code">
+if (condição) {
+
+} else {
+
+}
+</div>
+
+<hr>
+
+<p>
+💻 Exemplo
+</p>
+
+<div class="code">
+let idade = 15;
+
+if (idade >= 18) {
+  console.log("Maior");
+} else {
+  console.log("Menor");
+}
+</div>
+
+<hr>
+
+<h2>🧠 Relembrando os símbolos</h2>
+
+<div class="code">
+()
+
+guardam informações ou condições.
+
+
+{}
+
+guardam ações do código.
+
+
+;
+
+finaliza instruções.
+</div>
+
+</div>
+
+<!-- EXERCÍCIO 1 -->
+
+<div class="card">
+<div class="exercise">
+
+<h2>🧠 1. Múltipla escolha</h2>
+
+<p>
+Qual comando verifica se um valor existe no array?
+</p>
+
+<label class="option">
+<input type="radio" name="q1" value="a">
+A) .splice()
+</label>
+
+<label class="option">
+<input type="radio" name="q1" value="b">
+B) .includes()
+</label>
+
+<label class="option">
+<input type="radio" name="q1" value="c">
+C) .index()
+</label>
+
+<label class="option">
+<input type="radio" name="q1" value="d">
+D) .length()
+</label>
+
+<button onclick="corrigir1()">Verificar</button>
+
+<div id="r1" class="result"></div>
+
+</div>
+</div>
+
+<!-- EXERCÍCIO 2 -->
+
+<div class="card">
+<div class="exercise">
+
+<h2>🧠 2. Múltipla escolha</h2>
+
+<p>
+O que .indexOf() retorna quando NÃO encontra o valor?
+</p>
+
+<label class="option">
+<input type="radio" name="q2" value="a">
+A) 0
+</label>
+
+<label class="option">
+<input type="radio" name="q2" value="b">
+B) false
+</label>
+
+<label class="option">
+<input type="radio" name="q2" value="c">
+C) null
+</label>
+
+<label class="option">
+<input type="radio" name="q2" value="d">
+D) -1
+</label>
+
+<button onclick="corrigir2()">Verificar</button>
+
+<div id="r2" class="result"></div>
+
+</div>
+</div>
+
+<!-- EXERCÍCIO 3 -->
+
+<div class="card">
+<div class="exercise">
+
+<h2>🧠 3. Múltipla escolha</h2>
+
+<p>
+Qual parte faz o while percorrer TODAS as posições do array?
+</p>
+
+<label class="option">
+<input type="radio" name="q3" value="a">
+A) console.log()
+</label>
+
+<label class="option">
+<input type="radio" name="q3" value="b">
+B) i++
+</label>
+
+<label class="option">
+<input type="radio" name="q3" value="c">
+C) nomes.length
+</label>
+
+<label class="option">
+<input type="radio" name="q3" value="d">
+D) splice()
+</label>
+
+<button onclick="corrigir3()">Verificar</button>
+
+<div id="r3" class="result"></div>
+
+</div>
+</div>
+
+<!-- EXERCÍCIO 4 -->
+
+<div class="card">
+<div class="exercise">
+
+<h2>🧠 4. Múltipla escolha</h2>
+
+<p>
+Qual parte é o parâmetro da função?
+</p>
+
+<div class="code">
+function falar(nome) {
+
+}
+</div>
+
+<label class="option">
+<input type="radio" name="q4" value="a">
+A) function
+</label>
+
+<label class="option">
+<input type="radio" name="q4" value="b">
+B) falar
+</label>
+
+<label class="option">
+<input type="radio" name="q4" value="c">
+C) nome
+</label>
+
+<label class="option">
+<input type="radio" name="q4" value="d">
+D) {}
+</label>
+
+<button onclick="corrigir4()">Verificar</button>
+
+<div id="r4" class="result"></div>
+
+</div>
+</div>
+
+<!-- EXERCÍCIO 5 -->
+
+<div class="card">
+<div class="exercise">
+
+<h2>🧠 5. Múltipla escolha</h2>
+
+<p>
+O que acontece aqui?
+</p>
+
+<div class="code">
+nomes.splice(1,1)
+</div>
+
+<label class="option">
+<input type="radio" name="q5" value="a">
+A) Remove TODOS os valores
+</label>
+
+<label class="option">
+<input type="radio" name="q5" value="b">
+B) Remove 1 valor começando da posição 1
+</label>
+
+<label class="option">
+<input type="radio" name="q5" value="c">
+C) Adiciona valor no array
+</label>
+
+<label class="option">
+<input type="radio" name="q5" value="d">
+D) Procura posição
+</label>
+
+<button onclick="corrigir5()">Verificar</button>
+
+<div id="r5" class="result"></div>
+
+</div>
+</div>
+
+<!-- EXERCÍCIO 6 -->
+
+<div class="card">
+<div class="exercise">
+
+<h2>🧠 6. Criar código — splice() usando if</h2>
+
+<p>
+Crie:
+</p>
+
+<p>
+• um array chamado nomes<br>
+• um if<br>
+• use .includes()<br>
+• se existir "Carlos"<br>
+• remova usando .splice()<br>
+• mostre usando console.log()
+</p>
+
+<textarea id="q6"></textarea>
+
+<button onclick="corrigir6()">Verificar</button>
+
+<div id="r6" class="result"></div>
+
+</div>
+</div>
+
+<!-- EXERCÍCIO 7 -->
+
+<div class="card">
+<div class="exercise">
+
+<h2>🧠 7. Criar código — indexOf()</h2>
+
+<p>
+Crie:
+</p>
+
+<p>
+• um array chamado nomes<br>
+• use .indexOf()<br>
+• procure "Ana"<br>
+• mostre usando console.log()
+</p>
+
+<textarea id="q7"></textarea>
+
+<button onclick="corrigir7()">Verificar</button>
+
+<div id="r7" class="result"></div>
+
+</div>
+</div>
+
+<!-- EXERCÍCIO 8 -->
+
+<div class="card">
+<div class="exercise">
+
+<h2>🧠 8. Criar código — while + length</h2>
+
+<p>
+Crie:
+</p>
+
+<p>
+• um array<br>
+• uma variável i<br>
+• um while<br>
+• use .length<br>
+• mostre os valores com console.log()
+</p>
+
+<textarea id="q8"></textarea>
+
+<button onclick="corrigir8()">Verificar</button>
+
+<div id="r8" class="result"></div>
+
+</div>
+</div>
+
+<!-- EXERCÍCIO 9 -->
+
+<div class="card">
+<div class="exercise">
+
+<h2>🧠 9. Criar código — includes()</h2>
+
+<p>
+Crie:
+</p>
+
+<p>
+• um array chamado frutas<br>
+• use .includes()<br>
+• procure "Maçã"<br>
+• mostre o resultado
+</p>
+
+<textarea id="q9"></textarea>
+
+<button onclick="corrigir9()">Verificar</button>
+
+<div id="r9" class="result"></div>
+
+</div>
+</div>
+
+<!-- EXERCÍCIO 10 -->
+
+<div class="card">
+<div class="exercise">
+
+<h2>🧠 10. Criar código — função com parâmetro</h2>
+
+<p>
+Crie:
+</p>
+
+<p>
+• uma função chamada mensagem<br>
+• parâmetro nome<br>
+• mostre: "Olá " + nome<br>
+• execute enviando "Carlos"
+</p>
+
+<textarea id="q10"></textarea>
+
+<button onclick="corrigir10()">Verificar</button>
+
+<div id="r10" class="result"></div>
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+function correto(id){
+document.getElementById(id).innerHTML =
+'<span class="correct">✔ Correto!</span>'
+}
+
+function errado(id){
+document.getElementById(id).innerHTML =
+'<span class="wrong">✖ Errado.</span>'
+}
+
+function corrigir1(){
+let r = document.querySelector('input[name="q1"]:checked')
+if(r && r.value == "b"){
+correto("r1")
+}else{
+errado("r1")
+}
+}
+
+function corrigir2(){
+let r = document.querySelector('input[name="q2"]:checked')
+if(r && r.value == "d"){
+correto("r2")
+}else{
+errado("r2")
+}
+}
+
+function corrigir3(){
+let r = document.querySelector('input[name="q3"]:checked')
+if(r && r.value == "c"){
+correto("r3")
+}else{
+errado("r3")
+}
+}
+
+function corrigir4(){
+let r = document.querySelector('input[name="q4"]:checked')
+if(r && r.value == "c"){
+correto("r4")
+}else{
+errado("r4")
+}
+}
+
+function corrigir5(){
+let r = document.querySelector('input[name="q5"]:checked')
+if(r && r.value == "b"){
+correto("r5")
+}else{
+errado("r5")
+}
+}
+
+function corrigir6(){
+
+let r = document.getElementById("q6").value.toLowerCase()
+
+if(
+r.includes("let") &&
+r.includes("[") &&
+r.includes("if") &&
+r.includes(".includes") &&
+r.includes(".splice") &&
+r.includes("console.log") &&
+r.includes("carlos")
+){
+correto("r6")
+}else{
+errado("r6")
+}
+
+}
+
+function corrigir7(){
+
+let r = document.getElementById("q7").value.toLowerCase()
+
+if(
+r.includes("let") &&
+r.includes("[") &&
+r.includes(".indexof") &&
+r.includes("console.log") &&
+r.includes("ana")
+){
+correto("r7")
+}else{
+errado("r7")
+}
+
+}
+
+function corrigir8(){
+
+let r = document.getElementById("q8").value.toLowerCase()
+
+if(
+r.includes("let") &&
+r.includes("[") &&
+r.includes("while") &&
+r.includes(".length") &&
+r.includes("console.log") &&
+r.includes("i++")
+){
+correto("r8")
+}else{
+errado("r8")
+}
+
+}
+
+function corrigir9(){
+
+let r = document.getElementById("q9").value.toLowerCase()
+
+if(
+r.includes("let") &&
+r.includes("[") &&
+r.includes(".includes") &&
+r.includes("console.log") &&
+r.includes("maçã")
+){
+correto("r9")
+}else{
+errado("r9")
+}
+
+}
+
+function corrigir10(){
+
+let r = document.getElementById("q10").value.toLowerCase()
+
+if(
+r.includes("function") &&
+r.includes("mensagem") &&
+r.includes("nome") &&
+r.includes("console.log") &&
+r.includes("carlos")
+){
+correto("r10")
+}else{
+errado("r10")
+}
+
+}
+
+</script>
+
+</body>
+</html>

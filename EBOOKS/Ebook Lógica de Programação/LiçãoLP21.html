@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 21 — Prática com Dados</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#0f172a;
+color:#e2e8f0;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:40px;
+}
+
+.card{
+background:#1e293b;
+padding:30px;
+border-radius:14px;
+margin-bottom:25px;
+border:1px solid #334155;
+}
+
+h1{
+color:#38bdf8;
+}
+
+.section{
+margin-top:25px;
+font-size:22px;
+font-weight:bold;
+color:#7dd3fc;
+}
+
+.text{
+line-height:1.8;
+margin-top:10px;
+}
+
+.code{
+background:#020617;
+padding:18px;
+border-radius:10px;
+margin-top:15px;
+color:#22c55e;
+font-family:Consolas;
+white-space:pre-line;
+overflow:auto;
+border:1px solid #334155;
+}
+
+.table{
+margin-top:15px;
+border-collapse:collapse;
+width:100%;
+}
+
+.table td,
+.table th{
+border:1px solid #334155;
+padding:10px;
+text-align:center;
+}
+
+.table th{
+background:#0f172a;
+color:#38bdf8;
+}
+
+.exercise{
+background:#020617;
+padding:25px;
+border-radius:12px;
+margin-top:20px;
+border:1px solid #334155;
+}
+
+textarea{
+width:100%;
+height:350px;
+margin-top:15px;
+padding:15px;
+background:black;
+color:#22c55e;
+border-radius:8px;
+border:1px solid #334155;
+font-family:Consolas;
+font-size:15px;
+}
+
+button{
+margin-top:15px;
+padding:12px 18px;
+background:#38bdf8;
+border:none;
+border-radius:8px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.result{
+margin-top:15px;
+font-weight:bold;
+font-size:18px;
+}
+
+.correct{
+color:#22c55e;
+}
+
+.wrong{
+color:#ef4444;
+}
+
+.highlight{
+color:#facc15;
+font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>📘 LIÇÃO 21 — Prática com Dados</h1>
+
+<div class="section">🧠 Objetivo da aula</div>
+
+<div class="text">
+Agora começaremos:
+<br><br>
+
+<span class="highlight">
+> a desenvolver sistemas de verdade.
+</span>
+</div>
+
+<div class="section">🧠 Pensamento lógico na programação</div>
+
+<div class="text">
+Quando você cria um sistema:
+<br><br>
+
+<span class="highlight">
+> não pense primeiro no código.
+</span>
+
+<br><br>
+
+Pense:
+<br><br>
+
+• o que o sistema precisa fazer<br>
+• quais informações ele precisa guardar<br>
+• quais verificações ele precisa fazer<br>
+• o que deve acontecer depois
+</div>
+
+<div class="section">📌 Exemplo</div>
+
+<div class="text">
+No sistema de pontos:
+<br><br>
+
+• primeiro guardamos jogadores<br>
+• depois verificamos se existe<br>
+• depois procuramos posição<br>
+• depois adicionamos pontos
+<br><br>
+
+👉 O código só veio:
+<br><br>
+
+<span class="highlight">
+> depois da lógica.
+</span>
+</div>
+
+<div class="section">🎯 Ideia importante</div>
+
+<div class="text">
+<span class="highlight">
+> Quem entende a lógica, consegue aprender qualquer código.
+</span>
+</div>
+
+<div class="section">🧠 Como pensar melhor na hora de programar</div>
+
+<div class="text">
+Sempre tente quebrar o sistema em partes pequenas.
+<br><br>
+
+Em vez de pensar:
+<br><br>
+
+<span class="highlight">
+> “Como faço o sistema inteiro?”
+</span>
+
+<br><br>
+
+Pense:
+<br><br>
+
+• como guardar os dados?<br>
+• como verificar?<br>
+• como alterar?<br>
+• como mostrar resultado?
+</div>
+
+<div class="section">📌 Outra dica importante</div>
+
+<div class="text">
+Quase todo sistema funciona com:
+<br><br>
+
+• guardar informação<br>
+• verificar informação<br>
+• alterar informação<br>
+• repetir processos
+</div>
+
+<div class="section">🎯 Pensamento final</div>
+
+<div class="text">
+<span class="highlight">
+> Programação não é decorar código.
+É aprender a resolver problemas passo por passo.
+</span>
+</div>
+
+<div class="section">🎮 Sistema da aula</div>
+
+<div class="text">
+Nesta aula iremos criar:
+<br><br>
+
+<span class="highlight">
+🎮 Um sistema de verificação e adicionamento de pontos
+</span>
+</div>
+
+<div class="section">🧠 O que esse sistema fará?</div>
+
+<div class="text">
+O sistema irá:
+<br><br>
+
+• guardar jogadores<br>
+• guardar pontos<br>
+• verificar se jogador existe<br>
+• procurar posição do jogador<br>
+• adicionar pontos automaticamente<br>
+• mostrar os resultados
+</div>
+
+<div class="section">📌 Conteúdos usados</div>
+
+<div class="text">
+• arrays<br>
+• .includes()<br>
+• .indexOf()<br>
+• .length<br>
+• funções<br>
+• parâmetros<br>
+• if<br>
+• atualização de variável<br>
+• posições do array
+</div>
+
+<div class="section">🧠 Relembrando arrays</div>
+
+<div class="code">
+let jogadores = ["Carlos", "Ana", "Pedro"];
+</div>
+
+<div class="text">
+posição 0 → Carlos<br>
+posição 1 → Ana<br>
+posição 2 → Pedro
+</div>
+
+<div class="section">🧠 Relembrando .includes()</div>
+
+<div class="code">
+console.log(jogadores.includes("Carlos"));
+</div>
+
+<div class="text">
+Resultado:
+<br><br>
+
+<span class="highlight">
+true
+</span>
+</div>
+
+<div class="section">🧠 Relembrando .indexOf()</div>
+
+<div class="code">
+console.log(jogadores.indexOf("Ana"));
+</div>
+
+<div class="text">
+Resultado:
+<br><br>
+
+<span class="highlight">
+1
+</span>
+</div>
+
+<div class="section">🚀 ETAPA 1 — Criando jogadores</div>
+
+<div class="code">
+let jogadores = ["Carlos", "Ana", "Pedro"];
+</div>
+
+<div class="section">🚀 ETAPA 2 — Criando pontos</div>
+
+<div class="code">
+let pontos = [100, 200, 50];
+</div>
+
+<table class="table">
+
+<tr>
+<th>Jogador</th>
+<th>Pontos</th>
+</tr>
+
+<tr>
+<td>Carlos</td>
+<td>100</td>
+</tr>
+
+<tr>
+<td>Ana</td>
+<td>200</td>
+</tr>
+
+<tr>
+<td>Pedro</td>
+<td>50</td>
+</tr>
+
+</table>
+
+<div class="section">🚀 ETAPA 3 — Procurando jogador</div>
+
+<div class="code">
+console.log(jogadores.indexOf("Carlos"));
+</div>
+
+<div class="text">
+Resultado:
+<br><br>
+
+<span class="highlight">
+0
+</span>
+</div>
+
+<div class="section">🚀 ETAPA 4 — Atualizando pontos</div>
+
+<div class="code">
+pontos[0] = pontos[0] + 50;
+</div>
+
+<div class="text">
+100 + 50 = 150
+</div>
+
+<div class="section">🚀 ETAPA 5 — Criando função</div>
+
+<div class="code">
+function adicionarPontos(nome, valor) {
+
+}
+</div>
+
+<div class="section">🚀 ETAPA 6 — Verificando jogador</div>
+
+<div class="code">
+if (jogadores.includes(nome)) {
+
+}
+</div>
+
+<div class="section">🚀 ETAPA 7 — Procurando posição</div>
+
+<div class="code">
+let posicao = jogadores.indexOf(nome);
+</div>
+
+<div class="section">🚀 ETAPA 8 — Adicionando pontos</div>
+
+<div class="code">
+pontos[posicao] = pontos[posicao] + valor;
+</div>
+
+<div class="section">🚀 ETAPA 9 — Código completo</div>
+
+<div class="code">
+let jogadores = ["Carlos", "Ana", "Pedro"];
+
+let pontos = [100, 200, 50];
+
+function adicionarPontos(nome, valor) {
+
+  if (jogadores.includes(nome)) {
+
+    let posicao = jogadores.indexOf(nome);
+
+    pontos[posicao] = pontos[posicao] + valor;
+
+    console.log("Pontos adicionados");
+
+  } else {
+
+    console.log("Jogador não encontrado");
+
+  }
+
+}
+
+adicionarPontos("Carlos", 50);
+
+console.log(pontos);
+</div>
+
+<div class="section">🧠 Resultado final</div>
+
+<div class="code">
+[150, 200, 50]
+</div>
+
+<div class="section">🎯 DESAFIO FINAL</div>
+
+<div class="exercise">
+
+<h2>🧠 Crie um sistema de moedas</h2>
+
+<div class="text">
+
+Seu sistema deve:
+
+<br><br>
+
+✅ Ter um array com nomes<br><br>
+
+✅ Ter um array com moedas<br><br>
+
+✅ Criar uma função<br><br>
+
+✅ Verificar se o jogador existe<br><br>
+
+✅ Procurar posição usando .indexOf()<br><br>
+
+✅ Adicionar moedas automaticamente<br><br>
+
+✅ Mostrar o resultado final com console.log()
+</div>
+
+<textarea id="codigo"></textarea>
+
+<button onclick="verificar()">Verificar Código</button>
+
+<div id="resultado" class="result"></div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function verificar(){
+
+let texto =
+document.getElementById("codigo")
+.value
+.toLowerCase()
+
+let requisitos = [
+
+"let",
+"[",
+"]",
+"function",
+"if",
+".includes",
+".indexof",
+"console.log",
+"+",
+"else"
+
+]
+
+let correto = requisitos.every(item =>
+texto.includes(item)
+)
+
+if(correto){
+
+document.getElementById("resultado").innerHTML =
+'<span class="correct">✔ Sistema correto!</span>'
+
+}else{
+
+document.getElementById("resultado").innerHTML =
+'<span class="wrong">✖ Seu sistema está incompleto.</span>'
+
+}
+
+}
+
+</script>
+
+</body>
+</html>

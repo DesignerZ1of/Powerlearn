@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 18 — Navegador</title>
+
+<style>
+
+body{
+font-family:Segoe UI, Arial;
+background:#ffffff;
+margin:0;
+color:#1f2937;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:50px 40px;
+}
+
+h1{
+color:#1e3a8a;
+font-size:34px;
+}
+
+.card{
+background:#f9fafb;
+border:1px solid #e5e7eb;
+border-radius:14px;
+padding:35px;
+margin-top:30px;
+}
+
+.section-title{
+color:#1e40af;
+font-size:20px;
+margin-top:35px;
+font-weight:bold;
+}
+
+.question{
+background:white;
+padding:20px;
+border-radius:10px;
+border:1px solid #e5e7eb;
+margin-top:20px;
+}
+
+.option{
+padding:10px;
+border:1px solid #d1d5db;
+border-radius:6px;
+margin-top:8px;
+cursor:pointer;
+}
+
+.option:hover{
+background:#eef2ff;
+}
+
+.correct{
+background:#dcfce7 !important;
+border-color:green !important;
+}
+
+.wrong{
+background:#fee2e2 !important;
+border-color:red !important;
+}
+
+.result{
+margin-top:10px;
+font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🌐 Lição 18 — Navegador (acessando a internet)</h1>
+
+<div class="card">
+
+<p>Agora que você já domina o computador, chegou a hora de usar algo essencial: a internet.</p>
+
+<p>Para acessar sites, pesquisar e navegar, usamos um programa chamado navegador.</p>
+
+<div class="section-title">🌐 O que é um navegador</div>
+
+<p>O navegador é o programa que permite acessar sites na internet.</p>
+
+<p>👉 Sem ele, você não consegue:</p>
+<p>Entrar em sites</p>
+<p>Pesquisar</p>
+<p>Usar serviços online</p>
+
+<div class="section-title">🚀 Como abrir o navegador</div>
+
+<p>Você pode:</p>
+<p>Clicar no ícone do navegador</p>
+<p>Procurar pelo nome no computador</p>
+
+<p>👉 Ao abrir, uma janela com a internet aparecerá.</p>
+
+<div class="section-title">🔗 Como acessar um site</div>
+
+<p>Existem duas formas principais:</p>
+<p>Digitando o endereço do site</p>
+<p>Pesquisando pelo nome</p>
+
+<div class="section-title">🔍 O que você pode fazer</div>
+
+<p>Pesquisar informações</p>
+<p>Assistir conteúdos</p>
+<p>Acessar contas</p>
+<p>Usar serviços online</p>
+
+<div class="section-title">🧭 Entendendo a tela do navegador</div>
+
+<p>Barra de endereço → onde você digita ou pesquisa</p>
+<p>Página → onde o conteúdo aparece</p>
+<p>Botões → voltar, avançar</p>
+
+<div class="section-title">⚠️ Cuidados básicos</div>
+
+<p>Nem todo site é confiável</p>
+<p>Evite clicar em qualquer coisa</p>
+<p>Tenha atenção ao que acessa</p>
+
+<div class="section-title">🎯 Ideia principal da lição</div>
+
+<p>O navegador é a porta de entrada para a internet.</p>
+
+</div>
+
+<div class="card">
+
+<h2>🧪 Exercícios</h2>
+
+<div id="quiz"></div>
+
+</div>
+
+</div>
+
+<script>
+
+const perguntas=[
+
+{
+pergunta:"1. Qual alternativa explica corretamente a função de um navegador?",
+opcoes:[
+"Permite organizar arquivos",
+"Permite acessar sites e conteúdos da internet",
+"Serve apenas para baixar programas",
+"Substitui o sistema operacional"
+],
+correta:1
+},
+
+{
+pergunta:"2. Um usuário digitou 'facebook' e pressionou Enter. O que acontece?",
+opcoes:[
+"Apaga o texto",
+"Abre um arquivo do computador",
+"Realiza uma pesquisa na internet",
+"Desliga o computador"
+],
+correta:2
+},
+
+{
+pergunta:"3. Qual representa o uso correto da barra de endereço?",
+opcoes:[
+"Só serve para pesquisar",
+"Um endereço completo pode abrir direto o site",
+"Só funciona offline",
+"Sempre dá erro"
+],
+correta:1
+},
+
+{
+pergunta:"4. Qual atitude é considerada mais segura ao usar um navegador?",
+opcoes:[
+"Clicar em qualquer link",
+"Confiar em todos os resultados",
+"Verificar se o site é confiável",
+"Baixar tudo que aparece"
+],
+correta:2
+},
+
+{
+pergunta:"5. Durante a navegação, qual botão permite voltar para a página anterior?",
+opcoes:[
+"Atualizar",
+"Avançar",
+"Voltar",
+"Fechar"
+],
+correta:2
+}
+
+]
+
+function carregarQuiz(){
+
+const quiz=document.getElementById("quiz")
+
+perguntas.forEach((q,i)=>{
+
+let html=`<div class="question">
+<strong>${q.pergunta}</strong>`
+
+q.opcoes.forEach((op,j)=>{
+
+html+=`<div class="option" onclick="responder(${i},${j},this)">
+${op}
+</div>`
+
+})
+
+html+=`<div id="res${i}" class="result"></div></div>`
+
+quiz.innerHTML+=html
+
+})
+
+}
+
+function responder(p,o,el){
+
+const correta=perguntas[p].correta
+const res=document.getElementById("res"+p)
+
+if(res.innerHTML!="") return
+
+if(o==correta){
+
+el.classList.add("correct")
+res.innerHTML="✔ Resposta correta!"
+
+}else{
+
+el.classList.add("wrong")
+res.innerHTML="✖ Resposta incorreta. Resposta correta: "+perguntas[p].opcoes[correta]
+
+}
+
+}
+
+carregarQuiz()
+
+</script>
+
+</body>
+</html>

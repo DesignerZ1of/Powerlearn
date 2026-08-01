@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 30 — Área de trabalho virtual</title>
+
+<style>
+
+body{
+font-family:Segoe UI;
+margin:0;
+background:#ffffff;
+color:#1f2937;
+}
+
+/* CONTEÚDO */
+.container{
+max-width:1100px;
+margin:auto;
+padding:40px;
+}
+
+h1{color:#1e3a8a;}
+
+.card{
+background:#f9fafb;
+border:1px solid #e5e7eb;
+border-radius:14px;
+padding:30px;
+margin-top:30px;
+}
+
+/* DESKTOP */
+.simulador{
+margin-top:30px;
+background:#1e3a8a;
+height:500px;
+border-radius:10px;
+position:relative;
+overflow:hidden;
+color:white;
+}
+
+/* ICONES */
+.icon{
+position:absolute;
+top:40px;
+left:40px;
+text-align:center;
+cursor:pointer;
+}
+
+.icon div{font-size:40px}
+
+/* TASKBAR */
+.taskbar{
+position:absolute;
+bottom:0;
+width:100%;
+height:50px;
+background:white;
+display:flex;
+align-items:center;
+padding:0 10px;
+color:black;
+}
+
+.app{
+margin-right:15px;
+cursor:pointer;
+}
+
+/* VIEWER */
+.viewer{
+position:absolute;
+bottom:60px;
+left:50%;
+transform:translateX(-50%);
+background:#ffffffee;
+padding:20px;
+border-radius:10px;
+display:none;
+gap:15px;
+}
+
+.areaBox{
+width:180px;
+height:100px;
+background:#ddd;
+border-radius:8px;
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+cursor:pointer;
+}
+
+.areaBox:hover{background:#ccc}
+
+/* JANELAS */
+.window{
+position:absolute;
+top:80px;
+left:100px;
+width:300px;
+height:200px;
+background:white;
+color:black;
+border-radius:10px;
+padding:15px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🖥️ Lição 30 — Área de trabalho virtual</h1>
+
+<div class="card">
+
+<p>Agora você vai aprender um recurso mais avançado do Microsoft Windows:</p>
+<p><b>👉 usar mais de uma área de trabalho no mesmo computador</b></p>
+
+<br>
+
+<p><b>🖥️ O que é área de trabalho virtual</b></p>
+<p>É como ter várias áreas de trabalho diferentes dentro do mesmo computador.</p>
+
+<p><b>🧠 Exemplo:</b></p>
+<p>Área 1 → estudo</p>
+<p>Área 2 → lazer</p>
+<p>Área 3 → organização</p>
+
+<p><b>🎯 Para que serve</b></p>
+<p>Evitar bagunça, separar tarefas e melhorar foco.</p>
+
+<p><b>⚙️ Como usar</b></p>
+<p>Clique no botão de visão de tarefas ou use <b>Windows + Tab</b></p>
+
+<p><b>🎯 Ideia principal</b></p>
+<p>Área de trabalho virtual é organização avançada da tela.</p>
+
+</div>
+
+<div class="card">
+
+<h2>🧪 Exercício Prático</h2>
+
+<p><b>Objetivo:</b></p>
+<p>1. Criar uma área chamada <b>Estudos</b></p>
+<p>2. Abrir o navegador nela</p>
+<p>3. Criar uma área chamada <b>Música</b></p>
+<p>4. Abrir arquivos de música</p>
+
+<div class="simulador">
+
+<!-- ICONES -->
+<div class="icon" onclick="abrirGoogle()">
+<div>🌐</div>Navegador
+</div>
+
+<div class="icon" style="top:120px" onclick="abrirMusica()">
+<div>🎵</div>Música
+</div>
+
+<!-- VIEWER -->
+<div class="viewer" id="viewer"></div>
+
+<!-- TASKBAR -->
+<div class="taskbar">
+<div class="app" onclick="toggleViewer()">🗂️</div>
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>🎓 Conclusão</h2>
+
+<p>Agora você não é mais iniciante.</p>
+<p>Você sabe usar o Windows.VOCÊ aprendeu a: Usar o Compurtador, Instalar as versões do Windows, A Usar a Área de Trabalho, Arquivos, O Armazenamento, Usar a Internet com Segurança, Atalhos, Imprimir e o uso de outros dispositivos externos.</p>
+
+<p><b>🔥 Você saiu do zero para o controle. USE O QUE APRENDEU   PRATIQUE  EVOLUA A CADA VEZ MAIS</b></p>
+
+</div>
+
+</div>
+
+<script>
+
+let areas=["Área 1"]
+let etapa=1
+
+function toggleViewer(){
+
+let v=document.getElementById("viewer")
+
+if(v.style.display=="flex"){
+v.style.display="none"
+}else{
+v.style.display="flex"
+render()
+}
+
+}
+
+function render(){
+
+let v=document.getElementById("viewer")
+v.innerHTML=""
+
+areas.forEach((nome,i)=>{
+
+v.innerHTML+=`
+<div class="areaBox" ondblclick="renomear(${i})" onclick="trocar(${i})">
+🖥️
+<div>${nome}</div>
+</div>
+`
+
+})
+
+v.innerHTML+=`
+<div class="areaBox" onclick="criar()">
++
+<div>Nova área</div>
+</div>
+`
+
+}
+
+function criar(){
+
+let nome=prompt("Nome da área:")
+if(!nome)return
+
+areas.push(nome)
+render()
+
+if(nome.toLowerCase()=="estudos"){
+alert("Agora abra essa área e use o navegador")
+etapa=2
+}
+
+if(nome.toLowerCase()=="musica"){
+alert("Agora abra essa área e use músicas")
+etapa=3
+}
+
+}
+
+function trocar(i){
+
+if(areas[i].toLowerCase()=="estudos" && etapa==2){
+alert("Abra o navegador")
+}
+
+if(areas[i].toLowerCase()=="musica" && etapa==3){
+alert("Abra músicas")
+}
+
+document.getElementById("viewer").style.display="none"
+
+}
+
+function renomear(i){
+
+let n=prompt("Novo nome:",areas[i])
+if(n){
+areas[i]=n
+render()
+}
+
+}
+
+function abrirGoogle(){
+alert("Você abriu o navegador")
+}
+
+function abrirMusica(){
+alert("Você abriu músicas")
+}
+
+</script>
+
+</body>
+</html>

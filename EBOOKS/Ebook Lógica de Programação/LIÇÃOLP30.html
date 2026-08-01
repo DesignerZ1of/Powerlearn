@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 30 — Lógicas e Linguagens</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Consolas, monospace;
+background:#0f172a;
+color:#e5e7eb;
+}
+
+.header{
+background:#020617;
+padding:30px;
+text-align:center;
+font-size:24px;
+color:#3b82f6;
+border-bottom:1px solid #1f2937;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:30px;
+}
+
+.card{
+background:#111827;
+padding:25px;
+border-radius:12px;
+margin-bottom:25px;
+border:1px solid #1f2937;
+}
+
+h1{
+color:#3b82f6;
+}
+
+.section{
+margin-top:20px;
+font-size:20px;
+font-weight:bold;
+color:#7dd3fc;
+}
+
+.code{
+background:#020617;
+padding:15px;
+border-radius:8px;
+margin-top:15px;
+color:#22c55e;
+white-space:pre-line;
+overflow:auto;
+border:1px solid #1f2937;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+💻 LIÇÃO 30 — Lógicas e Linguagens
+</div>
+
+<div class="container">
+
+<div class="card">
+
+<h1>📘 LIÇÃO 30 — Lógicas e Linguagens</h1>
+
+<div class="section">🧠 Objetivo da aula</div>
+
+<p>
+Agora você irá entender:
+</p>
+
+<p>
+> como a lógica funciona nas linguagens de programação.
+</p>
+
+<p>
+Porque no final:
+</p>
+
+<p>
+> o mais importante não é decorar código.
+</p>
+
+<p>
+E sim:
+</p>
+
+<p>
+> aprender a pensar como programador.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">📌 Conteúdos usados</div>
+
+<p>
+lógica<br>
+comparação entre linguagens<br>
+sistemas<br>
+adaptação<br>
+pensamento lógico<br>
+POO
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🧠 Uma coisa importante</div>
+
+<p>
+Muitas pessoas pensam:
+</p>
+
+<p>
+> “eu preciso decorar tudo”.
+</p>
+
+<p>
+Mas programação:
+</p>
+
+<p>
+> não funciona assim.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🎯 O mais importante</div>
+
+<p>
+> entender a lógica.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🧠 Tipos de lógica que você aprendeu</div>
+
+</div>
+
+<div class="card">
+
+<div class="section">🔹 Lógica de Verificação</div>
+
+<p>
+Usada para:
+</p>
+
+<p>
+verificar informações<br>
+tomar decisões<br>
+controlar sistemas
+</p>
+
+<div class="section">📌 Exemplos aprendidos</div>
+
+<div class="code">
+if (idade >= 18)
+
+if (moedas >= 50)
+</div>
+
+<div class="section">🧠 O que você aprendeu?</div>
+
+<p>
+if<br>
+else<br>
+&&<br>
+||<br>
+verificações
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🔹 Lógica de Repetição</div>
+
+<p>
+Usada para:
+</p>
+
+<p>
+repetir ações<br>
+percorrer arrays<br>
+automatizar sistemas
+</p>
+
+<div class="section">📌 Exemplos aprendidos</div>
+
+<div class="code">
+for (let i = 0; i < 5; i++)
+
+while (i < 5)
+</div>
+
+<div class="section">🧠 O que você aprendeu?</div>
+
+<p>
+for<br>
+while<br>
+.length<br>
+repetição
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🔹 Lógica de Organização</div>
+
+<p>
+Usada para:
+</p>
+
+<p>
+organizar informações<br>
+estruturar sistemas<br>
+deixar códigos mais limpos
+</p>
+
+<div class="section">📌 Exemplos aprendidos</div>
+
+<div class="code">
+let jogador = {
+  nome: "Carlos",
+  moedas: 100
+};
+</div>
+
+<div class="section">🧠 O que você aprendeu?</div>
+
+<p>
+objetos<br>
+arrays<br>
+arrays + objetos<br>
+organização de dados
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🔹 Lógica de Atualização</div>
+
+<p>
+Usada para:
+</p>
+
+<p>
+alterar valores<br>
+atualizar sistemas<br>
+mudar estados
+</p>
+
+<div class="section">📌 Exemplos aprendidos</div>
+
+<div class="code">
+vida = vida - 10
+
+moedas = moedas + 50
+</div>
+
+<div class="section">🧠 O que você aprendeu?</div>
+
+<p>
+atualização de dados<br>
+mudança de valores<br>
+sistemas dinâmicos
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🔹 Lógica de Sistemas</div>
+
+<p>
+Usada para:
+</p>
+
+<p>
+criar sistemas completos<br>
+conectar várias lógicas
+</p>
+
+<div class="section">📌 Exemplos aprendidos</div>
+
+<p>
+sistema de compra<br>
+sistema de moedas<br>
+sistema de dano<br>
+sistema de recompensa
+</p>
+
+<div class="section">🧠 O que você aprendeu?</div>
+
+<p>
+juntar códigos<br>
+pensar por etapas<br>
+organizar lógica
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🔹 Lógica de Interação</div>
+
+<p>
+Usada para:
+</p>
+
+<p>
+responder ações do usuário<br>
+ativar sistemas<br>
+criar interface
+</p>
+
+<div class="section">📌 Exemplos aprendidos</div>
+
+<div class="code">
+onclick
+</div>
+
+<div class="section">🧠 O que você aprendeu?</div>
+
+<p>
+eventos<br>
+clique<br>
+interação
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🔹 Lógica POO</div>
+
+<p>
+POO significa:
+</p>
+
+<p>
+🧠 Programação Orientada a Objetos
+</p>
+
+<div class="section">🧠 O que ela faz?</div>
+
+<p>
+Ela organiza sistemas usando:
+</p>
+
+<p>
+objetos<br>
+propriedades<br>
+ações
+</p>
+
+<div class="section">📌 Exemplo aprendido</div>
+
+<div class="code">
+let jogador = {
+  nome: "Carlos",
+  moedas: 100
+};
+</div>
+
+<div class="section">🧠 O que você aprendeu?</div>
+
+<p>
+objetos<br>
+métodos<br>
+this<br>
+organização de sistemas
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🧠 Sobre linguagens</div>
+
+<p>
+Mesmo linguagens diferentes:
+</p>
+
+<p>
+> usam as mesmas ideias de lógica.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">📌 Algumas linguagens famosas</div>
+
+<p>
+🔹 JavaScript
+</p>
+
+<p>
+Usada em:
+</p>
+
+<p>
+sites<br>
+interfaces<br>
+sistemas web
+</p>
+
+<hr>
+
+<p>
+🔹 Python
+</p>
+
+<p>
+Usada em:
+</p>
+
+<p>
+automação<br>
+IA<br>
+bots<br>
+sistemas
+</p>
+
+<hr>
+
+<p>
+🔹 C#
+</p>
+
+<p>
+Usada em:
+</p>
+
+<p>
+jogos<br>
+aplicativos<br>
+sistemas
+</p>
+
+<hr>
+
+<p>
+🔹 Java
+</p>
+
+<p>
+Usada em:
+</p>
+
+<p>
+aplicativos<br>
+sistemas grandes<br>
+empresas
+</p>
+
+<hr>
+
+<p>
+🔹 C++
+</p>
+
+<p>
+Usada em:
+</p>
+
+<p>
+jogos<br>
+engines<br>
+performance
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🧠 Exemplo de comparação</div>
+
+<p>
+🔹 JavaScript
+</p>
+
+<div class="code">
+function mensagem() {
+  console.log("Olá");
+}
+</div>
+
+<hr>
+
+<p>
+🔹 Python
+</p>
+
+<div class="code">
+def mensagem():
+    print("Olá")
+</div>
+
+<div class="section">🧠 O que mudou?</div>
+
+<p>
+Mudou:
+</p>
+
+<p>
+escrita<br>
+estrutura
+</p>
+
+<p>
+Mas a lógica continua:
+</p>
+
+<p>
+> criar uma função.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🎯 O verdadeiro programador</div>
+
+<p>
+Não é quem:
+</p>
+
+<p>
+> decora tudo.
+</p>
+
+<p>
+E sim quem:
+</p>
+
+<p>
+entende lógica<br>
+resolve problemas<br>
+cria sistemas<br>
+consegue se adaptar
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🧠 Mensagem final</div>
+
+<p>
+Se você chegou até aqui:
+</p>
+
+<p>
+> você já saiu do básico.
+</p>
+
+<p>
+Agora você entende:
+</p>
+
+<p>
+lógica<br>
+sistemas<br>
+organização<br>
+atualização<br>
+interação<br>
+POO
+</p>
+
+<p>
+E isso:
+</p>
+
+<p>
+> já coloca você muito à frente de quem apenas copia código.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🎉 Fim do Ebook</div>
+
+<p>
+Obrigado por acompanhar todas as lições.
+</p>
+
+<p>
+Continue:
+</p>
+
+<p>
+praticando<br>
+criando sistemas<br>
+testando ideias<br>
+errando<br>
+corrigindo
+</p>
+
+<p>
+Porque é assim:
+</p>
+
+<p>
+> que programadores evoluem.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🚀 Último pensamento</div>
+
+<p>
+> Programação não é decorar código.
+É aprender a construir soluções usando lógica.
+</p>
+
+</div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 10 — Arrays</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Consolas, monospace;
+background:#0f172a;
+color:#e2e8f0;
+}
+
+.container{
+max-width:950px;
+margin:auto;
+padding:40px;
+}
+
+.card{
+background:#1e293b;
+padding:25px;
+border-radius:12px;
+margin-bottom:25px;
+border:1px solid #334155;
+}
+
+h1{
+color:#38bdf8;
+}
+
+.section{
+margin-top:20px;
+font-weight:bold;
+color:#94a3b8;
+}
+
+.code{
+background:#020617;
+color:#22c55e;
+padding:15px;
+border-radius:8px;
+margin-top:10px;
+white-space:pre-line;
+}
+
+.exercise{
+background:#020617;
+padding:20px;
+border-radius:10px;
+margin-top:20px;
+}
+
+.option{
+display:block;
+margin-top:10px;
+cursor:pointer;
+}
+
+button{
+margin-top:15px;
+padding:10px 15px;
+background:#38bdf8;
+border:none;
+border-radius:6px;
+color:#0f172a;
+cursor:pointer;
+font-weight:bold;
+}
+
+.result{
+margin-top:15px;
+padding:10px;
+border-radius:8px;
+background:#0f172a;
+}
+
+.correct{
+color:#22c55e;
+}
+
+.wrong{
+color:#ef4444;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>📘 LIÇÃO 10 — Arrays</h1>
+
+---
+
+<div class="section">🧠 O que você vai aprender aqui</div>
+
+<p>
+O que é um array<br><br>
+
+Como guardar vários valores<br><br>
+
+O que são posições<br><br>
+
+Como acessar valores do array
+</p>
+
+---
+
+<div class="section">🧩 Tipo de lógica usado</div>
+
+<p><b>🔹 Lógica de Estrutura de Dados</b></p>
+
+<p>
+Organizar informações dentro do programa.
+</p>
+
+---
+
+<div class="section">🧠 O que é um array?</div>
+
+<p>
+Array é uma variável que guarda vários valores.
+</p>
+
+<p><b>
+Em vez de uma caixa com 1 valor,
+é uma lista com vários.
+</b></p>
+
+---
+
+<div class="section">💻 Código (1º da aula)</div>
+
+<div class="code">
+let numeros = [10, 20, 30];
+</div>
+
+---
+
+<div class="section">🧠 Tradução</div>
+
+<p>
+Uma variável chamada “numeros” guardando:
+</p>
+
+<p>
+10<br><br>
+
+20<br><br>
+
+30
+</p>
+
+---
+
+<div class="section">🧠 O que são posições?</div>
+
+<p>
+Cada valor dentro do array possui uma posição.
+</p>
+
+<p><b>
+⚠️ Importante:
+</b></p>
+
+<p>
+O array começa do 0.
+</p>
+
+---
+
+<div class="section">📌 Posições</div>
+
+<p>
+[0] → primeiro valor<br><br>
+
+[1] → segundo valor<br><br>
+
+[2] → terceiro valor
+</p>
+
+---
+
+<div class="section">💻 Código (2º da aula)</div>
+
+<div class="code">
+let numeros = [10, 20, 30];
+
+console.log(numeros[0]);
+</div>
+
+---
+
+<div class="section">🧠 Resultado</div>
+
+<p>
+Aparece 10
+</p>
+
+<p>
+Porque:
+</p>
+
+<p><b>
+[0] é a primeira posição.
+</b></p>
+
+---
+
+<div class="section">🧠 Como pensar em array</div>
+
+<p><b>Variável normal</b></p>
+
+<p>
+Guarda uma coisa
+</p>
+
+<p><b>Array</b></p>
+
+<p>
+Guarda uma lista
+</p>
+
+---
+
+<div class="section">📌 Onde arrays são usados?</div>
+
+<p>
+lista de jogadores<br><br>
+
+lista de nomes<br><br>
+
+inventário<br><br>
+
+mensagens<br><br>
+
+notas<br><br>
+
+ranking<br><br>
+
+itens de loja
+</p>
+
+---
+
+<div class="section">⚠️ Erro comum</div>
+
+<p>
+Pensar que:
+</p>
+
+<p><b>
+o primeiro valor é [1]
+</b></p>
+
+<p>
+Mas no array:
+</p>
+
+<p><b>
+começa em [0]
+</b></p>
+
+</div>
+
+<!-- EXERCÍCIOS -->
+
+<div class="card">
+
+<h1>🧪 Exercícios</h1>
+
+<div class="exercise">
+
+<p><b>1. O que é um array?</b></p>
+
+<label class="option">
+<input type="radio" name="q1" value="a">
+ Uma repetição
+</label>
+
+<label class="option">
+<input type="radio" name="q1" value="b">
+ Uma variável que guarda vários valores
+</label>
+
+<label class="option">
+<input type="radio" name="q1" value="c">
+ Um operador
+</label>
+
+<button onclick="corrigir1()">Verificar</button>
+
+<div id="r1" class="result"></div>
+
+</div>
+
+<div class="exercise">
+
+<p><b>2. Qual posição representa o primeiro valor?</b></p>
+
+<label class="option">
+<input type="radio" name="q2" value="a">
+ [1]
+</label>
+
+<label class="option">
+<input type="radio" name="q2" value="b">
+ [0]
+</label>
+
+<label class="option">
+<input type="radio" name="q2" value="c">
+ [10]
+</label>
+
+<button onclick="corrigir2()">Verificar</button>
+
+<div id="r2" class="result"></div>
+
+</div>
+
+<div class="exercise">
+
+<p><b>3. O que esse código irá mostrar?</b></p>
+
+<div class="code">
+let numeros = [10, 20, 30];
+
+console.log(numeros[1]);
+</div>
+
+<label class="option">
+<input type="radio" name="q3" value="a">
+ 10
+</label>
+
+<label class="option">
+<input type="radio" name="q3" value="b">
+ 20
+</label>
+
+<label class="option">
+<input type="radio" name="q3" value="c">
+ 30
+</label>
+
+<button onclick="corrigir3()">Verificar</button>
+
+<div id="r3" class="result"></div>
+
+</div>
+
+<div class="exercise">
+
+<p><b>4. Onde arrays são usados?</b></p>
+
+<label class="option">
+<input type="radio" name="q4" value="a">
+ Apenas em matemática
+</label>
+
+<label class="option">
+<input type="radio" name="q4" value="b">
+ Lista de jogadores, mensagens e ranking
+</label>
+
+<label class="option">
+<input type="radio" name="q4" value="c">
+ Apenas em jogos
+</label>
+
+<button onclick="corrigir4()">Verificar</button>
+
+<div id="r4" class="result"></div>
+
+</div>
+
+<div class="exercise">
+
+<p><b>5. Qual alternativa cria corretamente um array?</b></p>
+
+<label class="option">
+<input type="radio" name="q5" value="a">
+ let numeros = 10,20,30;
+</label>
+
+<label class="option">
+<input type="radio" name="q5" value="b">
+ let numeros = [10, 20, 30];
+</label>
+
+<label class="option">
+<input type="radio" name="q5" value="c">
+ let numeros = {10,20,30};
+</label>
+
+<button onclick="corrigir5()">Verificar</button>
+
+<div id="r5" class="result"></div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function verificar(nome, correta, resultado){
+
+let resposta = document.querySelector('input[name="'+nome+'"]:checked')
+
+if(resposta && resposta.value == correta){
+
+document.getElementById(resultado).innerHTML =
+'<span class="correct">✔ Correto!</span>'
+
+}else{
+
+document.getElementById(resultado).innerHTML =
+'<span class="wrong">✖ Errado.</span>'
+
+}
+
+}
+
+function corrigir1(){
+verificar("q1","b","r1")
+}
+
+function corrigir2(){
+verificar("q2","b","r2")
+}
+
+function corrigir3(){
+verificar("q3","b","r3")
+}
+
+function corrigir4(){
+verificar("q4","b","r4")
+}
+
+function corrigir5(){
+verificar("q5","b","r5")
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 7 — Datas e Tempo</title>
+
+<style>
+body{font-family:Arial;background:#fff;color:#111;margin:0}
+.container{max-width:1100px;margin:auto;padding:40px}
+h2{color:#22c55e}
+
+.card{background:#f9fafb;border:1px solid #e5e7eb;border-radius:10px;padding:25px;margin:20px 0}
+
+.excel{border:1px solid #cbd5e1;border-radius:8px;background:#fff}
+.menu{display:flex;gap:18px;background:#e5e7eb;padding:8px;font-weight:bold}
+
+.grid{display:grid;grid-template-columns:40px repeat(3,120px)}
+.header{background:#f1f5f9;border:1px solid #cbd5e1;text-align:center;font-weight:bold;padding:6px}
+.cell{border:1px solid #cbd5e1;min-height:32px;padding:6px}
+
+.header-top{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  margin-bottom:30px;
+}
+
+.header-top img{
+  width:60px;
+}
+
+.verify{background:#22c55e;color:#fff;border:none;padding:8px 14px;border-radius:6px;cursor:pointer}
+.result{font-weight:bold;margin-left:10px}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<div class="header-top">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Microsoft_Excel_2013-2019_logo.svg">
+
+  <h2 class="lesson-title">
+    Lição 7 — Data e Tempo
+  </h2>
+</div>
+
+<!-- CONTEÚDO (INTACTO) -->
+<div class="card">
+<p>Até agora o Excel calculava números.<br>
+Agora ele também entende tempo.</p>
+
+<p>Isso permite:</p>
+<ul>
+<li>Saber quando algo aconteceu</li>
+<li>Controlar prazos</li>
+<li>Atualizar informações automaticamente</li>
+</ul>
+
+<hr>
+
+<p> Irei te apresentar algumas "fórmulas" aonde basta você colocar na célula, que já aparece o dia a data ou a hora.</p>
+
+<b>1️⃣ Função HOJE()</b>
+
+<p>Este comando mostra a data atual,aonde ela sempre se atualiza.</p>
+
+<p><b>Fórmula:</b><br>=HOJE()</p>
+
+<p><b>O que acontece:</b></p>
+
+<p>
+Hoje é 26/01 → aparece 26/01<br>
+Amanhã você abre o arquivo → vira 27/01
+</p>
+
+<p>👉 Você não precisa ficar mudando a data manualmente.</p>
+
+<p><b>Quando isso é usado?</b></p>
+<ul>
+<li>Lista de tarefas</li>
+<li>Registros diários</li>
+</ul>
+
+<hr>
+
+<b>2️⃣ Função AGORA()</b>
+
+<p>Já neste comando ele mostra a data + a hora atual.</p>
+
+<p><b>Fórmula:</b><br>=AGORA()</p>
+
+<p><b>Exemplo de resultado:</b> 26/01/2026 22:41</p>
+
+<p>Ela também se atualiza sozinha sempre que a planilha recalcula.</p>
+
+<p><b>Quando isso é usado?</b></p>
+<ul>
+<li>Sistemas simples de acompanhamento</li>
+</ul>
+
+<hr>
+
+<b>🎯 O que você ganha com essa aula</b>
+<ul>
+<li>Fazer planilhas que se atualizam com o dia atual</li>
+<li>Controlar prazos automaticamente</li>
+<li>Medir tempo entre eventos</li>
+</ul>
+</div>
+
+<!-- EXERCÍCIO -->
+<div class="card">
+<b>Exercício — Data e Hora Automática</b>
+
+<p>
+1. Clique em qualquer célula<br>
+2. Digite exatamente: <b>=AGORA()</b><br>
+3. Saia da célula (Enter ou clique fora)
+</p>
+
+<div class="excel">
+<div class="menu">
+<span>Arquivo</span>
+<span>Início</span>
+<span>Inserir</span>
+<span>Compartilhar</span>
+<span>Layout da Página</span>
+</div>
+
+<div class="grid">
+  <div class="header"></div><div class="header">A</div><div class="header">B</div><div class="header">C</div>
+
+  <div class="header">1</div>
+  <div class="cell" contenteditable></div>
+  <div class="cell" contenteditable></div>
+  <div class="cell" contenteditable></div>
+
+  <div class="header">2</div>
+  <div class="cell" contenteditable></div>
+  <div class="cell" contenteditable></div>
+  <div class="cell" contenteditable></div>
+
+  <div class="header">3</div>
+  <div class="cell" contenteditable></div>
+  <div class="cell" contenteditable></div>
+  <div class="cell" contenteditable></div>
+</div>
+</div>
+
+<br>
+<button class="verify" onclick="verificar()">Verificar Exercício</button>
+<span id="res" class="result"></span>
+</div>
+
+</div>
+
+<script>
+document.querySelectorAll(".cell").forEach(cell=>{
+  cell.addEventListener("blur",()=>{
+    if(cell.innerText.trim()==="=AGORA()"){
+      const agora=new Date();
+      const data=agora.toLocaleDateString("pt-BR");
+      const hora=agora.toLocaleTimeString("pt-BR",{hour:'2-digit',minute:'2-digit'});
+      cell.innerText=`${data} ${hora}`;
+      cell.dataset.ok="true";
+    }
+  });
+});
+
+function verificar(){
+  const ok=[...document.querySelectorAll(".cell")].some(c=>c.dataset.ok==="true");
+  document.getElementById("res").innerText =
+    ok ? "✔ Exercício concluído corretamente" : "✖ Digite =AGORA() em uma célula";
+}
+</script>
+
+</body>
+</html>

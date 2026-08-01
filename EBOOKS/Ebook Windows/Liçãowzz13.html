@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 13</title>
+
+<style>
+body{font-family:Arial;background:#fff;margin:0;color:#111}
+.container{max-width:1100px;margin:auto;padding:40px}
+
+h2{color:#1e3a8a}
+
+.card{
+background:#f9fafb;
+border:1px solid #e5e7eb;
+border-radius:10px;
+padding:25px;
+margin:20px 0
+}
+
+/* DESKTOP */
+.desktop{
+height:400px;
+background:#1e3a8a;
+position:relative;
+color:#000;
+border-radius:10px;
+}
+
+/* ICONES */
+.icon{
+position:absolute;
+top:60px;
+left:40px;
+text-align:center;
+cursor:pointer;
+}
+
+.icon div{font-size:40px}
+
+/* TASKBAR */
+.taskbar{
+position:absolute;
+bottom:0;
+width:100%;
+background:#fff;
+color:#000;
+display:flex;
+justify-content:flex-end;
+padding:5px;
+}
+
+/* JANELA */
+.window{
+position:absolute;
+top:40px;
+left:50%;
+transform:translateX(-50%);
+width:800px;
+height:300px;
+background:#fff;
+border-radius:10px;
+display:none;
+}
+
+.close{
+text-align:right;
+padding:8px;
+cursor:pointer;
+}
+
+/* EXPLORADOR */
+.explorer{
+display:flex;
+height:100%;
+}
+
+.sidebar{
+width:200px;
+background:#f3f4f6;
+padding:10px;
+color : #000
+}
+
+
+.content{
+flex:1;
+padding:10px;
+color : #000;
+}
+
+.file{
+border:1px solid #ddd;
+padding:8px;
+margin-top:5px;
+cursor:pointer;
+color : #000
+}
+
+
+.rename-box{
+display:none;
+margin-top:10px;
+}
+
+.result{
+margin-top:10px;
+font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<h2>💾 Lição 13 — Salvar arquivos e mudar o tipo</h2>
+
+<div class="card">
+
+💾 O que é salvar<br><br>
+
+Salvar significa guardar o arquivo dentro do computador.<br><br>
+
+👉 Se você não salvar:<br>
+O arquivo pode ser perdido<br>
+Tudo que foi feito pode desaparecer<br><br>
+
+Por isso, salvar é uma ação essencial.<br><br>
+
+---
+
+⚙️ Como salvar um arquivo<br><br>
+
+1. Clique em Arquivo<br>
+2. Clique em Salvar ou Salvar como<br>
+3. Escolha o local (pasta)<br>
+4. Digite um nome<br>
+5. Clique em salvar<br><br>
+
+👉 Depois disso, o arquivo estará guardado no computador.<br><br>
+
+---
+
+📂 Escolhendo onde salvar<br><br>
+
+Documentos<br>
+Área de trabalho<br>
+Outra pasta criada por você<br><br>
+
+💡 Importante:<br>
+Se você não prestar atenção, depois pode não lembrar onde salvou.<br><br>
+
+---
+
+🧠 Nomeando o arquivo<br><br>
+
+Exemplos bons:<br>
+Trabalho_Historia<br>
+Anotacao_Matematica<br><br>
+
+Evite:<br>
+Novo<br>
+Arquivo1<br><br>
+
+---
+
+🔄 Salvando novamente<br><br>
+
+Salvar novamente → atualiza o arquivo<br><br>
+
+---
+
+📑 Mudando o tipo do arquivo<br><br>
+
+Documento de texto → editável<br>
+PDF → leitura<br><br>
+
+👉 Opção “Salvar como tipo”<br><br>
+
+---
+
+⚠️ Atenção<br><br>
+
+PDF → difícil de editar<br>
+Documento → fácil alterar<br><br>
+
+---
+
+🎯 Ideia principal<br><br>
+
+Salvar =<br>
+Onde + Nome + Tipo
+
+</div>
+
+<!-- EXERCÍCIO -->
+<div class="card">
+
+<b>Exercício — Renomear e mudar tipo</b><br><br>
+
+👉 Siga:<br>
+1. Abra o Explorador de Arquivos<br>
+2. Vá em Downloads<br>
+3. Clique no arquivo<br>
+4. Renomeie<br>
+5. Mude o tipo para PDF<br><br>
+
+<div class="desktop">
+
+<div class="icon" onclick="abrirExplorer()">
+<div>📁</div>
+Arquivos
+</div>
+
+<div class="taskbar">
+📶 🔊 🔋
+</div>
+
+<!-- EXPLORADOR -->
+<div class="window" id="exp">
+<div class="close" onclick="fechar()">❌</div>
+
+<div class="explorer">
+
+<div class="sidebar">
+<div onclick="abrirDownloads()">Downloads</div>
+</div>
+
+<div class="content" id="conteudo"></div>
+
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+function abrirExplorer(){
+document.getElementById("exp").style.display="block"
+}
+
+function fechar(){
+document.getElementById("exp").style.display="none"
+}
+
+function abrirDownloads(){
+document.getElementById("conteudo").innerHTML=`
+<div class="file" onclick="renomear()">📄 arquivo.txt</div>
+
+<div class="rename-box" id="box">
+Nome:<br>
+<input id="nome" autocomplete="off"><br>
+Tipo:<br>
+<select id="tipo">
+<option value="txt">.txt</option>
+<option value="pdf">.pdf</option>
+</select><br><br>
+
+<button onclick="salvar()">Salvar</button>
+
+<div id="res" class="result"></div>
+</div>
+`
+}
+
+function renomear(){
+document.getElementById("box").style.display="block"
+}
+
+function salvar(){
+let nome=document.getElementById("nome").value
+let tipo=document.getElementById("tipo").value
+let res=document.getElementById("res")
+
+if(nome==="" || nome.toLowerCase()==="arquivo"){
+res.style.color="red"
+res.innerText="❌ Nome inválido"
+return
+}
+
+if(tipo!=="pdf"){
+res.style.color="red"
+res.innerText="❌ Mude o tipo para PDF"
+return
+}
+
+res.style.color="green"
+res.innerText="✔ Arquivo renomeado e convertido com sucesso"
+}
+</script>
+
+</body>
+</html>

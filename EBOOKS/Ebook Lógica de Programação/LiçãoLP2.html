@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 2 — Variáveis</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Consolas, monospace;
+background:#0f172a;
+color:#e5e7eb;
+}
+
+.header{
+background:#020617;
+padding:30px;
+text-align:center;
+font-size:24px;
+color:#3b82f6;
+border-bottom:1px solid #1f2937;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:30px;
+}
+
+.card{
+background:#111827;
+padding:25px;
+border-radius:12px;
+margin-bottom:25px;
+border:1px solid #1f2937;
+}
+
+h1{
+color:#3b82f6;
+}
+
+.section{
+margin-top:20px;
+}
+
+.code{
+background:#020617;
+padding:15px;
+border-radius:8px;
+margin-top:15px;
+color:#22c55e;
+}
+
+input{
+width:100%;
+margin-top:10px;
+padding:10px;
+border-radius:8px;
+border:none;
+background:#020617;
+color:white;
+}
+
+.button{
+margin-top:10px;
+padding:10px 15px;
+background:#3b82f6;
+border:none;
+border-radius:6px;
+color:white;
+cursor:pointer;
+}
+
+.result{
+margin-top:10px;
+font-weight:bold;
+}
+
+.correct{
+color:#22c55e;
+}
+
+.wrong{
+color:#ef4444;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+💻 LIÇÃO 2 — Variáveis
+</div>
+
+<div class="container">
+
+<div class="card">
+
+<h1>📘 LIÇÃO 2 — Variáveis</h1>
+
+<div class="section">
+🧠 O que são variáveis?
+</div>
+
+<p>Variáveis são espaços para guardar informações.</p>
+
+<p>> O programa precisa lembrar de coisas.
+Variável é a memória dele.</p>
+
+<div class="section">
+📦 Exemplo simples
+</div>
+
+<div class="code">
+let nome = "João";<br>
+let idade = 18;
+</div>
+
+<p>👉 Aqui você guardou informações:</p>
+
+<p>nome → "João"</p>
+<p>idade → 18</p>
+
+<div class="section">
+🧱 Erro comum
+</div>
+
+<p>Achar que variável é fixa.</p>
+
+<p>> Não é.Ela muda o tempo todo.</p>
+
+<p>Usando o Exemplo da *Lição1:*</p>
+
+<p>Se a idade for maior ou igual a 18- Pode entrar<br>
+Senão- Não pode entrar</p>
+
+<div class="section">
+⚙️Onde as Variaveis entra?
+</div>
+
+<p>A Variavel vai servir para guardar a idade da pessoa, para depois falar se pode ou não entrar.</p>
+
+<p>Porque pensa:</p>
+
+<p>> Como o sistema vai decidir algo sem saber a idade?</p>
+
+<p>É a Variável que permite a lógica acontecer, pois sem ela:</p>
+
+<p>Não tem Idade<br>
+Não tem Comparação<br>
+Não tem Decisão</p>
+
+<p>> *Mas como então agente pode declarar a variável?*</p>
+
+<div class="section">
+Forma Básica (JavaScript)
+</div>
+
+<div class="code">
+let idade = 18
+</div>
+
+<p>let → Você está criando a variável</p>
+<p>idade → nome da variável</p>
+<p>= → Significa "recebe"</p>
+<p>18 → Valor guardado</p>
+
+<p>*Ou seja quando você for criar uma variável faça dessa forma:*</p>
+
+<p>(let) (nome que você irá inserir em sua variável) (=) (Valor da variável)</p>
+
+</div>
+
+<div class="card">
+
+<h1>🧪 Exercício — Criando Variável</h1>
+
+<p>Crie uma variável com qualquer nome e atribua um valor.</p>
+
+<input id="res" placeholder="Ex: let nome = 'João'">
+
+<button class="button" onclick="corrigir()">Verificar</button>
+
+<div id="feedback" class="result"></div>
+
+</div>
+
+</div>
+
+<script>
+
+function corrigir(){
+
+let resposta = document.getElementById("res").value.trim()
+
+// REGEX profissional para validar variável
+let regex = /^let\s+[a-zA-Z_]\w*\s*=\s*.+$/
+
+if(regex.test(resposta)){
+document.getElementById("feedback").innerHTML = '<span class="correct">✔ Variável correta!</span>'
+}else{
+document.getElementById("feedback").innerHTML = '<span class="wrong">✖ Use o formato: let nome = valor</span>'
+}
+
+}
+
+</script>
+
+</body>
+</html>

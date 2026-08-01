@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Power Learn - Windows</title>
+
+<style>
+
+:root{
+  --bg:#0b0b0b;
+  --card:#111;
+  --accent:#ff7a18;
+  --muted:#9aa0a6;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Inter, Arial, sans-serif;
+  background:linear-gradient(180deg,#050505 0%, #0b0b0b 100%);
+  color:white;
+}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  backdrop-filter:blur(6px);
+  background:rgba(0,0,0,0.7);
+  border-bottom:1px solid rgba(255,255,255,0.03);
+}
+
+.nav{
+  max-width:1200px;
+  margin:auto;
+  padding:18px 25px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo-area{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+
+.logo{
+  width:5px;
+  height:5px;
+  background:linear-gradient(135deg,var(--accent),#ff3d00);
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:800;
+  color:#111;
+  margin-top: 20px;
+}
+
+.logo img{
+  display: block;
+    width: 60px;
+    margin: 20px auto;
+    position: relative;
+    top: -10px;
+    left: -20px;
+}
+
+.logo-text{
+  font-size:18px;
+  font-weight:700;
+}
+
+.logo-sub{
+  font-size:12px;
+  color:var(--muted);
+}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:50px 25px;
+}
+
+.topo{
+  margin-bottom:40px;
+}
+
+.tag{
+  display:inline-block;
+  padding:8px 14px;
+  border-radius:999px;
+  background:rgba(255,122,24,0.08);
+  color:var(--accent);
+  font-size:13px;
+  font-weight:700;
+}
+
+h1{
+  font-size:50px;
+  margin-top:20px;
+  margin-bottom:15px;
+}
+
+.desc{
+  color:var(--muted);
+  max-width:700px;
+  line-height:1.7;
+  font-size:16px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:20px;
+}
+
+.licao{
+  background:var(--card);
+  border:1px solid rgba(255,255,255,0.03);
+  border-radius:18px;
+  padding:35px 20px;
+  text-align:center;
+  text-decoration:none;
+  color:white;
+  transition:0.3s;
+  font-weight:700;
+  box-shadow:0 10px 25px rgba(0,0,0,0.35);
+}
+
+.licao:hover{
+  transform:translateY(-6px);
+  border-color:var(--accent);
+  box-shadow:0 0 20px rgba(255,122,24,0.2);
+}
+
+.exercicio{
+  background:#0066ff;
+}
+
+.reforco{
+  background:linear-gradient(135deg,#ff7a18,#ff5500);
+  color:#111;
+}
+
+.numero{
+  font-size:32px;
+  margin-bottom:10px;
+}
+
+.tipo{
+  font-size:14px;
+  color:#aaa;
+}
+
+footer{
+  margin-top:60px;
+  padding:30px;
+  text-align:center;
+  color:#777;
+  border-top:1px solid rgba(255,255,255,0.03);
+}
+
+</style>
+</head>
+<body>
+
+<header>
+
+  <div class="nav">
+
+    <div class="logo-area">
+
+      <div class="logo">
+    <img src="../../Arquivos/PowerLearnLogo.png" alt="Logo">
+</div>
+
+      <div>
+        <div class="logo-text">
+          Power Learn
+        </div>
+
+        <div class="logo-sub">
+          Aprenda. Pratique. Evolua.
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</header>
+
+<div class="container">
+
+  <div class="topo">
+
+    <div class="tag">
+      Curso Completo
+    </div>
+
+    <h1>
+      Ebook Lógica de Programação
+    </h1>
+
+    <div class="desc">
+      Aprenda a Lógica de Programação do absoluto zero até recursos avançados. 
+      Explore: códigos, funções, lógicas, produtividade e muito mais através de lições práticas.
+    </div>
+
+  </div>
+
+  <div class="grid">
+
+    <a onclick="window.location.href='../../Anuncio.html?curso=LP1'" class="licao">
+      <div class="numero">1</div>
+      <div>O que é Lógica de Programação?</div>
+    </a>
+
+    <a onclick="window.location.href='../../Anuncio.html?curso=LP2'" class="licao">
+      <div class="numero">2</div>
+      <div>Variáveis</div>
+    </a>
+
+    <a onclick="window.location.href='../../Anuncio.html?curso=LP3'" class="licao">
+      <div class="numero">3</div>
+      <div>Operadores</div>
+    </a>
+
+    <a onclick="window.location.href='../../Anuncio.html?curso=LP4'" class="licao">
+      <div class="numero">4</div>
+      <div>Resumo</div>
+    </a>
+
+    <a onclick="window.location.href='../../Anuncio.html?curso=LP5'" class="licao">
+      <div class="numero">5</div>
+      <div>Repetição</div>
+    </a>
+
+    <a onclick="window.location.href='../../Anuncio.html?curso=LP6'" class="licao">
+      <div class="numero">6</div>
+      <div>Repetição 2</div>
+    </a>
+
+    <a onclick="window.location.href='../../Anuncio.html?curso=LP7'" class="licao">
+      <div class="numero">7</div>
+      <div>Reforço</div>
+    </a>
+
+    <a onclick="window.location.href='../../Anuncio.html?curso=LP8'" class="licao">
+      <div class="numero">8</div>
+      <div>Condição</div>
+    </a>
+
+    <a onclick="window.location.href='../../Anuncio.html?curso=LP9'" class="licao">
+      <div class="numero">9</div>
+      <div>Condição 2</div>
+    </a>
+
+    <a onclick="window.location.href='../../Anuncio.html?curso=LP10'" class="licao">
+      <div class="numero">10</div>
+      <div>Arrays</div>
+    </a>
+
+   <a onclick="window.location.href='../../Anuncio.html?curso=LP11'" class="licao">
+      <div class="numero">11</div>
+      <div>Arrays 2</div>
+    </a>
+
+    <a onclick="window.location.href='../../Anuncio.html?curso=LP12'" class="licao">
+      <div class="numero">12</div>
+      <div>Arrays 3</div>
+    </a>
+
+    <a onclick="window.location.href='../../Anuncio.html?curso=LP13'" class="licao">
+      <div class="numero">13</div>
+      <div>Reforço</div>
+    </a>
+
+    <a onclick="window.location.href='../../Anuncio.html?curso=LP14'" class="licao">
+      <div class="numero">14</div>
+      <div>Objetos</div>
+    </a>
+
+    <a onclick="window.location.href='../../Anuncio.html?curso=LP15'" class="licao">
+      <div class="numero">15</div>
+      <div>Funções</div>
+    </a>
+
+    <a onclick="window.location.href='../../Anuncio.html?curso=LP16'" class="licao">
+      <div class="numero">16</div>
+      <div>Parâmetros</div>
+    </a>
+
+   <a onclick="window.location.href='../../Anuncio.html?curso=LP17'" class="licao">
+      <div class="numero">17</div>
+      <div>Reforço</div>
+    </a>
+
+     <a onclick="window.location.href='../../Anuncio.html?curso=LP18'" class="licao">
+      <div class="numero">18</div>
+      <div>Return</div>
+    </a>
+
+     <a onclick="window.location.href='../../Anuncio.html?curso=LP19'" class="licao"><div class="numero">19</div><div>Classes</div></a>
+     <a onclick="window.location.href='../../Anuncio.html?curso=LP20'" class="licao"><div class="numero">20</div><div>Exercícios</div></a>
+     <a onclick="window.location.href='../../Anuncio.html?curso=LP21'" class="licao"><div class="numero">21</div><div>Prática com Dados</div></a>
+     <a onclick="window.location.href='../../Anuncio.html?curso=LP22'" class="licao"><div class="numero">22</div><div>Verificãção</div></a>
+     <a onclick="window.location.href='../../Anuncio.html?curso=LP23'" class="licao"><div class="numero">23</div><div>Objetos na prática</div></a>
+      <a onclick="window.location.href='../../Anuncio.html?curso=LP24'" class="licao"><div class="numero">24</div><div>Reforço</div></a>
+     <a onclick="window.location.href='../../Anuncio.html?curso=LP25'" class="licao"><div class="numero">25</div><div>Métodos</div></a>
+     <a onclick="window.location.href='../../Anuncio.html?curso=LP26'" class="licao"><div class="numero">26</div><div>Arrays + Objetos</div></a>
+     <a onclick="window.location.href='../../Anuncio.html?curso=LP27'" class="licao"><div class="numero">27</div><div>Reforço</div></a>
+     <a onclick="window.location.href='../../Anuncio.html?curso=LP28'" class="licao"><div class="numero">28</div><div>Eventos</div></a>
+     <a onclick="window.location.href='../../Anuncio.html?curso=LP29'" class="licao"><div class="numero">29</div><div>Converção de Valores</div></a>
+     <a onclick="window.location.href='../../Anuncio.html?curso=LP30'" class="licao"><div class="numero">30</div><div>Linguagens</div></a>
+
+  </div>
+
+</div>
+
+<footer>
+  © 2026 Power Learn
+</footer>
+
+</body>
+</html>

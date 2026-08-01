@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lição 8 — Organização de Dados</title>
+
+<style>
+body{
+  font-family: Inter, Arial, sans-serif;
+  background:#ffffff;
+  color:#111827;
+  margin:0;
+}
+
+.section{
+  max-width:1100px;
+  margin:auto;
+  padding:40px;
+}
+
+/* CABEÇALHO */
+.header{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  margin-bottom:35px;
+}
+
+.header img{
+  width:65px;
+}
+
+.lesson-title{
+  font-size:2em;
+  color:#22c55e;
+  font-weight:bold;
+}
+
+/* CARDS */
+.card{
+  background:#f9fafb;
+  border:1px solid #e5e7eb;
+  border-radius:14px;
+  padding:28px;
+  margin:25px 0;
+  line-height:1.7;
+}
+
+.exercises{
+  border-left:6px solid #eab308;
+}
+
+.dicas{
+  border-left:6px solid #22c55e;
+}
+
+/* ÁREA EXCEL */
+.excel{
+  border:1px solid #cbd5e1;
+  border-radius:10px;
+  overflow:hidden;
+  background:#fff;
+  margin-top:25px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.08);
+}
+
+/* TOPO EXCEL */
+.excel-top{
+  background:#107c41;
+  color:white;
+  padding:10px 18px;
+  font-weight:bold;
+  font-size:15px;
+}
+
+/* MENU */
+.menu{
+  display:flex;
+  gap:20px;
+  background:#f3f4f6;
+  padding:10px 15px;
+  border-bottom:1px solid #d1d5db;
+}
+
+.menu span{
+  cursor:pointer;
+  font-weight:500;
+}
+
+.menu span:hover{
+  color:#107c41;
+}
+
+/* RIBBON */
+.ribbon{
+  display:none;
+  gap:10px;
+  flex-wrap:wrap;
+  background:#ecfdf5;
+  padding:12px;
+  border-bottom:1px solid #d1d5db;
+}
+
+.ribbon button{
+  background:#ffffff;
+  border:1px solid #cbd5e1;
+  border-radius:6px;
+  padding:8px 12px;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.ribbon button:hover{
+  background:#22c55e;
+  color:white;
+}
+
+/* BARRA FÓRMULA */
+.formula{
+  display:flex;
+  gap:10px;
+  padding:10px;
+  border-bottom:1px solid #d1d5db;
+  background:#f8fafc;
+}
+
+.name-box{
+  width:70px;
+  border:1px solid #cbd5e1;
+  padding:6px;
+  background:white;
+  text-align:center;
+}
+
+.formula input{
+  flex:1;
+  border:1px solid #cbd5e1;
+  padding:6px;
+}
+
+/* TABELA */
+.sheet{
+  overflow:auto;
+}
+
+table{
+  border-collapse:collapse;
+  width:100%;
+}
+
+th, td{
+  border:1px solid #cbd5e1;
+  padding:10px;
+  min-width:140px;
+}
+
+th{
+  background:#f1f5f9;
+  text-align:left;
+  position:relative;
+}
+
+.row-number{
+  background:#f8fafc;
+  width:50px;
+  text-align:center;
+  font-weight:bold;
+}
+
+.selected{
+  outline:2px solid #22c55e;
+}
+
+.arrow{
+  float:right;
+  cursor:pointer;
+}
+
+/* FILTRO */
+.filter-box{
+  position:absolute;
+  background:white;
+  border:1px solid #cbd5e1;
+  border-radius:8px;
+  padding:12px;
+  margin-top:5px;
+  z-index:20;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+
+.hidden{
+  display:none;
+}
+
+/* STATUS */
+.status{
+  margin-top:18px;
+  font-weight:bold;
+  color:#15803d;
+}
+
+button.main{
+  background:#22c55e;
+  color:white;
+  border:none;
+  padding:10px 16px;
+  border-radius:8px;
+  cursor:pointer;
+  margin-top:15px;
+}
+
+button.main:hover{
+  background:#16a34a;
+}
+
+ul li{
+  margin:10px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="section">
+
+<!-- CABEÇALHO -->
+<div class="header">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Microsoft_Excel_2013-2019_logo.svg">
+  <div class="lesson-title">Lição 8 — Organização de Dados</div>
+</div>
+
+<!-- INTRODUÇÃO -->
+<div class="card dicas">
+<h3>📘 O que vamos aprender?</h3>
+
+<p>
+Quando trabalhamos com muitas informações, tudo pode virar uma bagunça.
+Imagine uma empresa com centenas de nomes, produtos e valores misturados.
+Se os dados não estiverem organizados, encontrar informações importantes fica difícil.
+</p>
+
+<p>
+Nesta lição você aprenderá como o Excel ajuda a:
+</p>
+
+<ul>
+<li>✔ Colocar dados em ordem</li>
+<li>✔ Mostrar apenas o que importa</li>
+<li>✔ Remover informações repetidas</li>
+<li>✔ Transformar listas em tabelas profissionais</li>
+</ul>
+
+<p>
+E o melhor: você aprenderá praticando diretamente em uma simulação parecida com o Excel real.
+</p>
+</div>
+
+<!-- EXCEL -->
+<div class="excel">
+
+<div class="excel-top">
+Microsoft Excel — Organização de Dados
+</div>
+
+<div class="menu">
+  <span>Arquivo</span>
+  <span>Início</span>
+  <span>Inserir</span>
+  <span>Layout da Página</span>
+  <span>Fórmulas</span>
+  <span onclick="toggleDados()">Dados</span>
+  <span>Exibir</span>
+</div>
+
+<div id="dadosBar" class="ribbon">
+  <button onclick="ordenarAZ()">Classificar A-Z</button>
+  <button>Classificar Z-A</button>
+  <button onclick="ativarFiltro()">Filtro</button>
+  <button onclick="removerDuplicatas()">Remover Duplicatas</button>
+  <button onclick="transformarTabela()">Formatar como Tabela</button>
+</div>
+
+<div class="formula">
+  <div class="name-box">A1</div>
+  <input type="text" value="Ana">
+</div>
+
+<div class="sheet">
+<table id="tabela">
+<thead>
+<tr>
+<th class="row-number"></th>
+<th>Nome <span id="fNome" class="arrow hidden">▼</span></th>
+<th>Produto <span id="fProduto" class="arrow hidden" onclick="abrirFiltro()">▼</span></th>
+<th>Valor <span id="fValor" class="arrow hidden">▼</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="row-number">1</td>
+<td class="selected">Ana</td>
+<td>Caderno</td>
+<td>25</td>
+</tr>
+<tr>
+<td class="row-number">2</td>
+<td>Lucas</td>
+<td>Caneta</td>
+<td>5</td>
+</tr>
+<tr>
+<td class="row-number">3</td>
+<td>Ana</td>
+<td>Caderno</td>
+<td>25</td>
+</tr>
+<tr>
+<td class="row-number">4</td>
+<td>Bruno</td>
+<td>Mochila</td>
+<td>120</td>
+</tr>
+<tr>
+<td class="row-number">5</td>
+<td>Carla</td>
+<td>Caneta</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div id="filterBox" class="filter-box hidden">
+<label><input type="checkbox" id="ckCaderno" checked> Caderno</label><br>
+<label><input type="checkbox" id="ckCaneta" checked> Caneta</label><br>
+<label><input type="checkbox" id="ckMochila" checked> Mochila</label><br><br>
+<button onclick="aplicarFiltro()">Aplicar</button>
+</div>
+
+<div style="padding:15px;">
+<button class="main" onclick="limparFiltro()">Desfazer Filtro</button>
+<p id="status" class="status"></p>
+</div>
+
+</div>
+
+<!-- EXPLICAÇÃO -->
+<div class="card exercises">
+<h3>🟨 PASSO 1 — Entendendo a Bagunça</h3>
+
+<p>
+Observe a tabela acima.
+Os nomes estão misturados, existem produtos repetidos e algumas informações aparecem duas vezes.
+</p>
+
+<p>
+Quando uma empresa trabalha com muitos dados assim, fica difícil:
+</p>
+
+<ul>
+<li>Encontrar pessoas rapidamente</li>
+<li>Analisar produtos específicos</li>
+<li>Evitar erros em relatórios</li>
+</ul>
+
+<p>
+Por isso o Excel possui ferramentas de organização.
+</p>
+</div>
+
+<div class="card">
+<h3>🟩 PASSO 2 — Classificar Dados</h3>
+
+<p>
+Classificar significa colocar as informações em ordem.
+</p>
+
+<p><strong>Como fazer:</strong></p>
+
+<ol>
+<li>Clique em qualquer parte da tabela</li>
+<li>Abra a guia <strong>Dados</strong></li>
+<li>Clique em <strong>Classificar A-Z</strong></li>
+</ol>
+
+<p>
+✨ Resultado: os nomes ficarão organizados em ordem alfabética.
+</p>
+
+<p>
+Isso ajuda muito quando precisamos encontrar informações rapidamente.
+</p>
+</div>
+
+<div class="card">
+<h3>🟩 PASSO 3 — Usando Filtros</h3>
+
+<p>
+Filtros servem para mostrar apenas as informações importantes.
+</p>
+
+<p><strong>Experimente:</strong></p>
+
+<ol>
+<li>Clique em <strong>Filtro</strong></li>
+<li>Aperte a seta da coluna Produto</li>
+<li>Deixe marcado apenas “Caneta”</li>
+</ol>
+
+<p>
+✨ Resultado: somente as linhas com Caneta aparecerão.
+</p>
+
+<p>
+O restante continua guardado, apenas escondido temporariamente.
+</p>
+</div>
+
+<div class="card">
+<h3>🟩 PASSO 4 — Remover Duplicatas</h3>
+
+<p>
+Às vezes os mesmos dados aparecem repetidos.
+Isso pode causar erros em contas e relatórios.
+</p>
+
+<p><strong>Experimente:</strong></p>
+
+<ol>
+<li>Abra a guia Dados</li>
+<li>Clique em <strong>Remover Duplicatas</strong></li>
+</ol>
+
+<p>
+✨ Resultado: uma das linhas da Ana será apagada.
+</p>
+
+<p>
+Agora a tabela ficará mais limpa e organizada.
+</p>
+</div>
+
+<div class="card dicas">
+<h3>🎯 O que você aprendeu</h3>
+
+<ul>
+<li>✔ Organizar informações em ordem</li>
+<li>✔ Filtrar dados importantes</li>
+<li>✔ Remover repetições</li>
+<li>✔ Trabalhar de forma profissional</li>
+</ul>
+
+<p>
+📌 Organização de dados significa controlar a bagunça para analisar informações com facilidade.
+</p>
+</div>
+
+</div>
+
+<script>
+function toggleDados(){
+  dadosBar.style.display = dadosBar.style.display === "flex" ? "none" : "flex";
+}
+
+function ordenarAZ(){
+  const rows = [...tabela.tBodies[0].rows];
+
+  rows.sort((a,b)=>
+    a.cells[1].innerText.localeCompare(b.cells[1].innerText)
+  );
+
+  rows.forEach(r=>tabela.tBodies[0].appendChild(r));
+
+  status.innerText = "✔ Dados classificados em ordem alfabética";
+}
+
+function ativarFiltro(){
+  ["fNome","fProduto","fValor"].forEach(id=>
+    document.getElementById(id).classList.remove("hidden")
+  );
+
+  status.innerText = "✔ Filtros ativados";
+}
+
+function abrirFiltro(){
+  filterBox.classList.toggle("hidden");
+}
+
+function aplicarFiltro(){
+  [...tabela.tBodies[0].rows].forEach(r=>{
+
+    const p = r.cells[2].innerText.toLowerCase();
+
+    r.style.display =
+      (p === "caneta" && ckCaneta.checked) ||
+      (p === "caderno" && ckCaderno.checked) ||
+      (p === "mochila" && ckMochila.checked)
+      ? "" : "none";
+  });
+
+  filterBox.classList.add("hidden");
+  status.innerText = "✔ Filtro aplicado com sucesso";
+}
+
+function limparFiltro(){
+  [...tabela.tBodies[0].rows].forEach(r=>r.style.display="");
+
+  ckCaderno.checked = true;
+  ckCaneta.checked = true;
+  ckMochila.checked = true;
+
+  status.innerText = "✔ Filtro removido";
+}
+
+function removerDuplicatas(){
+  const seen = new Set();
+
+  [...tabela.tBodies[0].rows].forEach(r=>{
+
+    const key = r.cells[1].innerText +
+                r.cells[2].innerText +
+                r.cells[3].innerText;
+
+    if(seen.has(key)){
+      r.remove();
+    } else {
+      seen.add(key);
+    }
+  });
+
+  status.innerText = "✔ Duplicatas removidas";
+}
+
+function transformarTabela(){
+  tabela.style.background = "#ecfdf5";
+  status.innerText = "✔ Tabela formatada no estilo profissional";
+}
+</script>
+
+</body>
+</html>
+```

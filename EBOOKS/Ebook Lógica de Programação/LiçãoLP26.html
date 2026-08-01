@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 26 — Array + Objetos</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Consolas, monospace;
+background:#0f172a;
+color:#e5e7eb;
+}
+
+.header{
+background:#020617;
+padding:30px;
+text-align:center;
+font-size:24px;
+color:#3b82f6;
+border-bottom:1px solid #1f2937;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:30px;
+}
+
+.card{
+background:#111827;
+padding:25px;
+border-radius:12px;
+margin-bottom:25px;
+border:1px solid #1f2937;
+}
+
+h1{
+color:#3b82f6;
+}
+
+.section{
+margin-top:20px;
+font-size:20px;
+font-weight:bold;
+color:#7dd3fc;
+}
+
+.code{
+background:#020617;
+padding:15px;
+border-radius:8px;
+margin-top:15px;
+color:#22c55e;
+white-space:pre-line;
+overflow:auto;
+border:1px solid #1f2937;
+}
+
+.question{
+background:#020617;
+padding:20px;
+border-radius:10px;
+margin-top:20px;
+border:1px solid #334155;
+}
+
+.option{
+padding:12px;
+margin-top:10px;
+background:#111827;
+border-radius:8px;
+cursor:pointer;
+border:1px solid #1f2937;
+transition:0.2s;
+}
+
+.option:hover{
+background:#1e293b;
+}
+
+.correct{
+background:#14532d !important;
+border:1px solid #22c55e;
+}
+
+.wrong{
+background:#450a0a !important;
+border:1px solid #ef4444;
+}
+
+.exercise{
+background:#020617;
+padding:25px;
+border-radius:12px;
+margin-top:20px;
+border:1px solid #334155;
+}
+
+textarea{
+width:100%;
+height:320px;
+margin-top:15px;
+padding:15px;
+background:black;
+color:#22c55e;
+border-radius:8px;
+border:1px solid #334155;
+font-family:Consolas;
+font-size:15px;
+}
+
+button{
+margin-top:15px;
+padding:12px 18px;
+background:#3b82f6;
+border:none;
+border-radius:8px;
+color:white;
+font-weight:bold;
+cursor:pointer;
+}
+
+.result{
+margin-top:15px;
+font-weight:bold;
+font-size:18px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+💻 LIÇÃO 26 — Array + Objetos
+</div>
+
+<div class="container">
+
+<div class="card">
+
+<h1>📘 LIÇÃO 26 — Array + Objetos</h1>
+
+<div class="section">🧠 Objetivo da aula</div>
+
+<p>
+Agora você aprenderá:
+</p>
+
+<p>
+> como guardar vários objetos dentro de um array.
+</p>
+
+<p>
+Até agora:
+</p>
+
+<p>
+usamos apenas 1 objeto
+</p>
+
+<p>
+Agora:
+</p>
+
+<p>
+iremos trabalhar com vários objetos juntos
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">📌 Conteúdos usados</div>
+
+<p>
+arrays<br>
+objetos<br>
+for<br>
+.length<br>
+.includes()<br>
+.indexOf()<br>
+atualização de dados
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🧠 Relembrando array</div>
+
+<p>
+Array serve para:
+</p>
+
+<p>
+> guardar listas.
+</p>
+
+<div class="code">
+let nomes = ["Carlos", "Ana", "Pedro"];
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="section">🧠 Relembrando objeto</div>
+
+<p>
+Objeto serve para:
+</p>
+
+<p>
+> organizar informações relacionadas.
+</p>
+
+<div class="code">
+let jogador = {
+  nome: "Carlos",
+  moedas: 100
+};
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="section">🚀 Misturando os dois</div>
+
+<p>
+Agora iremos guardar:
+</p>
+
+<p>
+> vários objetos dentro de um array.
+</p>
+
+<div class="code">
+let jogadores = [
+
+  {
+    nome: "Carlos",
+    moedas: 100
+  },
+
+  {
+    nome: "Ana",
+    moedas: 200
+  }
+
+];
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="section">🧠 O que isso significa?</div>
+
+<p>
+O array:
+</p>
+
+<p>
+> guarda vários jogadores.
+</p>
+
+<p>
+E cada jogador:
+</p>
+
+<p>
+> possui suas próprias informações.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">📌 Organização</div>
+
+<div class="code">
+Posição 0 → Carlos
+Posição 1 → Ana
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="section">🚀 Acessando objeto do array</div>
+
+<div class="code">
+console.log(jogadores[0]);
+</div>
+
+<p>
+📌 Resultado
+</p>
+
+<div class="code">
+{ nome: "Carlos", moedas: 100 }
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="section">🚀 Acessando informação específica</div>
+
+<div class="code">
+console.log(jogadores[0].nome);
+</div>
+
+<p>
+📌 Resultado
+</p>
+
+<div class="code">
+Carlos
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="section">🧠 O que aconteceu?</div>
+
+<p>
+🔹 jogadores[0]
+</p>
+
+<p>
+Pega o primeiro objeto.
+</p>
+
+<hr>
+
+<p>
+🔹 .nome
+</p>
+
+<p>
+Pega o nome dentro do objeto.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🚀 Atualizando dados</div>
+
+<div class="code">
+jogadores[0].moedas =
+jogadores[0].moedas + 50;
+</div>
+
+<div class="section">🧠 O que acontece?</div>
+
+<p>
+O sistema:
+</p>
+
+<p>
+pega moedas atuais<br>
+adiciona 50<br>
+atualiza valor
+</p>
+
+<p>
+📌 Resultado final
+</p>
+
+<div class="code">
+150
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="section">🚀 Usando for</div>
+
+<div class="code">
+for (let i = 0; i < jogadores.length; i++) {
+
+  console.log(jogadores[i].nome);
+
+}
+</div>
+
+<div class="section">🧠 O que esse código faz?</div>
+
+<p>
+O for:
+</p>
+
+<p>
+percorre o array<br>
+pega cada objeto<br>
+mostra o nome
+</p>
+
+<p>
+📌 Resultado
+</p>
+
+<div class="code">
+Carlos
+Ana
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="section">🚀 Sistema simples</div>
+
+<p>
+Agora iremos criar:
+</p>
+
+<p>
+🎮 Sistema de recompensa
+</p>
+
+<div class="code">
+let jogadores = [
+
+  {
+    nome: "Carlos",
+    moedas: 100
+  },
+
+  {
+    nome: "Ana",
+    moedas: 200
+  }
+
+];
+
+function recompensa(valor) {
+
+  for (let i = 0; i < jogadores.length; i++) {
+
+    jogadores[i].moedas =
+    jogadores[i].moedas + valor;
+
+  }
+
+}
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="section">🧠 O que esse sistema faz?</div>
+
+<p>
+Ele:
+</p>
+
+<p>
+percorre todos os jogadores<br>
+adiciona moedas para todos
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="section">🚀 Executando</div>
+
+<div class="code">
+recompensa(50);
+
+console.log(jogadores);
+</div>
+
+<p>
+📌 Resultado final
+</p>
+
+<div class="code">
+[
+  { nome: "Carlos", moedas: 150 },
+  { nome: "Ana", moedas: 250 }
+]
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="section">🧠 Pensamento importante</div>
+
+<p>
+> Arrays organizam listas.
+</p>
+
+<p>
+> Objetos organizam informações.
+</p>
+
+<p>
+> Arrays + objetos são uma das estruturas mais usadas na programação.
+</p>
+
+</div>
+
+<div class="card">
+
+<h1>🧪 Exercícios</h1>
+
+<div class="question">
+
+<h3>1. O que esse array guarda?</h3>
+
+<div class="code">
+let jogadores = [
+
+ { nome: "Carlos" },
+
+ { nome: "Ana" }
+
+];
+</div>
+
+<div class="option" onclick="responder(this, false)">
+Números
+</div>
+
+<div class="option" onclick="responder(this, true)">
+Objetos
+</div>
+
+<div class="option" onclick="responder(this, false)">
+Funções
+</div>
+
+<div class="option" onclick="responder(this, false)">
+Strings separadas
+</div>
+
+</div>
+
+<div class="question">
+
+<h3>2. O que jogadores[0] pega?</h3>
+
+<div class="option" onclick="responder(this, false)">
+O último objeto
+</div>
+
+<div class="option" onclick="responder(this, true)">
+O primeiro objeto
+</div>
+
+<div class="option" onclick="responder(this, false)">
+O nome
+</div>
+
+<div class="option" onclick="responder(this, false)">
+O array inteiro
+</div>
+
+</div>
+
+<div class="question">
+
+<h3>3. Qual código pega o nome do primeiro jogador?</h3>
+
+<div class="option" onclick="responder(this, false)">
+jogadores.nome
+</div>
+
+<div class="option" onclick="responder(this, false)">
+jogadores[1]
+</div>
+
+<div class="option" onclick="responder(this, true)">
+jogadores[0].nome
+</div>
+
+<div class="option" onclick="responder(this, false)">
+nome.jogadores[0]
+</div>
+
+</div>
+
+<div class="question">
+
+<h3>4. O que esse código faz?</h3>
+
+<div class="code">
+jogadores[0].moedas =
+jogadores[0].moedas + 50;
+</div>
+
+<div class="option" onclick="responder(this, false)">
+Remove moedas
+</div>
+
+<div class="option" onclick="responder(this, true)">
+Atualiza moedas
+</div>
+
+<div class="option" onclick="responder(this, false)">
+Cria objeto
+</div>
+
+<div class="option" onclick="responder(this, false)">
+Apaga o array
+</div>
+
+</div>
+
+<div class="question">
+
+<h3>5. O que o for faz nesse sistema?</h3>
+
+<div class="code">
+for (let i = 0; i < jogadores.length; i++) {
+
+ console.log(jogadores[i].nome);
+
+}
+</div>
+
+<div class="option" onclick="responder(this, false)">
+Cria objetos
+</div>
+
+<div class="option" onclick="responder(this, false)">
+Remove jogadores
+</div>
+
+<div class="option" onclick="responder(this, true)">
+Percorre o array
+</div>
+
+<div class="option" onclick="responder(this, false)">
+Atualiza variáveis automaticamente
+</div>
+
+</div>
+
+<div class="exercise">
+
+<h2>💻 Desafio de Código</h2>
+
+<p>
+Crie:
+</p>
+
+<p>
+✅ um array com objetos<br><br>
+
+✅ cada objeto deve ter nome e moedas<br><br>
+
+✅ um for<br><br>
+
+✅ console.log()<br><br>
+
+✅ atualização de moedas
+</p>
+
+<textarea id="codigo"></textarea>
+
+<button onclick="verificar()">Verificar Código</button>
+
+<div id="resultado" class="result"></div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function responder(elemento, correto){
+
+if(elemento.classList.contains("correct")
+|| elemento.classList.contains("wrong")){
+return;
+}
+
+if(correto){
+
+elemento.classList.add("correct");
+
+}else{
+
+elemento.classList.add("wrong");
+
+}
+
+}
+
+function verificar(){
+
+let texto =
+document.getElementById("codigo")
+.value
+.toLowerCase()
+
+let requisitos = [
+
+"let",
+"[",
+"]",
+"{",
+"}",
+"nome",
+"moedas",
+"for",
+".length",
+"console.log",
+"+"
+
+]
+
+let correto = requisitos.every(item =>
+texto.includes(item)
+)
+
+if(correto){
+
+document.getElementById("resultado").innerHTML =
+'<span style="color:#22c55e;">✔ Código correto!</span>'
+
+}else{
+
+document.getElementById("resultado").innerHTML =
+'<span style="color:#ef4444;">✖ Seu código está incompleto.</span>'
+
+}
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 24 — Recuperação e golpes</title>
+
+<style>
+
+body{
+font-family:Segoe UI, Arial;
+background:#ffffff;
+margin:0;
+color:#1f2937;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:50px 40px;
+}
+
+h1{
+color:#1e3a8a;
+font-size:34px;
+}
+
+.card{
+background:#f9fafb;
+border:1px solid #e5e7eb;
+border-radius:14px;
+padding:35px;
+margin-top:30px;
+}
+
+.section-title{
+color:#1e40af;
+font-size:20px;
+margin-top:30px;
+font-weight:bold;
+}
+
+/* EXERCÍCIO */
+.screen{display:none;}
+.active{display:block;}
+
+input{
+display:block;
+width:300px;
+padding:10px;
+margin-top:10px;
+border:1px solid #ccc;
+border-radius:6px;
+}
+
+button{
+margin-top:15px;
+padding:10px 15px;
+background:#1e3a8a;
+color:#fff;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+button:hover{
+background:#1e40af;
+}
+
+.link{
+color:#1e40af;
+margin-top:10px;
+cursor:pointer;
+}
+
+.feedback{
+margin-top:10px;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>📘 Lição 24 — Recuperação de conta e golpes</h1>
+
+<div class="card">
+
+<p>Agora que você já sabe criar e usar contas, precisa dominar duas coisas essenciais:</p>
+
+<p>👉 recuperar acesso quando algo dá errado</p>
+<p>👉 se proteger de tentativas de engano</p>
+
+<div class="section-title">🔄 Recuperação de conta</div>
+
+<p>Você pode perder acesso quando:</p>
+<p>Esquece a senha</p>
+<p>Digita errado várias vezes</p>
+<p>Sua conta é bloqueada</p>
+
+<p><b>👉 Use “Esqueci minha senha”</b></p>
+
+<div class="section-title">🔐 Como recuperar uma conta</div>
+
+<p>1. (Usando o navegador como o Google Chrome)Clique em “Esqueci minha senha”</p>
+<p>2. Informe seu e-mail</p>
+<p>3. Receba um código</p>
+<p>4. Crie nova senha</p>
+<p> Esse processo acontece no próprio site
+
+<div class="section-title">⚠️ Cuidados importantes</div>
+
+<p>Nunca compartilhe o código</p>
+<p>Não confie em pedidos de senha</p>
+<p>Faça no site oficial</p>
+
+<div class="section-title">🚨 Golpes</div>
+
+<p>A Internet tem riscos, por isso se atente</p>
+<p>TIPOS COMUNS:</p>
+<p>Links perigosos</p>
+<p>e-mails pedindo confirmação da conta</p>
+<p> Mensagens com links suspeitos</p>
+<p> Mensagens com promessas(dinheiro,prêmios)</p>
+
+<div class="section-title">🧠 Como identificar</div>
+
+<p>Erros de escrita</p>
+<p>Pressa ("Faça isso agora!!")</p>
+<p>Pedidos de senha ou código</p>
+<p> Links </p>
+
+<div class="section-title">🛡️ Como se proteger</div>
+
+<p>Não clicar em links desconhecidos</p>
+<p>Usar sites oficiais</p>
+<p>Não informe senha para outras pessoas</p>
+<p> Use senhas diferentes para cada plataforma</p>
+
+<div class="section-title">🎯 Ideia principal</div>
+
+<p>Você precisa saber recuperar acesso e evitar golpes.</p>
+
+</div>
+
+<!-- EXERCÍCIO -->
+<div class="card">
+
+<h2>🧪 Exercício — Recuperação de conta</h2>
+
+<!-- LOGIN -->
+<div class="screen active" id="login">
+
+<input type="text" placeholder="E-mail">
+<input type="password" id="senhaLogin" placeholder="Senha">
+
+<button onclick="login()">Entrar</button>
+
+<div class="link" onclick="irRecuperacao()">Esqueci minha senha</div>
+
+<div class="feedback" id="loginFeedback"></div>
+
+</div>
+
+<!-- RECUPERAÇÃO -->
+<div class="screen" id="recuperacao">
+
+<input type="text" id="emailRec" placeholder="Digite seu e-mail">
+
+<button onclick="enviarCodigo()">Enviar código</button>
+
+<div class="feedback" id="recFeedback"></div>
+
+</div>
+
+<!-- CÓDIGO -->
+<div class="screen" id="codigo">
+
+<p>Seu código é: <b id="codigoGerado"></b></p>
+
+<input type="text" id="codigoInput" placeholder="Digite o código">
+
+<button onclick="validarCodigo()">Confirmar</button>
+
+<div class="feedback" id="codFeedback"></div>
+
+</div>
+
+<!-- NOVA SENHA -->
+<div class="screen" id="novaSenha">
+
+<input type="password" id="novaSenhaInput" placeholder="Nova senha">
+<input type="password" id="confirmarSenha" placeholder="Confirmar senha">
+
+<button onclick="salvarSenha()">Salvar</button>
+
+<div class="feedback" id="novaFeedback"></div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+let codigo = ""
+
+/* TELAS */
+function mostrar(id){
+document.querySelectorAll(".screen").forEach(s=>s.classList.remove("active"))
+document.getElementById(id).classList.add("active")
+}
+
+/* LOGIN */
+function login(){
+document.getElementById("loginFeedback").innerHTML="❌ Senha incorreta"
+}
+
+/* IR */
+function irRecuperacao(){
+mostrar("recuperacao")
+}
+
+/* CÓDIGO */
+function enviarCodigo(){
+
+let email = document.getElementById("emailRec").value
+
+if(email.length < 5){
+document.getElementById("recFeedback").innerHTML="❌ Digite um e-mail válido"
+return
+}
+
+codigo = Math.floor(100000 + Math.random() * 900000)
+
+document.getElementById("codigoGerado").innerHTML = codigo
+
+mostrar("codigo")
+
+}
+
+/* VALIDAR */
+function validarCodigo(){
+
+let digitado = document.getElementById("codigoInput").value
+
+if(digitado == codigo){
+mostrar("novaSenha")
+}else{
+document.getElementById("codFeedback").innerHTML="❌ Código incorreto"
+}
+
+}
+
+/* NOVA SENHA */
+function salvarSenha(){
+
+let senha = document.getElementById("novaSenhaInput").value
+let confirmar = document.getElementById("confirmarSenha").value
+
+if(senha.length < 4){
+document.getElementById("novaFeedback").innerHTML="❌ Senha muito fraca"
+return
+}
+
+if(senha !== confirmar){
+document.getElementById("novaFeedback").innerHTML="❌ Senhas não coincidem"
+return
+}
+
+document.getElementById("novaFeedback").innerHTML="🎉 Senha alterada com sucesso!"
+
+}
+
+</script>
+
+</body>
+</html>

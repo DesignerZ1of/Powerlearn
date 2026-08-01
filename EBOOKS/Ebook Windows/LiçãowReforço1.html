@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição de Reforço — Revisão do Windows</title>
+
+<style>
+
+body{
+font-family:Segoe UI, Arial;
+background:#ffffff;
+margin:0;
+color:#1f2937;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:50px 40px;
+}
+
+h1{
+color:#1e3a8a;
+font-size:34px;
+}
+
+.card{
+background:#f9fafb;
+border:1px solid #e5e7eb;
+border-radius:14px;
+padding:35px;
+margin-top:30px;
+}
+
+.section-title{
+color:#1e40af;
+font-size:20px;
+margin-top:35px;
+font-weight:bold;
+}
+
+.question{
+background:white;
+padding:20px;
+border-radius:10px;
+border:1px solid #e5e7eb;
+margin-top:20px;
+}
+
+.option{
+padding:10px;
+border:1px solid #d1d5db;
+border-radius:6px;
+margin-top:8px;
+cursor:pointer;
+}
+
+.option:hover{
+background:#eef2ff;
+}
+
+.correct{
+background:#dcfce7 !important;
+border-color:green !important;
+}
+
+.wrong{
+background:#fee2e2 !important;
+border-color:red !important;
+}
+
+.result{
+margin-top:10px;
+font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🔁 Lição de Reforço — Revisando tudo que aprendemos</h1>
+
+<div class="card">
+
+<p>Antes de continuar avançando, é importante revisar o que já foi aprendido.
+Isso ajuda a fixar o conhecimento e evitar confusões no futuro.</p>
+
+<p>Tudo até agora gira em torno de entender e usar o Microsoft Windows.</p>
+
+<div class="section-title">💻 O que é o Windows</div>
+
+<p>O Windows é o sistema que faz o computador funcionar e permite que você use programas, abra arquivos e controle o computador.</p>
+
+<p>Ele foi desenvolvido pela Microsoft e está presente na maioria dos computadores pessoais.</p>
+
+<p>Sem um sistema operacional como o Windows, o computador não teria uma interface para ser usado.</p>
+
+<div class="section-title">⚙️ Instalação do Windows</div>
+
+<p>Aprendemos que instalar o Windows é o primeiro passo para preparar um computador.</p>
+
+<p>Para fazer isso normalmente é necessário:</p>
+
+<p>Um computador</p>
+<p>Internet</p>
+<p>Um pendrive (geralmente de 8GB ou mais)</p>
+
+<p>O processo básico envolve:</p>
+
+<p>1. Baixar a ferramenta oficial da Microsoft</p>
+<p>2. Criar um pendrive de instalação</p>
+<p>3. Reiniciar o computador</p>
+<p>4. Iniciar pelo pendrive</p>
+<p>5. Seguir o processo de instalação</p>
+
+<p>Durante a instalação você escolhe idioma, versão do sistema e o disco onde ele será instalado.</p>
+
+<div class="section-title">🛠 O que fazer depois da instalação</div>
+
+<p>Conectar o computador à internet</p>
+<p>Atualizar o sistema</p>
+<p>Verificar se som, internet e tela estão funcionando</p>
+<p>Instalar programas que você pretende usar</p>
+
+<div class="section-title">🖥 Conhecendo a tela do Windows</div>
+
+<p><b>Área de trabalho</b> — tela principal do computador.</p>
+<p><b>Menu iniciar</b> — encontra programas e configurações.</p>
+<p><b>Barra de tarefas</b> — mostra programas abertos.</p>
+<p><b>Barra de pesquisa</b> — procura arquivos e programas.</p>
+<p><b>Explorador de arquivos</b> — organiza arquivos e pastas.</p>
+
+<div class="section-title">🎨 Personalização</div>
+
+<p>Alterar papel de parede</p>
+<p>Modo claro ou escuro</p>
+<p>Ajustar tamanho da tela</p>
+<p>Fixar programas na barra</p>
+<p>Alterar tela de bloqueio</p>
+
+<div class="section-title">🧾 Programas e aplicativos</div>
+
+<p>Programas são ferramentas usadas para realizar tarefas.</p>
+
+<p>Exemplos:</p>
+
+<p>Navegar na internet</p>
+<p>Escrever documentos</p>
+<p>Ver fotos</p>
+<p>Assistir vídeos</p>
+
+<div class="section-title">📂 Diferença entre programa e arquivo</div>
+
+<p><b>Arquivo</b> → conteúdo (foto, vídeo, documento)</p>
+<p><b>Programa</b> → ferramenta que abre o arquivo</p>
+
+<div class="section-title">🧠 O que acontece quando você usa o computador</div>
+
+<p>1. Você dá um comando</p>
+<p>2. O Windows recebe</p>
+<p>3. Executa o programa</p>
+<p>4. O programa aparece na tela</p>
+
+<p>Quando um programa está aberto, ele está rodando.</p>
+
+<div class="section-title">🔄 Vários programas ao mesmo tempo</div>
+
+<p>O Windows consegue gerenciar vários programas simultaneamente.</p>
+
+<div class="section-title">⚠️ Minimizar x Fechar</div>
+
+<p>Minimizar → continua rodando</p>
+<p>Fechar → encerra o programa</p>
+
+</div>
+
+
+<div class="card">
+
+<h2>🧪 Exercícios de Reforço</h2>
+
+<div id="quiz"></div>
+
+</div>
+
+</div>
+
+<script>
+
+const perguntas=[
+
+{
+pergunta:"1. Qual afirmação explica corretamente o papel do Windows em um computador?",
+opcoes:[
+"Ele é apenas um programa de internet",
+"Ele é o sistema que permite controlar o computador e executar programas",
+"Ele é um tipo de arquivo que abre programas",
+"Ele serve apenas para instalar aplicativos"
+],
+correta:1
+},
+
+{
+pergunta:"2. Qual etapa da instalação garante que o computador inicie o instalador do Windows?",
+opcoes:[
+"Selecionar o disco",
+"Entrar no boot e escolher o pendrive",
+"Abrir o explorador de arquivos",
+"Criar uma pasta no computador"
+],
+correta:1
+},
+
+{
+pergunta:"3. Qual ação normalmente deve ser feita logo após instalar o Windows para evitar problemas?",
+opcoes:[
+"Apagar programas do sistema",
+"Atualizar o sistema e verificar drivers",
+"Reinstalar o Windows novamente",
+"Desligar o computador"
+],
+correta:1
+},
+
+{
+pergunta:"4. Qual ferramenta é usada para organizar arquivos e pastas no Windows?",
+opcoes:[
+"Menu iniciar",
+"Explorador de arquivos",
+"Barra de tarefas",
+"Barra de pesquisa"
+],
+correta:1
+},
+
+{
+pergunta:"5. Qual exemplo representa corretamente um programa?",
+opcoes:[
+"PDF",
+"Foto",
+"Google Chrome",
+"Vídeo"
+],
+correta:2
+},
+
+{
+pergunta:"6. O que realmente acontece quando você minimiza um programa?",
+opcoes:[
+"Ele é fechado",
+"Ele continua rodando, apenas escondido",
+"Ele vira um arquivo",
+"Ele é apagado da memória"
+],
+correta:1
+},
+
+{
+pergunta:"7. Por que o computador consegue rodar vários programas ao mesmo tempo?",
+opcoes:[
+"Porque o monitor permite",
+"Porque o Windows gerencia a execução dos programas",
+"Porque os arquivos fazem isso automaticamente",
+"Porque o teclado controla os programas"
+],
+correta:1
+}
+
+]
+
+function carregarQuiz(){
+
+const quiz=document.getElementById("quiz")
+
+perguntas.forEach((q,i)=>{
+
+let html=`<div class="question">
+<strong>${q.pergunta}</strong>`
+
+q.opcoes.forEach((op,j)=>{
+
+html+=`<div class="option" onclick="responder(${i},${j},this)">
+${op}
+</div>`
+
+})
+
+html+=`<div id="res${i}" class="result"></div></div>`
+
+quiz.innerHTML+=html
+
+})
+
+}
+
+function responder(p,o,el){
+
+const correta=perguntas[p].correta
+const res=document.getElementById("res"+p)
+
+if(res.innerHTML!="") return
+
+if(o==correta){
+
+el.classList.add("correct")
+res.innerHTML="✔ Correto!"
+
+}else{
+
+el.classList.add("wrong")
+res.innerHTML="✖ Errado. Resposta correta: "+perguntas[p].opcoes[correta]
+
+}
+
+}
+
+carregarQuiz()
+
+</script>
+
+</body>
+</html>

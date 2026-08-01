@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Exercício Prático</title>
+
+<style>
+body{margin:0;font-family:Segoe UI;background:#1e3a8a;color:#111}
+
+/* INSTRUÇÕES */
+.instructions{
+background:#fff;
+padding:15px;
+border-bottom:3px solid #2563eb;
+}
+
+/* DESKTOP */
+.desktop{
+height:100vh;
+position:relative;
+}
+
+/* ÍCONES */
+.icon-desktop{
+position:absolute;
+top:100px;
+left:40px;
+text-align:center;
+cursor:pointer;
+color:#fff;
+}
+
+.icon-desktop div{
+font-size:40px;
+}
+
+/* TASKBAR */
+.taskbar{
+position:absolute;
+bottom:0;
+width:100%;
+background:#fff;
+display:flex;
+justify-content:flex-end;
+padding:5px 10px;
+}
+
+/* JANELAS */
+.window{
+position:absolute;
+top:80px;
+left:50%;
+transform:translateX(-50%);
+width:900px;
+height:500px;
+background:#fff;
+border-radius:10px;
+border:1px solid #ccc;
+display:none;
+}
+
+/* BOTÃO FECHAR */
+.close{
+text-align:right;
+padding:8px;
+cursor:pointer;
+font-weight:bold;
+}
+
+/* NAVEGADOR */
+.browser{
+padding:20px;
+}
+
+/* EXPLORADOR */
+.explorer{
+display:flex;
+height:100%;
+}
+
+.sidebar{
+width:220px;
+background:#f3f4f6;
+padding:10px;
+}
+
+.sidebar div{
+padding:8px;
+cursor:pointer;
+border-radius:5px;
+}
+
+.sidebar div:hover{
+background:#e5e7eb;
+}
+
+.content{
+flex:1;
+padding:10px;
+}
+
+.file{
+padding:8px;
+border:1px solid #ddd;
+margin-top:5px;
+cursor:pointer;
+}
+
+.folder{
+font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="instructions">
+<b>🎯 Objetivo:</b> Simular uso real do computador<br><br>
+
+1. Clique no Google na área de trabalho<br>
+2. Pesquise: <b>letra de música pdf</b><br>
+3. Baixe o arquivo<br>
+4. Abra o Explorador de Arquivos<br>
+5. Vá em Downloads<br>
+6. Crie uma pasta chamada <b>Letras</b><br>
+7. Mova o arquivo para a pasta<br>
+</div>
+
+<div class="desktop">
+
+<!-- GOOGLE -->
+<div class="icon-desktop" onclick="abrirNavegador()">
+<div>🌐</div>
+<span>Google</span>
+</div>
+
+<!-- EXPLORADOR -->
+<div class="icon-desktop" style="top:200px" onclick="abrirExplorer()">
+<div>📁</div>
+<span>Arquivos</span>
+</div>
+
+<!-- TASKBAR -->
+<div class="taskbar">
+📶 🔊 🔋 🔔
+</div>
+
+</div>
+
+<!-- NAVEGADOR -->
+<div class="window" id="nav">
+<div class="close" onclick="fechar('nav')">❌</div>
+
+<div class="browser">
+<h3>Google</h3>
+<input id="pesquisa" style="width:70%">
+<button onclick="pesquisar()">Buscar</button>
+<div id="resultado"></div>
+</div>
+</div>
+
+<!-- EXPLORADOR -->
+<div class="window" id="exp">
+<div class="close" onclick="fechar('exp')">❌</div>
+
+<div class="explorer">
+
+<div class="sidebar">
+<div onclick="abrirDownloads()">Downloads</div>
+<div>Documentos</div>
+<div>Imagens</div>
+<div>Este Computador</div>
+</div>
+
+<div class="content" id="conteudo"></div>
+
+</div>
+</div>
+
+<script>
+let etapa=1
+let arquivos=[]
+let pasta=false
+
+function abrirNavegador(){
+if(etapa===1){
+document.getElementById("nav").style.display="block"
+etapa=2
+}
+}
+
+function fechar(id){
+document.getElementById(id).style.display="none"
+}
+
+function pesquisar(){
+let val=document.getElementById("pesquisa").value.toLowerCase()
+if(val==="letra de música pdf"){
+document.getElementById("resultado").innerHTML='<button onclick="baixar()">Baixar PDF</button>'
+etapa=3
+}else alert("Digite corretamente")
+}
+
+function baixar(){
+arquivos.push("letra.pdf")
+alert("Download feito")
+etapa=4
+}
+
+function abrirExplorer(){
+if(etapa>=4){
+document.getElementById("exp").style.display="block"
+}else alert("Baixe o arquivo primeiro")
+}
+
+function abrirDownloads(){
+if(etapa===4){
+mostrar()
+etapa=5
+}
+}
+
+function mostrar(){
+let html=""
+
+arquivos.forEach(a=>{
+html+=`<div class="file" draggable="true" ondragstart="drag(event)" id="${a}">📄 ${a}</div>`
+})
+
+if(pasta){
+html+=`<div class="file folder" id="Letras" ondrop="drop(event)" ondragover="allowDrop(event)">📁 Letras</div>`
+}
+
+html+=`<button onclick="criar()">Nova Pasta</button>`
+
+document.getElementById("conteudo").innerHTML=html
+}
+
+function criar(){
+let nome=prompt("Nome da pasta:")
+if(nome==="Letras"){
+pasta=true
+mostrar()
+etapa=6
+}else alert("Nome errado")
+}
+
+function allowDrop(ev){ev.preventDefault()}
+function drag(ev){ev.dataTransfer.setData("text",ev.target.id)}
+
+function drop(ev){
+ev.preventDefault()
+let data=ev.dataTransfer.getData("text")
+
+if(data==="letra.pdf"){
+document.getElementById("Letras").innerHTML+="<br>📄 letra.pdf"
+document.getElementById(data).remove()
+alert("✔ Concluído!")
+}
+}
+</script>
+
+</body>
+</html>

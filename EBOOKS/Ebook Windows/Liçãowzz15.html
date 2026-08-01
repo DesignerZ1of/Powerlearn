@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 15 — Propriedades dos arquivos</title>
+
+<style>
+body{font-family:Arial;background:#fff;margin:0;color:#111}
+.container{max-width:1100px;margin:auto;padding:40px}
+h2{color:#1e3a8a}
+
+.card{
+background:#f9fafb;
+border:1px solid #e5e7eb;
+border-radius:10px;
+padding:25px;
+margin:20px 0
+}
+
+/* DESKTOP */
+.desktop{
+height:350px;
+background:#1e3a8a;
+position:relative;
+border-radius:10px;
+color:#fff;
+}
+
+.icon{
+position:absolute;
+top:60px;
+left:40px;
+text-align:center;
+cursor:pointer;
+}
+.icon div{font-size:40px}
+
+/* WINDOW */
+.window{
+position:absolute;
+top:40px;
+left:50%;
+transform:translateX(-50%);
+width:850px;
+height:260px;
+background:#fff;
+border-radius:10px;
+display:none;
+overflow:visible;
+}
+
+.close{
+text-align:right;
+padding:8px;
+cursor:pointer;
+}
+
+/* EXPLORER */
+.explorer{display:flex;height:100%}
+
+.sidebar{
+width:200px;
+background:#f3f4f6;
+padding:10px;
+color:#000;
+}
+
+.content{
+flex:1;
+padding:10px;
+color:#000;
+}
+
+.file{
+border:1px solid #ddd;
+padding:8px;
+margin-top:5px;
+cursor:pointer;
+color:#000;
+}
+
+/* MENU */
+.menu{
+position:fixed;
+background:#fff;
+border:1px solid #ccc;
+display:none;
+z-index:999;
+}
+
+.menu div{
+padding:8px;
+cursor:pointer;
+}
+.menu div:hover{background:#f3f4f6}
+
+/* PROPERTIES */
+.properties{
+display:none;
+background:#fff;
+border:2px solid #1e3a8a;
+border-radius:10px;
+padding:15px;
+margin-top:10px;
+}
+
+/* QUIZ */
+.pergunta{margin-top:20px}
+
+.option{
+display:block;
+padding:8px;
+border:1px solid #ddd;
+margin-top:5px;
+border-radius:6px;
+cursor:pointer;
+}
+
+.correct{background:#22c55e;color:#fff}
+.wrong{background:#ef4444;color:#fff}
+
+.result{
+margin-top:5px;
+font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<h2>🧠 Lição 15 — Propriedades dos arquivos</h2>
+
+<div class="card">
+
+📄 O que são propriedades<br><br>
+
+Todo arquivo possui informações além do nome.<br><br>
+
+Exemplos:<br>
+Tamanho<br>
+Tipo<br>
+Data de criação<br>
+Última modificação<br><br>
+
+👉 São dados que ajudam a entender melhor o arquivo.<br><br>
+
+---
+
+🖱️ Como ver as propriedades<br><br>
+
+1. Clique com o botão direito no arquivo<br>
+2. Clique em Propriedades<br><br>
+
+Uma janela será aberta com todas as informações.<br><br>
+
+---
+
+📦 Tamanho do arquivo<br><br>
+
+Mostra quanto espaço o arquivo ocupa.<br><br>
+
+👉 Exemplos:<br>
+Texto → pequeno<br>
+Imagem → médio<br>
+Vídeo → grande<br><br>
+
+Isso ajuda a entender o uso do armazenamento.<br><br>
+
+---
+
+📅 Data de modificação<br><br>
+
+Mostra a última vez que o arquivo foi alterado.<br><br>
+
+👉 Útil para:<br>
+Identificar versão mais recente<br>
+Saber se o arquivo foi atualizado<br><br>
+
+---
+
+📑 Tipo do arquivo<br><br>
+
+Mostra qual é o formato do arquivo.<br><br>
+
+👉 Exemplo:<br>
+Documento<br>
+Imagem<br>
+PDF<br><br>
+
+Ajuda a saber com qual programa abrir.<br><br>
+
+---
+
+🎯 Ideia principal<br><br>
+
+Um arquivo não é só o nome.<br><br>
+
+Ele possui informações importantes que ajudam você a identificar, organizar e usar melhor o que está no computador.
+
+</div>
+
+<div class="card">
+
+<b>Exercício — Investigue o arquivo</b><br><br>
+
+👉 Siga:<br>
+1. Abra o Explorador<br>
+2. Clique com botão direito no arquivo<br>
+3. Abra Propriedades<br>
+4. Use as informações para responder<br><br>
+
+<div class="desktop">
+
+<div class="icon" onclick="abrirExplorer()">
+<div>📁</div>
+Arquivos
+</div>
+
+<div class="window" id="exp">
+<div class="close" onclick="fechar()">❌</div>
+
+<div class="explorer">
+
+<div class="sidebar">
+<div onclick="abrirDoc()">Documentos</div>
+</div>
+
+<div class="content" id="conteudo"></div>
+
+</div>
+</div>
+
+</div>
+
+<div class="menu" id="menu">
+<div onclick="abrirProp()">Propriedades</div>
+</div>
+
+<div class="properties" id="prop">
+<b>Propriedades do arquivo</b><br><br>
+Tipo: PDF<br>
+Tamanho: 2 MB<br>
+Última modificação: 10/03/2026
+</div>
+
+<!-- PERGUNTAS -->
+
+<div class="pergunta">
+<b>1. Qual é o tipo do arquivo?</b>
+<div class="option" onclick="responder(this,0,1)">Imagem</div>
+<div class="option" onclick="responder(this,1,1)">PDF</div>
+<div class="option" onclick="responder(this,2,1)">Vídeo</div>
+<div class="result"></div>
+</div>
+
+<div class="pergunta">
+<b>2. Esse arquivo é considerado:</b>
+<div class="option" onclick="responder(this,0,0)">Leve</div>
+<div class="option" onclick="responder(this,1,0)">Médio</div>
+<div class="option" onclick="responder(this,2,0)">Muito grande</div>
+<div class="result"></div>
+</div>
+
+<div class="pergunta">
+<b>3. A última modificação indica:</b>
+<div class="option" onclick="responder(this,0,1)">Quando foi criado</div>
+<div class="option" onclick="responder(this,1,1)">Quando foi alterado por último</div>
+<div class="option" onclick="responder(this,2,1)">Quando foi aberto</div>
+<div class="result"></div>
+</div>
+
+<div class="pergunta">
+<b>4. Esse arquivo é melhor para:</b>
+<div class="option" onclick="responder(this,0,1)">Edição</div>
+<div class="option" onclick="responder(this,1,1)">Leitura</div>
+<div class="option" onclick="responder(this,2,1)">Programação</div>
+<div class="result"></div>
+</div>
+
+</div>
+
+</div>
+
+<script>
+function abrirExplorer(){
+document.getElementById("exp").style.display="block"
+}
+
+function fechar(){
+document.getElementById("exp").style.display="none"
+}
+
+function abrirDoc(){
+document.getElementById("conteudo").innerHTML=
+`<div class="file" oncontextmenu="menu(event)">📄 Trabalho_Final.pdf</div>`
+}
+
+function menu(e){
+e.preventDefault()
+let m=document.getElementById("menu")
+m.style.display="block"
+m.style.left=e.clientX+"px"
+m.style.top=e.clientY+"px"
+}
+
+function abrirProp(){
+document.getElementById("menu").style.display="none"
+document.getElementById("prop").style.display="block"
+}
+
+function responder(el, selecionado, correto){
+
+let pergunta = el.closest(".pergunta")
+let opcoes = pergunta.querySelectorAll(".option")
+let resultado = pergunta.querySelector(".result")
+
+opcoes.forEach(o => o.style.pointerEvents = "none")
+
+if(selecionado === correto){
+el.classList.add("correct")
+resultado.innerHTML="✔ Correto"
+}else{
+el.classList.add("wrong")
+opcoes[correto].classList.add("correct")
+resultado.innerHTML="❌ Errado — correta destacada"
+}
+
+}
+</script>
+
+</body>
+</html>

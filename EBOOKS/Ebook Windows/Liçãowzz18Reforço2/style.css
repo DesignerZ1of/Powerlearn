@@ -1,0 +1,186 @@
+body{
+margin:0;
+font-family:Arial;
+}
+
+/* INSTRUÇÕES */
+.instructions{
+background:#1e3a8a;
+color:#fff;
+padding:20px;
+line-height:1.6;
+}
+
+/* TELAS */
+.screen{
+display:none;
+height:100vh;
+}
+.active{
+display:block;
+}
+
+/* ================= DESKTOP ================= */
+
+.desktop{
+height:100%;
+background:#1e3a8a;
+color:#fff;
+position:relative;
+}
+
+.icon{
+position:absolute;
+top:40px;
+left:40px;
+text-align:center;
+cursor:pointer;
+}
+.icon div{
+font-size:40px;
+}
+
+/* BARRA */
+.taskbar{
+position:absolute;
+bottom:0;
+width:100%;
+height:50px;
+background:#ffffff;
+display:flex;
+align-items:center;
+padding:0 10px;
+}
+
+.search{
+width:200px;
+height:30px;
+margin:0 10px;
+}
+
+.right{
+margin-left:auto;
+color:#000;
+}
+
+/* ================= EXPLORADOR ================= */
+
+.window{
+height:100%;
+display:flex;
+flex-direction:column;
+}
+
+.topbar{
+background:#fff;
+padding:10px;
+display:flex;
+gap:10px;
+border-bottom:1px solid #ddd;
+}
+
+.topbar button{
+background:#f3f4f6;
+border:1px solid #ddd;
+padding:6px 12px;
+border-radius:5px;
+cursor:pointer;
+}
+
+.topbar button:hover{
+background:#e5e7eb;
+}
+
+.main{
+display:flex;
+flex:1;
+}
+
+.sidebar{
+width:220px;
+background:#ffffff;
+border-right:1px solid #ddd;
+padding:10px;
+}
+
+.sidebar div{
+padding:8px;
+cursor:pointer;
+border-radius:5px;
+}
+
+.sidebar div:hover{
+background:#e5e7eb;
+}
+
+.content{
+flex:1;
+padding:20px;
+background:#fff;
+}
+
+/* ARQUIVOS */
+.file{
+padding:10px;
+border:1px solid #ddd;
+margin-bottom:10px;
+border-radius:6px;
+cursor:pointer;
+display:flex;
+justify-content:space-between;
+}
+
+.file:hover{
+background:#f3f4f6;
+}
+
+/* ================= LIXEIRA ================= */
+
+.trash{
+height:100%;
+display:flex;
+flex-direction:column;
+}
+
+.trash-content{
+flex:1;
+padding:20px;
+background:#fff;
+}
+
+.trash-item{
+padding:10px;
+border:1px solid #ddd;
+margin-bottom:10px;
+border-radius:6px;
+}
+
+/* ================= ESTE COMPUTADOR ================= */
+
+.pc{
+height:100%;
+display:flex;
+flex-direction:column;
+}
+
+.disk{
+margin:20px;
+padding:20px;
+border:1px solid #ddd;
+border-radius:10px;
+background:#fff;
+}
+
+.bar{
+height:20px;
+background:#e5e7eb;
+border-radius:10px;
+overflow:hidden;
+margin-top:10px;
+}
+
+.bar-fill{
+height:100%;
+background:#3b82f6;
+width:70%;
+}

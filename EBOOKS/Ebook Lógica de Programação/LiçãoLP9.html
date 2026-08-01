@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 9 — Condição (Parte 2)</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Consolas, monospace;
+background:#0f172a;
+color:#e2e8f0;
+}
+
+.container{
+max-width:950px;
+margin:auto;
+padding:40px;
+}
+
+.card{
+background:#1e293b;
+padding:25px;
+border-radius:12px;
+margin-bottom:25px;
+border:1px solid #334155;
+}
+
+h1{
+color:#38bdf8;
+}
+
+.section{
+margin-top:20px;
+font-weight:bold;
+color:#94a3b8;
+}
+
+.code{
+background:#020617;
+color:#22c55e;
+padding:15px;
+border-radius:8px;
+margin-top:10px;
+white-space:pre-line;
+}
+
+.exercise{
+background:#020617;
+padding:20px;
+border-radius:10px;
+margin-top:20px;
+}
+
+.tip{
+background:#0f172a;
+padding:15px;
+border-left:4px solid #38bdf8;
+margin-top:15px;
+border-radius:6px;
+}
+
+textarea{
+width:100%;
+height:220px;
+margin-top:10px;
+padding:10px;
+border-radius:8px;
+border:none;
+background:#0f172a;
+color:#e2e8f0;
+font-family:Consolas;
+font-size:15px;
+}
+
+button{
+margin-top:15px;
+padding:10px 15px;
+background:#38bdf8;
+border:none;
+border-radius:6px;
+color:#0f172a;
+cursor:pointer;
+font-weight:bold;
+}
+
+.result{
+margin-top:15px;
+padding:15px;
+border-radius:8px;
+background:#020617;
+}
+
+.correct{
+color:#22c55e;
+}
+
+.wrong{
+color:#ef4444;
+}
+
+.option{
+display:block;
+margin-top:10px;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>📘 LIÇÃO 9 — Condição (Parte 2)</h1>
+
+---
+
+<div class="section">🧠 O que você vai aprender aqui</div>
+
+<p>
+Como criar mais de uma condição<br><br>
+
+O que significa &&<br><br>
+
+O que significa ||<br><br>
+
+Como juntar verificações
+</p>
+
+---
+
+<div class="section">🧩 Tipo de lógica usado</div>
+
+<p><b>🔹 Lógica Condicional</b></p>
+
+<p>
+O programa toma decisões usando várias condições.
+</p>
+
+---
+
+<div class="section">🧠 O que é &&</div>
+
+<p>
+&& significa:
+</p>
+
+<p><b>
+“e”
+</b></p>
+
+---
+
+<div class="section">📌 Como funciona</div>
+
+<p>
+As duas condições precisam ser verdadeiras.
+</p>
+
+---
+
+<div class="section">💻 Código (1º da aula)</div>
+
+<div class="code">
+let idade = 20;
+let dinheiro = 50;
+
+if (idade >= 18 && dinheiro >= 30) {
+
+console.log("Pode entrar");
+
+}
+</div>
+
+---
+
+<div class="section">🧠 Tradução</div>
+
+<p><b>
+Se a idade for maior ou igual a 18
+E tiver pelo menos 30 de dinheiro
+→ pode entrar
+</b></p>
+
+---
+
+<div class="section">⚠️ Importante</div>
+
+<p>
+Com &&:
+</p>
+
+<p><b>
+tudo precisa estar correto
+</b></p>
+
+---
+
+<div class="section">🧠 O que é ||</div>
+
+<p>
+|| significa:
+</p>
+
+<p><b>
+“ou”
+</b></p>
+
+---
+
+<div class="section">📌 Como funciona</div>
+
+<p>
+Só uma condição precisa ser verdadeira.
+</p>
+
+---
+
+<div class="section">💻 Código (2º da aula)</div>
+
+<div class="code">
+let vip = false;
+let ingresso = true;
+
+if (vip == true || ingresso == true) {
+
+console.log("Pode entrar");
+
+}
+</div>
+
+---
+
+<div class="section">🧠 Tradução</div>
+
+<p><b>
+Se for VIP
+OU tiver ingresso
+→ pode entrar
+</b></p>
+
+---
+
+<div class="section">🔍 Diferença mais importante</div>
+
+<p><b>&&</b></p>
+
+<p>
+Todas precisam ser verdadeiras
+</p>
+
+---
+
+<p><b>||</b></p>
+
+<p>
+Apenas uma precisa ser verdadeira
+</p>
+
+---
+
+<div class="section">🧠 Onde isso é usado?</div>
+
+<p>
+sistemas de login<br><br>
+
+verificações de acesso<br><br>
+
+jogos<br><br>
+
+permissões<br><br>
+
+compras<br><br>
+
+validações
+</p>
+
+---
+
+<div class="section">📌 Comparação simples</div>
+
+<p><b>&&</b></p>
+
+<p>
+“isso E aquilo”
+</p>
+
+<p><b>||</b></p>
+
+<p>
+“isso OU aquilo”
+</p>
+
+</div>
+
+<!-- EXERCÍCIO 1 -->
+
+<div class="card">
+
+<h1>🧪 Exercício 1 — Criando um código com &&</h1>
+
+<div class="exercise">
+
+<p>
+Crie um código que:
+</p>
+
+<p>
+✔ Crie idade = 20<br><br>
+
+✔ Crie dinheiro = 50<br><br>
+
+✔ Use &&<br><br>
+
+✔ Mostre:
+"Pode entrar"
+</p>
+
+<div class="tip">
+
+💡 EXEMPLO PARA SEGUIR:
+
+<div class="code">
+let numero = 10;
+let pontos = 5;
+
+if(numero >= 10 && pontos >= 5){
+
+console.log("Liberado");
+
+}
+</div>
+
+</div>
+
+<textarea id="codigo1"></textarea>
+
+<button onclick="executar1()">Executar Código</button>
+
+<div id="resultado1" class="result"></div>
+
+</div>
+
+</div>
+
+<!-- EXERCÍCIO 2 -->
+
+<div class="card">
+
+<h1>🧪 Exercício 2 — Criando um código com ||</h1>
+
+<div class="exercise">
+
+<p>
+Crie um código que:
+</p>
+
+<p>
+✔ Crie vip = false<br><br>
+
+✔ Crie ingresso = true<br><br>
+
+✔ Use ||<br><br>
+
+✔ Mostre:
+"Pode entrar"
+</p>
+
+<div class="tip">
+
+💡 EXEMPLO PARA SEGUIR:
+
+<div class="code">
+let admin = false;
+let senha = true;
+
+if(admin == true || senha == true){
+
+console.log("Entrou");
+
+}
+</div>
+
+</div>
+
+<textarea id="codigo2"></textarea>
+
+<button onclick="executar2()">Executar Código</button>
+
+<div id="resultado2" class="result"></div>
+
+</div>
+
+</div>
+
+<!-- EXERCÍCIO 3 -->
+
+<div class="card">
+
+<h1>🧪 Exercício 3 — Múltipla Escolha</h1>
+
+<div class="exercise">
+
+<p><b>O que o && significa?</b></p>
+
+<label class="option">
+<input type="radio" name="q1" value="a">
+ ou
+</label>
+
+<label class="option">
+<input type="radio" name="q1" value="b">
+ e
+</label>
+
+<label class="option">
+<input type="radio" name="q1" value="c">
+ repetir
+</label>
+
+<button onclick="corrigirQ1()">Verificar</button>
+
+<div id="resultadoQ1" class="result"></div>
+
+</div>
+
+</div>
+
+<!-- EXERCÍCIO 4 -->
+
+<div class="card">
+
+<h1>🧪 Exercício 4 — Múltipla Escolha (Difícil)</h1>
+
+<div class="exercise">
+
+<p><b>O que esse código irá mostrar?</b></p>
+
+<div class="code">
+let idade = 17;
+let dinheiro = 100;
+
+if(idade >= 18 && dinheiro >= 30){
+
+console.log("Entrou");
+
+}else{
+
+console.log("Bloqueado");
+
+}
+</div>
+
+<label class="option">
+<input type="radio" name="q2" value="a">
+ Entrou
+</label>
+
+<label class="option">
+<input type="radio" name="q2" value="b">
+ Bloqueado
+</label>
+
+<label class="option">
+<input type="radio" name="q2" value="c">
+ verdadeiro
+</label>
+
+<button onclick="corrigirQ2()">Verificar</button>
+
+<div id="resultadoQ2" class="result"></div>
+
+</div>
+
+</div>
+
+<!-- EXERCÍCIO 5 -->
+
+<div class="card">
+
+<h1>🧪 Exercício 5 — Múltipla Escolha (Difícil)</h1>
+
+<div class="exercise">
+
+<p><b>Qual situação abaixo executa o código usando || ?</b></p>
+
+<label class="option">
+<input type="radio" name="q3" value="a">
+ Todas precisam ser verdadeiras
+</label>
+
+<label class="option">
+<input type="radio" name="q3" value="b">
+ Apenas uma precisa ser verdadeira
+</label>
+
+<label class="option">
+<input type="radio" name="q3" value="c">
+ Nenhuma pode ser verdadeira
+</label>
+
+<button onclick="corrigirQ3()">Verificar</button>
+
+<div id="resultadoQ3" class="result"></div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function executar1(){
+
+let codigo = document.getElementById("codigo1").value
+let resultado = document.getElementById("resultado1")
+
+resultado.innerHTML = ""
+
+try{
+
+let saida = []
+
+let consoleFake = {
+
+log: function(msg){
+
+saida.push(msg)
+
+}
+
+}
+
+new Function("console", codigo)(consoleFake)
+
+let valido = true
+
+if(!codigo.includes("&&")) valido = false
+if(!codigo.includes("console.log")) valido = false
+if(saida.join("") !== "Pode entrar") valido = false
+
+if(valido){
+
+resultado.innerHTML =
+'<span class="correct">✔ Código correto!</span>'
+
+}else{
+
+resultado.innerHTML =
+'<span class="wrong">✖ Revise o uso do &&.</span>'
+
+}
+
+}catch(erro){
+
+resultado.innerHTML =
+'<span class="wrong">Erro:<br><br>'+erro.message+'</span>'
+
+}
+
+}
+
+function executar2(){
+
+let codigo = document.getElementById("codigo2").value
+let resultado = document.getElementById("resultado2")
+
+resultado.innerHTML = ""
+
+try{
+
+let saida = []
+
+let consoleFake = {
+
+log: function(msg){
+
+saida.push(msg)
+
+}
+
+}
+
+new Function("console", codigo)(consoleFake)
+
+let valido = true
+
+if(!codigo.includes("||")) valido = false
+if(!codigo.includes("console.log")) valido = false
+if(saida.join("") !== "Pode entrar") valido = false
+
+if(valido){
+
+resultado.innerHTML =
+'<span class="correct">✔ Código correto!</span>'
+
+}else{
+
+resultado.innerHTML =
+'<span class="wrong">✖ Revise o uso do ||.</span>'
+
+}
+
+}catch(erro){
+
+resultado.innerHTML =
+'<span class="wrong">Erro:<br><br>'+erro.message+'</span>'
+
+}
+
+}
+
+function corrigirQ1(){
+
+let resposta = document.querySelector('input[name="q1"]:checked')
+let resultado = document.getElementById("resultadoQ1")
+
+if(resposta && resposta.value == "b"){
+
+resultado.innerHTML =
+'<span class="correct">✔ Correto!</span>'
+
+}else{
+
+resultado.innerHTML =
+'<span class="wrong">✖ Errado.</span>'
+
+}
+
+}
+
+function corrigirQ2(){
+
+let resposta = document.querySelector('input[name="q2"]:checked')
+let resultado = document.getElementById("resultadoQ2")
+
+if(resposta && resposta.value == "b"){
+
+resultado.innerHTML =
+'<span class="correct">✔ Correto!</span>'
+
+}else{
+
+resultado.innerHTML =
+'<span class="wrong">✖ Errado.</span>'
+
+}
+
+}
+
+function corrigirQ3(){
+
+let resposta = document.querySelector('input[name="q3"]:checked')
+let resultado = document.getElementById("resultadoQ3")
+
+if(resposta && resposta.value == "b"){
+
+resultado.innerHTML =
+'<span class="correct">✔ Correto!</span>'
+
+}else{
+
+resultado.innerHTML =
+'<span class="wrong">✖ Errado.</span>'
+
+}
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 14 — Controle ao salvar</title>
+
+<style>
+body{font-family:Arial;background:#fff;margin:0;color:#111}
+.container{max-width:1100px;margin:auto;padding:40px}
+
+h2{color:#1e3a8a}
+
+.card{
+background:#f9fafb;
+border:1px solid #e5e7eb;
+border-radius:10px;
+padding:25px;
+margin:20px 0
+}
+
+.question{
+margin-bottom:20px;
+}
+
+.option{
+display:block;
+padding:8px;
+border:1px solid #ddd;
+border-radius:6px;
+margin-top:5px;
+cursor:pointer;
+}
+
+.option:hover{background:#f3f4f6}
+
+.correct{background:#22c55e;color:#fff}
+.wrong{background:#ef4444;color:#fff}
+
+.result{
+margin-top:8px;
+font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<h2>🔄 Lição 14 — Controle ao salvar (sem erros)</h2>
+
+<div class="card">
+
+🔄 Lição 14 — Controle ao salvar (sem erros)<br><br>
+
+Na lição anterior você aprendeu a salvar arquivos.
+Agora o objetivo é simples: salvar sem erro e com controle no Microsoft Windows.<br><br>
+
+---
+
+💾 Salvar vs Salvar como<br><br>
+
+Salvar → atualiza o mesmo arquivo<br>
+Salvar como → cria outro arquivo<br><br>
+
+👉 Use “Salvar como” quando quiser outra versão.<br><br>
+
+---
+
+🧠 Criando versões<br><br>
+
+Trabalho_v1<br>
+Trabalho_v2<br>
+Trabalho_final<br><br>
+
+---
+
+📂 Onde salvar (atenção)<br><br>
+
+Antes de salvar, confira a pasta.<br>
+👉 Salvar no lugar errado = não encontrar depois.<br><br>
+
+---
+
+🔍 Conferir se deu certo<br><br>
+
+Vá na pasta<br>
+Veja se o arquivo está lá<br>
+Confira nome e tipo<br><br>
+
+---
+
+⚠️ Erros comuns<br><br>
+
+Não salvar antes de fechar<br>
+Salvar no lugar errado<br>
+Criar vários arquivos iguais<br><br>
+
+---
+
+🎯 Ideia principal<br><br>
+
+Salvar não é só clicar.<br>
+É saber onde, como e por quê você está salvando.
+
+</div>
+
+<!-- EXERCÍCIOS -->
+<div class="card">
+
+<b>Exercícios — Controle ao salvar</b><br><br>
+
+<div id="quiz"></div>
+
+</div>
+
+</div>
+
+<script>
+const perguntas = [
+{
+q:"Qual a principal diferença entre 'Salvar' e 'Salvar como'?",
+o:[
+"Salvar cria um novo arquivo sempre",
+"Salvar como atualiza o arquivo",
+"Salvar atualiza o mesmo arquivo e Salvar como cria outro",
+"Não existe diferença"
+],
+c:2
+},
+{
+q:"Quando você deve usar 'Salvar como'?",
+o:[
+"Quando quiser substituir o arquivo",
+"Quando quiser criar outra versão do arquivo",
+"Quando quiser apagar o arquivo",
+"Quando o arquivo não abrir"
+],
+c:1
+},
+{
+q:"Qual dessas opções mostra um bom controle de versões?",
+o:[
+"Arquivo, Arquivo2, Arquivo3",
+"Novo, Novo2",
+"Trabalho_v1, Trabalho_v2, Trabalho_final",
+"Documento, Documento copia"
+],
+c:2
+},
+{
+q:"Qual é o erro mais comum ao salvar arquivos?",
+o:[
+"Escolher o nome certo",
+"Salvar no lugar errado",
+"Abrir o arquivo",
+"Usar PDF"
+],
+c:1
+},
+{
+q:"Como você confirma que salvou corretamente?",
+o:[
+"Fechando o programa",
+"Reiniciando o computador",
+"Verificando a pasta, nome e tipo do arquivo",
+"Apenas confiando que salvou"
+],
+c:2
+}
+]
+
+const quiz = document.getElementById("quiz")
+
+perguntas.forEach((p,i)=>{
+let div = document.createElement("div")
+div.className="question"
+
+let html = `<b>${i+1}. ${p.q}</b>`
+
+p.o.forEach((opt,j)=>{
+html += `<div class="option" onclick="responder(this,${j},${p.c})">${opt}</div>`
+})
+
+html += `<div class="result"></div>`
+
+div.innerHTML = html
+quiz.appendChild(div)
+})
+
+function responder(el,sel,corr){
+let opcoes = el.parentElement.querySelectorAll(".option")
+let res = el.parentElement.querySelector(".result")
+
+opcoes.forEach(o=>o.onclick=null)
+
+if(sel===corr){
+el.classList.add("correct")
+res.innerHTML="✔ Correto"
+}else{
+el.classList.add("wrong")
+opcoes[corr].classList.add("correct")
+res.innerHTML="❌ Errado — resposta correta destacada"
+}
+}
+</script>
+
+</body>
+</html>

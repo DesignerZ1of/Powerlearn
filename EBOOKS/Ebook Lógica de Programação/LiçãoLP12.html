@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 12 — Arrays 3</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Consolas, monospace;
+background:#0f172a;
+color:#e2e8f0;
+}
+
+.container{
+max-width:950px;
+margin:auto;
+padding:40px;
+}
+
+.card{
+background:#1e293b;
+padding:25px;
+border-radius:12px;
+margin-bottom:25px;
+border:1px solid #334155;
+}
+
+h1{
+color:#38bdf8;
+}
+
+.section{
+margin-top:20px;
+font-weight:bold;
+color:#94a3b8;
+}
+
+.code{
+background:#020617;
+color:#22c55e;
+padding:15px;
+border-radius:8px;
+margin-top:10px;
+white-space:pre-line;
+}
+
+.exercise{
+background:#020617;
+padding:20px;
+border-radius:10px;
+margin-top:20px;
+}
+
+textarea{
+width:100%;
+height:220px;
+background:#000;
+color:#22c55e;
+border:1px solid #334155;
+border-radius:8px;
+padding:15px;
+margin-top:15px;
+font-family:Consolas;
+font-size:15px;
+}
+
+button{
+margin-top:15px;
+padding:10px 15px;
+background:#38bdf8;
+border:none;
+border-radius:6px;
+color:#0f172a;
+cursor:pointer;
+font-weight:bold;
+}
+
+.result{
+margin-top:15px;
+padding:10px;
+border-radius:8px;
+background:#0f172a;
+font-weight:bold;
+}
+
+.correct{
+color:#22c55e;
+}
+
+.wrong{
+color:#ef4444;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>📘 LIÇÃO 12 — Arrays 3</h1>
+
+---
+
+<div class="section">🧠 O que você vai aprender aqui</div>
+
+<p>
+Como usar for com arrays<br><br>
+
+Como usar while com arrays<br><br>
+
+Como verificar se um valor existe no array
+</p>
+
+---
+
+<div class="section">🧩 Tipo de lógica usado</div>
+
+<p><b>🔹 Lógica de Estrutura de Dados</b></p>
+
+<p>
+Percorrer e verificar informações automaticamente.
+</p>
+
+---
+
+<div class="section">🧠 Relembrando</div>
+
+<p>
+Array é uma lista de valores.
+</p>
+
+<div class="code">
+let nomes = ["Ana", "Carlos", "João"];
+</div>
+
+---
+
+<div class="section">🧠 O problema</div>
+
+<p>
+Sem repetição:
+</p>
+
+<p><b>
+você teria que acessar posição por posição manualmente.
+</b></p>
+
+---
+
+<div class="section">🚀 Usando for com arrays</div>
+
+<div class="code">
+let nomes = ["Ana", "Carlos", "João"];
+
+for (let i = 0; i < nomes.length; i++) {
+  console.log(nomes[i]);
+}
+</div>
+
+---
+
+<div class="section">🧠 O que acontece</div>
+
+<p>
+começa no 0<br><br>
+
+percorre todas as posições<br><br>
+
+mostra cada valor automaticamente
+</p>
+
+---
+
+<div class="section">📌 Entendendo melhor</div>
+
+<p><b>🔹 i</b></p>
+
+<p>
+Controla a posição atual.
+</p>
+
+<p><b>🔹 nomes.length</b></p>
+
+<p>
+Mostra o tamanho do array.
+</p>
+
+<p><b>🔹 nomes[i]</b></p>
+
+<p>
+Acessa a posição atual.
+</p>
+
+---
+
+<div class="section">🧠 Quando usar for com arrays?</div>
+
+<p>
+Quando:
+</p>
+
+<p><b>
+você quer percorrer a lista inteira.
+</b></p>
+
+---
+
+<div class="section">🔁 Usando while com arrays</div>
+
+<div class="code">
+let nomes = ["Ana", "Carlos", "João"];
+
+let i = 0;
+
+while (i < nomes.length) {
+  console.log(nomes[i]);
+
+  i++;
+}
+</div>
+
+---
+
+<div class="section">🧠 O que acontece</div>
+
+<p>
+começa na posição 0<br><br>
+
+verifica se ainda existe posição<br><br>
+
+mostra o valor<br><br>
+
+aumenta +1<br><br>
+
+repete
+</p>
+
+---
+
+<div class="section">⚖️ Diferença entre for e while com arrays</div>
+
+<p><b>for</b></p>
+
+<p>
+mais organizado<br><br>
+
+melhor para listas
+</p>
+
+<p><b>while</b></p>
+
+<p>
+mais manual<br><br>
+
+mais controle
+</p>
+
+---
+
+<div class="section">🧠 Verificando se existe</div>
+
+<p>
+Para verificar se um valor existe usamos:
+</p>
+
+<div class="code">
+.includes()
+</div>
+
+---
+
+<div class="section">💻 Exemplo</div>
+
+<div class="code">
+let nomes = ["Ana", "Carlos", "João"];
+
+console.log(nomes.includes("Carlos"));
+</div>
+
+---
+
+<div class="section">🧠 Resultado</div>
+
+<p>
+Aparece:
+</p>
+
+<div class="code">
+true
+</div>
+
+<p>
+Porque:
+</p>
+
+<p><b>
+“Carlos” existe no array.
+</b></p>
+
+---
+
+<div class="section">⚠️ E se não existir?</div>
+
+<div class="code">
+console.log(nomes.includes("Pedro"));
+</div>
+
+<p>
+Resultado:
+</p>
+
+<div class="code">
+false
+</div>
+
+---
+
+<div class="section">🧠 O que .includes() retorna?</div>
+
+<p>
+true → existe<br><br>
+
+false → não existe
+</p>
+
+---
+
+<div class="section">📌 Diferença importante</div>
+
+<p><b>.indexOf()</b></p>
+
+<p>
+procura posição
+</p>
+
+<p><b>.includes()</b></p>
+
+<p>
+verifica existência
+</p>
+
+---
+
+<div class="section">🎯 Fechamento</div>
+
+<p><b>
+Arrays guardam dados.<br><br>
+
+Repetição percorre dados.<br><br>
+
+Includes verifica dados.
+</b></p>
+
+</div>
+
+<!-- EXERCÍCIOS -->
+
+<div class="card">
+
+<h1>🧪 Exercícios de Código</h1>
+
+<!-- EXERCÍCIO 1 -->
+
+<div class="exercise">
+
+<h2>1. Crie um FOR com Array</h2>
+
+<p>
+Crie um array chamado <b>frutas</b> com:
+</p>
+
+<p>
+"Maçã", "Banana", "Uva"
+</p>
+
+<p>
+Depois:
+</p>
+
+<p>
+Use um <b>for</b> para mostrar todas as frutas.
+</p>
+
+<p><b>📌 Exemplo para seguir:</b></p>
+
+<div class="code">
+let nomes = ["Ana", "Carlos"];
+
+for (let i = 0; i < nomes.length; i++) {
+  console.log(nomes[i]);
+}
+</div>
+
+<textarea id="res1"></textarea>
+
+<button onclick="corrigir1()">Verificar</button>
+
+<div id="r1" class="result"></div>
+
+</div>
+
+<!-- EXERCÍCIO 2 -->
+
+<div class="exercise">
+
+<h2>2. Procurando posição com indexOf()</h2>
+
+<p>
+Crie um array chamado <b>nomes</b> com:
+</p>
+
+<p>
+"Ana", "Carlos", "João"
+</p>
+
+<p>
+Depois:
+</p>
+
+<p>
+Mostre a posição de "Carlos" usando:
+</p>
+
+<p><b>.indexOf()</b></p>
+
+<p><b>📌 Exemplo para seguir:</b></p>
+
+<div class="code">
+let numeros = [10, 20, 30];
+
+console.log(numeros.indexOf(20));
+</div>
+
+<textarea id="res2"></textarea>
+
+<button onclick="corrigir2()">Verificar</button>
+
+<div id="r2" class="result"></div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function corrigir1(){
+
+let resposta = document.getElementById("res1").value.toLowerCase()
+
+if(
+resposta.includes("let frutas") &&
+resposta.includes("for") &&
+resposta.includes("frutas.length") &&
+resposta.includes("console.log") &&
+resposta.includes("frutas[i]")
+){
+
+document.getElementById("r1").innerHTML =
+'<span class="correct">✔ Código correto!</span>'
+
+}else{
+
+document.getElementById("r1").innerHTML =
+'<span class="wrong">✖ Revise o FOR com arrays.</span>'
+
+}
+
+}
+
+function corrigir2(){
+
+let resposta = document.getElementById("res2").value.toLowerCase()
+
+if(
+resposta.includes("let nomes") &&
+resposta.includes("indexof") &&
+resposta.includes("carlos") &&
+resposta.includes("console.log")
+){
+
+document.getElementById("r2").innerHTML =
+'<span class="correct">✔ Código correto!</span>'
+
+}else{
+
+document.getElementById("r2").innerHTML =
+'<span class="wrong">✖ Revise o uso do indexOf().</span>'
+
+}
+
+}
+
+</script>
+
+</body>
+</html>

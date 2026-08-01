@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 11 — Arrays 2</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Consolas, monospace;
+background:#0f172a;
+color:#e2e8f0;
+}
+
+.container{
+max-width:950px;
+margin:auto;
+padding:40px;
+}
+
+.card{
+background:#1e293b;
+padding:25px;
+border-radius:12px;
+margin-bottom:25px;
+border:1px solid #334155;
+}
+
+h1{
+color:#38bdf8;
+}
+
+.section{
+margin-top:20px;
+font-weight:bold;
+color:#94a3b8;
+}
+
+.code{
+background:#020617;
+color:#22c55e;
+padding:15px;
+border-radius:8px;
+margin-top:10px;
+white-space:pre-line;
+}
+
+.exercise{
+background:#020617;
+padding:20px;
+border-radius:10px;
+margin-top:20px;
+}
+
+.option{
+display:block;
+margin-top:10px;
+cursor:pointer;
+}
+
+button{
+margin-top:15px;
+padding:10px 15px;
+background:#38bdf8;
+border:none;
+border-radius:6px;
+color:#0f172a;
+cursor:pointer;
+font-weight:bold;
+}
+
+.result{
+margin-top:15px;
+padding:10px;
+border-radius:8px;
+background:#0f172a;
+}
+
+.correct{
+color:#22c55e;
+}
+
+.wrong{
+color:#ef4444;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>📘 LIÇÃO 11 — Arrays 2</h1>
+
+---
+
+<div class="section">🧠 O que você vai aprender aqui</div>
+
+<p>
+Como alterar o valor de arrays<br><br>
+
+Como remover valores de array<br><br>
+
+Como procurar valores de arrays
+</p>
+
+---
+
+<div class="section">🧠 Relembrando array</div>
+
+<p>
+Array é uma lista de valores.
+</p>
+
+<div class="code">
+let numeros = [10, 20, 30];
+</div>
+
+---
+
+<div class="section">🧠 Alterando valores</div>
+
+<p>
+Nesta aula você aprenderá como alterar um valor de uma variável, que é de um array.
+</p>
+
+<p>
+Na verdade é bem simples, é só você escrever o <b>nome da variável</b>, especificar <b>qual posição</b>, botar o <b>sinal de =</b> (que significa "recebe") e o <b>novo valor da variável.</b>
+</p>
+
+---
+
+<div class="section">💻 Código (1º da aula)</div>
+
+<div class="code">
+let numeros = [10, 20, 30];
+
+numeros[1] = 200;
+
+console.log(numeros);
+</div>
+
+---
+
+<div class="section">🧠 O que acontece</div>
+
+<p>
+posição 1 muda de 20 → 200
+</p>
+
+<p><b>ESTRUTURA:</b></p>
+
+<div class="code">
+NomedaVariável[Especificar qual] = Novo Valor
+</div>
+
+---
+
+<div class="section">🧠 Removendo valores com .splice()</div>
+
+<p>
+O .splice() serve para remover valores específicos do array.
+</p>
+
+<p>
+Com .splice():
+</p>
+
+<p><b>
+você escolhe onde começa e quantos valores serão removidos.
+</b></p>
+
+---
+
+<div class="section">📌 Estrutura</div>
+
+<div class="code">
+array.splice(posição, quantidade);
+</div>
+
+---
+
+<div class="section">🧠 O que cada parte significa</div>
+
+<p><b>🔹 Primeiro número</b></p>
+
+<p>
+posição onde começa
+</p>
+
+<p><b>🔹 Segundo número</b></p>
+
+<p>
+quantidade de valores removidos.
+</p>
+
+<p>
+Ou seja:
+</p>
+
+<p><b>
+"Começa no 0 e termina até dar a quantidade de itens."
+</b></p>
+
+---
+
+<div class="section">💻 Exemplo simples</div>
+
+<div class="code">
+let nomes = ["Ana", "Carlos", "João"];
+
+nomes.splice(1, 1);
+
+console.log(nomes);
+</div>
+
+---
+
+<div class="section">🧠 O que acontece</div>
+
+<p>
+Posições:
+</p>
+
+<p>
+0 → Ana<br><br>
+
+1 → Carlos<br><br>
+
+2 → João
+</p>
+
+---
+
+<div class="section">🔍 Explicando</div>
+
+<p>
+splice(1, 1)
+</p>
+
+<p>
+Significa:
+</p>
+
+<p>
+começa na posição 1<br><br>
+
+remove 1 valor
+</p>
+
+<p><b>
+👉 “Carlos” é removido
+</b></p>
+
+<p>
+Resultado:
+</p>
+
+<div class="code">
+["Ana", "João"]
+</div>
+
+---
+
+<div class="section">⚠️ Erro comum</div>
+
+<p>
+Pensar que:
+</p>
+
+<div class="code">
+splice(0, 3)
+</div>
+
+<p>
+remove 4 itens.
+</p>
+
+<p><b>
+❌ Errado.
+</b></p>
+
+<p>
+Ele remove:
+</p>
+
+<p><b>
+exatamente 3 itens
+</b></p>
+
+---
+
+<div class="section">🧠 Procurando valores no array</div>
+
+<p>
+Para procurar a posição de um valor usamos:
+</p>
+
+<div class="code">
+.indexOf()
+</div>
+
+---
+
+<div class="section">📌 O que ele faz</div>
+
+<p>
+O .indexOf() procura um valor dentro do array e mostra sua posição.
+</p>
+
+---
+
+<div class="section">💻 Exemplo</div>
+
+<div class="code">
+let nomes = ["Ana", "Carlos", "João"];
+
+console.log(nomes.indexOf("Carlos"));
+</div>
+
+---
+
+<div class="section">🧠 O que acontece</div>
+
+<p>
+Posições:
+</p>
+
+<p>
+0 → Ana<br><br>
+
+1 → Carlos<br><br>
+
+2 → João
+</p>
+
+---
+
+<div class="section">📌 Resultado</div>
+
+<p>
+Aparece:
+</p>
+
+<div class="code">
+1
+</div>
+
+<p>
+Porque:
+</p>
+
+<p><b>
+“Carlos” está na posição 1.
+</b></p>
+
+---
+
+<div class="section">⚠️ Importante</div>
+
+<p>
+Arrays começam no:
+</p>
+
+<p><b>
+0
+</b></p>
+
+---
+
+<div class="section">🧠 E se não existir?</div>
+
+<div class="code">
+let nomes = ["Ana", "Carlos", "João"];
+
+console.log(nomes.indexOf("Pedro"));
+</div>
+
+---
+
+<div class="section">📌 Resultado</div>
+
+<p>
+Aparece:
+</p>
+
+<div class="code">
+-1
+</div>
+
+---
+
+<div class="section">🧠 O que -1 significa?</div>
+
+<p><b>
+O valor não foi encontrado.
+</b></p>
+
+---
+
+<div class="section">📌 Como pensar no .indexOf()</div>
+
+<p>
+Ele funciona como:
+</p>
+
+<p><b>
+“Onde isso está?”
+</b></p>
+
+---
+
+<div class="section">🧠 Onde isso é usado?</div>
+
+<p>
+procurar jogador<br><br>
+
+procurar nome<br><br>
+
+verificar item<br><br>
+
+sistemas de busca<br><br>
+
+inventário
+</p>
+
+---
+
+<div class="section">⚠️ Erro comum</div>
+
+<p>
+Pensar que:
+</p>
+
+<div class="code">
+indexOf()
+</div>
+
+<p>
+mostra o valor.
+</p>
+
+<p><b>
+❌ Não.
+</b></p>
+
+<p>
+Ele mostra:
+</p>
+
+<p><b>
+a posição do valor.
+</b></p>
+
+---
+
+<div class="section">🎯 Resumo final</div>
+
+<p><b>
+indexOf() procura posição.<br><br>
+
+Se encontrar → mostra posição.<br><br>
+
+Se não encontrar → retorna -1.
+</b></p>
+
+</div>
+
+<!-- EXERCÍCIOS -->
+
+<div class="card">
+
+<h1>🧪 Exercícios Difíceis</h1>
+
+<div class="exercise">
+
+<p><b>1. O que esse código irá mostrar?</b></p>
+
+<div class="code">
+let numeros = [10, 20, 30];
+
+numeros[2] = 100;
+
+console.log(numeros[2]);
+</div>
+
+<label class="option">
+<input type="radio" name="q1" value="a">
+ 30
+</label>
+
+<label class="option">
+<input type="radio" name="q1" value="b">
+ 2
+</label>
+
+<label class="option">
+<input type="radio" name="q1" value="c">
+ 100
+</label>
+
+<button onclick="corrigir1()">Verificar</button>
+
+<div id="r1" class="result"></div>
+
+</div>
+
+<div class="exercise">
+
+<p><b>2. O que acontece nesse código?</b></p>
+
+<div class="code">
+let nomes = ["Ana", "Carlos", "João"];
+
+nomes.splice(0, 2);
+
+console.log(nomes);
+</div>
+
+<label class="option">
+<input type="radio" name="q2" value="a">
+ Remove apenas "Ana"
+</label>
+
+<label class="option">
+<input type="radio" name="q2" value="b">
+ Remove "Ana" e "Carlos"
+</label>
+
+<label class="option">
+<input type="radio" name="q2" value="c">
+ Remove todos os nomes
+</label>
+
+<button onclick="corrigir2()">Verificar</button>
+
+<div id="r2" class="result"></div>
+
+</div>
+
+<div class="exercise">
+
+<p><b>3. O que será mostrado?</b></p>
+
+<div class="code">
+let nomes = ["Ana", "Carlos", "João"];
+
+console.log(nomes.indexOf("Pedro"));
+</div>
+
+<label class="option">
+<input type="radio" name="q3" value="a">
+ Pedro
+</label>
+
+<label class="option">
+<input type="radio" name="q3" value="b">
+ 0
+</label>
+
+<label class="option">
+<input type="radio" name="q3" value="c">
+ -1
+</label>
+
+<button onclick="corrigir3()">Verificar</button>
+
+<div id="r3" class="result"></div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function verificar(nome, correta, resultado){
+
+let resposta = document.querySelector('input[name="'+nome+'"]:checked')
+
+if(resposta && resposta.value == correta){
+
+document.getElementById(resultado).innerHTML =
+'<span class="correct">✔ Correto!</span>'
+
+}else{
+
+document.getElementById(resultado).innerHTML =
+'<span class="wrong">✖ Errado.</span>'
+
+}
+
+}
+
+function corrigir1(){
+verificar("q1","c","r1")
+}
+
+function corrigir2(){
+verificar("q2","b","r2")
+}
+
+function corrigir3(){
+verificar("q3","c","r3")
+}
+
+</script>
+
+</body>
+</html>

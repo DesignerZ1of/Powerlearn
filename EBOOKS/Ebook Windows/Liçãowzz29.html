@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 29 — Reforço geral</title>
+
+<style>
+body{
+font-family:Segoe UI, Arial;
+background:#ffffff;
+margin:0;
+color:#1f2937;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:50px 40px;
+}
+
+h1{
+color:#1e3a8a;
+font-size:34px;
+}
+
+.card{
+background:#f9fafb;
+border:1px solid #e5e7eb;
+border-radius:14px;
+padding:35px;
+margin-top:30px;
+}
+
+.section-title{
+color:#1e40af;
+font-size:22px;
+margin-top:40px;
+font-weight:bold;
+}
+
+.question{
+background:white;
+padding:20px;
+border-radius:10px;
+border:1px solid #e5e7eb;
+margin-top:20px;
+}
+
+.option{
+padding:10px;
+border:1px solid #d1d5db;
+border-radius:6px;
+margin-top:8px;
+cursor:pointer;
+}
+
+.option:hover{
+background:#eef2ff;
+}
+
+.correct{
+background:#dcfce7 !important;
+border-color:green !important;
+}
+
+.wrong{
+background:#fee2e2 !important;
+border-color:red !important;
+}
+
+.result{
+margin-top:10px;
+font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>📘 Lição 29 — Reforço geral (domínio completo)</h1>
+
+<div class="card">
+<p><b>👉 Você não é mais iniciante.</b></p>
+<p>Agora é hora de provar tudo que você aprendeu.</p>
+<div class="card">
+
+<p>Agora você chegou em um ponto importante no Microsoft Windows.</p>
+
+<p><b>👉 Você já aprendeu tudo o essencial</b><br>
+👉 Agora é hora de organizar e consolidar</p>
+
+<p>Essa lição não ensina algo novo.<br>
+Ela faz você perceber tudo que já sabe.</p>
+
+<div class="section-title">💻 Uso do computador</div>
+
+<p>Entender a tela<br>
+Usar programas<br>
+Controlar o ambiente de trabalho</p>
+
+<p><b>👉 Hoje você não se perde mais</b></p>
+
+<div class="section-title">🖥️ Área de trabalho</div>
+
+<p>O que deixar na área de trabalho<br>
+Como organizar<br>
+Minimizar, maximizar, fechar<br>
+Manter a tela limpa</p>
+
+<p><b>👉 Você controla o que vê</b></p>
+
+<div class="section-title">📂 Arquivos e organização</div>
+
+<p>Criar arquivos e pastas<br>
+Organizar corretamente<br>
+Saber onde tudo está</p>
+
+<p><b>👉 Você sabe onde está tudo</b></p>
+
+<div class="section-title">💾 Salvamento e controle</div>
+
+<p>Salvar corretamente<br>
+Evitar perder arquivos<br>
+Controlar versões</p>
+
+<p><b>👉 Você não perde mais seu trabalho</b></p>
+
+<div class="section-title">📊 Funcionamento do computador</div>
+
+<p>Armazenamento<br>
+Espaço disponível<br>
+Lixeira</p>
+
+<p><b>👉 Você entende o sistema</b></p>
+
+<div class="section-title">🌐 Internet</div>
+
+<p>Usar navegador<br>
+Pesquisar<br>
+Acessar sites</p>
+
+<p><b>👉 Você sabe navegar</b></p>
+
+<div class="section-title">⚡ Velocidade e controle</div>
+
+<p>Atalhos<br>
+Botões<br>
+Controle de janelas</p>
+
+<p><b>👉 Você usa com eficiência</b></p>
+
+<div class="section-title">🔒 Segurança e contas</div>
+
+<p>Criar contas<br>
+Senhas seguras<br>
+Evitar golpes</p>
+
+<p><b>👉 Você usa com segurança</b></p>
+
+<div class="section-title">🖨️ Uso prático</div>
+
+<p>Imprimir arquivos<br>
+Usar pendrive</p>
+
+<p><b>👉 Você usa no mundo real</b></p>
+
+<div class="section-title">🎯 Ideia principal</div>
+
+<p><b>Você não é mais iniciante.</b></p>
+
+<div class="section-title">🚀 Conclusão</div>
+
+<p>Agora é praticar, usar e evoluir.</p>
+
+</div>
+</div>
+
+<div id="quiz"></div>
+
+</div>
+
+<script>
+
+const blocos = [
+
+{
+titulo:"💻 Geral do Computador",
+perguntas:[
+{
+p:"1. O que acontece ao desligar incorretamente?",
+o:["Melhora o desempenho dos sistemas","Pode corromper arquivos","Nada acontece","Limpa a memória"],
+c:1
+},
+{
+p:"2. Programa travado → ação correta?",
+o:["Desligar o PC direto","Esperar ou fechar","Desinstalar o Programa","Formatar"],
+c:1
+},
+{
+p:"3. Desktop é:",
+o:["Um Programa"," A Tela inicial"," Um Arquivo"," O Sistema"],
+c:1
+},
+{
+p:"4. Função do sistema operacional:",
+o:["Imprimir","Controlar o hardware","Salvar arquivos no  sistema ","Baixar apps, jogos e programas"],
+c:1 
+},
+{
+p:"5. Multitarefa significa:",
+o:["Um programa","Vários processos","Desligar rápido","Atualizar"],
+c:1
+}
+]
+},
+
+{
+titulo:"🖥️ Área de Trabalho",
+perguntas:[
+{
+p:"6.O que os Ícones representam:",
+o:["Arquivos reais sempre","Atalhos ou arquivos","Sistemas","Internet"],
+c:1
+},
+{
+p:"7. Muitos ícones causam:",
+o:["Velocidade e Organização","Somente Organização","Bagunça","Segurança nos apps"],
+c:2
+},
+{
+p:"8. Minimizar faz:",
+o:["Fechar o programa","Esconder o programa","Apaga a tela","Duplica a tela"],
+c:1
+},
+{
+p:"9. Maximizar faz:",
+o:["Fecha a tela","Ocupa a tela","Esconde o Programa","Duplica o Programa"],
+c:1
+},
+{
+p:"10. O que cauza ter uma Área organizada:",
+o:["Mais lenta, por ter poucos ícones","Mais rápida por ter poucos ícones","Igual; ou seja não muda em nada","Inútil"],
+c:1
+}
+]
+},
+
+{
+titulo:"📂 Arquivos e Organização",
+perguntas:[
+{
+p:"11. A Pasta serve para:",
+o:["Apagar arquivos indesejáveis","Organizar os arquivos","Executar arquivos dentro dela","Baixar arquivos que tem dentro dela"],
+c:1
+},
+{
+p:"12. Um Arquivo .mp3 é de:",
+o:["Imagem","Texto","Áudio","Vídeo"],
+c:2
+},
+{
+p:"13.O Explorador serve para:",
+o:["Navegar pela Internet","Navegar por Arquivos","É o Sistema do Computador","Criar uma Senha, ou apagá la"],
+c:1
+},
+{
+p:"14. Nomear arquivos ajuda em:",
+o:["Apagá lo com facilidade","Organizar a área e procura lo","Deixar a área mais bonita"," Deixa o computador mais inteligente"],
+c:1
+},
+{
+p:"15. Misturar arquivos em uma pasta só causa:",
+o:["O Computador fica mias lento","Confusão, e desorganização","Velocidade no sistema","Segurança, pois dificultará invasões"],
+c:1
+}
+]
+},
+
+{
+titulo:"💾 Salvamento e Controle",
+perguntas:[
+{
+p:"16. Ctrl + S:",
+o:["Fecha","Salva","Apaga","Copia"],
+c:1
+},
+{
+p:"17. Onde é melhor salvar um arquivo de trabalhos escolhares?:",
+o:["Em qualquer área do Explorador","Na lixeira","Em uma pasta chamada: Trabalhos","Em uma pasta chamada: Jogos"],
+c:2
+},
+{
+p:"18. Salvar arquivos evita:",
+o:["Erro no Computador","Confusão no software","Perca de arquivos","Velocidade no desempenho"],
+c:2
+},
+{
+p:"19. Qual é a melhor prática ao trabalhar com arquivos?:",
+o:["Salvar durante o processo","Nenhuma","Copiar tudo ","Não salvar nada para evitar erros"],
+c:0
+},
+{
+p:"20. Qual desses nomes é o mais correto para salvar em um trabalho de História?",
+o:["Trabalho","Trabalho_História1","His","DocumentoH"],
+c:1
+}
+]
+},
+
+{
+titulo:"📊 Armazenamento e Lixeira",
+perguntas:[
+{
+p:"21. Lixeira guarda:",
+o:["Arquivos apagados","Programas funcionando","Sistemas criados recentemente","Apps sem logins"],
+c:0
+},
+{
+p:"22. Ao Esvaziar a lixeira o que acontece? :",
+o:["Recupera arquivos","Apaga definitivo","Duplica arquivos","Move eles de lugar"],
+c:1
+},
+{
+p:"23. Pouco espaço causa:",
+o:["Velocidade no sistema","Lentidão no sistema","Deixa mais Seguro ","Perca de arquivos instantaneamente"],
+c:0
+},
+{
+p:"24. O que fazer quando tiver pouco espaço:",
+o:["Remover rapidamente os arquivos","verificar os arquivos e exclui los","Comprar outro dispositivo","Duplicar os arquivos e depois exclui los"],
+c:1
+},
+{
+p:"25.Ao Excluir arquivos eles:",
+o:["Move lixeira","Apaga total","Salva","Duplica"],
+c:0
+}
+]
+},
+
+{
+titulo:"🌐 Internet",
+perguntas:[
+{
+p:"26. Navegador meche com:",
+o:["Arquivos","A Internet","O Sistema","Com Senha"],
+c:1
+},
+{
+p:"27.A Barra de endereço serve para:",
+o:["Enviar mensagens para pessoas distantes","Pesquisar sites","Entrar nas configurações","Se proteger de vírus"],
+c:1
+},
+{
+p:"28. Site falso pode:",
+o:["Ajudar","Roubar dados","Salvar","Atualizar"],
+c:1
+},
+{
+p:"29. Baixar se sites desconhecidos pode causar:",
+o:["Melhorar o Pc","Instalar vírus","Aumentar a memória","Funcionar normalmente"],
+c:1
+},
+{
+p:"30. Internet permite:",
+o:["Somente instalar jogos","Ter Informações","Nada","Ver somente a hora e o clima"],
+c:1
+}
+]
+},
+
+{
+titulo:"⚡ Atalhos",
+perguntas:[
+{
+p:"31. Ctrl + C:",
+o:["Colar","Copiar","Recortar","Salvar"],
+c:1
+},
+{
+p:"32. Ctrl + V:",
+o:["Copiar","Colar","Recortar","Salvar"],
+c:1
+},
+{
+p:"33. Ctrl + X:",
+o:["Copiar","Mover","Salvar","Fechar"],
+c:1
+},
+{
+p:"34. Ctrl + A:",
+o:["Selecionar tudo","Apagar","Salvar","Mover"],
+c:0
+},
+{
+p:"35. Alt + F4:",
+o:["Minimizar","Fechar","Salvar","Copiar"],
+c:1
+}
+]
+},
+
+{
+titulo:"🔒 Segurança",
+perguntas:[
+{
+p:"36. Senha forte:",
+o:["123456","Nome","Misturada","abc"],
+c:2
+},
+{
+p:"37. Compartilhar senha:",
+o:["Seguro","Perigoso","Normal","Rápido"],
+c:1
+},
+{
+p:"38. Link suspeito:",
+o:["Clicar","Ignorar","Compartilhar","Salvar"],
+c:1
+},
+{
+p:"39. Código recebido:",
+o:["Enviar","Guardar","Postar","Apagar"],
+c:1
+},
+{
+p:"40. Golpe indica:",
+o:["Erro texto","Site bom","Seguro","Atualizado"],
+c:0
+}
+]
+},
+
+{
+titulo:"🖨️ Impressão",
+perguntas:[
+{
+p:"41. Ctrl + P:",
+o:["Salvar","Imprimir","Fechar","Copiar"],
+c:1
+},
+{
+p:"42. Quando aparece Sem papel:",
+o:["Imprime","Dá Erro","Salva","Fecha a imprenssão"],
+c:1
+},
+{
+p:"43. Quando imprime com a Impressora desligada:",
+o:["Funciona normalmente","Dá Erro","Salva a imprenssão para mais tarde","Atualiza"],
+c:1
+},
+{
+p:"44. Prévia serve para:",
+o:["Ver Erros no arquivo","Visualizar","Excluir o arquivo","Salvar o arquivo"],
+c:1
+},
+{
+p:"45. Imprimir transforma:",
+o:["Papel→digital","Digital→papel","Nada","Som pro digital"],
+c:1
+}
+]
+}
+
+]
+
+function carregar(){
+
+const quiz=document.getElementById("quiz")
+
+blocos.forEach((b,bi)=>{
+
+quiz.innerHTML+=`<div class="section-title">${b.titulo}</div>`
+
+b.perguntas.forEach((q,pi)=>{
+
+let html=`<div class="question"><b>${q.p}</b>`
+
+q.o.forEach((op,oi)=>{
+html+=`<div class="option" onclick="resp(${bi},${pi},${oi},this)">${op}</div>`
+})
+
+html+=`<div id="r${bi}_${pi}" class="result"></div></div>`
+
+quiz.innerHTML+=html
+
+})
+
+})
+
+}
+
+function resp(b,p,o,el){
+
+const q=blocos[b].perguntas[p]
+const res=document.getElementById(`r${b}_${p}`)
+
+if(res.innerHTML!="") return
+
+if(o==q.c){
+el.classList.add("correct")
+res.innerHTML="✔ Correto"
+}else{
+el.classList.add("wrong")
+res.innerHTML="✖ Errado"
+}
+
+}
+
+carregar()
+
+</script>
+
+</body>
+</html>

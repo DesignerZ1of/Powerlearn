@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lição 19 — Atalhos</title>
+
+<style>
+
+body{
+font-family:Segoe UI, Arial;
+margin:0;
+background:#ffffff;
+}
+
+/* CONTEÚDO */
+.container{
+max-width:1100px;
+margin:auto;
+padding:40px;
+}
+
+h1{color:#1e3a8a}
+
+.card{
+background:#f9fafb;
+padding:30px;
+border-radius:14px;
+border:1px solid #e5e7eb;
+margin-top:20px;
+}
+
+.section{
+margin-top:25px;
+font-weight:bold;
+color:#1e40af;
+}
+
+/* DESKTOP */
+.desktop{
+height:100vh;
+background:#1e3a8a;
+color:#fff;
+position:relative;
+margin-top:30px;
+}
+
+/* ÍCONE */
+.icon{
+position:absolute;
+top:40px;
+left:40px;
+text-align:center;
+cursor:pointer;
+}
+.icon div{font-size:40px}
+
+/* JANELA */
+.window{
+position:absolute;
+top:80px;
+left:150px;
+width:600px;
+background:#fff;
+color:#000;
+border-radius:10px;
+display:none;
+box-shadow:0 5px 20px rgba(0,0,0,0.3);
+}
+
+/* TOPO */
+.topbar{
+background:#f3f4f6;
+padding:10px;
+display:flex;
+justify-content:space-between;
+}
+
+/* TEXTO */
+textarea{
+width:100%;
+height:300px;
+border:none;
+outline:none;
+padding:10px;
+font-size:16px;
+}
+
+/* RESULTADO */
+.result{
+position:absolute;
+bottom:60px;
+left:20px;
+background:#fff;
+color:#000;
+padding:10px;
+border-radius:6px;
+font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>⚡ Lição 19 — Atalhos e botões</h1>
+
+<div class="card">
+
+<p><b>👉 fazer tudo mais rápido, com menos esforço e mais controle</b></p>
+
+<div class="section">⚡ O que são atalhos</div>
+<p>Atalhos são combinações de teclas que executam ações rapidamente.</p>
+
+<div class="section">⌨️ Atalhos essenciais</div>
+<p>Ctrl + C → copiar</p>
+<p>Ctrl + V → colar</p>
+<p>Ctrl + X → recortar</p>
+<p>Ctrl + Z → desfazer</p>
+<p>Ctrl + Y → refazer</p>
+
+<div class="section">🔍 Seleção</div>
+<p>Ctrl + A → selecionar tudo</p>
+
+<div class="section">📂 Sistema</div>
+<p>Ctrl + S → salvar</p>
+<p>Alt + F4 → fechar programa</p>
+
+<div class="section"> NAVEGADOR📡</div>
+<p>Ctrl + T → nova aba</p>
+<p>Ctrl + W → fechar aba</p>
+<p>Ctrl + Shift + T → reabrir aba fachada</p>
+<p>Ctrl + L → ir para a barra de endereço</p>
+
+<div class="section">🖱️ Botões</div>
+<p>Clique → selecionar</p>
+<p>Duplo clique → abrir</p>
+
+<div class="section">⚠️ Erros comuns</div>
+<p>Não confundir copiar com recortar</p>
+<p>Não fechar sem salvar</p>
+
+<div class="section">🎯 Ideia principal</div>
+<p><b>Atalhos = velocidade | Botões = precisão</b></p>
+
+</div>
+
+<div class="card">
+
+<h2>🧪 Exercício</h2>
+
+<p>1. Abra o arquivo de texto</p>
+<p>2. Digite algo</p>
+<p>3. Use:</p>
+<p>Ctrl + A</p>
+<p>Ctrl + C</p>
+<p>Ctrl + V</p>
+<p>Ctrl + X</p>
+<p>4. Feche com Alt + F4</p>
+
+</div>
+
+</div>
+
+<!-- DESKTOP -->
+<div class="desktop">
+
+<div class="icon" ondblclick="abrirBloco()">
+<div>📄</div>
+Texto
+</div>
+
+<div class="result" id="resultado">Siga o exercício</div>
+
+<!-- BLOCO -->
+<div class="window" id="bloco">
+
+<div class="topbar">
+<span>Bloco de Notas</span>
+<button onclick="fecharBloco()">❌</button>
+</div>
+
+<textarea id="texto" placeholder="Digite algo aqui..."></textarea>
+
+</div>
+
+</div>
+
+<script>
+
+let textoArea = document.getElementById("texto")
+
+function abrirBloco(){
+document.getElementById("bloco").style.display="block"
+}
+
+/* FECHAR */
+function fecharBloco(){
+document.getElementById("bloco").style.display="none"
+document.getElementById("resultado").innerHTML="✔ Programa fechado"
+}
+
+/* ATALHOS */
+document.addEventListener("keydown",function(e){
+
+if(e.ctrlKey){
+
+if(e.key==="a"){
+e.preventDefault()
+textoArea.select()
+document.getElementById("resultado").innerHTML="✔ Ctrl + A"
+}
+
+if(e.key==="c"){
+document.getElementById("resultado").innerHTML="✔ Ctrl + C"
+}
+
+if(e.key==="v"){
+document.getElementById("resultado").innerHTML="✔ Ctrl + V"
+}
+
+if(e.key==="x"){
+document.getElementById("resultado").innerHTML="✔ Ctrl + X"
+}
+
+}
+
+/* ALT + F4 */
+if(e.altKey && e.key==="F4"){
+fecharBloco()
+}
+
+})
+
+</script>
+
+</body>
+</html>
