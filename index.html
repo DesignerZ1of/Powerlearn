@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8745727009154154"
+     crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Power Learn — Aprenda programação & informática</title>
+  <meta name="description" content="Power Learn: aprenda Java, Python, C#, Pacote Office e Windows — conteúdo gratuito com anúncios, exercícios práticos, de forma que você aprende rápido'." /> <!-- =======Descrição do Site==== -->
+  
+<!-- ============================================================== -->
+<!-- ======== VISUAL ============== -->
+<!-- ============================================================== -->
+   <meta name="theme-color" content="#ff7a18"/>
+  <style>
+    :root{
+      --bg:#0b0b0b;
+      --card:#111;
+      --accent:#ff7a18;             /* laranja */
+      --muted:#9aa0a6;
+      --glass: rgba(255,255,255,0.03);
+      --radius:14px;
+      --maxw:1100px;
+      --sans:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      --royal: #0077ff;
+    }
+
+    *{box-sizing:border-box}            /*=Padroniza o Tamanho dos elementos=*/
+    html,body{height:100%}
+
+
+
+
+    body{
+      margin:0;
+      font-family:var(--sans);
+      background: rgb(0, 0, 0);
+      color:#fff;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+
+    a{color:inherit; text-decoration:none}                                      /* ===Tag=== */
+    .container{max-width:var(--maxw); margin:0 auto; padding:32px;}
+
+   
+
+     /*========== CABEÇALHO ==========*/
+     
+
+    header{
+      position:sticky; top:0; z-index:60;
+      backdrop-filter: blur(6px);
+      background: linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.3));
+      border-bottom:1px solid rgba(255,255,255,0.03);
+    }
+    .nav{display:flex; align-items:center; gap:24px; justify-content:space-between; max-width:var(--maxw); margin:0 auto; padding:12px 20px;}
+    .brand{display:flex;gap:12px;align-items:center;font-weight:700;font-size:18px}
+    .logo{
+      width:60px;
+      heigth:60px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+    }
+    .logo img{
+	width: 100%;
+	height: 100%;
+	object-fit:contain;
+	border-radius:10px;
+    }
+
+    nav ul{
+	display:flex;
+	gap:60px; 
+	list-style:none;
+	margin:0;
+	padding:0;
+	align-items:center
+     }
+
+    .btn-entrar{
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 10px;
+    }
+
+    .btn-criar{
+      background: #ea7a00;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 10px;
+      border: none;
+    }
+	
+    
+
+                                         /* ======================================================= */
+                                                         /* HERO - ÁREA PRINCIPAL */
+                                         /* ======================================================= */
+    
+    #Inicio{
+      margin-top: 0px;
+      margin-bottom: 0px;
+
+    }
+    .hero{
+          display:grid;
+          grid-template-columns:1fr 420px;                                       /* Ela se Divide em Duas Partes: */
+          gap:34px;                                                              /* Esquerda = Textos       Direita = cards e Ilustrações */ 
+          align-items:center; 
+          padding:48px 0;
+          margin-left: -60px;
+	}
+
+    .hero-card{
+      background: #0D1016;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      width: 700px;
+      win-height: 180px;
+      padding: 24px 36px;
+      margin-top: -100px ;
+    }
+    
+    .hero h1{
+            font-size:36px;                                /* Título Principal */
+	    margin:12px 0;
+	    letter-spacing:-0.6px;
+	    line-height: 1.2;
+	}
+    .hero p.lead{
+                color:var(--muted);              /* Texto Menor */
+	        font-size:17px;
+	        line-height:1.9;
+		letter-spacing:0.3px;
+	        margin:20px 0 30px; 
+	        max-width:65ch;
+	     }
+    .hero .actions{display:flex; gap:12px; align-items:center}       /* Area dos Butões */
+
+
+
+
+
+ /* ===================================== ESPAÇO DO LOGIN ================================= */
+
+
+
+
+    .login-card{
+      width: 380px;
+      min-height: 520px ;
+      background: #0D1016;
+      border: 1px solid rgba(255, 255, 255, 0.08);           /* === CARD PRINCIPAL DA ÁREA DE LOGIN === */
+      border-radius: 20px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+     }
+    
+
+    .login-card h2{
+    margin-top: 0px;           /* Título */
+    margin-bottom: 10px;
+     }
+
+   .login-card p.lead{
+    margin-top: 0px;            /* Descrição */
+    margin-bottom: 0px;
+     }
+
+   .login-card label{
+    font-size: 18px;                 /* Nome dos Campos EX: senha, nome*/               
+   }
+
+
+    .login-card input{
+      background: #0D1016;
+      border: 1px solid rgba(255, 255, 255, 0.08);              /* Espaços para colocar senha e E-mail */
+      color: white;
+      padding: 12px 16px;
+      border-radius: 10px;
+      height: 30px;
+    }
+
+    .login-btn{
+      background: #c75a00;
+      font-size: 17px;
+      color: white;
+      border: none;                          /* ======= Botão Principal de Criação da Conta ======== */
+      padding: 14px;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 5px;
+    }
+
+    .btn-cadastrar{
+     width: 200px;
+     padding: 8px;
+     background: transparent;
+     border: 1px solid rgba(255, 255, 255, .12);     /* =========== Botão Principal de Entrar com uma Conta ============= */
+     color: white;
+     border-radius: 12px;
+     cursor: pointer;
+     margin: 20px auto;
+    }
+
+     .form-group{
+      margin-bottom: 10px;         /* ===== Agrupa cada campo ===== */
+     }
+
+     .form-group label{
+      display: block;            /* ===== Estiliza os títulos dos campos ===== */
+      margin-bottom: 8px;
+
+      color: #ffffff;
+      font-size: 18px;
+      font-weight: 600;
+     }
+
+     .form-group input{
+      width: 100%;      
+      height: 30px;
+
+      padding: 12 16px;
+
+      background: #111827;                    /* ========= Estiliza os campos pertencentes ao grupo ============= */
+      border: 1px solid #2d3748;
+      border-radius: 12px;
+
+      color: white;
+      font-size: 16px;
+
+      box-sizing: border-box;
+     }
+
+    .login-card .btn-criar{
+     background: #c75a00;
+     width: 100%;
+     height: 50px;
+    }
+
+    .social-login{
+      width: 70px;
+      height: 70px;
+     display:flex;
+     align-items: center;
+     justify-content: center;
+     gap:12px;
+     margin: 0px auto;
+     cursor: pointer;
+    }
+
+    .social-login img{
+      width: 70px;
+      height: 70px;
+    }
+
+    .download-btn{background:#111; border:1px solid rgba(255,255,255,0.03); padding:12px 14px; border-radius:10px; display:inline-flex; gap:10px; align-items:center}     /* Estilo dos Butões */
+   
+    .cards {background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent); padding:18px; border-radius:14px; border:1px solid rgba(255,255,255,0.03)}
+    /* Cards Ilustrativos */
+
+
+/* ==================================================== */
+/* Apenas a Decoração visual do Hero */
+/* ==================================================== */
+
+.app-mock{
+	background:linear-gradient(180deg,#0b0b0b,#0f0f0f);
+	padding:18px;
+	border-radius:12px;
+	box-shadow: 0 12px 40px rgba(0,0,0,0.5);                 /* ===== Caixa Principal ===== */
+	width:420px;
+	max-width:100%;
+       }
+    
+    .mock-header{display:flex; justify-content:space-between; align-items:center; margin-bottom:12px}
+/* Cabeçalho do mockup */
+    
+    .mock-screen{background:linear-gradient(180deg,#070707,#111); border-radius:10px; padding:12px; border:1px solid rgba(255,255,255,0.03)}
+/* Tela inteira do mockup */
+    
+    .power-row{display:flex; gap:8px; align-items:center}
+/* Linha dos Indicadores */
+    
+    .power{width:10px; height:10px; border-radius:3px; background:var(--accent); box-shadow: 0 4px 12px rgba(255,122,24,0.12)}
+/* Indicadores Luminosos */
+
+                         /* ======================================================================= */
+                                                        /* Cursos */
+                         /* ======================================================================= */
+
+   #cursos{
+    margin-top:28px;
+    margin-bottom:80px
+   }
+
+
+    .grid{
+	display:grid;
+	grid-template-columns:repeat(auto-fit,minmax(220px,1fr));      /* Grade onde fica os cursos */
+	gap:18px
+       }
+
+    .course{
+	background:var(--card);
+	padding:18px;
+	border-radius:12px;
+	border:1px solid rgba(255,255,255,0.03);     /* Card individual de cada curso */
+	cursor:default
+       }
+    .course h4{margin:10px 0 6px}  /* Título */
+    
+      /* Etiqueta */
+.badge{display:inline-block;background:rgba(255,255,255,0.03); color:var(--muted); padding:6px 8px;border-radius:8px;font-size:13px}
+   
+   /* ==== Barra de progresso ==== */
+ .progress{height:8px; background:rgba(255,255,255,0.03); border-radius:8px; overflow:hidden; margin-top:12px}
+    /* Parte Preenchida da Barra */
+.progress > i{display:block; height:100%; background:linear-gradient(90deg,var(--accent), #ff3d00); width:0; transition:width .8s ease;}
+    			
+			/* ===================================================================== */
+                   /* ============================= COMO FUNCIONA =================================== */
+			/* ===================================================================== */
+    
+    .steps{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px}
+ /* Grades dos passo a passo */
+
+    .step{background:var(--glass); padding:14px; border-radius:12px; border:1px solid rgba(255,255,255,0.02)}
+/* Card de cada passo a passo
+    
+
+    .muted{color:var(--muted)}
+/* Texto secundário */
+    
+/* =================================== */
+   /* PACOTE DE OFFICE */
+/* =================================== */
+
+ .office-panel{
+	background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+	border-radius:12px;
+	margin-top:12px;
+	padding:14px;                                        /* === Painel que abre e fecha === */
+	display:none;
+	border:1px solid rgba(255,255,255,0.03)
+       }
+
+                           /* Card Individual */
+    .office-card{background:var(--card); padding:14px; border-radius:10px; margin-bottom:10px; display:flex; justify-content:space-between; align-items:center}
+    
+	/* Título */
+    .office-card h4{margin:0}
+
+        /* Descrição */
+    .office-card p{margin:0;color:var(--muted); font-size:13px}
+
+/* ================================================= */
+            /* ======== Butões ======== */
+/* ================================================= */
+
+    .btn{padding:10px 12px; border-radius:10px; background:var(--accent); color:#111; font-weight:700; border:0; cursor:pointer} /* Principal */
+    .btn.ghost{background:transparent; border:1px solid rgba(255,255,255,0.06); color:var(--muted); font-weight:600}            /* Secundário */
+    
+          /* ========== Rodapé ========== */
+    .footer{margin-top:40px; padding:32px 0; border-top:1px solid rgba(255,255,255,0.03)}
+    
+             /* ================================== JANELAS POU-UP (modal) ======================================== */
+    .modal-backdrop{position:fixed; inset:0; background:linear-gradient(90deg, rgba(0,0,0,0.6), rgba(0,0,0,0.7)); display:none; align-items:center; justify-content:center; z-index:200;}
+    .modal{background:#0e0e0e; border-radius:12px; padding:20px; width:96%; max-width:520px; border:1px solid rgba(255,255,255,0.04)}
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr; gap:20px}
+      .app-mock{max-width:100%}
+      .nav{padding:8px 16px}
+    }
+
+    .Lermais{
+    background: transparent;
+    border: none;
+    color: #5d5f63;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 0;
+}
+
+@media (max-width:768px){
+
+    .container{
+        padding:20px;
+    }
+
+    .hero{
+        display:flex;
+        flex-direction:column;
+        margin-left:0;
+        padding:20px 0;
+    }
+
+    .hero-card{
+        width:100%;
+        margin-top:0;
+        padding:25px;
+    }
+
+    .login-card{
+        width:100%;
+        min-height:auto;
+    }
+
+    .hero h1{
+        font-size:30px;
+    }
+
+    .hero p.lead{
+        font-size:16px;
+    }
+
+    .actions{
+        flex-direction:column;
+        width:100%;
+    }
+
+    .btn,
+    .download-btn{
+        width:100%;
+        text-align:center;
+    }
+
+}
+
+@media (max-width:480px){
+
+    .hero h1{
+        font-size:24px;
+    }
+
+    .brand{
+        font-size:16px;
+    }
+
+    .logo{
+        width:45px;
+        height:45px;
+    }
+
+    nav ul{
+        gap:15px;
+    }
+
+}
+
+  </style>
+</head>
+
+
+
+
+
+
+
+<body>
+  <header>
+
+
+<!-- ======================== Menu Principal do Site ================================== -->
+    <div class="nav container" role="navigation" aria-label="Principal">   
+      
+    <div class="brand" title="Power Learn">              <!-- Nome do site -->
+       
+	<!-- Logo -->
+     <div class="logo">
+ 	    <img src="Arquivos/PowerLearnLogo.png"alt="Logo Power Learn"></div>
+        
+        <div>
+          <div style="font-size:20px">Power Learn</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:2px">Aprenda. Pratique. Evolua.</div>              <!-- Nome e Slogan -->
+        </div>
+      </div>
+
+      <!-- =============== MENU ================ -->
+
+      <nav>
+        <ul>
+          <li class="small muted"><a href="#Inicio">Início</a></li>
+          <li class="small muted"><a href="#cursos">Cursos</a></li>
+	        <li class="small muted"><a href="Arquivos/SobreNósI.html">Sobre Nós</a></li>
+          <li><button class="btn-entrar" id="open-login"><a href="login.html">Entrar</a></button></li>
+          <li><button class="btn-criar" id="open-register">Criar Conta</button></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+                                    <!-- ============================================================ -->
+                                  <!-- =========================   HERO   ============================ -->
+                                    <!-- ============================================================ -->
+  <main class="container" role="main">
+    <section class="hero" aria-labelledby="hero-title" id="Inicio">
+      <div class="hero-card">
+        <h1 id="hero-title">Aprenda programação e informática — sem pagar nada.</h1>
+        <p class="lead">Power Learn transforma estudo em uma experiência interativa: cursos práticos de Java, Python, Aprender a programar em C#, Pacote Office e Windows. Assista a um anúncio e desbloqueie lições — aprenda no seu ritmo com exercícios, progresso e recompensas.</p>
+
+        <div class="actions" style="margin-top:12px">
+          <button class="btn" id="get-started">Assistir anúncio & começar</button>
+          <a class="download-btn" href="#" onclick="alert('Em breve nas lojas!'); return false;">Disponível grátis</a>
+        </div>
+        
+      </div>
+      <form class="login-card" action="/cadastro" method="POST">
+        <h2>Criar uma conta</h2>
+        <p class="lead">Cire uma conta de forma gratuita para acompanhar seu progresso.</p>
+
+      <div class="form-group">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome">
+      </div>
+
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email">
+      </div>
+
+      <div class="form-group">
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" name="senha">
+      </div>
+
+        <button class="login-btn" id="criar-conta">Criar</button>
+        <button type= "button" class="btn-cadastrar" id="open-login" onclick="window.location.href='login.html'"> Já tem uma conta? Entrar </button>
+        <button class="social-login"><img src="Arquivos/googlelogo.png" alt="Google"></button>
+      </form>
+
+    </section>
+        
+    <section id="cursos">
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:12px">
+        <div>
+          <h2 style="margin:0">Cursos em destaque</h2>
+          <div class="small muted" style="margin-top:6px">Aulas práticas, exercícios e trilhas por nível.</div>
+        </div>
+        <div class="small muted">100% gratuito (com anúncio)</div>
+      </div>
+
+      
+      <div style="margin-top:18px" class="grid" aria-live="polite">
+       
+
+
+
+
+        <!-- course cards -->
+        <article class="course" aria-labelledby="c1">
+          <div class="badge">Programação</div>
+          <h4 id="c1">Java — Do básico ao avançado</h4>
+          <p class="small muted">Estruturas, OOP e projetos práticos.</p>
+        </article>
+
+        <article class="course" aria-labelledby="c2">
+          <div class="badge">Programação</div>
+          <h4 id="c2">Python — Comece a programar</h4>
+          <p class="small muted">Sintaxe, manipulação de dados e automações.</p>
+        </article>
+
+        <article class="course" aria-labelledby="c3">
+          <div class="badge">Programação</div>
+          <h4 id="c3">Aprender a programar em C#</h4>
+          <p class="small muted">Aprenda C# com foco em lógica e desenvolvimento prático.</p>
+        </article>
+
+
+        <article class="course" aria-labelledby="c5">
+          <div class="badge">Sistemas</div>
+          <h4 id="c5">Windows & Ferramentas digitais</h4>
+          <p class="small muted">Configurações, atalhos e produtividade.</p>                                                        
+        </article>
+
+      </div>
+
+    </section>
+    <footer>
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; flex-wrap:wrap;">
+        <div style="max-width:520px">
+         <h3 style="margin:0">Sobre Nós</h3>
+
+<div class="small muted" style="margin-top:8px">
+  A Power Learn nasceu da vontade de criar uma plataforma de ensino moderna, acessível e fácil de usar. O projeto começou como uma ideia simples e, aos poucos, foi sendo desenvolvendo e aprimorando, mas sempre com o objetivo...
+</div>
+
+<button class="Lermais" onclick="location.href='Arquivos/SobreNósI.html'">
+    Ler mais
+</button>
+
+<button class="Lermais" onclick="location.href='Arquivos/Política de PrivacidadeI.html'">Política de Privacidade</button>
+<button class="Lermais" onclick="location.href='Arquivos/Termos e CondiçõesI.html'">Termos de Uso</button>
+
+
+</div>
+
+        
+        <div style="min-width:220px">
+          <div class="small muted">Contato</div>
+          <div style="margin-top:8px">
+            <a href="mailto:contato@powerlearn.app" class="small">contatopowerlearn@gmail.com</a>
+            <div class="small muted" style="margin-top:6px">© <span id="year"></span> Power Learn</div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // initialize year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+  </script>
+</body>
+</html>
